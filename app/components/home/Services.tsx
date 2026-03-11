@@ -72,7 +72,6 @@ export default function StackedServices() {
 
                 {/* النص المتحرك في الخلفية (Stroke Text) */}
                 <motion.div
-                    style={{ x: xTransform }}
                     className="absolute whitespace-nowrap text-[18vw] md:text-[14vw] font-black uppercase tracking-tighter select-none leading-none z-0"
                     style={{
                         WebkitTextStroke: "1px rgba(255,255,255,0.03)",

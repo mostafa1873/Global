@@ -24,7 +24,7 @@ export default function KineticColumnsGallery() {
   }, []);
 
   return (
-    <section className="relative h-screen w-full bg-[#050505] overflow-hidden flex items-center justify-center">
+    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
       
       {/* الخلفية: أعمدة متحركة بسرعات مختلفة */}
       <div className="absolute inset-0 flex gap-2 p-2 opacity-30">

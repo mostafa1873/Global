@@ -25,7 +25,7 @@ const projects = [
 
 export default function BentoWorkSection() {
   return (
-    <section className="bg-black py-16 md:py-28 px-4 md:px-10 relative overflow-hidden" dir="rtl">
+    <section className=" py-16 md:py-28 px-4 md:px-10 relative overflow-hidden" dir="rtl">
       
       {/* Header الرايق */}
       <div className="max-w-[1400px] mx-auto mb-16 text-center">

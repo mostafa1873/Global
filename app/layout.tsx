@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/src/components/main/Navbar";
+import Footer from "@/src/components/main/Footer";
+import GlobalBackground from "@/src/components/main/GlobalBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Global Nexus",
   description: "Global Nexus is a platform for sharing and discovering knowledge across the globe.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -27,7 +33,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Navbar />
+
+        <GlobalBackground />
         {children}
+
+        <Footer />
+
       </body>
     </html>
   );

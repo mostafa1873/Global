@@ -65,7 +65,7 @@ export default function StackedServices() {
     const xTransform = useTransform(scrollYProgress, [0, 1], ["20%", "-20%"]);
 
     return (
-        <section ref={containerRef} className="relative bg-[#020617] py-8 md:py-8" dir="rtl">
+        <section ref={containerRef} className="relative py-8 md:py-8" dir="rtl">
 
             {/* رأس السكشن - تم توحيد اللون والخط هنا */}
             <div className="sticky top-0 h-[40vh] md:h-[50vh] flex flex-col items-center justify-center overflow-hidden z-0 pointer-events-none">

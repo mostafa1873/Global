@@ -33,11 +33,11 @@ export default function GlobalNavbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[100] p-4 md:px-6 md:py-6" dir="ltr">
+    <nav className="fixed top-0 left-0 right-0 z-[1000] p-4 md:px-6 md:py-6" dir="ltr">
       {/* --- Header Container --- */}
       <div className={`w-full relative flex items-center h-[70px] md:h-[90px] transition-all duration-500 px-3 md:px-10 ${
         scrolled 
-          ? "bg-black/60 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl" 
+          ? "bg-nexus-blue/20 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl" 
           : "bg-transparent"
       }`}>
         

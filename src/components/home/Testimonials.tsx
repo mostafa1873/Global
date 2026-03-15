@@ -10,65 +10,65 @@ import client3 from "../../assets/client-3.png";
 import client4 from "../../assets/client-4.png";
 import client5 from "../../assets/brand_5.webp";
 
-const row1 = [client1, client2, client3, client4, client5, client1, client2];
-const row2 = [client3, client4, client5, client1, client2, client3, client4];
+const partners = [client1, client2, client3, client4, client5];
 
-export default function Partners() {
+export default function PremiumPartners() {
     return (
-        // تقليل الـ py في الموبايل لمنع التداخل مع السكاشن الأخرى
-        <section className="relative w-full py-10 md:py-60 overflow-hidden flex flex-col items-center justify-center min-h-[450px] md:min-h-[800px]">
+        <section className="relative w-full py-24 overflow-hidden" dir="rtl">
 
-            {/* عنوان السكشن بالعربي */}
-            <div className="relative z-30 mb-10 md:mb-20 text-center px-4" dir="rtl">
-                <h3 className="text-white/40 uppercase tracking-[0.2em] text-[10px] md:text-sm mb-2 font-medium">
-                    شبكة عملائنا
-                </h3>
-                <h2 className="text-white text-3xl md:text-6xl font-bold leading-tight">
-                    شركاء <span className="text-blue-500 italic">النجاح</span>
-                </h2>
-                <div className="w-12 md:w-20 h-1 bg-blue-600 mx-auto mt-4 rounded-full opacity-50" />
+            {/* عنوان السكشن - بسيط وواضح ومتمركز */}
+            <div className="max-w-7xl mx-auto px-6 mb-20 text-center">
+                <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    className="text-white text-4xl md:text-6xl font-black mb-4"
+                >
+                    شركاء <span className="text-blue-500">النجاح</span>
+                </motion.h2>
+                <div className="h-1 w-20 bg-blue-600 mx-auto rounded-full"></div>
             </div>
 
-            {/* الحاوية اللي بتعمل حرف الـ X */}
-            <div className="relative w-full flex-1 flex items-center justify-center">
+            {/* حاوية اللوجوهات - حركة ناعمة جداً وواضحة */}
+            <div className="flex flex-col gap-10">
 
-                {/* الشريط الأول (النازل \) */}
-                <div className="absolute w-[250%] md:w-[150%] py-4 md:py-12 border-y border-white/10 rotate-[8deg] md:rotate-[10deg] -translate-y-8 md:translate-y-0 overflow-hidden flex z-20 bg-black/40 backdrop-blur-sm">
+                {/* الصف الأول - تم تعديل المحور ليتناسب مع RTL */}
+                <div className="flex overflow-hidden">
                     <motion.div
-                        // الحركة هنا بتبدأ من 0 وتنتهي عند نص المسافة بالظبط عشان تلحم في نفسها
-                        animate={{ x: [0, "-50%"] }} 
+                        animate={{ x: ["50%", "0%"] }} // تعديل الحركة لتبدأ من اليمين بشكل صحيح
+                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                        className="flex gap-10 px-5"
+                    >
+                        {[...partners, ...partners, ...partners].map((img, idx) => (
+                            <div
+                                key={idx}
+                                className="w-48 md:w-64 h-24 md:h-32 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center p-6 backdrop-blur-sm hover:border-blue-500/50 transition-colors group"
+                            >
+                                <Image
+                                    src={img}
+                                    alt="partner"
+                                    className="object-contain w-full h-full brightness-100 transition-transform duration-500 group-hover:scale-110"
+                                />
+                            </div>
+                        ))}
+                    </motion.div>
+                </div>
+
+                {/* الصف الثاني - تم تعديل المحور ليتحرك عكس الاتجاه بانتظام */}
+                <div className="flex overflow-hidden">
+                    <motion.div
+                        animate={{ x: ["0%", "50%"] }} // المحور المعاكس لضمان استمرار الحركة بدون قطع
                         transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                        className="flex gap-8 md:gap-32 px-4 items-center flex-nowrap"
+                        className="flex gap-10 px-5"
                     >
-                        {/* تكرار المصفوفة 4 مرات عشان نملى الفراغ والحركة متقطعش */}
-                        {[...row1, ...row1, ...row1, ...row1].map((img, idx) => (
-                            <div key={idx} className="w-28 md:w-60 h-10 md:h-24 relative flex-shrink-0">
+                        {[...partners, ...partners, ...partners].map((img, idx) => (
+                            <div
+                                key={idx}
+                                className="w-48 md:w-64 h-24 md:h-32 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center p-6 backdrop-blur-sm hover:border-blue-500/50 transition-colors group"
+                            >
                                 <Image
                                     src={img}
                                     alt="partner"
-                                    fill
-                                    className="object-contain brightness-110 mix-blend-screen px-2"
-                                />
-                            </div>
-                        ))}
-                    </motion.div>
-                </div>
-
-                {/* الشريط الثاني (الطالع /) */}
-                <div className="absolute w-[250%] md:w-[150%] py-4 md:py-12 border-y border-white/10 -rotate-[8deg] md:-rotate-[10deg] translate-y-8 md:translate-y-0 overflow-hidden flex z-10 bg-black/40 backdrop-blur-sm">
-                    <motion.div
-                        // الشريط ده بيتحرك عكس الاتجاه وبنفس المنطق
-                        animate={{ x: ["-50%", 0] }}
-                        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                        className="flex gap-8 md:gap-32 px-4 items-center flex-nowrap"
-                    >
-                        {[...row2, ...row2, ...row2, ...row2].map((img, idx) => (
-                            <div key={idx} className="w-28 md:w-60 h-10 md:h-24 relative flex-shrink-0">
-                                <Image
-                                    src={img}
-                                    alt="partner"
-                                    fill
-                                    className="object-contain brightness-110 mix-blend-screen px-2"
+                                    className="object-contain w-full h-full brightness-100 transition-transform duration-500 group-hover:scale-110"
                                 />
                             </div>
                         ))}
@@ -77,11 +77,7 @@ export default function Partners() {
 
             </div>
 
-            {/* نص خلفي خفيف */}
-            <div className="absolute bottom-5 md:bottom-20 left-1/2 -translate-x-1/2 opacity-[0.02] pointer-events-none select-none">
-                <h2 className="text-white text-[20vw] md:text-[12vw] font-black tracking-widest uppercase">Global</h2>
-            </div>
-
+            
         </section>
     );
 }

@@ -20,10 +20,11 @@ export default function Hero() {
   }, [mouseX, mouseY]);
 
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#020617] py-12 md:py-6" dir="rtl">
-      
+    /* أضفنا pt-20 و md:pt-24 عشان نزق المحتوى بعيد عن الـ Navbar المتركز فوق */
+    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-[#020617] pt-32 md:pt-46 pb-12 md:pb-6" dir="rtl">
+
       {/* 1. طبقة الإضاءة التفاعلية */}
-      <motion.div 
+      <motion.div
         style={{ x: springX, y: springY }}
         className="absolute w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-nexus-blue/20 blur-[80px] md:blur-[130px] rounded-full pointer-events-none will-change-transform"
       />
@@ -32,9 +33,9 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 pointer-events-none"></div>
 
       <div className="relative py-16 md:py-26 z-10 w-full px-5 md:px-6 flex flex-col items-center">
-        
+
         {/* عنوان مفرغ خلفي */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 0.05, scale: 1 }}
           transition={{ duration: 1.5 }}
@@ -54,30 +55,30 @@ export default function Hero() {
             className="mb-6 md:mb-8"
           >
             <span className="text-nexus-blue font-mono tracking-[0.2em] md:tracking-[0.4em] text-[10px] md:text-xs uppercase bg-white/[0.03] px-5 py-2 rounded-full border border-white/10 backdrop-blur-md inline-block">
-                GLOBAL NEXUS • CREATIVE
+              GLOBAL NEXUS • CREATIVE
             </span>
           </motion.div>
 
           {/* العنوان الرئيسي */}
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-[2.8rem] sm:text-6xl md:text-[7.5rem] font-black text-white leading-[1.1] md:leading-[1] mb-8 md:mb-12 tracking-tight"
           >
-            حلقة الوصل<br /> 
+            حلقة الوصل<br />
             <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-l from-white via-nexus-blue to-white py-2">
-                بينك وبين عملائك
-                <motion.span 
-                  initial={{ width: 0 }}
-                  animate={{ width: "100%" }}
-                  transition={{ delay: 1, duration: 0.8 }}
-                  className="absolute bottom-2 md:bottom-4 left-0 h-[1px] md:h-[2px] bg-nexus-blue/50 -z-10"
-                />
+              بينك وبين عملائك
+              <motion.span
+                initial={{ width: 0 }}
+                animate={{ width: "100%" }}
+                transition={{ delay: 1, duration: 0.8 }}
+                className="absolute bottom-2 md:bottom-4 left-0 h-[1px] md:h-[2px] bg-nexus-blue/50 -z-10"
+              />
             </span>
           </motion.h2>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
@@ -93,42 +94,15 @@ export default function Hero() {
                 <span className="relative z-10 group-hover:text-white transition-colors duration-500">ابدأ الرحلة</span>
                 <div className="absolute inset-0 bg-nexus-blue translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1]"></div>
               </button>
-              
+
               <button className="flex items-center justify-center gap-4 md:gap-6 text-white group relative py-4 px-2">
                 <span className="text-[11px] md:text-xs font-black uppercase tracking-[0.2em] md:tracking-[0.3em] group-hover:text-nexus-blue transition-colors">مشاهدة أعمالنا</span>
                 <div className="flex flex-col gap-1.5 overflow-hidden w-8 md:w-10">
-                   <span className="w-full h-[1px] md:h-[2px] bg-nexus-blue group-hover:translate-x-full transition-transform duration-500"></span>
-                   <span className="w-2/3 h-[1px] md:h-[2px] bg-white group-hover:w-full transition-all duration-500"></span>
+                  <span className="w-full h-[1px] md:h-[2px] bg-nexus-blue group-hover:translate-x-full transition-transform duration-500"></span>
+                  <span className="w-2/3 h-[1px] md:h-[2px] bg-white group-hover:w-full transition-all duration-500"></span>
                 </div>
               </button>
             </div>
-
-            {/* --- الإضافة هنا: آخر أعمالنا تحت الزرارين مباشرة --- */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1, duration: 1 }}
-              className="flex flex-col items-center gap-4 group cursor-pointer"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-8 h-[1px] bg-white/20 group-hover:w-12 group-hover:bg-nexus-blue transition-all duration-500"></div>
-                <span className="text-white/40 group-hover:text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] transition-colors">
-                  آخر أعمالنا
-                </span>
-                <div className="w-8 h-[1px] bg-white/20 group-hover:w-12 group-hover:bg-nexus-blue transition-all duration-500"></div>
-              </div>
-              
-              <motion.div
-                animate={{ y: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                className="text-nexus-blue opacity-50 group-hover:opacity-100"
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
-                </svg>
-              </motion.div>
-            </motion.div>
-            {/* --- نهاية الإضافة --- */}
 
           </motion.div>
         </div>
@@ -136,7 +110,7 @@ export default function Hero() {
 
       {/* الإطار الجانبي الفاخر */}
       <div className="absolute inset-4 md:inset-10 border border-white/5 pointer-events-none rounded-[2rem] md:rounded-[2.5rem]"></div>
-      
+
       <style jsx>{`
         .border-text {
           -webkit-text-stroke: 1px rgba(255,255,255,0.3);

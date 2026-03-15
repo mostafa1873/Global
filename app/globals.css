@@ -2,11 +2,16 @@
 
 @theme {
   /* ألوان Global Nexus من اللوجو */
-  --color-nexus-dark: #030A14; /* لون الخلفية الأساسي - كحلي داكن جداً ومريح للعين */
-  --color-nexus-navy: #112A46; /* لون اللوجو الغامق */
-  --color-nexus-blue: #1A5F97; /* لون اللوجو الفاتح */
-  --color-nexus-gray: #8F9CA7; /* لون النص الثانوي */
-  --color-nexus-glow: rgba(26, 95, 151, 0.15); /* لون الإضاءة */
+  --color-nexus-dark: #030A14;
+  /* لون الخلفية الأساسي - كحلي داكن جداً ومريح للعين */
+  --color-nexus-navy: #112A46;
+  /* لون اللوجو الغامق */
+  --color-nexus-blue: #1A5F97;
+  /* لون اللوجو الفاتح */
+  --color-nexus-gray: #8F9CA7;
+  /* لون النص الثانوي */
+  --color-nexus-glow: rgba(26, 95, 151, 0.15);
+  /* لون الإضاءة */
 }
 
 body {

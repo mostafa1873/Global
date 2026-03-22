@@ -24,7 +24,7 @@ const projects = [
 export default function BentoWorkSection() {
 
   // 🔹 تم تعديل الدالة لتحقيق الـ Layout المطلوب بدقة
-  const getGridItemClass = (index) => {
+  const getGridItemClass = (index: number) => {
     switch (index) {
       case 0:
         return "md:col-span-2 md:row-span-2"; // صورة كبيرة (2 عمود × 2 صف) occupies C1,C2 / R1,R2

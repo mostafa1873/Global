@@ -1,157 +1,141 @@
 "use client";
-
 import { motion } from "framer-motion";
+import { ArrowLeft } from "lucide-react"; // استيراد الأيقونة
 import Image from "next/image";
-import client1 from "../../assets/client-1.png";
-import client2 from "../../assets/client-2.png";
-import client3 from "../../assets/client-3.png";
-import client4 from "../../assets/client-4.png";
-import client5 from "../../assets/client-1.png";
-import client6 from "../../assets/brand_5.webp";
+import img1 from "../../assets/about.jpg";
 
-const logos = [client1, client2, client3, client4, client5, client6];
+export default function AboutSection() {
+  return (
+    <section className="py-14 md:py-16 border-b border-white/5 relative overflow-hidden" dir="rtl">
 
-export default function AboutAndLogos() {
-    return (
-        /* غيرنا bg-transparent لـ bg-nexus-dark عشان يلحم مع الهيرو */
-        <section className="relative py-8 md:py-10 bg-[#020617] overflow-hidden" dir="rtl">
-            
-            {/* 1. الـ Grid الخفي والـ Noise (نفس اللي في الهيرو بالظبط) */}
-            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 pointer-events-none"></div>
+      {/* لمسة إضاءة خافتة في الخلفية */}
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,_rgba(37,99,235,0.05)_0%,_transparent_50%)]" />
 
-            {/* 2. طبقة إضاءة (Glow) إضافية في الزاوية عشان الروح تكمل */}
-            <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-nexus-blue/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* تم استخدام flex-col وتغيير الترتيب بالـ order لتحقيق طلبك */}
+        <div className="flex flex-col lg:grid lg:grid-cols-12 gap-12 lg:gap-16 items-center text-center lg:text-right">
 
-            <div className="max-w-7xl mx-auto px-6 relative z-10">
+          {/* 1. جملة حكايتنا في كلمتين (تظهر أولاً في الموبايل) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="order-1 md:hidden lg:col-span-12 flex justify-center lg:justify-start"
+          >
+            <div className="inline-flex items-center gap-3 py-2 px-4 rounded-full border border-blue-500/20 bg-blue-500/5 text-blue-500 text-xs font-bold tracking-widest uppercase">
+              <span className="w-2 h-2 bg-blue-600 rounded-full animate-pulse" />
+              حكايتنا في كلمتين
+            </div>
+          </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-
-                    {/* 1. المحتوى النصي: ترتيب أنضف */}
-                    <div className="space-y-8 text-center lg:text-right order-1 lg:order-1">
-                        <motion.div
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            className="inline-block py-1 px-3 border-r-2 border-blue-600 bg-blue-600/5 text-blue-500 text-xs font-bold tracking-[0.2em]"
-                        >
-                            شركاء النجاح
-                        </motion.div>
-
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1 }}
-                            className="text-white text-4xl md:text-6xl font-black leading-[1.15]"
-                        >
-                            قوة <span className="text-blue-600">البراند</span> <br />
-                            تبدأ من الفكرة الصح.
-                        </motion.h2>
-
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2 }}
-                            className="text-slate-400 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light"
-                        >
-                            وإحنا دورنا نحول الفكرة دي لاستراتيجية وتسويق وتجربة بصرية تخلي شركتك تظهر بشكل يليق بقيمتها قدام عملاء السوق.
-                            <br />
-                            ودول شركاء النجاح اللي وثقوا فينا، وقدرنا نحقق معاهم نتائج نفتخر بيها.
-                        </motion.p>
-
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            transition={{ delay: 0.3 }}
-                            className="pt-6 grid grid-cols-2 sm:flex sm:flex-row justify-center lg:justify-start gap-6 md:gap-10"
-                        >
-                            {/* الميزة الأولى */}
-                            <div className="flex items-center gap-3">
-                                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-blue-600/10 flex items-center justify-center">
-                                    <svg className="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                </div>
-                                <span className="text-slate-300 text-sm font-medium">جودة عالمية</span>
-                            </div>
-
-                            {/* الميزة الثانية */}
-                            <div className="flex items-center gap-3">
-                                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-blue-600/10 flex items-center justify-center">
-                                    <svg className="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                    </svg>
-                                </div>
-                                <span className="text-slate-300 text-sm font-medium">سرعة تنفيذ</span>
-                            </div>
-
-                            {/* الميزة الثالثة */}
-                            <div className="flex items-center gap-3">
-                                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-blue-600/10 flex items-center justify-center">
-                                    <svg className="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                                    </svg>
-                                </div>
-                                <span className="text-slate-300 text-sm font-medium">حلول مبتكرة</span>
-                            </div>
-                        </motion.div>
-                    </div>
-
-                    {/* 2. شبكة اللوجوهات */}
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4 order-2 lg:order-2">
-                        {logos.map((logo, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                transition={{ delay: i * 0.05 }}
-                                whileHover={{ y: -5, backgroundColor: "rgba(255, 255, 255, 0.05)" }}
-                                className="group relative h-24 md:h-32 flex items-center justify-center p-6 bg-white/[0.02] border border-white/5 rounded-xl transition-all duration-300 shadow-2xl overflow-hidden"
-                            >
-                                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/0 to-blue-600/0 group-hover:from-blue-600/5 group-hover:to-transparent transition-all duration-500" />
-
-                                <div className="relative w-full h-full grayscale group-hover:grayscale-0 opacity-40 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-110">
-                                    <Image
-                                        src={logo}
-                                        alt="client logo"
-                                        fill
-                                        className="object-contain"
-                                    />
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-
-                </div>
+          {/* 2. الجانب الأيسر: الصورة (تظهر ثانياً في الموبايل) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="order-2 lg:col-span-5 relative group w-full max-w-md mx-auto lg:mx-0"
+          >
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/10">
+              <Image
+                src={img1}
+                alt="Nexus Team"
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent opacity-60" />
             </div>
 
-             {/* --- الإضافة هنا: آخر أعمالنا تحت الزرارين مباشرة --- */}
+            {/* كرت الأرقام العائم */}
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="absolute -bottom-6 -right-6 bg-blue-600 p-6 md:p-8 rounded-3xl shadow-2xl hidden md:block z-20"
+            >
+              <p className="text-white text-4xl md:text-5xl font-black mb-1">150+</p>
+              <p className="text-blue-100 text-[10px] md:text-xs font-bold uppercase tracking-widest">بيزنس كبر معانا</p>
+            </motion.div>
+          </motion.div>
+
+          {/* 3. الجانب الأيمن: باقي المحتوى (يظهر ثالثاً في الموبايل) */}
+          <div className="order-3 lg:col-span-7 space-y-8 w-full">
+
+            {/* 1. جملة حكايتنا في كلمتين (تظهر أولاً في الموبايل) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1, duration: 1 }}
-              className="flex flex-col items-center gap-4 group cursor-pointer mt-5"
+              whileInView={{ opacity: 1, y: 0 }}
+              className="hidden md:block lg:col-span-12 flex justify-center lg:justify-start"
             >
-              <div className="flex items-center gap-4">
-                <div className="w-8 h-[1px] bg-white/20 group-hover:w-12 group-hover:bg-nexus-blue transition-all duration-500"></div>
-                <span className="text-white/40 group-hover:text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] transition-colors">
-                  آخر أعمالنا
-                </span>
-                <div className="w-8 h-[1px] bg-white/20 group-hover:w-12 group-hover:bg-nexus-blue transition-all duration-500"></div>
+              <div className="inline-flex items-center gap-3 py-2 px-4 rounded-full border border-blue-500/20 bg-blue-500/5 text-blue-500 text-xs font-bold tracking-widest uppercase">
+                <span className="w-2 h-2 bg-blue-600 rounded-full animate-pulse" />
+                حكايتنا في كلمتين
               </div>
-
-              <motion.div
-                animate={{ y: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                className="text-nexus-blue opacity-50 group-hover:opacity-100"
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
-                </svg>
-              </motion.div>
             </motion.div>
-            {/* --- نهاية الإضافة --- */}
 
-            {/* إضاءات خلفية خافتة (Glows) */}
-            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-900/10 blur-[100px] rounded-full pointer-events-none" />
-        </section>
-    );
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-[1.2] tracking-tighter"
+            >
+              إحنا مش مجرد وكالة، <br />
+              <span className="text-blue-600">إحنا شريكك في السيطرة</span> <br />
+              على السوق الرقمي.
+            </motion.h2>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="space-y-6 text-slate-400 text-base md:text-lg lg:text-xl font-light leading-relaxed max-w-2xl mx-auto lg:mx-0"
+            >
+              <p>
+                عارفين إن السوق زحمة، وعارفين إن البرمجة والماركتنج مش بس كود وإعلانات.. الموضوع أكبر من كدة بكتير. في نكسس، بنجمع بين "صياعة" الماركتنج و "قوة" البرمجة عشان نطلعلك براند ملهوش زي.
+              </p>
+              <p>
+                فريقنا مبيحبش الحلول التقليدية، إحنا بنفصل كل حاجة على مقاس البيزنس بتاعك، عشان هدفنا واحد: إن براندك ميبقاش مجرد "موجود" أونلاين، لا ده يبقى هو "القائد".
+              </p>
+            </motion.div>
+
+            {/* أرقام سريعة تحت الكلام */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="grid grid-cols-3 gap-4 md:gap-8 pt-8 border-t border-white/5"
+            >
+              <div>
+                <p className="text-white text-xl md:text-2xl font-black">2026</p>
+                <p className="text-slate-500 text-[10px] md:text-sm uppercase font-bold tracking-tighter">بداية الرحلة</p>
+              </div>
+              <div>
+                <p className="text-white text-xl md:text-2xl font-black">12+</p>
+                <p className="text-slate-500 text-[10px] md:text-sm uppercase font-bold tracking-tighter">دماغ مبدعة</p>
+              </div>
+              <div>
+                <p className="text-white text-xl md:text-2xl font-black">100%</p>
+                <p className="text-slate-500 text-[10px] md:text-sm uppercase font-bold tracking-tighter">تركيز عالنتائج</p>
+              </div>
+            </motion.div>
+
+            {/* الزرار الـ "رايق" في نهاية السكشن */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="pt-4 flex justify-center lg:justify-center"
+            >
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="group flex items-center gap-3 bg-white/5 border border-white/10 text-white px-8 py-4 rounded-2xl font-bold text-sm transition-all duration-500 hover:bg-blue-600 hover:border-blue-600 shadow-xl"
+              >
+                شوف حكايتنا كاملة
+                <ArrowLeft size={18} className="group-hover:-translate-x-2 transition-transform duration-500 text-blue-500 group-hover:text-white" />
+              </motion.button>
+            </motion.div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

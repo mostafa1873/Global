@@ -35,7 +35,6 @@ export default function GlobalBackground() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
 
       {/* 4. الإطار الجانبي الفاخر (ليظهر في كل الصفحات كـ Frame) */}
-      <div className="absolute inset-4 md:inset-10 border border-white/5 rounded-[2rem] md:rounded-[2.5rem]"></div>
     </div>
   );
 }

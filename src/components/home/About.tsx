@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react"; // استيراد الأيقونة
 import Image from "next/image";
-import img1 from "../../assets/about.jpg";
+import img1 from "../../assets/about.jpeg";
 
 export default function AboutSection() {
   return (

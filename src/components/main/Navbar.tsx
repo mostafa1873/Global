@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Home, Users, Cpu, Briefcase, 
-  BookOpen, MessageSquare, Globe, Menu, X, ArrowUpRight 
-} from "lucide-react";
+  BookOpen, MessageSquare, Languages, Menu, X, ArrowUpRight 
+} from "lucide-react"; // استبدلنا Globe بـ Languages
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../assets/header.webp";
@@ -17,58 +17,68 @@ export default function GlobalNavbar() {
   const [lang, setLang] = useState("AR");
   const pathname = usePathname();
 
+  // منع السكرول عند فتح المنيو في الموبايل
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isOpen]);
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // تعديل: ربط الأسماء بمتغير اللغة lang عشان الترجمة تشتغل
   const navLinks = [
-    { name: "الرئيسية", href: "/", icon: <Home size={18} /> },
-    { name: "عن الشركة", href: "/about", icon: <Users size={18} /> },
-    { name: "خدماتنا", href: "/services", icon: <Cpu size={18} /> },
-    { name: "أعمالنا", href: "/portfolio", icon: <Briefcase size={18} /> },
-    { name: "المدونة", href: "/blog", icon: <BookOpen size={18} /> },
-    { name: "تواصل معنا", href: "/contact", icon: <MessageSquare size={18} /> },
+    { name: lang === "AR" ? "الرئيسية" : "Home", href: "/", icon: <Home size={18} /> },
+    { name: lang === "AR" ? "عن الشركة" : "About", href: "/about", icon: <Users size={18} /> },
+    { name: lang === "AR" ? "خدماتنا" : "Services", href: "/services", icon: <Cpu size={18} /> },
+    { name: lang === "AR" ? "أعمالنا" : "Portfolio", href: "/portfolio", icon: <Briefcase size={18} /> },
+    { name: lang === "AR" ? "المدونة" : "Blog", href: "/blog", icon: <BookOpen size={18} /> },
+    { name: lang === "AR" ? "تواصل معنا" : "Contact", href: "/contact", icon: <MessageSquare size={18} /> },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[1000] p-4 md:px-6 md:py-6" dir="ltr">
-      {/* --- Header Container --- */}
-      <div className={`w-full relative flex items-center h-[70px] md:h-[90px] transition-all duration-500 px-3 md:px-10 ${
+    <nav className="fixed top-0 left-0 right-0 z-[9999] pt-4 px-2 md:pt-6 md:px-8 pointer-events-none" dir={lang === "AR" ? "rtl" : "ltr"}>
+      {/* --- Floating Pill Container --- */}
+      <div className={`pointer-events-auto mx-auto max-w-[1400px] relative flex items-center justify-between h-[70px] md:h-[70px] rounded-[2.5rem] pl-2 pr-5 md:pl-4 md:pr-8 transition-all duration-700 ${
         scrolled 
-          ? "bg-nexus-blue/20 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl" 
-          : "bg-transparent"
-      }`}>
+          ? "bg-white/20 backdrop-blur-xl border border-white/10 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.7)]" 
+          : "bg-white/10 backdrop-blur-md border border-white/10 shadow-lg"
+      }`} dir="ltr">
         
-        {/* 1. اللوجو - تم استخدام -ml-4 لسحب اللوجو لليسار تماماً في الموبايل */}
-        <div className="z-20 flex-shrink-0 mr-auto -ml-7 md:-ml-8">
+        {/* 1. اللوجو */}
+        <div className="z-20 flex-shrink-0 transition-transform hover:scale-105 -ml-2 md:-ml-4">
           <Link href="/" className="block">
-            <div className="relative w-[200px] h-[75px] md:w-[220px] md:h-[70px]">
+            <div className="relative w-[160px] h-[60px] md:w-[200px] md:h-[70px]">
               <Image 
                 src={logo} 
                 alt="Nexus Logo" 
                 fill 
-                className="object-contain object-left brightness-200 transition-transform duration-300" 
+                className="object-contain object-left brightness-200" 
                 priority 
               />
             </div>
           </Link>
         </div>
 
-        {/* 2. اللينكات - سنتر بالظبط (Desktop Only) */}
+        {/* 2. اللينكات - Desktop Only */}
         <div className="hidden lg:flex absolute inset-0 items-center justify-center pointer-events-none">
-          <div className="flex items-center gap-1 bg-white/5 border border-white/10 p-1.5 rounded-full pointer-events-auto backdrop-blur-md">
+          <div className="flex items-center gap-1 pointer-events-auto p-1.5 bg-black/40 border border-white/5 rounded-full">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link 
                   key={link.name} 
                   href={link.href} 
-                  className={`px-6 py-2.5 text-[11px] font-black uppercase tracking-widest rounded-full transition-all duration-300 ${
+                  className={`px-5 py-2 rounded-full text-[11px] font-black uppercase tracking-widest transition-all duration-300 ${
                     isActive 
-                      ? "bg-blue-600 text-white shadow-[0_0_20px_rgba(37,99,235,0.5)] scale-105" 
-                      : "text-slate-300 hover:text-white hover:bg-white/10"
+                      ? "bg-white text-black shadow-[0_0_15px_rgba(255,255,255,0.3)]" 
+                      : "text-slate-400 hover:text-white hover:bg-white/10"
                   }`}
                 >
                   {link.name}
@@ -78,18 +88,26 @@ export default function GlobalNavbar() {
           </div>
         </div>
 
-        {/* 3. أزرار الأكشن - تم تصغير حجم الزرار هنا */}
-        <div className="flex items-center gap-4 z-20 ml-auto -mr-1 md:mr-0">
+        {/* 3. أزرار الأكشن */}
+        <div className="flex items-center gap-2 md:gap-3 z-20">
           <button 
             onClick={() => setLang(lang === "AR" ? "EN" : "AR")}
-            className="hidden lg:flex items-center justify-center w-[50px] h-[50px] bg-white/5 border border-white/10 rounded-full text-white hover:bg-blue-600 transition-all"
+            className="hidden lg:flex items-center justify-center w-11 h-11 bg-black/40 border border-white/10 rounded-full text-slate-300 hover:text-white hover:border-white/30 transition-all"
           >
-            <Globe size={20} />
+            <Languages size={18} />
           </button>
+
+          <Link 
+            href="/call"
+            className="hidden lg:flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-full font-black text-[11px] uppercase tracking-widest transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:-translate-y-0.5"
+          >
+            {lang === "AR" ? "احجز مكالمة" : "Book a call"}
+            <ArrowUpRight size={16} />
+          </Link>
 
           <button 
             onClick={() => setIsOpen(true)}
-            className="lg:hidden p-2.5 bg-blue-600 border border-blue-400/50 text-white rounded-full hover:scale-105 active:scale-95 transition-all shadow-lg"
+            className="lg:hidden flex items-center justify-center w-11 h-11 bg-blue-600 text-white rounded-full shadow-lg active:scale-95 transition-all"
           >
             <Menu size={20} />
           </button>
@@ -105,73 +123,78 @@ export default function GlobalNavbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-black/98 backdrop-blur-xl z-[110]"
+              className="fixed inset-0 backdrop-blur-2xl z-[110] pointer-events-auto"
             />
 
             <motion.div 
-              initial={{ opacity: 0, scale: 0.9, y: 30 }}
+              initial={{ opacity: 0, scale: 0.95, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 30 }}
-              className="fixed inset-x-4 top-[8%] bottom-[8%] bg-[#020617]/90 border border-white/10 rounded-[2.5rem] z-[120] p-6 shadow-[0_0_50px_rgba(0,0,0,1)] flex flex-col items-center justify-between overflow-hidden"
-              dir="rtl"
+              exit={{ opacity: 0, scale: 0.95, y: 10 }}
+              className="fixed inset-x-4 top-5 bottom-5 border border-white/10 rounded-[2.5rem] z-[120] p-6 shadow-2xl pointer-events-auto flex flex-col justify-between"
+              dir={lang === "AR" ? "rtl" : "ltr"}
             >
-              {/* ترويسة المنيو - ترتيب أنظف */}
-              <div className="w-full flex justify-between items-center" dir="ltr">
-                <button 
-                  onClick={() => setIsOpen(false)}
-                  className="p-2.5 bg-white/5 border border-white/10 rounded-full text-white"
-                >
-                  <X size={20} />
-                </button>
-
-                <button 
-                  onClick={() => setLang(lang === "AR" ? "EN" : "AR")}
-                  className="flex items-center gap-2 px-4 py-2 bg-blue-600/20 border border-blue-600/50 rounded-full text-blue-400 text-[10px] font-bold uppercase tracking-widest"
-                >
-                  <Globe size={14} />
-                  {lang === "AR" ? "EN" : "AR"}
-                </button>
-              </div>
-
-              <div className="text-center py-2">
-                <h3 className="text-white text-2xl font-black uppercase tracking-tighter">Nexus Menu</h3>
-                <div className="w-10 h-1 bg-blue-600 mx-auto mt-2 rounded-full shadow-[0_0_15px_#2563eb]" />
-              </div>
-              
-              {/* شبكة اللينكات - مساحات أقل زحمة */}
-              <div className="grid grid-cols-2 gap-3 w-full">
-                {navLinks.map((link, i) => (
-                  <motion.div
-                    key={link.name}
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: i * 0.04 }}
+              <div>
+                <div className="flex justify-between items-center mb-6" dir="ltr">
+                  <button 
+                    onClick={() => setIsOpen(false)}
+                    className="w-12 h-12 flex items-center justify-center bg-white/5 border border-white/10 rounded-full text-white"
                   >
-                    <Link 
-                      href={link.href}
-                      onClick={() => setIsOpen(false)}
-                      className={`flex flex-col items-center justify-center gap-2 py-4 border rounded-[1.5rem] transition-all duration-300 ${
-                        pathname === link.href 
-                          ? "bg-blue-600 border-blue-400 shadow-[0_8px_20px_rgba(37,99,235,0.2)] scale-105" 
-                          : "bg-white/[0.02] border-white/5 active:bg-white/10"
-                      }`}
+                    <X size={24} />
+                  </button>
+                  <h3 className="text-white font-black text-lg tracking-tighter italic">GLOBAL NEXUS</h3>
+                </div>
+
+                <div className="flex flex-col gap-1.5 py-2">
+                  {navLinks.map((link, i) => (
+                    <motion.div
+                      key={link.name}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.05 }}
                     >
-                      <div className={`${pathname === link.href ? "text-white" : "text-blue-500"}`}>
+                      <Link 
+                        href={link.href}
+                        onClick={() => setIsOpen(false)}
+                        className={`flex items-center justify-between p-4 rounded-2xl transition-all ${
+                          pathname === link.href 
+                            ? "bg-blue-600 text-white shadow-xl" 
+                            : "bg-white/5 text-slate-300 border border-white/5"
+                        }`}
+                      >
+                        <span className="text-sm font-black uppercase tracking-widest">{link.name}</span>
                         {link.icon}
-                      </div>
-                      <span className={`text-[10px] font-bold uppercase tracking-wider ${pathname === link.href ? "text-white" : "text-slate-400"}`}>
-                        {link.name}
-                      </span>
-                    </Link>
-                  </motion.div>
-                ))}
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
 
-              {/* زر الأكشن - شكل أرفع وأشيك */}
-              <button className="w-full flex items-center justify-center gap-2 py-4 bg-blue-600 text-white rounded-[1.2rem] font-black text-[11px] uppercase tracking-widest shadow-lg active:scale-95 transition-transform">
-                ابدأ مشروعك
-                <ArrowUpRight size={18} />
-              </button>
+              {/* جزء الأكشن مع padding-bottom لضمان المسافة من تحت */}
+              <div className="mt-auto pb-8 flex flex-col gap-3">
+                 <div className="flex items-center p-1 bg-white/5 border border-white/10 rounded-2xl h-[60px]">
+                    <button 
+                      onClick={() => setLang("AR")}
+                      className={`flex-1 h-full rounded-xl flex items-center justify-center text-[10px] font-black uppercase tracking-[0.1em] transition-all duration-300 ${lang === "AR" ? "bg-white text-black shadow-lg" : "text-white"}`}
+                    >
+                      العربية
+                    </button>
+                    <button 
+                      onClick={() => setLang("EN")}
+                      className={`flex-1 h-full rounded-xl flex items-center justify-center text-[10px] font-black uppercase tracking-[0.1em] transition-all duration-300 ${lang === "EN" ? "bg-white text-black shadow-lg" : "text-white"}`}
+                    >
+                      English
+                    </button>
+                 </div>
+
+                 <Link 
+                  href="/call"
+                  onClick={() => setIsOpen(false)}
+                  className="w-full flex items-center justify-center gap-2 py-5 bg-blue-600 text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-xl active:scale-95 transition-all"
+                >
+                  {lang === "AR" ? "احجز مكالمة" : "Book a Call"}
+                  <ArrowUpRight size={18} />
+                </Link>
+              </div>
             </motion.div>
           </>
         )}

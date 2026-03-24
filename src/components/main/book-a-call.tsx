@@ -32,19 +32,26 @@ export default function BookACall() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut" as const // أضف "as const" هنا حل المشكلة فوراً
+      },
+    },
   };
 
   return (
     <section className="relative min-h-screen w-full bg-[#020617] overflow-hidden pt-28 pb-20 px-6" dir="rtl">
-      
+
       {/* خلفية الإضاءة المتحركة - قللتها شوية لراحة العين */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-blue-600/10 blur-[120px] rounded-full" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
-        
+
         {/* العمود الأيمن: المحتوى والنصوص (خليته 40% عشان الهدوء البصري) */}
         <motion.div
           variants={containerVariants}
@@ -65,7 +72,7 @@ export default function BookACall() {
           <motion.h1 variants={itemVariants} className="text-white text-5xl md:text-7xl font-black leading-[1.1] mb-8 tracking-tight">
             جاهز <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 italic">
-               نكبر سوا؟
+              نكبر سوا؟
             </span>
           </motion.h1>
 
@@ -93,7 +100,7 @@ export default function BookACall() {
             <div className="flex flex-col gap-3 text-right">
               {faqs.map((faq, index) => (
                 <div key={index} className="group border-b border-white/5 pb-3">
-                  <button 
+                  <button
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}
                     className="flex justify-between items-center w-full text-slate-300 hover:text-white transition-colors text-sm font-medium"
                   >
@@ -129,7 +136,7 @@ export default function BookACall() {
         >
           {/* Overlay لتغطية الـ footer */}
           <div className="absolute bottom-0 left-0 right-0 h-14 bg-[#020617] z-20 pointer-events-none" />
-          
+
           <iframe
             src="https://calendly.com/globalnexus1999/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=020617&text_color=ffffff&primary_color=2563eb"
             className="w-full h-full relative z-10"

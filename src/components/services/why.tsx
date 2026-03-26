@@ -2,13 +2,13 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Coffee, Map, Zap, LineChart, ArrowRight } from "lucide-react";
+import { Coffee, Map, Zap, LineChart } from "lucide-react";
 
 const steps = [
   { id: "01", title: "قعدة قهوة", subTitle: "Discovery", desc: "فهم عميق لأهدافك وتحدياتك هو أول خطوة لنجاح المشروع. بنسمعك كويس عشان نبدأ صح.", icon: Coffee, color: "#3b82f6" },
   { id: "02", title: "رسم الخطة", subTitle: "Strategy", desc: "تحويل الأفكار لخريطة طريق واضحة بأحدث التكنولوجيا. بنرسم المسار اللي هيوصلنا لهدفك.", icon: Map, color: "#6366f1" },
   { id: "03", title: "مرحلة التنفيذ", subTitle: "Execution", desc: "بناء منتجك بأعلى جودة واهتمام بأدق التفاصيل التقنية. الكود عندنا فن مش مجرد كتابة.", icon: Zap, color: "#8b5cf6" },
-  { id: "04", title: "المتابعة والنتائج", subTitle: "Optimization", desc: "تحليل مستمر وتطوير لضمان بقاء مشروعك في القمة. رحلتنا مابتنتهيش عند التسليم.", icon: LineChart, color: "#10b981" }
+  { id: "04", title: "المتابعة والنتائج", subTitle: "Optimization", desc: "تحليل مستمر وتطوير لضمان بقاء مشروعك في القمة. رحلتنا مابتنتهيش عند التسليم.", icon: LineChart, color: "#10 b981" }
 ];
 
 const AUTO_PLAY_DURATION = 5000;
@@ -16,12 +16,13 @@ const AUTO_PLAY_DURATION = 5000;
 export default function CinematicAutoProcess() {
   const [active, setActive] = useState(0);
   const [progress, setProgress] = useState(0);
-  const requestRef = useRef();
+  // التعديل هنا: تحديد النوع والقيمة الأولية لتجنب خطأ الـ Build
+  const requestRef = useRef<number | null>(null);
 
   useEffect(() => {
     let startTime = performance.now();
     
-    const updateProgress = (currentTime) => {
+    const updateProgress = (currentTime: number) => {
       const elapsed = currentTime - startTime;
       const currentProgress = Math.min((elapsed / AUTO_PLAY_DURATION) * 100, 100);
       
@@ -37,10 +38,14 @@ export default function CinematicAutoProcess() {
     };
 
     requestRef.current = requestAnimationFrame(updateProgress);
-    return () => cancelAnimationFrame(requestRef.current);
+    return () => {
+      if (requestRef.current !== null) {
+        cancelAnimationFrame(requestRef.current);
+      }
+    };
   }, [active]);
 
-  const handleStepClick = (index) => {
+  const handleStepClick = (index: number) => {
     setActive(index);
     setProgress(0);
   };
@@ -65,10 +70,9 @@ export default function CinematicAutoProcess() {
       </AnimatePresence>
 
       <div className="container mx-auto px-6 lg:px-20 relative z-10">
-        {/* استخدمت grid-flow-dense و order للتحكم في الترتيب */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-x-32 items-center">
           
-          {/* 1. العنوان (أول حاجة في الموبايل والديسكتوب) */}
+          {/* 1. العنوان */}
           <div className="order-1 lg:col-start-1">
             <motion.div 
               initial={{ opacity: 0, x: 20 }}
@@ -86,7 +90,7 @@ export default function CinematicAutoProcess() {
             </motion.div>
           </div>
 
-          {/* 2. الأيقونة (تاني حاجة في الموبايل - وفي الديسكتوب العمود التاني) */}
+          {/* 2. الأيقونة */}
           <div className="order-2 lg:order-2 lg:row-span-2 flex justify-center items-center">
             <div className="relative group w-full flex justify-center">
               <div 
@@ -123,7 +127,7 @@ export default function CinematicAutoProcess() {
             </div>
           </div>
 
-          {/* 3. الوصف والـ Stepper (تالت حاجة في الموبايل - وتحت العنوان في الديسكتوب) */}
+          {/* 3. الوصف والـ Stepper */}
           <div className="order-3 lg:order-3 lg:col-start-1 space-y-8 md:space-y-12">
             <div className="pt-6 md:pt-10 space-y-4 md:space-y-5 border-t border-white/10 text-center lg:text-right">
               <motion.span 
@@ -177,7 +181,7 @@ export default function CinematicAutoProcess() {
                     ) : null}
                   </div>
                   <span className={`text-[8px] md:text-[10px] font-black uppercase text-center lg:text-right transition-all ${active === index ? "text-white" : "text-slate-600 hover:text-slate-400"}`}>
-                    {step.title.split(' ')[0]}
+                    {step.title.split(' ')}
                   </span>
                 </button>
               ))}

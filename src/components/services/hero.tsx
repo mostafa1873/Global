@@ -1,26 +1,38 @@
 "use client";
 
-import { motion } from "framer-motion";
-// تم الإبقاء فقط على الأيقونات المستخدمة فعلياً لمنع خطأ الـ Build
+import { motion, Variants } from "framer-motion";
 import { Sparkles, ShieldCheck, Zap, BarChart3, ChevronLeft, Code2, Megaphone, Palette, Share2 } from "lucide-react";
 import Link from "next/link";
 import { useRef } from "react";
 
 export default function ServicesHero() {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLElement>(null);
   
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.1 } },
+    visible: { 
+      opacity: 1, 
+      transition: { 
+        staggerChildren: 0.2, 
+        delayChildren: 0.1 
+      } 
+    },
   };
 
-  const fadeInUp = {
+  // حل مشكلة النوع هنا بإضافة "as const" أو تعريف النوع يدوياً
+  const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { 
+        duration: 0.8, 
+        ease: [0.22, 1, 0.36, 1] // تم التأكد من توافقها مع TypeScript
+      } 
+    },
   };
 
   const scrollToServices = () => {
-    // التأكد من أن الكود يعمل فقط في المتصفح لتجنب أخطاء SSR
     if (typeof window !== "undefined") {
       document.getElementById("services-list")?.scrollIntoView({ behavior: "smooth" });
     }
@@ -35,14 +47,12 @@ export default function ServicesHero() {
       <div className="container mx-auto px-6 lg:px-16 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
           
-          {/* --- الجانب الأيمن (Content) --- */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
             className="flex flex-col items-center lg:items-start text-center lg:text-right order-2 lg:order-1"
           >
-            {/* Badge */}
             <motion.div variants={fadeInUp} className="mb-6 flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/20 backdrop-blur-xl">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
@@ -51,18 +61,15 @@ export default function ServicesHero() {
               <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-blue-300">Global Nexus Services</span>
             </motion.div>
 
-            {/* Headline */}
             <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl lg:text-[5rem] font-black text-white leading-[1.1] tracking-tight mb-6">
               بنكبر بيزنس غيرنا.<br />
               عشان نكبر مع <span className="text-transparent bg-clip-text bg-gradient-to-l from-blue-400 to-indigo-400 italic">بعض.</span>
             </motion.h1>
 
-            {/* Sub-headline */}
             <motion.p variants={fadeInUp} className="max-w-xl text-slate-400 text-base md:text-lg lg:text-xl leading-relaxed mb-10 font-medium">
               حلول تسويقية وتكنولوجية متكاملة هدفها واحد: إن شغلك يوصل <span className="text-white font-bold border-b-2 border-blue-500/50 pb-1">للعميل الصح</span> ويحقق أرقام حقيقية.
             </motion.p>
 
-            {/* --- الأزرار --- */}
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <Link href="/contact" className="relative group overflow-hidden px-10 py-4 bg-white text-black rounded-full font-bold text-center transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-95 flex items-center justify-center gap-2">
                 <span>ابدأ مشروعك دلوقتي</span>
@@ -74,15 +81,14 @@ export default function ServicesHero() {
               </Link>
             </motion.div>
 
-            {/* Trust Badges */}
-            <motion.div variants={fadeInUp} className="mt-12 flex flex-wrap justify-center lg:justify-start items-center gap-6 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all">
+            <motion.div variants={fadeInUp} className="mt-12 flex flex-wrap justify-center lg:justify-start items-center gap-6 opacity-40 grayscale group-hover:grayscale-0">
                <div className="flex items-center gap-2 text-white text-sm font-bold"><ShieldCheck size={16} className="text-blue-500"/> موثوقية</div>
                <div className="flex items-center gap-2 text-white text-sm font-bold"><Zap size={16} className="text-blue-500"/> سرعة</div>
                <div className="flex items-center gap-2 text-white text-sm font-bold"><BarChart3 size={16} className="text-blue-500"/> نتائج</div>
             </motion.div>
           </motion.div>
 
-          {/* --- الجانب الأيسر (Visual) --- */}
+          {/* الجانب الأيسر - Visual */}
           <motion.div 
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -122,17 +128,14 @@ export default function ServicesHero() {
                   ))}
                 </div>
               </div>
-              
               <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-600/10 blur-[60px] rounded-full" />
             </div>
-
             <div className="absolute inset-0 border-[1px] border-white/5 rounded-full scale-[1.1] animate-[spin_40s_linear_infinite] hidden md:block" />
             <div className="absolute inset-0 border-[1px] border-blue-500/10 rounded-full scale-[1.2] animate-[spin_30s_linear_infinite_reverse] hidden md:block" />
           </motion.div>
         </div>
       </div>
 
-      {/* --- Scroll Button --- */}
       <motion.button 
         onClick={scrollToServices}
         initial={{ opacity: 0 }}

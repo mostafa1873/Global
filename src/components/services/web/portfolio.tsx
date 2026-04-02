@@ -1,14 +1,22 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { ExternalLink, ArrowUpRight } from "lucide-react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import proj1 from "../../../assets/ezz.png";
 import proj2 from "../../../assets/agro.png";
 
+// تعريف أنواع البيانات للكروت
+interface Project {
+    id: number;
+    title: string;
+    image: StaticImageData;
+    link: string;
+    color: string;
+}
 
-const projects = [
+const projects: Project[] = [
     {
         id: 1,
         title: "مشروع إيز إكسبورت",
@@ -33,7 +41,7 @@ const projects = [
 ];
 
 export default function TechMusclesScroll() {
-    const container = useRef(null);
+    const container = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: container,
         offset: ["start start", "end end"]
@@ -43,17 +51,15 @@ export default function TechMusclesScroll() {
         <section ref={container} className="relative bg-transparent border-t border-white/5" dir="rtl">
             <div className="container mx-auto max-w-6xl px-4 md:px-6 py-10 md:py-10">
 
-                {/* Header احترافي: خلفية إنجليزية + عنوان عربي */}
+                {/* Header احترافي */}
                 <div className="sticky top-10 md:top-20 z-0 mb-12 md:mb-5 px-2" dir="rtl">
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/5 pb-10">
 
                         <div className="relative">
-                            {/* الكلمة الإنجليزية في الخلفية: ضخمة، مفرغة، وشفافة جداً لإعطاء عمق */}
                             <h2 className="absolute -top-10 md:-top-16 -right-4 md:-right-8 text-8xl md:text-[12rem] font-black text-white/[0.03] uppercase italic select-none tracking-tighter leading-none pointer-events-none">
                                 WORKS
                             </h2>
 
-                            {/* العنوان العربي الأساسي فوق الكلمة الإنجليزية */}
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -72,7 +78,6 @@ export default function TechMusclesScroll() {
                             </motion.div>
                         </div>
 
-                        {/* إحصائيات سريعة أو حالة النظام على اليسار (أو اليمين في RTL) */}
                         <div className="flex flex-col items-start md:items-end gap-3 z-10">
                             <div className="flex items-center gap-2 bg-white/[0.03] px-4 py-2 rounded-2xl border border-white/5 backdrop-blur-md">
                                 <span className="relative flex h-2 w-2">
@@ -92,7 +97,6 @@ export default function TechMusclesScroll() {
                     </div>
                 </div>
 
-                {/* الحاوية - إضافة padding-bottom عشان آخر كارت يظهر بالكامل */}
                 <div className="flex flex-col pb-[10vh]">
                     {projects.map((project, index) => {
                         const targetScale = 1 - ((projects.length - index) * 0.05);
@@ -102,7 +106,6 @@ export default function TechMusclesScroll() {
                                 {...project}
                                 i={index}
                                 progress={scrollYProgress}
-                                // ضبط الـ Range لضمان سلاسة الحركة بناءً على عدد الكروت
                                 range={[index * (1 / projects.length), 1]}
                                 targetScale={targetScale}
                             />
@@ -114,28 +117,33 @@ export default function TechMusclesScroll() {
     );
 }
 
-const ProjectCard = ({ title, image, link, i, progress, range, targetScale, color }) => {
+// تعريف الـ Props للـ ProjectCard لحل مشكلة الـ Type Error
+interface ProjectCardProps extends Project {
+    i: number;
+    progress: MotionValue<number>;
+    range: number[];
+    targetScale: number;
+}
+
+const ProjectCard = ({ title, image, link, i, progress, range, targetScale }: ProjectCardProps) => {
     const scale = useTransform(progress, range, [1, targetScale]);
 
     return (
-        // ضبط الـ Sticky Top والارتفاع في الموبايل والديسك توب
         <div className="h-[70vh] md:h-[80vh] flex items-center justify-center sticky top-16 md:top-24 mb-12 md:mb-0">
             <motion.div
                 style={{
                     scale,
-                    // ضبط الإزاحة الرأسية للكروت المتراكمة بشكل أفضل
                     top: `calc(-2vh + ${i * 20}px)`
                 }}
                 className="relative h-[400px] md:h-[500px] w-full max-w-[900px] rounded-[1.5rem] md:rounded-[2.5rem] border border-white/10 bg-neutral-950 overflow-hidden shadow-2xl mx-auto"
             >
-                {/* الصورة كخلفية */}
                 <Image
                     src={image}
                     alt={title}
+                    fill
                     className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-opacity duration-500"
                 />
 
-                {/* Overlay المحتوى - تم التعديل هنا ليتوسط في الموبايل */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent p-6 md:p-12 flex flex-col justify-center md:justify-end items-center md:items-stretch">
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 w-full text-center md:text-right">
                         <div className="space-y-2 md:space-y-4">

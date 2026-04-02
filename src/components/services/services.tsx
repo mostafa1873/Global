@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const services = [
     {
-        id: "web-dev",
+        id: "web-development",
         icon: Code2,
         title: "برمجة وتطوير المواقع",
         titleEn: "Web Development",

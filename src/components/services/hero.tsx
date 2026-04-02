@@ -7,28 +7,27 @@ import { useRef } from "react";
 
 export default function ServicesHero() {
   const containerRef = useRef<HTMLElement>(null);
-  
+
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
-    visible: { 
-      opacity: 1, 
-      transition: { 
-        staggerChildren: 0.2, 
-        delayChildren: 0.1 
-      } 
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
     },
   };
 
-  // حل مشكلة النوع هنا بإضافة "as const" أو تعريف النوع يدوياً
   const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
-        duration: 0.8, 
-        ease: [0.22, 1, 0.36, 1] // تم التأكد من توافقها مع TypeScript
-      } 
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.22, 1, 0.36, 1] 
+      }
     },
   };
 
@@ -39,14 +38,14 @@ export default function ServicesHero() {
   };
 
   return (
-    <section 
+    <section
       ref={containerRef}
-      className="relative min-h-[100svh] flex flex-col items-center justify-center overflow-hidden pt-24" 
+      className="relative min-h-[100svh] flex flex-col items-center justify-center overflow-hidden pt-24"
       dir="rtl"
     >
       <div className="container mx-auto px-6 lg:px-16 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
-          
+
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -82,14 +81,14 @@ export default function ServicesHero() {
             </motion.div>
 
             <motion.div variants={fadeInUp} className="mt-12 flex flex-wrap justify-center lg:justify-start items-center gap-6 opacity-40 grayscale group-hover:grayscale-0">
-               <div className="flex items-center gap-2 text-white text-sm font-bold"><ShieldCheck size={16} className="text-blue-500"/> موثوقية</div>
-               <div className="flex items-center gap-2 text-white text-sm font-bold"><Zap size={16} className="text-blue-500"/> سرعة</div>
-               <div className="flex items-center gap-2 text-white text-sm font-bold"><BarChart3 size={16} className="text-blue-500"/> نتائج</div>
+              <div className="flex items-center gap-2 text-white text-sm font-bold"><ShieldCheck size={16} className="text-blue-500" /> موثوقية</div>
+              <div className="flex items-center gap-2 text-white text-sm font-bold"><Zap size={16} className="text-blue-500" /> سرعة</div>
+              <div className="flex items-center gap-2 text-white text-sm font-bold"><BarChart3 size={16} className="text-blue-500" /> نتائج</div>
             </motion.div>
           </motion.div>
 
           {/* الجانب الأيسر - Visual */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
@@ -136,7 +135,7 @@ export default function ServicesHero() {
         </div>
       </div>
 
-      <motion.button 
+      <motion.button
         onClick={scrollToServices}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -145,7 +144,7 @@ export default function ServicesHero() {
       >
         <span className="text-[10px] text-slate-500 font-bold uppercase tracking-[0.3em]">اكتشف خدماتنا</span>
         <div className="w-6 h-10 rounded-full border border-white/20 p-1 flex justify-center">
-          <motion.div 
+          <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
             className="w-1 h-2 bg-blue-500 rounded-full"

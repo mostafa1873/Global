@@ -18,7 +18,11 @@ export default function HeroSection() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+      transition: { 
+        duration: 0.8, 
+        // حل المشكلة بإضافة as const لتعريف المصفوفة كـ Cubic Bezier ثابت
+        ease: [0.16, 1, 0.3, 1] as const 
+      },
     },
   };
 
@@ -45,7 +49,7 @@ export default function HeroSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 py-20 lg:py-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
           
-          {/* قسم النصوص - تم إضافة items-center text-center للموبايل */}
+          {/* قسم النصوص - تم الحفاظ على التوسيط للموبايل */}
           <motion.div
             className="lg:col-span-7 flex flex-col justify-center items-center lg:items-start text-center lg:text-right pt-10 md:pt-0"
             variants={containerVariants}
@@ -73,7 +77,6 @@ export default function HeroSection() {
               بنمسك إدارة منصات السوشيال ميديا من الألف للياء (تخطيط، تنفيذ، ومتابعة) عشان إنت تتفرغ لتطوير بيزنسك وتنسى همّ <span className="font-semibold text-blue-400">"هنزل إيه النهاردة؟"</span>.
             </motion.p>
 
-            {/* تم إضافة justify-center للموبايل */}
             <motion.div variants={itemVariants} className="flex flex-wrap gap-4 items-center justify-center lg:justify-start">
               <button className="group relative px-10 py-4 bg-blue-600 text-white font-bold text-lg rounded-full overflow-hidden transition-all hover:bg-blue-500 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] focus:outline-none">
                 <span className="relative z-10 flex items-center gap-3">
@@ -91,7 +94,7 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* قسم الفيجوالز - مفيش تغيير */}
+          {/* قسم الفيجوالز */}
           <motion.div
             className="lg:col-span-5 relative h-[500px] hidden lg:flex items-center justify-center"
             initial={{ opacity: 0 }}
@@ -149,7 +152,6 @@ export default function HeroSection() {
               <h3 className="text-white font-bold">متابعة الأداء</h3>
               <p className="text-sm text-blue-400 mt-1 font-mono tracking-wider">+120% نمو</p>
             </motion.div>
-
           </motion.div>
         </div>
       </div>

@@ -20,7 +20,7 @@ export default function HeroSection() {
       y: 0,
       transition: { 
         duration: 0.8, 
-        // حل المشكلة بإضافة as const لتعريف المصفوفة كـ Cubic Bezier ثابت
+        // حل مشكلة Type error لمصفوفة ease
         ease: [0.16, 1, 0.3, 1] as const 
       },
     },
@@ -32,7 +32,8 @@ export default function HeroSection() {
       transition: {
         duration: 4,
         repeat: Infinity,
-        ease: "easeInOut",
+        // حل مشكلة Type error لقيمة ease النصية
+        ease: "easeInOut" as const,
       },
     },
   };

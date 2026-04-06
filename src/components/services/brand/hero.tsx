@@ -90,7 +90,7 @@ export default function UltraStudioHero() {
           </motion.div>
 
           <motion.div 
-            animate={{ x:, y: [0, -30, 0] }}
+            animate={{ x: [0, 30, 0], y: [0, -30, 0] }}
             transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
             className="absolute top-10 right-4 md:right-8 p-3.5 bg-[#0a0f1e] border border-blue-500/20 rounded-2xl backdrop-blur-xl z-30 flex items-center gap-3 shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
           >

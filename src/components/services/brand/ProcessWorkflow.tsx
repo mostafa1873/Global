@@ -67,15 +67,16 @@ export default function ParallaxProcess() {
     );
 }
 
-function ProcessItem({ step, index }) {
+// تم إضافة تعريف الأنواع هنا لحل مشكلة الـ Build
+function ProcessItem({ step, index }: { step: any, index: number }) {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
         offset: ["start end", "end start"]
     });
 
-    const yImage = useTransform(scrollYProgress, [0, 1], [0, -150]);
-    const yText = useTransform(scrollYProgress, [0, 1], [0, 100]);
+    const yImage = useTransform(scrollYProgress,, [0, -150]);
+    const yText = useTransform(scrollYProgress,,);
 
     return (
         <div ref={ref} className={`relative flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-10 md:gap-20`}>

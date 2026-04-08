@@ -75,8 +75,9 @@ function ProcessItem({ step, index }: { step: any, index: number }) {
         offset: ["start end", "end start"]
     });
 
-    const yImage = useTransform(scrollYProgress,  [0, -150]);
-    const yText = useTransform(scrollYProgress,  [0, -100]);
+    // --- التعديل هنا لحل مشكلة الـ TypeScript ---
+    const yImage = useTransform(scrollYProgress, [0, 1], [0, -150]);
+    const yText = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
     return (
         <div ref={ref} className={`relative flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-10 md:gap-20`}>

@@ -33,7 +33,8 @@ export default function ArchitecturalWorkSection() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+    // التعديل هنا بإضافة as const لحل مشكلة الـ Type Error في الـ ease
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const } }
   };
 
   return (

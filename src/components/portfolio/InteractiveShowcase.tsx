@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useState, useEffect } from "react";
 import { X, ArrowUpLeft, Target, Lightbulb, TrendingUp, Zap } from "lucide-react";
 
@@ -15,7 +15,7 @@ const clients = [
     problem: "صعوبة الوصول لعملاء دوليين وغياب الهوية الاحترافية في السوق العالمي.",
     solution: "بناء منصة تصدير متكاملة مع استراتيجية محتوى بلغات متعددة.",
     result: "زيادة 300% في طلبات التوريد الخارجية خلال أول 6 شهور.",
-    themeColor: "text-blue-500", // تعديل للون البراند بتاعك
+    themeColor: "text-blue-500",
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ const clients = [
     problem: "ضعف الولاء للعلامة التجارية وتشابه الهوية مع المنافسين التقليديين.",
     solution: "تصميم هوية بصرية 'Chic' تعتمد على الـ 3D Mockups وتجربة مستخدم مريحة.",
     result: "انتشار واسع في السوشيال ميديا وتحول البراند لـ 'Lifestyle'.",
-    themeColor: "text-blue-500", // تعديل للون البراند بتاعك
+    themeColor: "text-blue-500",
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ const clients = [
     problem: "صعوبة الوصول لعملاء دوليين وغياب الهوية الاحترافية في السوق العالمي.",
     solution: "بناء منصة تصدير متكاملة مع استراتيجية محتوى بلغات متعددة.",
     result: "زيادة 300% في طلبات التوريد الخارجية خلال أول 6 شهور.",
-    themeColor: "text-blue-500", // تعديل للون البراند بتاعك
+    themeColor: "text-blue-500",
   }
 ];
 
@@ -54,26 +54,30 @@ export default function AvantGardeShowcase() {
 
   const selectedClient = clients.find(c => c.id === selectedId);
 
-  const contentVariants = {
+  // تم تصحيح الـ Types هنا لضمان قبولها في Vercel Build
+  const contentVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: 0.3 + (i * 0.1), duration: 0.6, ease: [0.22, 1, 0.36, 1] }
+      transition: { 
+        delay: 0.3 + (i * 0.1), 
+        duration: 0.6, 
+        ease: [0.22, 1, 0.36, 1] as const // الـ as const هنا هي الحل
+      }
     })
   };
 
   return (
     <div className="min-h-screen text-white font-sans overflow-x-hidden relative" dir="rtl">
-      {/* Noise Texture Effect */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.015] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
       
       <div className="px-6 md:px-16 max-w-[100vw] relative z-10">
         
         <div className="mb-24 mt-12 flex flex-col gap-6">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-2 text-blue-500">
-             <Zap size={14} className="fill-blue-500" />
-             <span className="text-[10px] font-black uppercase tracking-[0.3em]">Selected Case Studies</span>
+              <Zap size={14} className="fill-blue-500" />
+              <span className="text-[10px] font-black uppercase tracking-[0.3em]">Selected Case Studies</span>
           </motion.div>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -126,12 +130,12 @@ export default function AvantGardeShowcase() {
 
       <AnimatePresence>
         {selectedId && selectedClient && (
-          <div className="fixed inset-0 z-[10000] flex flex-col md:flex-row bg-[#050505] overflow-hidden h-full w-full">
+          <div className="fixed inset-0 z- flex flex-col md:flex-row bg-[#050505] overflow-hidden h-full w-full">
             
             <motion.button 
               initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }}
               onClick={() => setSelectedId(null)}
-              className="absolute top-6 left-6 z-[10001] w-14 h-14 bg-white/5 hover:bg-blue-600 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all border border-white/10 active:scale-90 shadow-2xl"
+              className="absolute top-6 left-6 z- w-14 h-14 bg-white/5 hover:bg-blue-600 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all border border-white/10 active:scale-90 shadow-2xl"
             >
               <X size={24} />
             </motion.button>
@@ -162,7 +166,7 @@ export default function AvantGardeShowcase() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 50 }}
-              transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] as const }}
               className="w-full h-[55vh] md:h-full md:w-1/2 overflow-y-auto scrollbar-hide bg-[#050505] p-6 sm:p-10 md:p-16 lg:p-24 flex flex-col relative"
             >
                <div className="absolute top-0 right-0 w-80 h-80 bg-blue-600/5 blur-[120px] rounded-full pointer-events-none" />

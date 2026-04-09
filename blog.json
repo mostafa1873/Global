@@ -1,0 +1,222 @@
+[
+  {
+    "id": 1,
+    "title_en": "How a Website Builds Your Company’s Credibility",
+    "title_ar": "كيف يبني الموقع الإلكتروني مصداقية شركتك",
+    "slug_en": "website-builds-company-credibility",
+    "slug_ar": "بناء-مصداقية-الشركة-عبر-الموقع",
+    "date": "2025-11-13",
+    "image": "img/blog_1.webp",
+    "mainTitle_en": "A Website Isn’t Decoration — It’s Presence",
+    "mainTitle_ar": "الموقع الإلكتروني ليس زخرفة — بل هو حضورك",
+    "subSections_en": [
+      {
+        "subtitle": "Transparency Starts with 'About Us'",
+        "text": "Many companies underestimate this page — writing just a few lines and moving on. But here’s the truth: people don’t buy products; they buy trust."
+      },
+      {
+        "subtitle": "Your Website Reflects Your Intention",
+        "text": "If your intention is genuine — to provide real value — it will show in every little detail: The site speed, the simplicity of your layout, and the clarity of your content."
+      },
+      {
+        "subtitle": "Social Proof Isn’t Optional",
+        "text": "When they see real testimonials, client stories, or project photos, they start believing. A few honest words from one happy client are enough to build credibility."
+      },
+      {
+        "subtitle": "Security Is Part of Credibility",
+        "text": "Visitors notice when your URL starts with https. They feel safe when they see a clear Privacy Policy or Contact page. Every small detail whispers: “We respect you.”"
+      },
+      {
+        "subtitle": "Your Website Is the Voice That Never Sleeps",
+        "text": "You might close your office at 6 p.m., but your website never sleeps. It answers questions while you’re offline, and builds trust one visit at a time."
+      }
+    ],
+    "subSections_ar": [
+      {
+        "subtitle": "الشفافية تبدأ بـ 'من نحن'",
+        "text": "تستخف العديد من الشركات بهذه الصفحة. لكن الحقيقة هي: الناس لا يشترون المنتجات؛ بل يشترون الثقة. إنهم يريدون معرفة من يقف وراء الاسم."
+      },
+      {
+        "subtitle": "موقعك يعكس نيتك",
+        "text": "إذا كانت نيتك حقيقية — وهي تقديم قيمة حقيقية — فستظهر في كل تفصيل صغير: سرعة التحميل، وبساطة التصميم، ووضوح المحتوى."
+      },
+      {
+        "subtitle": "الدليل الاجتماعي ليس اختياريًا",
+        "text": "عندما يرون شهادات حقيقية، قصص عملاء، أو صور مشاريع، يبدأون في التصديق. فبضع كلمات صادقة من عميل سعيد كافية لبناء المصداقية."
+      },
+      {
+        "subtitle": "الأمان جزء من المصداقية",
+        "text": "يلاحظ الزوار عندما يبدأ رابط موقعك بـ https. ويشعرون بالأمان عندما يرون سياسة خصوصية واضحة أو صفحة 'اتصل بنا'. كل تفصيل صغير يهمس: 'نحن نحترمك.'"
+      },
+      {
+        "subtitle": "موقعك هو الصوت الذي لا ينام",
+        "text": "قد تغلق مكتبك في السادسة مساءً، لكن موقعك لا ينام أبدًا. فهو يجيب على الأسئلة بينما أنت غير متصل، ويعمل على بناء الثقة زيارة بعد زيارة."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title_en": "Why SEO is the Secret Weapon for Startups",
+    "title_ar": "لماذا يعتبر الـ SEO السلاح السري للشركات الناشئة",
+    "slug_en": "seo-secret-weapon-for-startups",
+    "slug_ar": "أهمية-السيو-للشركات-الناشئة",
+    "date": "2025-11-20",
+    "image": "img/blog_5.webp",
+    "mainTitle_en": "SEO Isn't Just Keywords — It's Growth",
+    "mainTitle_ar": "السيو ليس مجرد كلمات مفتاحية — إنه النمو الحقيقي",
+    "subSections_en": [
+      {
+        "subtitle": "Be Where Your Customers Are Looking",
+        "text": "When people need a solution, they go to Google. If your startup isn't on the first page, you practically don't exist in their digital world."
+      },
+      {
+        "subtitle": "Long-Term Traffic Without the Ad Spend",
+        "text": "Unlike paid ads that stop the moment you stop paying, SEO is an investment that keeps bringing organic visitors to your door for free, year after year."
+      },
+      {
+        "subtitle": "Building Authority Through Content",
+        "text": "By answering your audience's questions through blog posts and guides, you're not just ranking higher; you're becoming the expert they trust in your industry."
+      },
+      {
+        "subtitle": "User Experience and SEO Go Hand in Hand",
+        "text": "Google rewards websites that are fast and mobile-friendly. Improving your SEO naturally leads to a better experience for your customers."
+      },
+      {
+        "subtitle": "Small Budgets, Big Impact",
+        "text": "Startups often have limited budgets. SEO levels the playing field, allowing a small company with great content to outrank a giant corporation."
+      }
+    ],
+    "subSections_ar": [
+      {
+        "subtitle": "كن حيث يبحث عملاؤك",
+        "text": "عندما يحتاج الناس إلى حل، فإنهم يلجأون إلى جوجل. إذا لم تكن شركتك الناشئة في الصفحة الأولى، فأنت عملياً غير موجود في عالمهم الرقمي."
+      },
+      {
+        "subtitle": "زيارات مستمرة دون تكاليف إعلانية",
+        "text": "على عكس الإعلانات الممولة التي تتوقف بمجرد توقف الدفع، فإن السيو استثمار يستمر في جلب الزوار إليك مجاناً، عاماً بعد عام."
+      },
+      {
+        "subtitle": "بناء السلطة من خلال المحتوى",
+        "text": "من خلال الإجابة على أسئلة جمهورك عبر المقالات، أنت لا تتصدر النتائج فحسب؛ بل تصبح الخبير الذي يثقون به في مجالك."
+      },
+      {
+        "subtitle": "تجربة المستخدم والسيو وجهان لعملة واحدة",
+        "text": "جوجل تكافئ المواقع السريعة والمتوافقة مع الهواتف. تحسين السيو يؤدي تلقائياً إلى توفير تجربة أفضل لعملائك."
+      },
+      {
+        "subtitle": "ميزانيات صغيرة، تأثير كبير",
+        "text": "غالباً ما تملك الشركات الناشئة ميزانيات محدودة. السيو يمنحك فرصة عادلة، حيث يمكن لشركة صغيرة بمحتوى رائع أن تتفوق على الشركات العملاقة."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title_en": "Why Your Brand Identity is More Than Just a Logo",
+    "title_ar": "لماذا هويتك البصرية هي أكثر من مجرد شعار",
+    "slug_en": "importance-of-brand-visual-identity",
+    "slug_ar": "أهمية-الهوية-البصرية-للعلامة-التجارية",
+    "date": "2025-11-27",
+    "image": "img/blog_2.webp",
+    "mainTitle_en": "Design is the Silent Ambassador of Your Brand",
+    "mainTitle_ar": "التصميم هو السفير الصامت لعلامتك التجارية",
+    "subSections_en": [
+      {
+        "subtitle": "First Impressions Last Forever",
+        "text": "It takes only a few seconds for a customer to form an opinion about your business. A professional visual identity tells them you are serious and reliable."
+      },
+      {
+        "subtitle": "Consistency Creates Recognition",
+        "text": "When you use the same colors, fonts, and style across all platforms, you make it easier for people to remember you in a crowded market."
+      },
+      {
+        "subtitle": "Colors Speak Louder Than Words",
+        "text": "Colors trigger emotions. Blue can reflect trust, while orange reflects energy. Choosing the right palette helps you communicate your values without saying a word."
+      },
+      {
+        "subtitle": "Distinguish Yourself from Competitors",
+        "text": "In a sea of similarity, unique design is what makes you stand out. Your visual identity is your chance to show why you are different and better."
+      },
+      {
+        "subtitle": "Building Emotional Connection",
+        "text": "Great design isn't just about looking good; it's about how it makes people feel. A strong brand identity builds a sense of belonging and loyalty with your audience."
+      }
+    ],
+    "subSections_ar": [
+      {
+        "subtitle": "الانطباعات الأولى تدوم للأبد",
+        "text": "يستغرق الأمر ثوانٍ قليلة فقط ليكوّن العميل رأياً عن عملك. الهوية البصرية الاحترافية تخبرهم بأنك جاد وموثوق قبل أن يتحدثوا إليك."
+      },
+      {
+        "subtitle": "الاستمرارية تبني المعرفة",
+        "text": "عندما تستخدم نفس الألوان والخطوط والأسلوب عبر جميع المنصات، فإنك تسهل على الناس تذكرك وتمييزك في سوق مزدحم بالمنافسين."
+      },
+      {
+        "subtitle": "الألوان تتحدث بصوت أعلى من الكلمات",
+        "text": "الألوان تثير المشاعر؛ فالأزرق يعكس الثقة والبرتقالي يعكس الطاقة. اختيار اللوحة الصحيحة يساعدك على إيصال قيمك دون نطق كلمة واحدة."
+      },
+      {
+        "subtitle": "ميز نفسك عن المنافسين",
+        "text": "في بحر من التشابه، التصميم الفريد هو ما يجعلك تبرز. هويتك البصرية هي فرصتك لإظهار سبب اختلافك وتفوقك عن الآخرين."
+      },
+      {
+        "subtitle": "بناء اتصال عاطفي",
+        "text": "التصميم الرائع لا يتعلق فقط بالشكل الجميل، بل بكيفية جعل الناس يشعرون. الهوية القوية تبني شعوراً بالانتماء والولاء لدى جمهورك."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title_en": "Content Marketing: The Engine of Modern Business",
+    "title_ar": "صناعة المحتوى: المحرك الأساسي للأعمال الحديثة",
+    "slug_en": "importance-of-content-marketing",
+    "slug_ar": "أهمية-صناعة-المحتوى-للمشاريع",
+    "date": "2025-12-05",
+    "image": "img/blog_4.webp",
+    "mainTitle_en": "Give Value First, Sell Later",
+    "mainTitle_ar": "قدم القيمة أولاً، وستأتي المبيعات لاحقاً",
+    "subSections_en": [
+      {
+        "subtitle": "Content is a Bridge of Trust",
+        "text": "By sharing helpful tips and industry insights, you move from being a 'seller' to a 'trusted advisor'. Trust is the shortest path to a sale."
+      },
+      {
+        "subtitle": "Fueling Your Social Media",
+        "text": "Without quality content, your social media pages are just empty shells. Good content gives people a reason to follow, engage, and share your brand."
+      },
+      {
+        "subtitle": "Educating Your Potential Customers",
+        "text": "Sometimes people don't buy because they don't understand the problem. Content helps you explain the 'why' and 'how' before you ever ask for their money."
+      },
+      {
+        "subtitle": "The Compound Effect of Blogs",
+        "text": "A good article written today can still bring you customers three years from now. It is an asset that grows in value over time."
+      },
+      {
+        "subtitle": "Humanizing Your Brand",
+        "text": "Content allows you to show the personality behind the logo. Behind-the-scenes stories and team highlights make your company feel human and relatable."
+      }
+    ],
+    "subSections_ar": [
+      {
+        "subtitle": "المحتوى هو جسر الثقة",
+        "text": "من خلال مشاركة نصائح مفيدة ومعلومات عن مجالك، تتحول من مجرد 'بائع' إلى 'مستشار موثوق'. والثقة هي أقصر طريق لإتمام عملية البيع."
+      },
+      {
+        "subtitle": "تغذية منصات التواصل الاجتماعي",
+        "text": "بدون محتوى عالي الجودة، تظل صفحاتك مجرد قوالب فارغة. المحتوى الجيد هو ما يعطي الناس سبباً لمتابعتك والتفاعل مع علامتك التجارية."
+      },
+      {
+        "subtitle": "تثقيف عملائك المحتملين",
+        "text": "أحياناً لا يشتري الناس لأنهم لا يدركون أبعاد المشكلة. المحتوى يساعدك على شرح 'لماذا' و 'كيف' قبل أن تطلب منهم الشراء."
+      },
+      {
+        "subtitle": "التأثير التراكمي للمقالات",
+        "text": "المقال الجيد الذي تكتبه اليوم قد يجلب لك عملاء بعد ثلاث سنوات من الآن. إنه أصل رقمي تزداد قيمته مع مرور الوقت."
+      },
+      {
+        "subtitle": "إضفاء الطابع الإنساني على العلامة",
+        "text": "يتيح لك المحتوى إظهار الشخصية الكامنة خلف الشعار. قصص الكواليس والتعريف بفريق العمل تجعل شركتك تبدو قريبة ومألوفة للناس."
+      }
+    ]
+  }
+]

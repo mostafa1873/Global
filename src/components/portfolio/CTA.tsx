@@ -7,10 +7,6 @@ import Link from "next/link";
 export default function CompactFinalCTA() {
     return (
         <section className="relative py-10 border-t border-white/5 overflow-hidden" dir="rtl">
-            {/* تأثير إضاءة خلفي هادي جداً */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl border-t border-white/5 opacity-20 blur-[120px] pointer-events-none">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full" />
-            </div>
 
             <div className="container mx-auto px-6 relative z-10">
                 <motion.div

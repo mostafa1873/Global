@@ -1,33 +1,11 @@
 import { Calendar, Clock, ChevronLeft, Search, Tag, ArrowRight } from "lucide-react";
 import Link from "next/link";
+// استيراد بيانات المدونة من ملف الـ JSON
+import blogData from "../../blog.json"; 
 
 export default function BlogPage() {
-  const posts = [
-    {
-      title: "مستقبل الذكاء الاصطناعي في تطوير الويب 2026",
-      excerpt: "كيف سيغير الذكاء الاصطناعي طريقة بناء المواقع، وما هي الأدوات التي يجب أن تتعلمها الآن للبقاء في القمة؟",
-      date: "10 مارس 2026",
-      readTime: "5 دقائق",
-      category: "تقنية",
-      image: "bg-gradient-to-br from-blue-900 to-blue-500"
-    },
-    {
-      title: "لماذا تختار Next.js لمشروعك القادم؟",
-      excerpt: "تحليل عميق لمميزات Next.js من ناحية السرعة، الأداء، وسهولة الأرشفة في محركات البحث العالمية.",
-      date: "5 مارس 2026",
-      readTime: "8 دقائق",
-      category: "تطوير",
-      image: "bg-gradient-to-br from-slate-800 to-slate-600"
-    },
-    {
-      title: "أهمية تجربة المستخدم في زيادة المبيعات",
-      excerpt: "دراسة حالة توضح كيف أدى تغيير بسيط في واجهة المستخدم إلى زيادة في التحويلات بنسبة 40%.",
-      date: "1 مارس 2026",
-      readTime: "6 دقائق",
-      category: "تصميم",
-      image: "bg-gradient-to-br from-indigo-900 to-indigo-600"
-    }
-  ];
+  // استخدام البيانات من ملف الـ JSON مباشرة
+  const posts = blogData;
 
   return (
     <main className="min-h-screen text-white pt-32 pb-20 px-6">
@@ -60,30 +38,40 @@ export default function BlogPage() {
         
         {/* --- Main Posts Grid --- */}
         <div className="lg:col-span-8 grid gap-10">
-          {posts.map((post, index) => (
-            <article key={index} className="group relative grid md:grid-cols-5 gap-6 p-6 rounded-[2.5rem] bg-white/[0.02] border border-white/5 hover:border-blue-600/30 transition-all duration-500">
+          {posts.map((post) => (
+            <article key={post.id} className="group relative grid md:grid-cols-5 gap-6 p-6 rounded-[2.5rem] bg-white/[0.02] border border-white/5 hover:border-blue-600/30 transition-all duration-500">
               {/* Thumbnail */}
-              <div className={`md:col-span-2 h-48 md:h-full rounded-[1.5rem] overflow-hidden ${post.image} opacity-80 group-hover:opacity-100 transition-opacity`} />
+              <div className="md:col-span-2 h-48 md:h-full rounded-[1.5rem] overflow-hidden relative opacity-80 group-hover:opacity-100 transition-opacity bg-slate-900">
+                <img 
+                  src={post.image} 
+                  alt={post.title_ar}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+              </div>
               
               {/* Post Content */}
               <div className="md:col-span-3 flex flex-col justify-center py-2">
                 <div className="flex items-center gap-4 text-slate-500 text-[10px] font-black mb-4 uppercase tracking-widest">
                   <span className="text-blue-500 flex items-center gap-1">
-                    <Tag size={12} /> {post.category}
+                    <Tag size={12} /> تقنية
                   </span>
-                  <span className="flex items-center gap-1"><Calendar size={12} /> {post.date}</span>
-                  <span className="flex items-center gap-1"><Clock size={12} /> {post.readTime}</span>
+                  <span className="flex items-center gap-1">
+                    <Calendar size={12} /> {post.date}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <Clock size={12} /> 5 دقائق
+                  </span>
                 </div>
                 
                 <h2 className="text-2xl font-black mb-4 group-hover:text-blue-500 transition-colors leading-tight">
-                  {post.title}
+                  {post.title_ar}
                 </h2>
                 
                 <p className="text-slate-400 text-sm leading-relaxed mb-6 font-medium line-clamp-2">
-                  {post.excerpt}
+                  {post.mainTitle_ar}
                 </p>
 
-                <Link href={`/blog/${index}`} className="flex items-center gap-2 text-xs font-black text-white hover:gap-4 transition-all">
+                <Link href={`/blog/${post.slug_ar}`} className="flex items-center gap-2 text-xs font-black text-white hover:gap-4 transition-all">
                   إقرأ المزيد <ChevronLeft size={16} className="text-blue-600" />
                 </Link>
               </div>

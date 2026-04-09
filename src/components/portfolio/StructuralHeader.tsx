@@ -6,11 +6,18 @@ import { ArrowLeft, Target, Cpu, Zap, Star, Globe } from "lucide-react";
 export default function UltraPremiumHero() {
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } }
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.9,
+        ease: [0.16, 1, 0.3, 1] as const
+      }
+    }
   };
 
   return (
-    <section 
+    <section
       className="relative min-h-screen w-full flex flex-col bg-transparent overflow-hidden px-6 lg:px-16"
       dir="rtl"
     >
@@ -19,13 +26,13 @@ export default function UltraPremiumHero() {
 
       {/* 2. المحتوى الرئيسي */}
       <div className="flex-1 w-full max-w-[1600px] mx-auto relative flex flex-col justify-center py-5">
-        
+
         {/* لمسات ضوئية خلفية خافتة */}
         <div className="absolute top-1/4 -right-20 w-[30vw] h-[30vw] bg-blue-600/5 blur-[120px] rounded-full pointer-events-none -z-10" />
         <div className="absolute bottom-0 -left-20 w-[20vw] h-[20vw] bg-blue-900/5 blur-[100px] rounded-full pointer-events-none -z-10" />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
+
           {/* الجانب الأيمن: تيبوجرافي بـ مقاسات مظبوطة - Responsive Alignment */}
           <div className="lg:col-span-7 relative flex flex-col items-center lg:items-start text-center lg:text-right">
             <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="relative z-10 w-full flex flex-col items-center lg:items-start">
@@ -39,13 +46,13 @@ export default function UltraPremiumHero() {
               <h1 className="text-[10vw] lg:text-[85px] font-black text-white leading-[1.1] tracking-tighter mb-2">
                 نجاحك هو <span className="text-blue-600 italic">المقياس</span>
               </h1>
-              
+
               <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-6">
-                 <h1 className="text-[10vw] lg:text-[85px] font-black text-white leading-[1.1] tracking-tighter">
-                   الوحيد لشغلنا.
+                <h1 className="text-[10vw] lg:text-[85px] font-black text-white leading-[1.1] tracking-tighter">
+                  الوحيد لشغلنا.
                 </h1>
                 {/* عنصر ديكوري */}
-                <motion.div 
+                <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
                   className="hidden xl:block text-white/5"
@@ -56,7 +63,7 @@ export default function UltraPremiumHero() {
             </motion.div>
 
             {/* إحصائية سريعة عائمة - Centered on Mobile */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.8 }}
@@ -75,7 +82,7 @@ export default function UltraPremiumHero() {
 
           {/* الجانب الأيسر: بطاقة المعلومات (Ultra Glass) */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end relative w-full">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 0, y: 30 }}
               whileInView={{ opacity: 1, x: 0, y: 0 }}
               viewport={{ once: true }}
@@ -86,13 +93,13 @@ export default function UltraPremiumHero() {
 
               <div className="relative z-10 w-full flex flex-col items-center lg:items-start">
                 <div className="flex gap-2 mb-6 justify-center lg:justify-start">
-                   <Target size={18} className="text-blue-600" />
-                   <Cpu size={18} className="text-white/20" />
-                   <Zap size={18} className="text-white/20" />
+                  <Target size={18} className="text-blue-600" />
+                  <Cpu size={18} className="text-white/20" />
+                  <Zap size={18} className="text-white/20" />
                 </div>
 
                 <p className="text-neutral-400 text-lg lg:text-xl font-light leading-relaxed italic border-none lg:border-r-2 border-blue-600 lg:pr-6 mb-10">
-                  "كل مشروع هنا وراه هدف، تنفيذ، ونتيجة حقيقية، جاهزة للمستقبل. 
+                  "كل مشروع هنا وراه هدف، تنفيذ، ونتيجة حقيقية، جاهزة للمستقبل.
                   <span className="text-white block mt-4 font-bold not-italic">ساعدنا عملائنا يكبروا، مش بس يظهروا."</span>
                 </p>
 

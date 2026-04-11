@@ -49,7 +49,7 @@ export default function BentoWorkSection() {
   };
 
   return (
-    <section className="relative min-h-screen bg-transparent flex flex-col py-8" dir="rtl">
+    <section className="relative min-h-screen bg-transparent flex flex-col py-8 border-t border-white/5" dir="rtl">
 
       {/* 🔹 الجملة العلوية - بدون أي تغيير */}
       <div className="w-full flex flex-col items-center text-center mb-12 md:mb-20 px-4 relative z-10">

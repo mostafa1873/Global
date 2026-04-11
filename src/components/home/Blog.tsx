@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Calendar, Clock, Tag, ArrowLeft, Sparkles } from "lucide-react";
 import Link from "next/link";
 import blogData from "../../../blog.json"; 
@@ -7,7 +7,8 @@ import blogData from "../../../blog.json";
 export default function BlogSection() {
   const featuredPosts = blogData.slice(0, 2);
 
-  const containerVariants = {
+  // تم إضافة النوع Variants لحل مشكلة الـ Build
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -15,7 +16,7 @@ export default function BlogSection() {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
   };
@@ -70,7 +71,7 @@ export default function BlogSection() {
               variants={itemVariants}
               className="group relative flex flex-col md:flex-row gap-8 p-4 rounded-[3rem] bg-white/[0.01] border border-white/[0.05] hover:bg-white/[0.03] hover:border-blue-600/20 transition-all duration-700 items-stretch"
             >
-              {/* Image Container - تم التعديل ليملأ الارتفاع في الشاشات الكبيرة */}
+              {/* Image Container - تم ضبطه ليملأ الارتفاع ويحل مشكلة الحجم في الشاشات الكبيرة */}
               <div className="w-full md:w-2/5 aspect-video md:aspect-auto md:self-stretch rounded-[2.2rem] overflow-hidden relative shrink-0">
                 <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent z-10 opacity-60" />
                 <img 

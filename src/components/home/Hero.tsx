@@ -3,9 +3,6 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
-import PortfolioMarquee from "./PortfolioMarquee";
 
 // استيراد صور البورتفوليو
 import img1 from "../../assets/(0).jpg";

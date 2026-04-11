@@ -65,7 +65,7 @@ export default function BlogSection() {
           viewport={{ once: true }}
           className="grid grid-cols-1 lg:grid-cols-2 gap-10"
         >
-          {featuredPosts.map((post) => (
+          {featuredPosts.map((post: any) => (
             <motion.article
               key={post.id}
               variants={itemVariants}

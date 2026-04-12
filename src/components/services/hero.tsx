@@ -70,7 +70,7 @@ export default function ServicesHero() {
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-              <Link href="/contact" className="relative group overflow-hidden px-10 py-4 bg-white text-black rounded-full font-bold text-center transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-95 flex items-center justify-center gap-2">
+              <Link href="/call" className="relative group overflow-hidden px-10 py-4 bg-white text-black rounded-full font-bold text-center transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-95 flex items-center justify-center gap-2">
                 <span>ابدأ مشروعك دلوقتي</span>
                 <ChevronLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
               </Link>

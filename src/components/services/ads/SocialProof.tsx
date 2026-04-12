@@ -11,6 +11,7 @@ import {
     ShieldCheck,
     MousePointerClick
 } from "lucide-react";
+import Link from "next/link";
 
 const results = [
     {
@@ -139,10 +140,12 @@ export default function UltimateGrowthSection() {
                                     ))}
                                 </div>
 
-                                <button className="w-full py-4 md:py-6 bg-white text-black rounded-xl md:rounded-2xl font-black text-base md:text-xl hover:bg-blue-500 hover:text-white transition-all duration-500 flex items-center justify-center gap-2 group">
-                                    <span>احجز جلستك المجانية</span>
-                                    <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
-                                </button>
+                                <Link href="/call" className="w-full">
+                                    <button className="w-full py-4 md:py-6 bg-white text-black rounded-xl md:rounded-2xl font-black text-base md:text-xl hover:bg-blue-500 hover:text-white transition-all duration-500 flex items-center justify-center gap-2 group">
+                                        <span>احجز جلستك المجانية</span>
+                                        <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
+                                    </button>
+                                </Link>
 
                                 <p className="text-center w-full text-neutral-500 text-[9px] mt-5 font-bold uppercase tracking-widest">
                                     Limited Availability this month

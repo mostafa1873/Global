@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowLeft, Target, Cpu, Zap, Star, Globe } from "lucide-react";
+import Link from "next/link";
 
 export default function UltraPremiumHero() {
   const fadeInUp = {
@@ -104,14 +105,17 @@ export default function UltraPremiumHero() {
                 </p>
 
                 {/* زرار الأكشن */}
-                <button className="group relative w-full flex items-center justify-between bg-white text-black h-16 px-6 rounded-2xl font-black text-xl transition-all duration-500 hover:bg-blue-600 hover:text-white overflow-hidden shadow-lg">
-                  <span className="relative z-10 flex items-center gap-3">
-                    ابدأ مشروعك
-                  </span>
-                  <div className="relative z-10 w-10 h-10 bg-black text-white rounded-xl flex items-center justify-center group-hover:bg-white group-hover:text-blue-600 transition-all duration-500">
-                    <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
-                  </div>
-                </button>
+                <Link href="/call" className="w-full">
+                  <button className="group relative w-full flex items-center justify-between bg-white text-black h-16 px-6 rounded-2xl font-black text-xl transition-all duration-500 hover:bg-blue-600 hover:text-white overflow-hidden shadow-lg">
+                    <span className="relative z-10 flex items-center gap-3">
+                      ابدأ مشروعك
+                    </span>
+                    <div className="relative z-10 w-10 h-10 bg-black text-white rounded-xl flex items-center justify-center group-hover:bg-white group-hover:text-blue-600 transition-all duration-500">
+                      <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
+                    </div>
+                  </button>
+                </Link>
+
               </div>
             </motion.div>
           </div>

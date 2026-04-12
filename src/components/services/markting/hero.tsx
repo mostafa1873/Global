@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function HeroSection() {
   const containerVariants = {
@@ -79,6 +80,7 @@ export default function HeroSection() {
             </motion.p>
 
             <motion.div variants={itemVariants} className="flex flex-wrap gap-4 items-center justify-center lg:justify-start">
+              <Link href="/contact">
               <button className="group relative px-10 py-4 bg-blue-600 text-white font-bold text-lg rounded-full overflow-hidden transition-all hover:bg-blue-500 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] focus:outline-none">
                 <span className="relative z-10 flex items-center gap-3">
                   استلم عرض سعر
@@ -92,6 +94,7 @@ export default function HeroSection() {
                   </svg>
                 </span>
               </button>
+              </Link>
             </motion.div>
           </motion.div>
 

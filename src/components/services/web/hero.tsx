@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, Code2, Gauge, BarChart3, Layers, Orbit } from "lucide-react";
+import Link from "next/link";
 
 export default function TechFrameHero() {
   const highlights = [
@@ -28,10 +29,10 @@ export default function TechFrameHero() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { 
+      transition: {
         type: "spring" as const, // إضافة as const لحل مشكلة الـ Type Error في الـ Build
-        stiffness: 60, 
-        damping: 20 
+        stiffness: 60,
+        damping: 20
       }, // حركة ناعمة
     },
   };
@@ -129,10 +130,12 @@ export default function TechFrameHero() {
 
             {/* الأزرار والفوتر التقني - pt متجاوبة */}
             <motion.div variants={itemVariants} className="pt-4 lg:pt-6 border-t border-white/5 flex flex-col md:flex-row items-center gap-6 justify-center lg:justify-start w-full">
-              <button className="w-full md:w-auto group flex items-center justify-center gap-3 px-8 py-3.5 bg-white text-black font-bold rounded-2xl hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-xl shadow-white/5 hover:shadow-blue-600/20 flex-shrink-0">
-                ابدأ مشروعك الآن
-                <ArrowLeft size={18} className="group-hover:-translate-x-1.5 transition-transform" />
-              </button>
+              <Link href="/call">
+                <button className="w-full md:w-auto group flex items-center justify-center gap-3 px-8 py-3.5 bg-white text-black font-bold rounded-2xl hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-xl shadow-white/5 hover:shadow-blue-600/20 flex-shrink-0">
+                  ابدأ مشروعك الآن
+                  <ArrowLeft size={18} className="group-hover:-translate-x-1.5 transition-transform" />
+                </button>
+              </Link>
             </motion.div>
           </div>
 

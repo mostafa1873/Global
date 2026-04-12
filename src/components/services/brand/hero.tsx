@@ -3,6 +3,7 @@
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useEffect } from "react";
 import { MousePointer2, Layers, Zap, Palette, Component, ChevronLeft } from "lucide-react";
+import Link from "next/link";
 
 export default function UltraStudioHero() {
   const mouseX = useMotionValue(0);
@@ -124,12 +125,14 @@ export default function UltraStudioHero() {
 
         {/* الزرار: محجوز في الصف الثاني تحت النص مباشرة */}
         <div className="flex flex-wrap justify-center lg:justify-start gap-6 order-3 lg:col-start-1 lg:row-start-2 lg:self-start lg:mt-4 px-6 lg:px-0">
+          <Link href="/call">
           <button className="group relative px-10 py-4 lg:py-5 bg-white text-black rounded-2xl font-black text-base lg:text-lg transition-all hover:scale-105 active:scale-95 overflow-hidden shadow-[0_0_30px_rgba(255,255,255,0.1)] w-full sm:w-auto">
             <span className="relative z-10 flex items-center justify-center gap-2 transition-colors group-hover:text-white">
                 ابدأ براندك دلوقتي
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </button>
+          </Link>
         </div>
 
       </div>

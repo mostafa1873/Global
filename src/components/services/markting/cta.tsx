@@ -1,18 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
 
 export default function CompactSalesClosing() {
     return (
         <section className="relative w-full py-10 sm:py-10 px-4 bg-transparent overflow-hidden border-t border-white/10" dir="rtl">
-            
-            <div className="absolute left-4 bottom-4 md:left-10 md:bottom-10 opacity-5 md:opacity-40 pointer-events-none z-0 overflow-hidden">
-                <p className="text-slate-800 text-[80px] sm:text-[100px] md:text-[150px] font-black leading-none select-none tracking-tighter">
-                    CALL
-                </p>
-            </div>
 
             <div className="max-w-4xl mx-auto relative z-10 text-center">
                 
@@ -33,6 +28,7 @@ export default function CompactSalesClosing() {
                     className="inline-flex flex-col sm:flex-row items-center gap-6 p-4 sm:p-2 bg-white/[0.02] border border-white/5 rounded-3xl sm:rounded-full backdrop-blur-3xl shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
                 >
                     {/* زرار الاستشارة (الأساسي) */}
+                    <Link href="/call">
                     <motion.button 
                         whileHover={{ x: -5 }}
                         className="w-full sm:w-auto px-10 py-5 bg-white text-black font-black rounded-full text-lg md:text-xl flex items-center justify-center gap-3 transition-transform"
@@ -40,10 +36,10 @@ export default function CompactSalesClosing() {
                         احجز استشارتك الآن
                         <FiArrowRight className="text-2xl" />
                     </motion.button>
-
+                    </Link>
                     {/* زرار الواتساب (المكمل) */}
                     <motion.a 
-                        href="https://wa.me/2010XXXXXXXX" 
+                        href="https://wa.me/201109458238" 
                         target="_blank"
                         whileHover={{ scale: 1.1 }}
                         className="p-5 text-[#25D366] hover:text-white group transition-colors"

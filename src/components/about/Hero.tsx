@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
+import Link from "next/link";
 import { FiArrowLeft, FiCode, FiBarChart } from "react-icons/fi";
 
 export default function TechAgencyHero() {
@@ -14,13 +15,13 @@ export default function TechAgencyHero() {
 
     const itemVariants: Variants = {
         hidden: { opacity: 0, y: 30 },
-        visible: { 
-            opacity: 1, 
-            y: 0, 
-            transition: { 
-                duration: 0.8, 
-                ease: [0.25, 1, 0.5, 1] as any 
-            } 
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.8,
+                ease: [0.25, 1, 0.5, 1] as any
+            }
         }
     };
 
@@ -81,13 +82,15 @@ export default function TechAgencyHero() {
                 <motion.div variants={itemVariants} className="flex flex-col md:flex-row-reverse items-center justify-center gap-10 md:gap-12 w-full">
 
                     {/* الزرار */}
-                    <button className="w-full sm:w-auto min-w-[200px] md:min-w-[240px] group relative px-8 py-4 md:px-10 md:py-5 bg-white text-black text-base font-bold rounded-xl md:rounded-2xl overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_20px_40px_rgba(255,255,255,0.05)]">
-                        <div className="absolute inset-0 bg-blue-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                        <span className="relative z-10 flex items-center justify-center gap-3 group-hover:text-white transition-colors">
-                            ابدأ مشروعك الآن
-                            <FiArrowLeft className="text-xl group-hover:-translate-x-2 transition-transform" />
-                        </span>
-                    </button>
+                    <Link href="/call">
+                        <button className="w-full sm:w-auto min-w-[200px] md:min-w-[240px] group relative px-8 py-4 md:px-10 md:py-5 bg-white text-black text-base font-bold rounded-xl md:rounded-2xl overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_20px_40px_rgba(255,255,255,0.05)]">
+                            <div className="absolute inset-0 bg-blue-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                            <span className="relative z-10 flex items-center justify-center gap-3 group-hover:text-white transition-colors">
+                                ابدأ مشروعك الآن
+                                <FiArrowLeft className="text-xl group-hover:-translate-x-2 transition-transform" />
+                            </span>
+                        </button>
+                    </Link>
 
                     {/* مؤشر النشاط */}
                     <div className="flex items-center justify-center gap-4 md:gap-6">

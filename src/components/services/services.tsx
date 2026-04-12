@@ -72,7 +72,7 @@ const services = [
 ];
 
 export default function ServicesShowcase() {
-    const WHATSAPP_NUMBER = "201000000000"; 
+    const WHATSAPP_NUMBER = "201109458238"; 
 
     return (
         <section className="py-10 overflow-visible border-t border-white/5 mt-5" dir="rtl">

@@ -1,89 +1,67 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
-import { Calendar, ArrowLeft, Sparkles } from "lucide-react";
 import Link from "next/link";
-const MotionLink = motion.create(Link); // بنحول الـ Link لـ Motion Component
+import { FaWhatsapp } from "react-icons/fa";
+import { FiArrowRight } from "react-icons/fi";
 
-export default function AgencyCTA() {
+export default function CompactSalesClosing() {
     return (
-        <section className="relative py-10 md:py-10 overflow-hidden bg-transparent" dir="rtl">
-            {/* خلفية بصرية خفيفة (Blur Glow) */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] bg-blue-600/10 blur-[120px] rounded-full -z-10" />
+        <section className="relative w-full py-10 px-4 bg-transparent overflow-hidden border-t border-white/5" dir="rtl">
 
-            <div className="container mx-auto max-w-5xl px-6">
-                <div className="relative bg-neutral-950/50 border border-white/5 backdrop-blur-xl rounded-[2rem] md:rounded-[4rem] p-8 md:p-20 overflow-hidden">
+            <div className="max-w-4xl mx-auto relative z-10 text-center">
 
-                    {/* Decorative Pattern */}
-                    <div className="absolute top-0 left-0 w-full h-full opacity-[0.02] pointer-events-none"
-                        style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='0.5'/%3E%3C/g%3E%3C/svg%3E")` }}
-                    />
+                {/* العنوان - تم تعديل النص مع الحفاظ على التنسيق */}
+                <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    className="text-white text-2xl sm:text-3xl md:text-5xl font-black leading-tight tracking-tight mb-12 sm:mb-16"
+                >
+                    جاهز تبدأ <br className="hidden md:block" />
+                    <span className="text-blue-600">رحلة النجاح؟</span>
+                </motion.h2>
 
-                    <div className="flex flex-col items-center text-center space-y-8 relative z-10">
+                {/* الزرار المركزي الضخم والمحكم */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    className="inline-flex flex-col sm:flex-row items-center gap-6 p-4 sm:p-2 bg-white/[0.02] border border-white/5 rounded-3xl sm:rounded-full backdrop-blur-3xl shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+                >
+                    {/* زرار الاستشارة (الأساسي) */}
 
-                        {/* Badge */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            className="flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 px-4 py-2 rounded-full"
+                    <Link href="/call">
+                        <motion.button
+                            whileHover={{ x: -5 }}
+                            className="w-full sm:w-auto px-10 py-5 bg-white text-black font-black rounded-full text-lg md:text-xl flex items-center justify-center gap-3 transition-transform"
                         >
-                            <Sparkles size={14} className="text-blue-400" />
-                            <span className="text-blue-400 text-[10px] md:text-sm font-medium tracking-wide uppercase">
-                                جاهز لنقل أعمالك للمستوى التالي؟
-                            </span>
-                        </motion.div>
 
-                        {/* Heading - ضبط الحجم للموبايل والديسك توب */}
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1 }}
-                            className="text-3xl sm:text-4xl md:text-7xl font-black text-white leading-tight md:leading-[1.1] tracking-tight"
-                        >
-                            لنصنع شيئاً <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">استثنائياً</span> معاً
-                        </motion.h2>
+                            احجز استشارتك الآن
+                            <FiArrowRight className="text-2xl" />
 
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2 }}
-                            className="text-neutral-400 text-xs md:text-xl max-w-2xl font-light leading-relaxed"
-                        >
-                            احجز جلسة استراتيجية مجانية لمدة 30 دقيقة لنناقش كيف يمكن لـ
-                            <span className="text-white font-medium"> Global Nexus </span>
-                            تحويل رؤيتك إلى واقع رقمي مبهر.
-                        </motion.p>
+                        </motion.button>
+                    </Link>
 
-                        {/* Action Buttons - العرض الكامل في الموبايل */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.3 }}
-                            className="flex flex-col md:flex-row items-center gap-4 pt-6 w-full md:w-auto"
-                        >
-                            <MotionLink
-                                href="/call"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="group relative flex items-center justify-center gap-3 bg-blue-600 text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-sm md:text-lg shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] transition-all w-full md:w-auto"
-                            >
-                                احجز مكالمتك الآن
-                                <Calendar size={20} />
-                            </MotionLink>
 
-                            <motion.button
-                                whileHover={{ x: -5 }}
-                                className="flex items-center justify-center gap-2 text-neutral-400 hover:text-white px-6 py-4 transition-colors text-xs md:text-base w-full md:w-auto"
-                            >
-                                رؤية كافة الخدمات
-                                <ArrowLeft size={18} />
-                            </motion.button>
-                        </motion.div>
+                    {/* زرار الواتساب (المكمل) */}
+                    <motion.a
+                        href="https://wa.me/201109458238"
+                        target="_blank"
+                        whileHover={{ scale: 1.1 }}
+                        className="p-5 text-[#25D366] hover:text-white group transition-colors"
+                    >
+                        <FaWhatsapp className="text-3xl" />
+                    </motion.a>
+                </motion.div>
 
-                    </div>
-                </div>
+                {/* جملة ختامية بسيطة جداً */}
+                <p className="mt-16 text-slate-500 text-sm font-light tracking-wide opacity-50">
+                    Your Digital Transformation Starts Here — 2026
+                </p>
+
             </div>
+
+            {/* تأثير إضاءة خلفي هادي جداً */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-600/[0.03] blur-[100px] rounded-full pointer-events-none" />
         </section>
     );
 }

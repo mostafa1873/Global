@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
 
@@ -34,6 +35,7 @@ export default function CompactSalesClosing() {
                     className="inline-flex flex-col sm:flex-row items-center gap-6 p-4 sm:p-2 bg-white/[0.02] border border-white/5 rounded-3xl sm:rounded-full backdrop-blur-3xl shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
                 >
                     {/* زرار الاستشارة (الأساسي) */}
+                    <Link href="/call">
                     <motion.button 
                         whileHover={{ x: -5 }}
                         className="w-full sm:w-auto px-10 py-5 bg-white text-black font-black rounded-full text-lg md:text-xl flex items-center justify-center gap-3 transition-transform"
@@ -41,10 +43,10 @@ export default function CompactSalesClosing() {
                         ابني هويتك الآن
                         <FiArrowRight className="text-2xl" />
                     </motion.button>
-
+                    </Link>
                     {/* زرار الواتساب (المكمل) */}
                     <motion.a 
-                        href="https://wa.me/2010XXXXXXXX" 
+                        href="https://wa.me/201109458238" 
                         target="_blank"
                         whileHover={{ scale: 1.1 }}
                         className="p-5 text-[#25D366] hover:text-white group transition-colors"

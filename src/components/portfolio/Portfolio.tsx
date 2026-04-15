@@ -82,8 +82,8 @@ export default function CustomGridPortfolio() {
     const filteredProjects = projects.filter(p => p.category.toLowerCase() === filter.toLowerCase());
 
     // بنجيب الإعدادات الخاصة بالقسم المختار، ولو مفيش بنرجعه للـ Website كديفولت
-    const currentStyle = categoryStyles[filter] || categoryStyles["Website"];
-
+    // هنحدد لـ TypeScript إن الـ filter ده "key" من الـ categoryStyles
+    const currentStyle = categoryStyles[filter as keyof typeof categoryStyles] || categoryStyles["Website"];
     return (
         <section className="py-10 border-t border-white/5 px-6 lg:px-16 bg-transparent" dir="rtl">
             <div className="max-w-[1600px] mx-auto">

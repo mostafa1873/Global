@@ -5,11 +5,11 @@ import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 
 // استيراد صور البورتفوليو
-import img1 from "../../assets/(0).jpg";
-import img2 from "../../assets/(15).jpg";
-import img3 from "../../assets/11.jpg";
-import img4 from "../../assets/12.jpg";
-import img5 from "../../assets/(17).jpg";
+import img1 from "../../assets/works/main-a.png";
+import img2 from "../../assets/works/main-c.png";
+import img3 from "../../assets/works/agro/main.png";
+import img4 from "../../assets/works/dodo/main.png";
+import img5 from "../../assets/works/elmaka/main.png";
 
 export default function Hero() {
   const mouseX = useMotionValue(0);
@@ -132,11 +132,7 @@ export default function Hero() {
           <motion.div animate={{ x: ["0%", "-50%"] }} transition={{ duration: 30, repeat: Infinity, ease: "linear" }} className="flex gap-4 md:gap-6 pr-6">
             {row1.map((item, i) => (
               <div key={`r1-${i}`} className={`relative flex-shrink-0 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-2xl group ${item.width} ${item.ratio}`}>
-                <Image src={item.src} alt="project" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-5 md:p-6 text-right" dir="rtl">
-                  <h3 className="text-white text-lg md:text-xl font-bold">NEXUS ELITE</h3>
-                  <p className="text-blue-400 text-[10px] font-semibold uppercase tracking-wider">Architecture</p>
-                </div>
+                <Image src={item.src} alt="project" fill className="object-cover " />
               </div>
             ))}
           </motion.div>

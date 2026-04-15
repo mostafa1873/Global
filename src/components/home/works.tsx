@@ -3,12 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import case1 from '../../assets/(0).jpg'
-import case2 from '../../assets/(15).jpg'
-import case3 from '../../assets/(17).jpg'
-import case4 from '../../assets/(0).jpg'
-import case5 from '../../assets/(0).jpg'
-import case6 from '../../assets/(0).jpg'
+import case1 from "../../assets/works/agro/main.png"
+import case2 from "../../assets/works/agro/main.png"
+import case3 from "../../assets/works/agro/main.png"
+import case4 from "../../assets/works/agro/main.png"
+import case5 from "../../assets/works/agro/main.png"
+import case6 from "../../assets/works/agro/main.png"
 
 
 const projects = [

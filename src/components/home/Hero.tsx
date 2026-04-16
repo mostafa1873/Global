@@ -11,6 +11,8 @@ import img3 from "../../assets/works/agro/main.png";
 import img4 from "../../assets/works/dodo/main.png";
 import img5 from "../../assets/works/elmaka/main.png";
 
+
+
 export default function Hero() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -26,7 +28,7 @@ export default function Hero() {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     handleResize();
     window.addEventListener("resize", handleResize);
-    
+
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX - window.innerWidth / 2);
       mouseY.set(e.clientY - window.innerHeight / 2);
@@ -38,13 +40,14 @@ export default function Hero() {
     };
   }, [mouseX, mouseY]);
 
-  // منطق البورتفوليو (Bento Grid)
   const projects = [
-    { src: img1, width: "w-[180px] md:w-[300px]", ratio: "aspect-[4/5]" },
-    { src: img2, width: "w-[160px] md:w-[260px]", ratio: "aspect-square" },
-    { src: img3, width: "w-[220px] md:w-[380px]", ratio: "aspect-video" },
-    { src: img4, width: "w-[140px] md:w-[220px]", ratio: "aspect-[3/4]" },
-    { src: img5, width: "w-[180px] md:w-[280px]", ratio: "aspect-square" },
+    { src: img1, width: "w-[150px] md:w-[260px]", ratio: "aspect-[9/16]" },
+    { src: img2, width: "w-[150px] md:w-[260px]", ratio: "aspect-[9/16]" },
+    { src: img3, width: "w-[150px] md:w-[260px]", ratio: "aspect-[9/16]" },
+    { src: img4, width: "w-[150px] md:w-[260px]", ratio: "aspect-[9/16]" },
+    { src: img5, width: "w-[150px] md:w-[260px]", ratio: "aspect-[9/16]" },
+    // { src: img6, width: "w-[150px] md:w-[260px]", ratio: "aspect-[9/16]" },
+    // { src: img7, width: "w-[150px] md:w-[260px]", ratio: "aspect-[9/16]" },
   ];
 
   const row1 = useMemo(() => [...projects, ...projects], []);
@@ -67,16 +70,16 @@ export default function Hero() {
 
       {/* المحتوى الرئيسي للهيرو */}
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-16 flex flex-col items-center justify-center gap-12 mb-10 pt-5 md:pt-5">
-        
-              {/* 3. كلمة NEXUS */}
-      <motion.div
-        style={{ x: parallaxX, y: parallaxY }}
-        className="absolute inset-0 flex items-center justify-center opacity-[0.04] select-none pointer-events-none z-0"
-      >
-        <h1 className="text-[35vw] md:text-[25vw] font-black text-white leading-none tracking-[0.05em] uppercase">
-          NEXUS
-        </h1>
-      </motion.div>
+
+        {/* 3. كلمة NEXUS */}
+        <motion.div
+          style={{ x: parallaxX, y: parallaxY }}
+          className="absolute inset-0 flex items-center justify-center opacity-[0.04] select-none pointer-events-none z-0"
+        >
+          <h1 className="text-[35vw] md:text-[25vw] font-black text-white leading-none tracking-[0.05em] uppercase">
+            NEXUS
+          </h1>
+        </motion.div>
 
         {/* العنوان والتاج */}
         <div className="w-full space-y-6 md:space-y-8 mb-0 flex flex-col items-center text-center">
@@ -101,7 +104,7 @@ export default function Hero() {
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }} className="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-10 w-full pt-0 md:pt-8 px-4 sm:px-0">
-            
+
             <button className="group relative w-full sm:w-auto py-4 px-8 sm:px-12 flex items-center justify-center transition-all duration-300 bg-white/5 md:bg-transparent border border-white/10 sm:border-none rounded-xl sm:rounded-none">
               <span className="relative z-10 text-white font-black text-[13px] sm:text-sm uppercase tracking-[0.2em] group-hover:text-white transition-colors duration-500">ابدأ الرحلة</span>
               <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-white/20 group-hover:border-nexus-blue group-hover:w-full group-hover:h-full transition-all duration-500 rounded-tr-xl"></div>
@@ -128,16 +131,27 @@ export default function Hero() {
       {/* 🔹 إضافة البورتفوليو المائل هنا (تحت المحتوى مباشرة) 🔹 */}
       <div className="w-full flex flex-col gap-6 md:gap-8 relative z-20" dir="ltr">
         {/* الصف العلوي */}
-        <div className="flex w-full overflow-visible"> 
-          <motion.div animate={{ x: ["0%", "-50%"] }} transition={{ duration: 30, repeat: Infinity, ease: "linear" }} className="flex gap-4 md:gap-6 pr-6">
+        <div className="flex w-full overflow-visible">
+          <motion.div
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            className="flex gap-3 md:gap-4 pr-4" // قللنا الـ gap هنا عشان الصور تلحم في بعض بشكل أشيك
+          >
             {row1.map((item, i) => (
-              <div key={`r1-${i}`} className={`relative flex-shrink-0 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-2xl group ${item.width} ${item.ratio}`}>
-                <Image src={item.src} alt="project" fill className="object-cover " />
+              <div
+                key={`r1-${i}`}
+                className={`relative flex-shrink-0 rounded-[0.5rem] md:rounded-[1rem] overflow-hidden shadow-xl ${item.width} ${item.ratio}`}
+              >
+                <Image
+                  src={item.src}
+                  alt="project"
+                  fill
+                  className="object-cover" // كفر عشان الصورة تملى الـ 9:16 بالكامل
+                />
               </div>
             ))}
           </motion.div>
         </div>
-
       </div>
 
       {/* إطار ديكوري خفيف */}

@@ -17,9 +17,9 @@ const categoryStyles = {
         cardClass: "rounded-[1.5rem]"
     },
     "Visuals": {
-        gridContainer: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-2 auto-rows-[400px]",
-        imageClass: "w-full h-full object-cover transition-transform duration-[1s] group-hover:scale-125 opacity-90 group-hover:opacity-100",
-        cardClass: "rounded-3xl"
+        gridContainer: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-x-4 gap-y-2 auto-rows-auto",
+        imageClass: "w-full h-full object-cover",
+        cardClass: "rounded-3xl overflow-hidden group"
     },
     "packaging": {
         gridContainer: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:auto-rows-[400px] items-start",
@@ -41,19 +41,28 @@ const projects = [
     { id: 9, title: "Pure Land", category: "Branding", image: "/works/main-a.png", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 lg:row-span-1" },
     { id: 10, title: "Global Identity", category: "Branding", image: "/works/elmaka/main.png", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 lg:row-span-1" },
 
-    // --- تعديل أحجام Packaging لضمان شكل احترافي للصور العريضة والطولية على الموبايل ---
     { id: 11, title: "Nexus Bottle", category: "packaging", image: "/works/mostafa/2.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
-    { id: 12, title: "Eco Box", category: "packaging", image: "/works/mostafa/1.jpeg", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" }, // تقليل الارتفاع للعرض
-    { id: 14, title: "Eco Box", category: "packaging", image: "/works/mostafa/4.jpeg", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" }, // تقليل الارتفاع للعرض
+    { id: 12, title: "Eco Box", category: "packaging", image: "/works/mostafa/1.jpeg", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
+    { id: 14, title: "Eco Box", category: "packaging", image: "/works/mostafa/4.jpeg", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
     { id: 13, title: "Nexus Bottle", category: "packaging", image: "/works/mostafa/3.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
     { id: 15, title: "Nexus Bottle", category: "packaging", image: "/works/mostafa/6.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
-    { id: 16, title: "Eco Box", category: "packaging", image: "/works/mostafa/5.jpeg", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" }, // تقليل الارتفاع للعرض
+    { id: 16, title: "Eco Box", category: "packaging", image: "/works/mostafa/5.jpeg", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
     { id: 17, title: "Nexus Bottle", category: "packaging", image: "/works/dodo/cup.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
     { id: 18, title: "Nexus Bottle", category: "packaging", image: "/works/dodo/2.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
     { id: 19, title: "Nexus Bottle", category: "packaging", image: "/works/dodo/1.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
 
-    { id: 20, title: "Core Render", category: "Visuals", image: "https://images.unsplash.com/photo-1633167606207-d840b5070fc2?q=80&w=2070", gridClass: "col-span-1 md:col-span-1 lg:col-span-6 lg:row-span-1" },
-    { id: 21, title: "Neon Concept", category: "Visuals", image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070", gridClass: "col-span-1 md:col-span-1 lg:col-span-6 lg:row-span-1" },
+  // المجموعة الأولى (العادية): الطويلة يمين (في الـ RTL)، الصغيرين شمال
+{ id: 20, title: "Core Render", category: "Visuals", image: "/works/elmaka/makaa.jpeg", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-1" },
+{ id: 21, title: "Neon Concept", category: "Visuals", image: "/works/ezz_social1.jpeg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-1" },
+{ id: 22, title: "Future Vision", category: "Visuals", image: "/works/ezz_social2.jpeg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-2" },
+
+// المجموعة الثانية (المعكوسة): الطويلة شمال، الصغيرين يمين
+// استخدمنا row-start-3 و row-start-4 عشان نضمن إنهم نزلوا تحت المجموعة الأولى وبدؤوا ترتيب جديد
+{ id: 23, title: "Neon Concept", category: "Visuals", image: "/works/dodo/dodo_social1.jpeg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-3 lg:col-start-1" },
+{ id: 24, title: "Future Vision", category: "Visuals", image: "/works/dodo/dodo_social2.jpeg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-4 lg:col-start-1" },
+{ id: 25, title: "Core Render", category: "Visuals", image: "/works/pure/pure.jpeg", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-3 lg:col-start-8" },
+
+
 ];
 
 const categories = [

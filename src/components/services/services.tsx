@@ -1,13 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
+// أبقيت على الاستيرادات للأيقوناتเผื่อ تم استخدامها في مكان آخر، ولكن لم أعد استخدمها داخل الكروت
 import { Code2, Share2, Megaphone, Palette, ArrowUpRight, CheckCircle2, Sparkles, MessageCircle } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image"; // استيراد مكون الصورة من نيكست
+
+import web_img from "../../assets/web.jpeg";
+import social_img from "../../assets/social.jpeg";
+import paid_img from "../../assets/ads.jpeg";
+import brand_img from "../../assets/brand.jpeg";
 
 const services = [
     {
         id: "web-development",
-        icon: Code2,
+        icon: Code2, // أبقيته للهيكل ولكن سنستخدم imageSrc
+        // ضع هنا مسار الصورة الخاصة ببرمجة المواقع، مثال: "/images/web-dev.png"
+        imageSrc: web_img,
         title: "برمجة وتطوير المواقع",
         titleEn: "Web Development",
         philosophy: "موقعك هو \"المقر الرقمي\" لشركتك، مش مجرد \"بروشور\" أونلاين.",
@@ -24,6 +33,8 @@ const services = [
     {
         id: "social-media",
         icon: Share2,
+        // ضع هنا مسار الصورة الخاصة بالسوشيال ميديا
+        imageSrc: social_img,
         title: "إدارة السوشيال ميديا",
         titleEn: "Social Media Management",
         philosophy: "ابني \"هيبة\" لبراندك وخلي اسمك هو أول حاجة تيجي في بال العميل.",
@@ -40,6 +51,8 @@ const services = [
     {
         id: "paid-ads",
         icon: Megaphone,
+        // ضع هنا مسار الصورة الخاصة بالإعلانات
+        imageSrc: paid_img,
         title: "الإعلانات الممولة",
         titleEn: "Paid Ads",
         philosophy: "استثمارك في الإعلانات لازم يرجعلك أضعاف، مش مجرد \"لايكات\" وهمية.",
@@ -56,6 +69,8 @@ const services = [
     {
         id: "branding",
         icon: Palette,
+        // ضع هنا مسار الصورة الخاصة بالبراندينج
+        imageSrc: brand_img,
         title: "البراندينج والهوية البصرية",
         titleEn: "Branding & Identity",
         philosophy: "البراند مش مجرد \"لوجو\"، ده الانطباع اللي بيسيبه اسمك في غيابك.",
@@ -72,7 +87,7 @@ const services = [
 ];
 
 export default function ServicesShowcase() {
-    const WHATSAPP_NUMBER = "201109458238"; 
+    const WHATSAPP_NUMBER = "201109458238";
 
     return (
         <section className="py-10 overflow-visible border-t border-white/5 mt-5" dir="rtl">
@@ -145,7 +160,14 @@ export default function ServicesShowcase() {
                                     {/* الجانب البصري */}
                                     <div className="flex-1 w-full max-w-[200px] md:max-w-sm mx-auto">
                                         <div className={`relative aspect-square w-full rounded-[2rem] md:rounded-[2.5rem] ${service.imageBg} border border-white/5 flex items-center justify-center group-hover:scale-105 transition-transform duration-700`}>
-                                            <service.icon className={`w-12 h-12 md:w-24 md:h-24 text-${service.color}-500 opacity-80`} />
+
+                                            {/* هنا الصورة بقت fill عشان تاخد حجم الديف كله ومتقصش حواف الديف */}
+                                            <Image
+                                                src={service.imageSrc}
+                                                alt={service.title}
+                                                fill
+                                                className="object-cover rounded-[2rem] md:rounded-[2.5rem] opacity-80"
+                                            />
 
                                             <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4 bg-[#030712] border border-white/10 p-2 md:p-4 rounded-xl md:rounded-2xl shadow-2xl">
                                                 <CheckCircle2 className={`text-${service.color}-400 mb-1`} size={16} />

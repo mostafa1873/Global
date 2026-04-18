@@ -2,22 +2,24 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
-    Code2,
-    Share2,
-    Megaphone,
-    Palette,
     ArrowUpRight,
     CheckCircle2,
     MessageCircle,
-    Sparkles
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image"; // 1. استيراد مكون الصورة
 import { useRef, useState, useEffect } from "react";
+import web_img from "../../assets/web.jpeg";
+import social_img from "../../assets/social.jpeg";
+import paid_img from "../../assets/ads.jpeg";
+import brand_img from "../../assets/brand.jpeg";
+
 
 const services = [
     {
         id: "web-development",
-        icon: Code2,
+        // icon: Code2, // 2. تعليق الأيقونة أو مسحها
+        imageSrc: web_img, // 3. إضافة مسار الصورة الفعلي
         title: "برمجة وتطوير المواقع",
         titleEn: "Web Development",
         philosophy: "موقعك هو \"المقر الرقمي\" لشركتك، مش مجرد \"بروشور\" أونلاين.",
@@ -35,7 +37,8 @@ const services = [
     },
     {
         id: "social-media",
-        icon: Share2,
+        // icon: Share2,
+        imageSrc: social_img,
         title: "إدارة السوشيال ميديا",
         titleEn: "Social Media Management",
         philosophy: "ابني \"هيبة\" لبراندك وخلي اسمك هو أول حاجة تيجي في بال العميل.",
@@ -53,7 +56,8 @@ const services = [
     },
     {
         id: "paid-ads",
-        icon: Megaphone,
+        // icon: Megaphone,
+        imageSrc: paid_img,
         title: "الإعلانات الممولة",
         titleEn: "Paid Ads",
         philosophy: "استثمارك في الإعلانات لازم يرجعلك أضعاف، مش مجرد \"لايكات\" وهمية.",
@@ -71,7 +75,8 @@ const services = [
     },
     {
         id: "branding",
-        icon: Palette,
+        // icon: Palette,
+        imageSrc: brand_img,
         title: "البراندينج والهوية البصرية",
         titleEn: "Branding & Identity",
         philosophy: "البراند مش مجرد \"لوجو\"، ده الانطباع اللي بيسيبه اسمك في غيابك.",
@@ -180,10 +185,17 @@ export default function StackedServices() {
                             {/* محتوى الكرت المدمج */}
                             <div className={`flex flex-col lg:flex-row items-center gap-8 md:gap-12 relative z-10 ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
                                 
-                                {/* الجانب البصري */}
+                                {/* الجانب البصري - تم استبدال الأيقونة بصورة */}
                                 <div className="flex-1 w-full max-w-[180px] md:max-w-sm mx-auto">
                                     <div className={`relative aspect-square w-full rounded-[2.5rem] ${service.imageBg} border border-white/5 flex items-center justify-center group-hover:scale-105 transition-transform duration-700`}>
-                                        <service.icon className="w-16 h-16 md:w-28 md:h-28 text-white opacity-80" />
+                                        {/* 4. استبدال مكون الأيقونة بمكون الصورة */}
+                                        <Image
+                                            src={service.imageSrc} // استخدام مسار الصورة من البيانات
+                                            alt={`${service.titleEn} icon`}
+                                            fill // جعل الصورة تملأ الأب
+                                            className="object-cover rounded-[2.5rem] opacity-80 group-hover:scale-105 transition-transform duration-700" // الحفاظ على التنسيقات
+                                        />
+                                        {/* الحفاظ على شعار الجودة */}
                                         <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4 bg-[#030712] border border-white/10 p-2 md:p-4 rounded-xl md:rounded-2xl shadow-2xl">
                                             <CheckCircle2 className="text-blue-400 mb-1" size={16} />
                                             <p className="text-[8px] md:text-[10px] text-white font-bold">100% Quality</p>
@@ -191,7 +203,7 @@ export default function StackedServices() {
                                     </div>
                                 </div>
 
-                                {/* الجانب النصي */}
+                                {/* الجانب النصي - كما هو */}
                                 <div className="flex-[1.5] text-center lg:text-right w-full flex flex-col items-center lg:items-start">
                                     <div className="mb-4">
                                         <h3 className="text-[10px] font-bold text-blue-400 uppercase tracking-[0.3em] mb-2">{service.titleEn}</h3>

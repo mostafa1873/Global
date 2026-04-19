@@ -6,10 +6,12 @@ import Image from "next/image";
 
 // استيراد صور البورتفوليو
 import img1 from "../../assets/works/main-a.png";
-import img2 from "../../assets/works/main-c.png";
+import img2 from "../../assets/works/pure.jpeg";
 import img3 from "../../assets/works/agro/main.png";
-import img4 from "../../assets/works/dodo/main.png";
-import img5 from "../../assets/works/elmaka/main.png";
+import img4 from "../../assets/works/pure.jpeg";
+import img5 from "../../assets/works/dodo/main.png";
+import img6 from "../../assets/works/pure.jpeg";
+import img7 from "../../assets/works/pure/main.png";
 
 
 
@@ -46,8 +48,8 @@ export default function Hero() {
     { src: img3, width: "w-[150px] md:w-[260px]", ratio: "aspect-[9/16]" },
     { src: img4, width: "w-[150px] md:w-[260px]", ratio: "aspect-[9/16]" },
     { src: img5, width: "w-[150px] md:w-[260px]", ratio: "aspect-[9/16]" },
-    // { src: img6, width: "w-[150px] md:w-[260px]", ratio: "aspect-[9/16]" },
-    // { src: img7, width: "w-[150px] md:w-[260px]", ratio: "aspect-[9/16]" },
+    { src: img6, width: "w-[150px] md:w-[260px]", ratio: "aspect-[9/16]" },
+    { src: img7, width: "w-[150px] md:w-[260px]", ratio: "aspect-[9/16]" },
   ];
 
   const row1 = useMemo(() => [...projects, ...projects], []);

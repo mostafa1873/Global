@@ -16,7 +16,7 @@ const categoryStyles = {
         imageClass: "w-full h-full object-contain",
         cardClass: "rounded-[1.5rem]"
     },
-    "Visuals": {
+    "Social": {
         gridContainer: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-x-4 gap-y-2 auto-rows-auto",
         imageClass: "w-full h-full object-cover",
         cardClass: "rounded-3xl overflow-hidden group"
@@ -29,10 +29,16 @@ const categoryStyles = {
 };
 
 const projects = [
-    { id: 1, title: "Elite Fintech", category: "Website", type: "web", image: "/works/agro/agro-web.jpg", gridClass: "col-span-1 md:col-span-1 lg:col-span-8 order-2 lg:order-none" },
+    // --- المجموعة الأولى (القديمة زي ما هي من غير أي تغيير) ---
+    { id: 1, title: "Elite Fintech", category: "Website", type: "web", image: "/works/ezz-web.png", gridClass: "col-span-1 md:col-span-1 lg:col-span-8 order-2 lg:order-none" },
     { id: 2, title: "Agro Platform", category: "Website", type: "reels", image: "/works/ezz-reals.mp4", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 order-1 lg:order-none" },
     { id: 3, title: "Elite Fintech", category: "Website", type: "reels", image: "/works/agro-reals.mp4", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 order-3 lg:order-none" },
-    { id: 4, title: "Agro Platform", category: "Website", type: "web", image: "/works/ezz-web.png", gridClass: "col-span-1 md:col-span-1 lg:col-span-8 order-4 lg:order-none" },
+    { id: 4, title: "Agro Platform", category: "Website", type: "web", image: "/works/agro/agro-web.jpg", gridClass: "col-span-1 md:col-span-1 lg:col-span-8 order-4 lg:order-none" },
+
+    // --- المجموعة الثانية (الجديدة في قسم منفصل) ---
+    // ضفنا هنا section: "bottom" عشان نفصلهم تحت
+    { id: 4.1, title: "New Web Wide", category: "Website", type: "web", section: "bottom", image: "/works/power_web.jpeg", gridClass: "col-span-1 md:col-span-1 lg:col-span-8" },
+    { id: 4.2, title: "New Web Tall", category: "Website", type: "tall", section: "bottom", image: "/works/green_web.jpeg", gridClass: "col-span-1 md:col-span-1 lg:col-span-4" },
 
     { id: 5, title: "EZZ Exports", category: "Branding", image: "/works/main-c.png", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 lg:row-span-1" },
     { id: 6, title: "Pure Land", category: "Branding", image: "/works/pure/main.png", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 lg:row-span-1" },
@@ -51,35 +57,71 @@ const projects = [
     { id: 18, title: "Nexus Bottle", category: "packaging", image: "/works/dodo/2.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
     { id: 19, title: "Nexus Bottle", category: "packaging", image: "/works/dodo/1.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
 
-  // المجموعة الأولى (العادية): الطويلة يمين (في الـ RTL)، الصغيرين شمال
-{ id: 20, title: "Core Render", category: "Visuals", image: "/works/elmaka/makaa.jpeg", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-1" },
-{ id: 21, title: "Neon Concept", category: "Visuals", image: "/works/ezz_social1.jpeg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-1" },
-{ id: 22, title: "Future Vision", category: "Visuals", image: "/works/ezz_social2.jpeg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-2" },
+    { id: 20, title: "Core Render", category: "Social", image: "/works/elmaka/makaa.jpeg", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-1" },
+    { id: 21, title: "Neon Concept", category: "Social", image: "/works/ezz_social1.jpeg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-1" },
+    { id: 22, title: "Future Vision", category: "Social", image: "/works/ezz_social2.jpeg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-2" },
 
-// المجموعة الثانية (المعكوسة): الطويلة شمال، الصغيرين يمين
-// استخدمنا row-start-3 و row-start-4 عشان نضمن إنهم نزلوا تحت المجموعة الأولى وبدؤوا ترتيب جديد
-{ id: 23, title: "Neon Concept", category: "Visuals", image: "/works/dodo/dodo_social1.jpeg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-3 lg:col-start-1" },
-{ id: 24, title: "Future Vision", category: "Visuals", image: "/works/dodo/dodo_social2.jpeg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-4 lg:col-start-1" },
-{ id: 25, title: "Core Render", category: "Visuals", image: "/works/pure/pure.jpeg", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-3 lg:col-start-8" },
-
-
+    { id: 23, title: "Neon Concept", category: "Social", image: "/works/dodo/dodo_social1.jpeg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-3 lg:col-start-1" },
+    { id: 24, title: "Future Vision", category: "Social", image: "/works/dodo/dodo_social2.jpeg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-4 lg:col-start-1" },
+    { id: 25, title: "Core Render", category: "Social", image: "/works/pure/pure.jpeg", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-3 lg:col-start-8" },
 ];
 
 const categories = [
     { name: "Website", icon: Globe },
     { name: "Branding", icon: Palette },
-    { name: "Visuals", icon: Layers },
+    { name: "Social", icon: Layers },
     { name: "packaging", icon: Box },
 ];
 
 export default function CustomGridPortfolio() {
     const [filter, setFilter] = useState("Website");
-    const filteredProjects = projects.filter(p => p.category.toLowerCase() === filter.toLowerCase());
+    
+    // فلتر المشاريع بناءً على القسم
+    const allFilteredProjects = projects.filter(p => p.category.toLowerCase() === filter.toLowerCase());
+    
+    // فصلناهم لمجموعتين: الأساسية (اللي فوق) والثانوية (اللي تحت)
+    const topProjects = allFilteredProjects.filter(p => p.section !== "bottom");
+    const bottomProjects = allFilteredProjects.filter(p => p.section === "bottom");
+
     const currentStyle = categoryStyles[filter as keyof typeof categoryStyles] || categoryStyles["Website"];
+
+    // دالة مساعدة عشان نرندر الكارت ومكررش الكود
+    const renderProjectCard = (project: any) => {
+        const aspectRatioClass = filter === "Website"
+            ? (project.type === 'reels' ? 'aspect-[4/3]' : project.type === 'tall' ? 'aspect-[3/4]' : 'aspect-[16/9]')
+            : '';
+
+        const isVideo = project.image.endsWith(".mp4");
+        const mediaClass = project.type === "reels" || project.type === "tall"
+            ? "w-full h-full object-contain"
+            : currentStyle.imageClass;
+
+        return (
+            <motion.div
+                key={project.id}
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
+                className={`relative group cursor-pointer overflow-hidden ${project.gridClass} ${currentStyle.cardClass} ${aspectRatioClass}`}
+            >
+                <div className="w-full h-full">
+                    {isVideo ? (
+                        <video src={project.image} className={mediaClass} autoPlay loop muted playsInline />
+                    ) : (
+                        <img src={project.image} className={mediaClass} alt={project.title} />
+                    )}
+                </div>
+            </motion.div>
+        );
+    };
 
     return (
         <section className="py-10 border-t border-white/5 px-6 lg:px-16 bg-transparent relative" dir="rtl">
             <div className="max-w-[1600px] mx-auto relative">
+                
+                {/* --- النصوص الجانبية الخاصة بقسم الموقع --- */}
                 <AnimatePresence>
                     {filter === "Website" && (
                         <>
@@ -88,7 +130,7 @@ export default function CustomGridPortfolio() {
                                 animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                                 exit={{ opacity: 0, x: 30, filter: "blur(10px)" }}
                                 transition={{ duration: 0.8, ease: "easeOut" }}
-                                className="hidden lg:flex flex-col absolute left-10 top-[56%] -translate-y-1/2 w-[320px] z-0 pointer-events-none"
+                                className="hidden lg:flex flex-col absolute left-10 top-[37.5%] -translate-y-1/2 w-[320px] z-0 pointer-events-none"
                             >
                                 <div className="flex items-baseline gap-2 mb-2">
                                     <span className="text-blue-600 font-mono text-xs font-black tracking-tighter">01</span>
@@ -103,7 +145,6 @@ export default function CustomGridPortfolio() {
                                     <div className="absolute -left-4 top-0 bottom-0 w-[1px] bg-gradient-to-b from-blue-600 via-blue-600/20 to-transparent"></div>
                                     <p className="text-white/50 text-[13px] leading-relaxed font-light pl-2">
                                         طورنا منصة "عز" بتقنيات <span className="text-white font-medium">Next.js</span> لضمان سرعة فائقة تناسب معايير السوق الأوروبي.
-                                        ركزنا على الأداء، الـ SEO العالمي، وتجربة مستخدم عابرة للقارات.
                                     </p>
                                 </div>
                             </motion.div>
@@ -113,7 +154,7 @@ export default function CustomGridPortfolio() {
                                 animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                                 exit={{ opacity: 0, x: -30, filter: "blur(10px)" }}
                                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                                className="hidden lg:flex flex-col absolute right-10 top-[94%] -translate-y-1/2 w-[320px] z-0 pointer-events-none text-right"
+                                className="hidden lg:flex flex-col absolute right-10 top-[65%] -translate-y-1/2 w-[320px] z-0 pointer-events-none text-right"
                             >
                                 <div className="flex items-baseline gap-2 mb-2 justify-end">
                                     <span className="text-white/20 font-mono text-[9px] uppercase tracking-[0.3em]">React Architecture</span>
@@ -127,7 +168,7 @@ export default function CustomGridPortfolio() {
                                 <div className="relative group text-right">
                                     <div className="absolute -right-4 top-0 bottom-0 w-[1px] bg-gradient-to-b from-blue-600 via-blue-600/20 to-transparent"></div>
                                     <p className="text-white/50 text-[13px] leading-relaxed font-light pr-2">
-                                        في "أجرو مارت" استغلينا قوة <span className="text-white font-medium">React</span> لخلق واجهة تسوق ذكية. كل تفاعل مصمم لضمان سرعة التصفح وتسهيل الوصول للمنتجات الزراعية.
+                                        في "أجرو مارت" استغلينا قوة <span className="text-white font-medium">React</span> لخلق واجهة تسوق ذكية.
                                     </p>
                                 </div>
                             </motion.div>
@@ -135,19 +176,13 @@ export default function CustomGridPortfolio() {
                     )}
                 </AnimatePresence>
 
+                {/* --- الهيدر والأزرار --- */}
                 <div className="relative mb-12 flex flex-col items-center justify-center text-center gap-10">
                     <div className="relative z-20">
-                        <motion.div
-                            initial={{ width: 0 }}
-                            whileInView={{ width: 60 }}
-                            className="h-[2px] bg-blue-600 mx-auto mb-6"
-                        />
+                        <motion.div initial={{ width: 0 }} whileInView={{ width: 60 }} className="h-[2px] bg-blue-600 mx-auto mb-6" />
                         <h2 className="text-6xl md:text-8xl lg:text-[110px] font-black text-white tracking-tighter leading-tight">
                             جزء من <span className="text-blue-600">شغلنا.</span>
                         </h2>
-                        <p className="text-white/20 font-mono text-[10px] uppercase tracking-[0.6em] mt-4">
-                            Creative Portfolio 2026 Edition
-                        </p>
                     </div>
 
                     <div className="flex flex-wrap justify-center gap-3 bg-white/[0.02] p-2 rounded-[2.5rem] border border-white/5 backdrop-blur-sm z-20 relative">
@@ -155,17 +190,10 @@ export default function CustomGridPortfolio() {
                             <button
                                 key={cat.name}
                                 onClick={() => setFilter(cat.name)}
-                                className={`relative flex items-center gap-3 px-8 py-3 rounded-full text-[11px] font-black transition-all duration-500 overflow-hidden group ${filter === cat.name
-                                    ? "text-white"
-                                    : "text-white/40 hover:text-white"
-                                    }`}
+                                className={`relative flex items-center gap-3 px-8 py-3 rounded-full text-[11px] font-black transition-all duration-500 overflow-hidden group ${filter === cat.name ? "text-white" : "text-white/40 hover:text-white"}`}
                             >
                                 {filter === cat.name && (
-                                    <motion.div
-                                        layoutId="activeTab"
-                                        className="absolute inset-0 bg-blue-600 -z-10 shadow-lg shadow-blue-600/20"
-                                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                                    />
+                                    <motion.div layoutId="activeTab" className="absolute inset-0 bg-blue-600 -z-10 shadow-lg shadow-blue-600/20" transition={{ type: "spring", stiffness: 300, damping: 30 }} />
                                 )}
                                 <cat.icon size={14} className={filter === cat.name ? "animate-pulse" : "group-hover:rotate-12 transition-transform"} />
                                 <span className="tracking-widest uppercase">{cat.name}</span>
@@ -174,54 +202,31 @@ export default function CustomGridPortfolio() {
                     </div>
                 </div>
 
-                <motion.div
-                    layout
-                    className={`${currentStyle.gridContainer} relative z-10`}
-                >
+
+                <motion.div layout className={`${currentStyle.gridContainer} relative z-10`}>
                     <AnimatePresence mode="popLayout">
-                        {filteredProjects.map((project) => {
-                            const aspectRatioClass = filter === "Website"
-                                ? (project.type === 'reels' ? 'aspect-[4/3]' : 'aspect-video')
-                                : '';
-
-                            const isVideo = project.image.endsWith(".mp4");
-                            const mediaClass = project.type === "reels"
-                                ? "w-full h-full object-contain"
-                                : currentStyle.imageClass;
-
-                            return (
-                                <motion.div
-                                    key={project.id}
-                                    layout
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    exit={{ opacity: 0, scale: 0.9 }}
-                                    transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
-                                    className={`relative group cursor-pointer overflow-hidden ${project.gridClass} ${currentStyle.cardClass} ${aspectRatioClass}`}
-                                >
-                                    <div className="w-full h-full">
-                                        {isVideo ? (
-                                            <video
-                                                src={project.image}
-                                                className={mediaClass}
-                                                autoPlay
-                                                loop
-                                                muted
-                                                playsInline
-                                            />
-                                        ) : (
-                                            <img
-                                                src={project.image}
-                                                className={mediaClass}
-                                                alt={project.title}
-                                            />
-                                        )}
-                                    </div>
-                                </motion.div>
-                            );
-                        })}
+                        {topProjects.map((project) => renderProjectCard(project))}
                     </AnimatePresence>
                 </motion.div>
+
+                <AnimatePresence>
+                    {bottomProjects.length > 0 && (
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 20 }}
+                            className=" pt-5 relative z-10"
+                        >
+                            {/* ده الـ Grid المنفصل الخاص بالجزء الجديد */}
+                            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                                <AnimatePresence mode="popLayout">
+                                    {bottomProjects.map((project) => renderProjectCard(project))}
+                                </AnimatePresence>
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+
             </div>
         </section>
     );

@@ -8,13 +8,6 @@ import { FiArrowRight } from "react-icons/fi";
 export default function CompactSalesClosing() {
     return (
         <section className="relative w-full py-10 sm:py-10 px-4 bg-transparent overflow-hidden" dir="rtl">
-            
-            {/* كلمة خلفية معبرة عن الهوية */}
-            <div className="absolute left-4 bottom-4 md:left-10 md:bottom-10 opacity-5 md:opacity-40 pointer-events-none z-0 overflow-hidden">
-                <p className="text-slate-800 text-[80px] sm:text-[100px] md:text-[150px] font-black leading-none select-none tracking-tighter">
-                    BRAND
-                </p>
-            </div>
 
             <div className="max-w-4xl mx-auto relative z-10 text-center">
                 

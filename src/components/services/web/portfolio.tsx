@@ -4,8 +4,10 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { ExternalLink, ArrowUpRight } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
-import proj1 from "../../../assets/ezz.png";
-import proj2 from "../../../assets/agro.png";
+import proj1 from "../../../assets/works/ezz-web.png";
+import proj2 from "../../../assets/works/agro/agro-web.jpg";
+import proj3 from "../../../assets/works/power_web.jpeg";
+import proj4 from "../../../assets/works/green-web.jpeg";
 
 // تعريف أنواع البيانات للكروت
 interface Project {
@@ -19,24 +21,31 @@ interface Project {
 const projects: Project[] = [
     {
         id: 1,
-        title: "مشروع إيز إكسبورت",
+        title: "عز إكسبورت",
         image: proj1,
         link: "https://ezzexport.com",
         color: "#2563eb"
     },
     {
         id: 2,
-        title: "بن دودو كوفي",
+        title: "اجرو مارت",
         image: proj2,
-        link: "https://ezzexport.com",
+        link: "https://agromart-eg.com",
         color: "#7c3aed"
     },
     {
         id: 3,
-        title: "لوحة تحكم ذكية",
-        image: proj1,
-        link: "#",
+        title: "جرين باور",
+        image: proj3,
+        link: "https://agropower.site",
         color: "#06b6d4"
+    },
+    {
+        id: 4,
+        title: "اجرو جرين",
+        image: proj4,
+        link: "https://greenpower-eg.com",
+        color: "#10b981"
     }
 ];
 

@@ -83,17 +83,6 @@ export default function UltimateGrowthSection() {
                     ))}
                 </div>
 
-                {/* عرض أسماء الشركات */}
-                <div className="flex flex-col items-center border-t border-white/5 pt-16">
-                    <p className="text-neutral-600 text-[10px] font-black uppercase tracking-[0.5em] mb-12 text-center">Partnerships in Growth</p>
-                    <div className="flex flex-wrap justify-center gap-x-8 md:gap-x-16 gap-y-8 opacity-20 hover:opacity-50 transition-opacity duration-700">
-                        <span className="text-xl md:text-3xl font-black italic tracking-tighter">ELITE VENTURES</span>
-                        <span className="text-xl md:text-3xl font-black italic tracking-tighter">NEXUS RETAIL</span>
-                        <span className="text-xl md:text-3xl font-black italic tracking-tighter">CORE LOGIC</span>
-                        <span className="text-xl md:text-3xl font-black italic tracking-tighter">GLOBAL TECH</span>
-                    </div>
-                </div>
-
                 {/* --- Section: The Offer (The Premium Invite) --- */}
                 <div className="mt-20 md:mt-40">
                     <motion.div

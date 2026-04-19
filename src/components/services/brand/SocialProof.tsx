@@ -3,22 +3,28 @@
 import { motion } from "framer-motion";
 import { MoveLeft, Star, Briefcase, Quote } from "lucide-react";
 
+import brand1 from "../../../assets/works/pure/main.png";
+import brand2 from "../../../assets/works/dodo/main.png";
+import brand3 from "../../../assets/works/agro/main.png";
+import Image from "next/image";
+
+
 // المحتوى الأصلي بتاعك بالظبط بدون أي تغيير
 const projects = [
   {
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2064&auto=format&fit=crop",
-    title: "هوية ريادة Tech",
-    tag: "Brand Transformation"
+    image: brand1,
+    title: "PURE LAND",
+    tag: "Brand Identity"
   },
   {
-    image: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=2074&auto=format&fit=crop",
-    title: "ELITE Fintech",
-    tag: "Visual Strategy"
+    image: brand2,
+    title: "DODO CAFE",
+    tag: "Brand Identity"
   },
   {
-    image: "https://images.unsplash.com/photo-1633113087654-c49c686c2acf?q=80&w=2070&auto=format&fit=crop",
-    title: "CORE Solutions",
-    tag: "Digital Experience"
+    image: brand3,
+    title: "AGRO MART",
+    tag: "Brand Identity"
   }
 ];
 
@@ -75,7 +81,7 @@ export default function ArchitecturalWorkSection() {
             </motion.a>
           </div>
 
-          {/* --- صف الصور: ضبط توزيع الشبكة والحدود الفاصلة --- */}
+          {/* --- صف الصور: تم التعديل هنا ليتناسب مع مقاس 9:16 --- */}
           <div className="grid grid-cols-1 md:grid-cols-3 border-b border-white/5">
             {projects.map((project, i) => (
               <motion.div 
@@ -84,20 +90,21 @@ export default function ArchitecturalWorkSection() {
                 className={`relative group overflow-hidden border-white/5 
                   ${i !== projects.length - 1 ? 'border-b md:border-b-0 md:border-r' : ''}`}
               >
-                <div className="aspect-[4/5] md:aspect-[3/4]">
-                  <img 
+                {/* تم تعديل الـ aspect ratio هنا ليكون 9/16 لصور البورتريه */}
+                <div className="relative aspect-[9/16] w-full overflow-hidden">
+                  <Image 
                     src={project.image} 
                     alt={project.title} 
-                    className="absolute inset-0 w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" 
+                    fill
+                    className="absolute inset-0 w-full h-full object-cover" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
+                  {/* تدرج لوني أقوى قليلاً في الأسفل لضمان وضوح النص على خلفية الصور */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
                   
                   <div className="absolute bottom-6 right-6 left-6 md:bottom-8 md:right-8 md:left-8 text-right">
                     <span className="text-blue-500 font-bold text-[10px] uppercase tracking-widest mb-2 block">{project.tag}</span>
-                    <h3 className="text-2xl md:text-4xl font-black text-white leading-tight mb-4 md:mb-6 tracking-tighter">{project.title}</h3>
+                    <h3 className="text-2xl md:text-3xl font-black text-white leading-tight mb-4 md:mb-6 tracking-tighter">{project.title}</h3>
                     <div className="flex items-center gap-3 text-neutral-500 group-hover:text-blue-400 transition-colors">
-                       <span className="text-xs font-bold uppercase tracking-wider">تفاصيل المشروع</span>
-                       <MoveLeft size={16} className="group-hover:translate-x-[-5px] transition-transform" />
                     </div>
                   </div>
                 </div>
@@ -115,14 +122,14 @@ export default function ArchitecturalWorkSection() {
              <div className="flex-1 text-center md:text-right relative z-10">
                 <span className="text-blue-500/50 font-mono text-[10px] md:text-sm mb-4 block tracking-widest uppercase">The Lasting Impact</span>
                 <p className="text-2xl md:text-5xl font-black text-white tracking-tighter leading-[1.2] md:leading-[1.1]">
-                  "<span className="text-transparent bg-clip-text bg-gradient-to-l from-blue-300 to-white relative">الناس بقت بتاخدنا بجد</span> <br className="hidden md:block" /> 
-                  بعد ما غيرنا الهوية"
+                  "<span className="text-transparent bg-clip-text bg-gradient-to-l from-blue-300 to-white relative">هوية تليق</span> <br className="hidden md:block" /> 
+                  بسوق أوروبا"
                 </p>
              </div>
              
              <div className="flex flex-col items-center md:items-end gap-2 border-t md:border-t-0 md:border-r border-white/5 pt-8 md:pt-0 md:pr-10 text-center md:text-right relative z-10 w-full md:w-auto">
-                <span className="text-white font-black text-lg md:text-xl tracking-tight">أحمد الرويني</span>
-                <span className="text-neutral-500 text-xs md:text-sm font-medium">مدير تنفيذي - ELITE Tech</span>
+                <span className="text-white font-black text-lg md:text-xl tracking-tight">محمد سامي</span>
+                <span className="text-neutral-500 text-xs md:text-sm font-medium">مدير تنفيذي - AGRO MART</span>
                 <div className="flex gap-1 mt-4">
                     {[...Array(5)].map((_, i) => <Star key={i} size={14} className="text-blue-500 fill-blue-500" />)}
                 </div>

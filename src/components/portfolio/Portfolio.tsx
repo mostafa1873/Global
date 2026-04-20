@@ -56,6 +56,20 @@ const projects = [
     { id: 17, title: "Nexus Bottle", category: "packaging", image: "/works/dodo/cup.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
     { id: 18, title: "Nexus Bottle", category: "packaging", image: "/works/dodo/2.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
     { id: 19, title: "Nexus Bottle", category: "packaging", image: "/works/dodo/1.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
+    { id: 19.1, title: "Nexus Bottle", category: "packaging", image: "/works/agro/agro_in1.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
+    { id: 19.2, title: "Eco Box", category: "packaging", image: "/works/agro/agro_pac.jpeg", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
+    { id: 19.3, title: "Eco Box", category: "packaging", image: "/works/agro/agro_in.jpeg", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
+    { id: 19.4, title: "Nexus Bottle", category: "packaging", image: "/works/agro/agro_pac1.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
+
+    { id: 19.5, title: "Nexus Bottle", category: "packaging", image: "/works/agro/agro_min.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
+    { id: 19.6, title: "Eco Box", category: "packaging", image: "/works/agro/agro_all.jpeg", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
+    { id: 19.7, title: "Eco Box", category: "packaging", image: "/works/pure/pure_in.jpeg", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
+    { id: 19.8, title: "Nexus Bottle", category: "packaging", image: "/works/pure/pure_pac1.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
+    { id: 19.9, title: "Nexus Bottle", category: "packaging", image: "/works/pure/pure_in1.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
+    { id: 19.11, title: "Eco Box", category: "packaging", image: "/works/pure/pure_pac.jpeg", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
+    { id: 19.12, title: "Eco Box", category: "packaging", image: "/works/pure/pure_all.jpeg", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
+    { id: 19.13, title: "Nexus Bottle", category: "packaging", image: "/works/pure/pure_min.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
+
 
     { id: 20, title: "Core Render", category: "Social", image: "/works/elmaka/makaa.jpeg", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-1" },
     { id: 21, title: "Neon Concept", category: "Social", image: "/works/ezz_social1.jpeg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-1" },
@@ -75,10 +89,10 @@ const categories = [
 
 export default function CustomGridPortfolio() {
     const [filter, setFilter] = useState("Website");
-    
+
     // فلتر المشاريع بناءً على القسم
     const allFilteredProjects = projects.filter(p => p.category.toLowerCase() === filter.toLowerCase());
-    
+
     // فصلناهم لمجموعتين: الأساسية (اللي فوق) والثانوية (اللي تحت)
     const topProjects = allFilteredProjects.filter(p => p.section !== "bottom");
     const bottomProjects = allFilteredProjects.filter(p => p.section === "bottom");
@@ -120,7 +134,7 @@ export default function CustomGridPortfolio() {
     return (
         <section className="py-10 border-t border-white/5 px-6 lg:px-16 bg-transparent relative" dir="rtl">
             <div className="max-w-[1600px] mx-auto relative">
-                
+
                 {/* --- النصوص الجانبية الخاصة بقسم الموقع --- */}
                 <AnimatePresence>
                     {filter === "Website" && (

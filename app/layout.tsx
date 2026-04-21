@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/src/components/main/Navbar";
 import Footer from "@/src/components/main/Footer";
 import GlobalBackground from "@/src/components/main/GlobalBackground";
+import WhatsAppFloat from "@/src/components/main/WhatsAppFloat";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +37,7 @@ export default function RootLayout({
         <Navbar />
 
         <GlobalBackground />
+        <WhatsAppFloat />
         {children}
 
         <Footer />

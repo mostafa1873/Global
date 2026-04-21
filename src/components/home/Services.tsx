@@ -9,10 +9,10 @@ import {
 import Link from "next/link";
 import Image from "next/image"; // 1. استيراد مكون الصورة
 import { useRef, useState, useEffect } from "react";
-import web_img from "../../assets/web.jpeg";
-import social_img from "../../assets/social.jpeg";
-import paid_img from "../../assets/ads.jpeg";
-import brand_img from "../../assets/brand.jpeg";
+import web_img from "../../assets/web.png";
+import social_img from "../../assets/social.png";
+import paid_img from "../../assets/ads.png";
+import brand_img from "../../assets/brand.png";
 
 
 const services = [
@@ -184,7 +184,7 @@ export default function StackedServices() {
 
                             {/* محتوى الكرت المدمج */}
                             <div className={`flex flex-col lg:flex-row items-center gap-8 md:gap-12 relative z-10 ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
-                                
+
                                 {/* الجانب البصري - تم استبدال الأيقونة بصورة */}
                                 <div className="flex-1 w-full max-w-[180px] md:max-w-sm mx-auto">
                                     <div className={`relative aspect-square w-full rounded-[2.5rem] ${service.imageBg} border border-white/5 flex items-center justify-center group-hover:scale-105 transition-transform duration-700`}>

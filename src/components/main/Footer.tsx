@@ -50,11 +50,11 @@ export default function Footer() {
         {/* 2. أيقونات السوشيال ميديا (تصميم Minimalist) */}
         <div className="flex gap-4 justify-center mb-12">
           {[
-            { icon: <FaFacebookF size={16} />, href: "#" },
-            { icon: <FaInstagram size={16} />, href: "#" },
-            { icon: <FaTiktok size={16} />, href: "#" },
-            { icon: <FaLinkedinIn size={16} />, href: "#" },
-            { icon: <FaBehance size={16} />, href: "#" },
+            { icon: <FaFacebookF size={16} />, href: "https://web.facebook.com/GlobalNexus.Egypt/?rdid=8c2wIiGvCoqjjqIv" },
+            { icon: <FaInstagram size={16} />, href: "https://www.instagram.com/accounts/suspended/?next=https%3A%2F%2Fwww.instagram.com%2Fglobalnexus_eg%3Figsh%3DMWp5emNjaXdlb2g0cg%26__coig_ufac%3D1#" },
+            { icon: <FaTiktok size={16} />, href: "https://www.tiktok.com/@global.nexus5?is_from_webapp=1&sender_device=pc" },
+            { icon: <FaLinkedinIn size={16} />, href: "https://www.linkedin.com/company/globalnexus-eg/?viewAsMember=true" },
+            { icon: <FaBehance size={16} />, href: "https://www.behance.net/globa1nexus" },
           ].map((social, i) => (
             <Link
               key={i}

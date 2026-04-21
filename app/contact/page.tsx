@@ -84,11 +84,11 @@ export default function ContactPage() {
             {/* Social Icons Box */}
             <div className="md:col-span-2 bg-blue-600 rounded-3xl p-6 flex items-center justify-center gap-5 md:gap-6 flex-wrap">
               {[
-                { icon: <FaFacebookF size={20} />, url: "https://facebook.com/..." },
-                { icon: <FaInstagram size={22} />, url: "https://instagram.com/..." },
-                { icon: <FaTiktok size={22} />, url: "https://tiktok.com/..." },
-                { icon: <FaLinkedinIn size={22} />, url: "https://linkedin.com/in/..." },
-                { icon: <FaBehance size={24} />, url: "https://behance.net/..." },
+                { icon: <FaFacebookF size={20} />, url: "https://web.facebook.com/GlobalNexus.Egypt/?rdid=8c2wIiGvCoqjjqIv" },
+                { icon: <FaInstagram size={22} />, url: "https://www.instagram.com/accounts/suspended/?next=https%3A%2F%2Fwww.instagram.com%2Fglobalnexus_eg%3Figsh%3DMWp5emNjaXdlb2g0cg%26__coig_ufac%3D1#" },
+                { icon: <FaTiktok size={22} />, url: "https://www.tiktok.com/@global.nexus5?is_from_webapp=1&sender_device=pc" },
+                { icon: <FaLinkedinIn size={22} />, url: "https://www.linkedin.com/company/globalnexus-eg/?viewAsMember=true" },
+                { icon: <FaBehance size={24} />, url: "https://www.behance.net/globa1nexus" },
               ].map((social, i) => (
                 <a
                   key={i}

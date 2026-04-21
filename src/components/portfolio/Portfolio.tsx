@@ -71,13 +71,24 @@ const projects = [
     { id: 19.13, title: "Nexus Bottle", category: "packaging", image: "/works/pure/pure_min.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
 
 
-    { id: 20, title: "Core Render", category: "Social", image: "/works/elmaka/makaa.jpeg", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-1" },
-    { id: 21, title: "Neon Concept", category: "Social", image: "/works/ezz_social1.jpeg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-1" },
-    { id: 22, title: "Future Vision", category: "Social", image: "/works/ezz_social2.jpeg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-2" },
+    { id: 20, title: "Core Render", category: "Social", image: "/works/elmaka/makaa.jpg", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-1" },
+    { id: 21, title: "Neon Concept", category: "Social", image: "/works/w5.jpg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-1" },
+    { id: 22, title: "Future Vision", category: "Social", image: "/works/w8.jpg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-2" },
 
-    { id: 23, title: "Neon Concept", category: "Social", image: "/works/dodo/dodo_social1.jpeg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-3 lg:col-start-1" },
-    { id: 24, title: "Future Vision", category: "Social", image: "/works/dodo/dodo_social2.jpeg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-4 lg:col-start-1" },
-    { id: 25, title: "Core Render", category: "Social", image: "/works/pure/pure.jpeg", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-3 lg:col-start-8" },
+    { id: 23, title: "Neon Concept", category: "Social", image: "/works/dodo/w6.jpg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-3 lg:col-start-1" },
+    { id: 24, title: "Future Vision", category: "Social", image: "/works/dodo/w7.jpg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-4 lg:col-start-1" },
+    { id: 25, title: "Core Render", category: "Social", image: "/works/pure/pure.jpg", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-3 lg:col-start-8" },
+
+    { id: 26, title: "New 1", category: "Social", image: "/works/w2.jpg", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-5 lg:col-start-1" },
+    { id: 27, title: "New 2", category: "Social", image: "/works/w9.jpg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-5 lg:col-start-6" },
+    { id: 28, title: "New 3", category: "Social", image: "/works/w10.jpg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-6 lg:col-start-6" },
+
+    { id: 29, title: "New 4", category: "Social", image: "/works/w3.jpg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-7 lg:col-start-1" },
+    { id: 30, title: "New 5", category: "Social", image: "/works/w1.jpg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-8 lg:col-start-1" },
+    { id: 31, title: "New 6", category: "Social", image: "/works/w11.jpg", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-7 lg:col-start-8" },
+
+
+
 ];
 
 const categories = [

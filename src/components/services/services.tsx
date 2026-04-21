@@ -6,10 +6,10 @@ import { Code2, Share2, Megaphone, Palette, ArrowUpRight, CheckCircle2, Sparkles
 import Link from "next/link";
 import Image from "next/image"; // استيراد مكون الصورة من نيكست
 
-import web_img from "../../assets/web.jpeg";
-import social_img from "../../assets/social.jpeg";
-import paid_img from "../../assets/ads.jpeg";
-import brand_img from "../../assets/brand.jpeg";
+import web_img from "../../assets/web.png";
+import social_img from "../../assets/social.png";
+import paid_img from "../../assets/ads.png";
+import brand_img from "../../assets/brand.png";
 
 const services = [
     {

@@ -168,7 +168,7 @@ export default function StackedServices() {
                         <motion.div
                             initial={{ opacity: 0, y: 80 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "200px" }}
+                            viewport={{ once: true, margin: "100px" }}
                             transition={{ duration: 0.6 }}
                             style={{
                                 scale: isMobile ? 1 : 1 - (services.length - index) * 0.015,

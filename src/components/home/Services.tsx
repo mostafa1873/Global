@@ -109,8 +109,8 @@ export default function StackedServices() {
     });
 
     const xTransform = useTransform(
-        scrollYProgress ,
-      [0, 1],
+        scrollYProgress,
+        [0, 1],
         isMobile ? ["5%", "-5%"] : ["20%", "-20%"]
     );
 
@@ -149,7 +149,7 @@ export default function StackedServices() {
                             خدماتنا الإبداعية
                         </h2>
                         <motion.div
-                            animate={{ y: [0, 15, 0] }}
+                            animate={{ y: [0, 10, 0] }}
                             transition={{ repeat: Infinity, duration: isMobile ? 3 : 2 }}
                             className="mt-8 w-[1px] h-16 bg-gradient-to-b from-blue-500 to-transparent transform-gpu"
                         />
@@ -166,19 +166,16 @@ export default function StackedServices() {
                         style={{ top: `${12 + index * 3}%`, zIndex: index + 1 }}
                     >
                         <motion.div
-                            initial={{ opacity: 0, y: isMobile ? 20 : 80 }}
+                            initial={{ opacity: 0, y: 80 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
-                            transition={{ duration: 0.5 }}
+                            viewport={{ once: true, margin: "150px" }}
+                            transition={{ duration: 0.6 }}
                             style={{
                                 scale: isMobile ? 1 : 1 - (services.length - index) * 0.015,
                                 willChange: "transform, opacity",
-                                transformOrigin: "top center",
-                                WebkitBackfaceVisibility: "hidden",
-                                backfaceVisibility: "hidden",
-                                transform: isMobile ? "translateZ(0)" : undefined
+                                transformOrigin: "top center"
                             }}
-                            className={`relative w-full min-h-[450px] md:min-h-[550px] rounded-[2.5rem] md:rounded-[4rem] p-6 md:p-12 lg:p-16 border ${service.border} bg-gradient-to-br ${service.gradient} ${service.shadow} shadow-2xl ${isMobile ? 'backdrop-blur-md' : 'backdrop-blur-3xl'} overflow-hidden transform-gpu group`}
+                            className={`relative w-full min-h-[450px] md:min-h-[550px] rounded-[2.5rem] md:rounded-[4rem] p-6 md:p-12 lg:p-16 border ${service.border} bg-gradient-to-br ${service.gradient} ${service.shadow} shadow-2xl backdrop-blur-3xl overflow-hidden transform-gpu group`}
                         >
                             {/* تأثيرات الخلفية */}
                             <div className={`absolute inset-0 opacity-5 ${service.imageBg} pointer-events-none`} />
@@ -264,7 +261,7 @@ export default function StackedServices() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="relative z- pt-10 flex justify-center"
+                    className="relative z-[100] pt-10 flex justify-center"
                 >
                     <Link href="/services" className="group relative">
                         <div className="absolute inset-0 bg-blue-500/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />

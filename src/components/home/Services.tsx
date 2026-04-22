@@ -168,12 +168,15 @@ export default function StackedServices() {
                         <motion.div
                             initial={{ opacity: 0, y: isMobile ? 20 : 80 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.05 }}
+                            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
                             transition={{ duration: 0.5 }}
                             style={{
                                 scale: isMobile ? 1 : 1 - (services.length - index) * 0.015,
                                 willChange: "transform, opacity",
-                                transformOrigin: "top center"
+                                transformOrigin: "top center",
+                                WebkitBackfaceVisibility: "hidden",
+                                backfaceVisibility: "hidden",
+                                transform: isMobile ? "translateZ(0)" : undefined
                             }}
                             className={`relative w-full min-h-[450px] md:min-h-[550px] rounded-[2.5rem] md:rounded-[4rem] p-6 md:p-12 lg:p-16 border ${service.border} bg-gradient-to-br ${service.gradient} ${service.shadow} shadow-2xl ${isMobile ? 'backdrop-blur-md' : 'backdrop-blur-3xl'} overflow-hidden transform-gpu group`}
                         >

@@ -96,7 +96,7 @@ const services = [
 
 export default function StackedServices() {
     const containerRef = useRef(null);
-    const WHATSAPP_NUMBER = "201000000000";
+    const WHATSAPP_NUMBER = "";
 
     const [isMobile, setIsMobile] = useState(false);
     useEffect(() => {
@@ -168,7 +168,7 @@ export default function StackedServices() {
                         <motion.div
                             initial={{ opacity: 0, y: 80 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-10%" }}
+                            viewport={{ once: true, margin: "50px" }}
                             transition={{ duration: 0.7 }}
                             style={{
                                 scale: isMobile ? 1 : 1 - (services.length - index) * 0.015,

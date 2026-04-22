@@ -5,11 +5,11 @@ import Link from "next/link";
 
 // --- إعدادات ستايل كل قسم (تم حل مشكلة الاختفاء بإضافة ارتفاع أدنى وكلاس group) ---
 const categoryStyles: Record<string, any> = {
-"Website": {
+  "Website": {
     gridContainer: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 auto-rows-auto items-start",
     imageClass: "w-full h-full object-cover",
     cardClass: "relative rounded-[2.5rem] overflow-hidden"
-},
+  },
   "Branding": {
     gridContainer: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 auto-rows-[500px] lg:auto-rows-[750px]",
     imageClass: "w-full h-full object-contain p-4 md:p-8",
@@ -42,10 +42,27 @@ const projects = [
   { id: 12, title: "Eco Box", category: "packaging", image: "/works/mostafa/1.jpeg", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
 
   // Social
-  { id: 20, title: "Core Render", category: "Social", image: "/works/w2.jpg", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-1" },
-  { id: 21, title: "Neon Concept", category: "Social", image: "/works/w5.jpg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-1" },
-  { id: 22, title: "Future Vision", category: "Social", image: "/works/w8.jpg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-2" },
-
+  {
+    id: 20,
+    title: "Core Render",
+    category: "Social",
+    image: "/works/w2.jpg",
+    gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-1"
+  },
+  {
+    id: 21,
+    title: "Neon Concept",
+    category: "Social",
+    image: "/works/w5.jpg",
+    gridClass: "col-span-1 lg:col-span-7 h-[300px] lg:h-full lg:row-start-1" // ضفنا h-[300px] للموبايل
+  },
+  {
+    id: 22,
+    title: "Future Vision",
+    category: "Social",
+    image: "/works/w8.jpg",
+    gridClass: "col-span-1 lg:col-span-7 h-[300px] lg:h-full lg:row-start-2" // ضفنا h-[300px] للموبايل
+  },
 ];
 
 export default function BentoWorkSection() {

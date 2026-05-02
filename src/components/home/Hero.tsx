@@ -91,10 +91,10 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          <motion.h2 initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="text-[2.8rem] sm:text-6xl md:text-[8.5rem] font-black text-white leading-[1.1] md:leading-[0.95] tracking-tighter">
-            حلقة الوصل<br />
+          <motion.h2 initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="text-[2.3rem] sm:text-6xl md:text-[7rem] font-black text-white leading-[1.1] md:leading-[0.95] tracking-tighter">
+            Where the <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-l from-white via-nexus-blue to-white">
-              بينك وبين عملائك
+              real value is created
             </span>
           </motion.h2>
         </div>
@@ -102,13 +102,13 @@ export default function Hero() {
         {/* النص والزراير */}
         <div className="w-full max-w-3xl flex flex-col items-center space-y-10 md:space-y-0">
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.5 }} className="text-nexus-gray/90 text-[1.1rem] md:text-2xl font-light leading-relaxed text-center border-y-2 py-4 border-nexus-blue/40 px-4 md:px-8">
-            في <span className="text-white font-medium italic">GLOBAL NEXUS</span> مش بس بنعملك موقع أو حملة إعلانية؛ إحنا بنصمم "تجربة" تفرق في عملك وتخليك الاختيار الأول لعملائك.
+            في <span className="text-white font-medium italic">GLOBAL NEXUS</span> نبتكر أنظمة نمو رقمية متكاملة تضمن لأعمالك الاستمرارية وتحقيق نتائج ملموسة تعكس حجم طموحك.
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }} className="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-10 w-full pt-0 md:pt-8 px-4 sm:px-0">
 
-            <button className="group relative w-full sm:w-auto py-4 px-8 sm:px-12 flex items-center justify-center transition-all duration-300 bg-white/5 md:bg-transparent border border-white/10 sm:border-none rounded-xl sm:rounded-none">
-              <span className="relative z-10 text-white font-black text-[13px] sm:text-sm uppercase tracking-[0.2em] group-hover:text-white transition-colors duration-500">ابدأ الرحلة</span>
+            <button className="group relative w-full sm:w-auto py-3 px-8 sm:px-12 flex items-center justify-center transition-all duration-300 bg-white/5 md:bg-transparent border border-white/10 sm:border-none rounded-xl sm:rounded-none">
+              <span className="relative z-10 text-white font-black text-[13px] sm:text-sm uppercase tracking-[0.2em] group-hover:text-white transition-colors duration-500">ابدأ الرحلة النمو</span>
               <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-white/20 group-hover:border-nexus-blue group-hover:w-full group-hover:h-full transition-all duration-500 rounded-tr-xl"></div>
               <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-white/20 group-hover:border-nexus-blue group-hover:w-full group-hover:h-full transition-all duration-500 rounded-bl-xl"></div>
               <div className="absolute inset-0 bg-nexus-blue scale-x-0 group-hover:scale-x-100 origin-right transition-transform duration-500 rounded-xl"></div>
@@ -116,7 +116,7 @@ export default function Hero() {
 
             <button className="group relative flex items-center justify-between sm:justify-center w-full sm:w-auto gap-4 py-3 px-6 sm:px-4 border border-white/5 sm:border-none rounded-xl">
               <div className="flex flex-col items-end gap-1">
-                <span className="text-white font-black text-[13px] sm:text-sm uppercase tracking-[0.2em] group-hover:text-nexus-blue transition-colors duration-300">مشاهدة أعمالنا</span>
+                <span className="text-white font-black text-[13px] sm:text-sm uppercase tracking-[0.2em] group-hover:text-nexus-blue transition-colors duration-300">استعرض سابقة أعمالنا</span>
                 <div className="w-full h-[1px] bg-white/20 relative overflow-hidden">
                   <div className="absolute inset-0 bg-nexus-blue -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
                 </div>

@@ -20,10 +20,10 @@ const services = [
         id: "web-development",
         // icon: Code2, // 2. تعليق الأيقونة أو مسحها
         imageSrc: web_img, // 3. إضافة مسار الصورة الفعلي
-        title: "برمجة وتطوير المواقع",
+        title: "تطوير الأنظمة الذكية",
         titleEn: "Web Development",
-        philosophy: "موقعك هو \"المقر الرقمي\" لشركتك، مش مجرد \"بروشور\" أونلاين.",
-        description: "نحن لا نبني مجرد أكواد، بل نصمم أدوات نمو ذكية تعمل لصالحك على مدار الساعة.",
+        philosophy: "موقعك هو \"المحرك الرقمي\" لأعمالك، وليس مجرد \"واجهة \" للعرض .",
+        description: "نحن لا نكتب أكواداً برمجية فحسب، بل نصمم أدوات نمو تقنية تعمل لصالحك على مدار الساعة لتنظيم أعمالك وزيادة كفاءتها.",
         details: [
             { title: "مواقع بتبيع 24/7", desc: "تصميم مخصص لتحويل الزوار لعملاء محتملين." },
             { title: "سرعة وأداء عالمي", desc: "استخدام أحدث التقنيات لضمان تجربة مستخدم البرق." }
@@ -39,10 +39,10 @@ const services = [
         id: "social-media",
         // icon: Share2,
         imageSrc: social_img,
-        title: "إدارة السوشيال ميديا",
+        title: "إدارة الظهور الرقمي",
         titleEn: "Social Media Management",
-        philosophy: "ابني \"هيبة\" لبراندك وخلي اسمك هو أول حاجة تيجي في بال العميل.",
-        description: "التواجد الرقمي ليس مجرد نشر بوستات، بل هو فن بناء المجتمعات المخلصة لعلامتك التجارية.",
+        philosophy: "رسّخ مكانة \"علامتك التجارية\" لتكون الأولوية الأولى في ذهن عملائك. ",
+        description: "التواجد الرقمي الفعّال يتجاوز مجرد النشر، نحن نبني استراتيجيات محتوى متكاملة تحول جمهورك إلى مجتمع مخلص لعلامتك التجارية، مع ضمان وصول رسالتك للفئة المستهدفة بدقة.",
         details: [
             { title: "إستراتيجية مش عشوائية", desc: "خطة محتوى متكاملة تخاطب احتياجات عميلك بدقة." },
             { title: "محتوى مرئي وقصصي", desc: "رواية قصة نجاحك من خلال فيديوهات وتصاميم تخطف العين." }
@@ -60,8 +60,8 @@ const services = [
         imageSrc: paid_img,
         title: "الإعلانات الممولة",
         titleEn: "Paid Ads",
-        philosophy: "استثمارك في الإعلانات لازم يرجعلك أضعاف، مش مجرد \"لايكات\" وهمية.",
-        description: "نحول ميزانيتك الإعلانية من 'مصروفات' إلى 'استثمار' حقيقي يظهر أثره في حسابك البنكي.",
+        philosophy: "حوّل ميزانيتك التسويقية إلى عوائد\"ربحية ملموسة.",
+        description: "نحن لا ندير حملات إعلانية فقط، بل نصمم استراتيجيات ذكية تضمن أعلى معدل تحويل وتحقق نموًا فعليًا لأعمالك.",
         details: [
             { title: "استهداف بالمسطرة", desc: "الوصول للعميل المهتم فعلاً بناءً على بيانات دقيقة." },
             { title: "شفافية كاملة (ROI)", desc: "تقرير دقيق لكل قرش اتصرف وجاب لك كام عميل." }
@@ -77,10 +77,10 @@ const services = [
         id: "branding",
         // icon: Palette,
         imageSrc: brand_img,
-        title: "البراندينج والهوية البصرية",
+        title: "تصميم الهوية البصرية",
         titleEn: "Branding & Identity",
-        philosophy: "البراند مش مجرد \"لوجو\"، ده الانطباع اللي بيسيبه اسمك في غيابك.",
-        description: "نحن نصمم الشخصية البصرية التي تجعل العميل يثق بك قبل أن ينطق بكلمة واحدة.",
+        philosophy: "هويتك هي الانطباع الأول الذي يحدد \"مكانتك\"،  قبل أن تبدأ الحديث.",
+        description: "نحن نبتكر شخصية بصرية متفردة تعكس قيم علامتك التجارية، وتخلق ترابطاً ذهنياً قوياً مع جمهورك المستهدف، لضمان حضور مميز يترك أثراً لا ينسى.",
         details: [
             { title: "هوية ليها \"روح\"", desc: "تصميم شعار وبالتة ألوان تعكس قيم وقوة شركتك." },
             { title: "سيكولوجية الألوان", desc: "اختيارات علمية تؤثر في قرار العميل النفسي لصالحك." }
@@ -146,7 +146,7 @@ export default function StackedServices() {
                             <span className="w-6 md:w-10 h-px bg-blue-500"></span>
                         </div>
                         <h2 className="text-5xl md:text-9xl font-black text-white tracking-tighter leading-none drop-shadow-2xl">
-                            خدماتنا الإبداعية
+                            حلولنا الاستراتيجية
                         </h2>
                         <motion.div
                             animate={{ y: [0, 10, 0] }}
@@ -237,7 +237,7 @@ export default function StackedServices() {
                                             href={`/services/${service.id}`}
                                             className="px-8 py-3 bg-white text-black rounded-xl font-bold text-sm hover:bg-slate-200 transition-all flex items-center justify-center gap-2"
                                         >
-                                            التفاصيل <ArrowUpRight size={18} />
+                                           استعرض منهجيتنا <ArrowUpRight size={18} />
                                         </Link>
                                         <a
                                             href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`أهلاً، أريد الاستفسار عن: ${service.title}`)}`}
@@ -245,7 +245,7 @@ export default function StackedServices() {
                                             rel="noopener noreferrer"
                                             className="px-8 py-3 bg-blue-600/10 text-blue-400 border border-blue-500/20 rounded-xl font-bold text-sm hover:bg-blue-600 hover:text-white transition-all flex items-center justify-center gap-2"
                                         >
-                                            اطلب الآن <MessageCircle size={18} />
+                                           ابدأ التعاون الآن <MessageCircle size={18} />
                                         </a>
                                     </div>
                                 </div>

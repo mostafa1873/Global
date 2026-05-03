@@ -46,21 +46,21 @@ const projects = [
     id: 20,
     title: "Core Render",
     category: "Social",
-    image: "/works/w2.webp",
+    image: "/works/social/w2.webp",
     gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-1"
   },
   {
     id: 21,
     title: "Neon Concept",
     category: "Social",
-    image: "/works/w5.webp",
+    image: "/works/social/w5.webp",
     gridClass: "col-span-1 lg:col-span-7 h-[300px] lg:h-full lg:row-start-1" // ضفنا h-[300px] للموبايل
   },
   {
     id: 22,
     title: "Future Vision",
     category: "Social",
-    image: "/works/w8.webp",
+    image: "/works/social/w8.webp",
     gridClass: "col-span-1 lg:col-span-7 h-[300px] lg:h-full lg:row-start-2" // ضفنا h-[300px] للموبايل
   },
 ];

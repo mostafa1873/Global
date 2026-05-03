@@ -9,10 +9,10 @@ import {
 import Link from "next/link";
 import Image from "next/image"; // 1. استيراد مكون الصورة
 import { useRef, useState, useEffect } from "react";
-import web_img from "../../assets/web.png";
-import social_img from "../../assets/social.png";
-import paid_img from "../../assets/ads.png";
-import brand_img from "../../assets/brand.png";
+import web_img from "../../../public/works/web.webp";
+import social_img from "../../../public/works/social.webp";
+import paid_img from "../../../public/works/ads.webp";
+import brand_img from "../../../public/works/brand.webp";
 
 
 const services = [

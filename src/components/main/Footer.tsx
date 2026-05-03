@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaTiktok, FaBehance } from "react-icons/fa";
-import logo from "../../assets/header.svg";
+import logo from "../../../public/works/header.webp";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -37,7 +37,7 @@ export default function Footer() {
                 src={logo}
                 alt="Global Nexus Logo"
                 fill
-                className="object-contain brightness-125"
+                className="object-contain"
                 priority
               />
             </motion.div>

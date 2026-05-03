@@ -6,10 +6,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { 
   Home, Users, Cpu, Briefcase, 
   BookOpen, MessageSquare, Languages, Menu, X, ArrowUpRight 
-} from "lucide-react"; // استبدلنا Globe بـ Languages
+} from "lucide-react"; 
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../../assets/header.webp";
+import logo from "../../../public/works/header.webp";
+
 
 export default function GlobalNavbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,19 +48,19 @@ export default function GlobalNavbar() {
       {/* --- Floating Pill Container --- */}
       <div className={`pointer-events-auto mx-auto max-w-[1400px] relative flex items-center justify-between h-[70px] md:h-[70px] rounded-[2.5rem] pl-2 pr-5 md:pl-4 md:pr-8 transition-all duration-700 ${
         scrolled 
-          ? "bg-white/20 backdrop-blur-xl border border-white/10 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.7)]" 
+          ? "bg-white/15 backdrop-blur-lg border border-white/10 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.7)]" 
           : "bg-white/10 backdrop-blur-md border border-white/10 shadow-lg"
       }`} dir="ltr">
         
         {/* 1. اللوجو */}
-        <div className="z-20 flex-shrink-0 transition-transform hover:scale-105 -ml-2 md:-ml-4">
+        <div className="z-20 flex-shrink-0 transition-transform hover:scale-105">
           <Link href="/" className="block">
             <div className="relative w-[160px] h-[60px] md:w-[200px] md:h-[70px]">
               <Image 
                 src={logo} 
                 alt="Nexus Logo" 
                 fill 
-                className="object-contain object-left brightness-200" 
+                className="object-contain " 
                 priority 
               />
             </div>

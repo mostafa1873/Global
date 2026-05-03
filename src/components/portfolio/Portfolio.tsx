@@ -30,65 +30,65 @@ const categoryStyles = {
 
 const projects = [
     // --- المجموعة الأولى (القديمة زي ما هي من غير أي تغيير) ---
-    { id: 1, title: "Elite Fintech", category: "Website", type: "web", image: "/works/ezz-web.png", gridClass: "col-span-1 md:col-span-1 lg:col-span-8 order-2 lg:order-none" },
-    { id: 2, title: "Agro Platform", category: "Website", type: "reels", image: "/works/ezz-reals.mp4", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 order-1 lg:order-none" },
-    { id: 3, title: "Elite Fintech", category: "Website", type: "reels", image: "/works/agro-reals.mp4", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 order-3 lg:order-none" },
-    { id: 4, title: "Agro Platform", category: "Website", type: "web", image: "/works/agro/agro-web.jpg", gridClass: "col-span-1 md:col-span-1 lg:col-span-8 order-4 lg:order-none" },
+    { id: 1, title: "Elite Fintech", category: "Website", type: "web", image: "/works/web/ezz-web.webp", gridClass: "col-span-1 md:col-span-1 lg:col-span-8 order-2 lg:order-none" },
+    { id: 2, title: "Agro Platform", category: "Website", type: "reels", image: "/works/web/ezz-reals.mp4", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 order-1 lg:order-none" },
+    { id: 3, title: "Elite Fintech", category: "Website", type: "reels", image: "/works/web/agro-reals.mp4", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 order-3 lg:order-none" },
+    { id: 4, title: "Agro Platform", category: "Website", type: "web", image: "/works/web/agro-web.webp", gridClass: "col-span-1 md:col-span-1 lg:col-span-8 order-4 lg:order-none" },
 
     // --- المجموعة الثانية (الجديدة في قسم منفصل) ---
     // ضفنا هنا section: "bottom" عشان نفصلهم تحت
-    { id: 4.1, title: "New Web Wide", category: "Website", type: "web", section: "bottom", image: "/works/power_web.jpeg", gridClass: "col-span-1 md:col-span-1 lg:col-span-8" },
-    { id: 4.2, title: "New Web Tall", category: "Website", type: "tall", section: "bottom", image: "/works/green_web.jpeg", gridClass: "col-span-1 md:col-span-1 lg:col-span-4" },
+    { id: 4.1, title: "New Web Wide", category: "Website", type: "web", section: "bottom", image: "/works/web/power_web.webp", gridClass: "col-span-1 md:col-span-1 lg:col-span-8" },
+    { id: 4.2, title: "New Web Tall", category: "Website", type: "tall", section: "bottom", image: "/works/web/green_web.webp", gridClass: "col-span-1 md:col-span-1 lg:col-span-4" },
 
-    { id: 5, title: "EZZ Exports", category: "Branding", image: "/works/main-c.png", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 lg:row-span-1" },
-    { id: 6, title: "Pure Land", category: "Branding", image: "/works/pure/main.png", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 lg:row-span-1" },
-    { id: 7, title: "Global Identity", category: "Branding", image: "/works/dodo/main.png", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 lg:row-span-1" },
-    { id: 8, title: "EZZ Exports", category: "Branding", image: "/works/agro/main.png", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 lg:row-span-1" },
-    { id: 9, title: "Pure Land", category: "Branding", image: "/works/main-a.png", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 lg:row-span-1" },
-    { id: 10, title: "Global Identity", category: "Branding", image: "/works/elmaka/main.png", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 lg:row-span-1" },
+    { id: 5, title: "EZZ Exports", category: "Branding", image: "/works/main-c.webp", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 lg:row-span-1" },
+    { id: 6, title: "Pure Land", category: "Branding", image: "/works/pure/main.webp", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 lg:row-span-1" },
+    { id: 7, title: "Global Identity", category: "Branding", image: "/works/dodo/main.webp", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 lg:row-span-1" },
+    { id: 8, title: "EZZ Exports", category: "Branding", image: "/works/agro/main.webp", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 lg:row-span-1" },
+    { id: 9, title: "Pure Land", category: "Branding", image: "/works/main-a.webp", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 lg:row-span-1" },
+    { id: 10, title: "Global Identity", category: "Branding", image: "/works/elmaka/main.webp", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 lg:row-span-1" },
 
-    { id: 11, title: "Nexus Bottle", category: "packaging", image: "/works/mostafa/2.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
-    { id: 12, title: "Eco Box", category: "packaging", image: "/works/mostafa/1.jpeg", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
-    { id: 14, title: "Eco Box", category: "packaging", image: "/works/mostafa/4.jpeg", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
-    { id: 13, title: "Nexus Bottle", category: "packaging", image: "/works/mostafa/3.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
-    { id: 15, title: "Nexus Bottle", category: "packaging", image: "/works/mostafa/6.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
-    { id: 16, title: "Eco Box", category: "packaging", image: "/works/mostafa/5.jpeg", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
-    { id: 17, title: "Nexus Bottle", category: "packaging", image: "/works/dodo/cup.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
-    { id: 18, title: "Nexus Bottle", category: "packaging", image: "/works/dodo/2.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
-    { id: 19, title: "Nexus Bottle", category: "packaging", image: "/works/dodo/1.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
-    { id: 19.1, title: "Nexus Bottle", category: "packaging", image: "/works/agro/agro_in1.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
-    { id: 19.2, title: "Eco Box", category: "packaging", image: "/works/agro/agro_pac.jpeg", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
-    { id: 19.3, title: "Eco Box", category: "packaging", image: "/works/agro/agro_in.jpeg", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
-    { id: 19.4, title: "Nexus Bottle", category: "packaging", image: "/works/agro/agro_pac1.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
+    { id: 11, title: "Nexus Bottle", category: "packaging", image: "/works/mostafa/2.webp", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
+    { id: 12, title: "Eco Box", category: "packaging", image: "/works/mostafa/1.webp", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
+    { id: 14, title: "Eco Box", category: "packaging", image: "/works/mostafa/4.webp", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
+    { id: 13, title: "Nexus Bottle", category: "packaging", image: "/works/mostafa/3.webp", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
+    { id: 15, title: "Nexus Bottle", category: "packaging", image: "/works/mostafa/6.webp", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
+    { id: 16, title: "Eco Box", category: "packaging", image: "/works/mostafa/5.webp", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
+    { id: 17, title: "Nexus Bottle", category: "packaging", image: "/works/dodo/cup.webp", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
+    { id: 18, title: "Nexus Bottle", category: "packaging", image: "/works/dodo/2.webp", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
+    { id: 19, title: "Nexus Bottle", category: "packaging", image: "/works/dodo/1.webp", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
+    { id: 19.1, title: "Nexus Bottle", category: "packaging", image: "/works/agro/agro_in1.webp", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
+    { id: 19.2, title: "Eco Box", category: "packaging", image: "/works/agro/agro_pac.webp", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
+    { id: 19.3, title: "Eco Box", category: "packaging", image: "/works/agro/agro_in.webp", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
+    { id: 19.4, title: "Nexus Bottle", category: "packaging", image: "/works/agro/agro_pac1.webp", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
 
-    { id: 19.5, title: "Nexus Bottle", category: "packaging", image: "/works/agro/agro_min.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
-    { id: 19.6, title: "Eco Box", category: "packaging", image: "/works/agro/agro_all.jpeg", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
-    { id: 19.7, title: "Eco Box", category: "packaging", image: "/works/pure/pure_in.jpeg", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
-    { id: 19.8, title: "Nexus Bottle", category: "packaging", image: "/works/pure/pure_pac1.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
-    { id: 19.9, title: "Nexus Bottle", category: "packaging", image: "/works/pure/pure_in1.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
-    { id: 19.11, title: "Eco Box", category: "packaging", image: "/works/pure/pure_pac.jpeg", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
-    { id: 19.12, title: "Eco Box", category: "packaging", image: "/works/pure/pure_all.jpeg", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
-    { id: 19.13, title: "Nexus Bottle", category: "packaging", image: "/works/pure/pure_min.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
+    { id: 19.5, title: "Nexus Bottle", category: "packaging", image: "/works/agro/agro_min.webp", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
+    { id: 19.6, title: "Eco Box", category: "packaging", image: "/works/agro/agro_all.webp", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
+    { id: 19.7, title: "Eco Box", category: "packaging", image: "/works/pure/pure_in.webp", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
+    { id: 19.8, title: "Nexus Bottle", category: "packaging", image: "/works/pure/pure_pac1.webp", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
+    { id: 19.9, title: "Nexus Bottle", category: "packaging", image: "/works/pure/pure_in1.webp", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
+    { id: 19.11, title: "Eco Box", category: "packaging", image: "/works/pure/pure_pac.webp", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
+    { id: 19.12, title: "Eco Box", category: "packaging", image: "/works/pure/pure_all.webp", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
+    { id: 19.13, title: "Nexus Bottle", category: "packaging", image: "/works/pure/pure_min.webp", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
+   
+  
+    { id: 20, title: "Core Render", category: "Social", image: "/works/elmaka/makaa.webp", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-1" },
+    { id: 21, title: "Neon Concept", category: "Social", image: "/works/social/w5.webp", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-1" },
+    { id: 22, title: "Future Vision", category: "Social", image: "/works/social/w8.webp", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-2" },
 
+    { id: 23, title: "Neon Concept", category: "Social", image: "/works/dodo/w6.webp", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-3 lg:col-start-1" },
+    { id: 24, title: "Future Vision", category: "Social", image: "/works/dodo/w7.webp", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-4 lg:col-start-1" },
+    { id: 25, title: "Core Render", category: "Social", image: "/works/pure/pure.webp", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-3 lg:col-start-8" },
+ 
+    { id: 26, title: "New 1", category: "Social", image: "/works/social/w2.webp", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-5 lg:col-start-1" },
+    { id: 27, title: "New 2", category: "Social", image: "/works/social/w9.webp", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-5 lg:col-start-6" },
+    { id: 28, title: "New 3", category: "Social", image: "/works/social/w10.webp", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-6 lg:col-start-6" },
 
-    { id: 20, title: "Core Render", category: "Social", image: "/works/elmaka/makaa.jpg", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-1" },
-    { id: 21, title: "Neon Concept", category: "Social", image: "/works/w5.jpg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-1" },
-    { id: 22, title: "Future Vision", category: "Social", image: "/works/w8.jpg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-2" },
+    { id: 29, title: "New 4", category: "Social", image: "/works/social/w3.webp", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-7 lg:col-start-1" },
+    { id: 30, title: "New 5", category: "Social", image: "/works/social/w1.webp", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-8 lg:col-start-1" },
+    { id: 31, title: "New 6", category: "Social", image: "/works/social/w11.webp", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-7 lg:col-start-8" },
 
-    { id: 23, title: "Neon Concept", category: "Social", image: "/works/dodo/w6.jpg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-3 lg:col-start-1" },
-    { id: 24, title: "Future Vision", category: "Social", image: "/works/dodo/w7.jpg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-4 lg:col-start-1" },
-    { id: 25, title: "Core Render", category: "Social", image: "/works/pure/pure.jpg", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-3 lg:col-start-8" },
-
-    { id: 26, title: "New 1", category: "Social", image: "/works/w2.jpg", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-5 lg:col-start-1" },
-    { id: 27, title: "New 2", category: "Social", image: "/works/w9.jpg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-5 lg:col-start-6" },
-    { id: 28, title: "New 3", category: "Social", image: "/works/w10.jpg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-6 lg:col-start-6" },
-
-    { id: 29, title: "New 4", category: "Social", image: "/works/w3.jpg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-7 lg:col-start-1" },
-    { id: 30, title: "New 5", category: "Social", image: "/works/w1.jpg", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-8 lg:col-start-1" },
-    { id: 31, title: "New 6", category: "Social", image: "/works/w11.jpg", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-7 lg:col-start-8" },
-
-
-
+ 
+ 
 ];
 
 const categories = [

@@ -4,10 +4,11 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { ExternalLink, ArrowUpRight } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
-import proj1 from "../../../assets/works/ezz-web.png";
-import proj2 from "../../../assets/works/agro/agro-web.jpg";
-import proj3 from "../../../assets/works/power_web.jpeg";
-import proj4 from "../../../assets/works/green-web.jpeg";
+import proj1 from "../../../../public/works/web/ezz-web.webp";
+import proj2 from "../../../../public/works/web/agro-web.webp";
+import proj3 from "../../../../public/works/web/power_web.webp";
+import proj4 from "../../../../public/works/web/green-web.webp";
+
 
 // تعريف أنواع البيانات للكروت
 interface Project {

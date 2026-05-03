@@ -5,13 +5,13 @@ import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 
 // استيراد صور البورتفوليو
-import img1 from "../../../public/works/main-a.png";
-import img2 from "../../../public/works/w11.jpg";
-import img3 from "../../../public/works/agro/main.png";
-import img4 from "../../../public/works/w2.jpg";
-import img5 from "../../../public/works/dodo/main.png";
-import img6 from "../../../public/works/pure/pure.jpg";
-import img7 from "../../../public/works/pure/main.png";
+import img1 from "../../../public/works/main-a.webp";
+import img2 from "../../../public/works/social/w11.webp";
+import img3 from "../../../public/works/agro/main.webp";
+import img4 from "../../../public/works/social/w2.webp";
+import img5 from "../../../public/works/dodo/main.webp";
+import img6 from "../../../public/works/pure/pure.webp";
+import img7 from "../../../public/works/pure/main.webp";
 
 
 

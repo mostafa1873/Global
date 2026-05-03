@@ -3,9 +3,10 @@
 import { motion } from "framer-motion";
 import { MoveLeft, Star, Briefcase, Quote } from "lucide-react";
 
-import brand1 from "../../../assets/works/pure/main.png";
-import brand2 from "../../../assets/works/dodo/main.png";
-import brand3 from "../../../assets/works/agro/main.png";
+import brand1 from "../../../../public/works/pure/main.webp";
+import brand2 from "../../../../public/works/dodo/main.webp";
+import brand3 from "../../../../public/works/agro/main.webp";
+
 import Image from "next/image";
 
 

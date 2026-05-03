@@ -4,11 +4,12 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 // اللوجوهات - تأكد من صحة المسارات عندك
-import client1 from "../../assets/logos/ezz.png";
-import client2 from "../../assets/logos/agro.png";
-import client3 from "../../assets/logos/pure.png";
-import client4 from "../../assets/logos/dodo.png";
-import client5 from "../../assets/logos/makaa.png";
+import client1 from "../../../public/works/logos/ezz.webp";
+import client2 from "../../../public/works/logos/agro.webp";
+import client3 from "../../../public/works/logos/pure.webp";
+import client4 from "../../../public/works/logos/dodo.webp";
+import client5 from "../../../public/works/logos/makaa.webp";
+
 
 const partners = [
     { img: client1, name: "Partner One", rotate: "-2deg" },

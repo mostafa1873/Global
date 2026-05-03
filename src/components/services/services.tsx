@@ -6,16 +6,16 @@ import { Code2, Share2, Megaphone, Palette, ArrowUpRight, CheckCircle2, Sparkles
 import Link from "next/link";
 import Image from "next/image"; // استيراد مكون الصورة من نيكست
 
-import web_img from "../../assets/web.png";
-import social_img from "../../assets/social.png";
-import paid_img from "../../assets/ads.png";
-import brand_img from "../../assets/brand.png";
+import web_img from "../../../public/works/web.webp";
+import social_img from "../../../public/works/social.webp";
+import paid_img from "../../../public/works/ads.webp";
+import brand_img from "../../../public/works/brand.webp";
 
 const services = [
     {
         id: "web-development",
         icon: Code2, // أبقيته للهيكل ولكن سنستخدم imageSrc
-        // ضع هنا مسار الصورة الخاصة ببرمجة المواقع، مثال: "/images/web-dev.png"
+        // ضع هنا مسار الصورة الخاصة ببرمجة المواقع، مثال: "/images/web-dev.webp"
         imageSrc: web_img,
         title: "برمجة وتطوير المواقع",
         titleEn: "Web Development",

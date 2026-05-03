@@ -29,38 +29,38 @@ const categoryStyles: Record<string, any> = {
 
 const projects = [
   // Website
-  { id: 1, title: "Elite Fintech", category: "Website", type: "web", image: "/works/ezz-web.png", gridClass: "col-span-1 md:col-span-1 lg:col-span-8 h-[300px] md:h-[500px] order-1 lg:order-none" },
-  { id: 2, title: "Agro Platform", category: "Website", type: "reels", image: "/works/ezz-reals.mp4", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 order-2 lg:order-none" },
+  { id: 1, title: "Elite Fintech", category: "Website", type: "web", image: "/works/web/ezz-web.webp", gridClass: "col-span-1 md:col-span-1 lg:col-span-8 h-[300px] md:h-[500px] order-1 lg:order-none" },
+  { id: 2, title: "Agro Platform", category: "Website", type: "reels", image: "/works/web/ezz-reals.mp4", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 order-2 lg:order-none" },
 
   // Branding
-  { id: 5, title: "EZZ Exports", category: "Branding", image: "/works/main-c.png", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 lg:row-span-1" },
-  { id: 6, title: "Pure Land", category: "Branding", image: "/works/pure/main.png", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 lg:row-span-1" },
-  { id: 7, title: "Global Identity", category: "Branding", image: "/works/dodo/main.png", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 lg:row-span-1" },
+  { id: 5, title: "EZZ Exports", category: "Branding", image: "/works/main-c.webp", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 lg:row-span-1" },
+  { id: 6, title: "Pure Land", category: "Branding", image: "/works/pure/main.webp", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 lg:row-span-1" },
+  { id: 7, title: "Global Identity", category: "Branding", image: "/works/dodo/main.webp", gridClass: "col-span-1 md:col-span-1 lg:col-span-4 lg:row-span-1" },
 
   // Packaging
-  { id: 11, title: "Nexus Bottle", category: "packaging", image: "/works/mostafa/2.jpeg", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
-  { id: 12, title: "Eco Box", category: "packaging", image: "/works/mostafa/1.jpeg", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
+  { id: 11, title: "Nexus Bottle", category: "packaging", image: "/works/mostafa/2.webp", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
+  { id: 12, title: "Eco Box", category: "packaging", image: "/works/mostafa/1.webp", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
 
   // Social
   {
     id: 20,
     title: "Core Render",
     category: "Social",
-    image: "/works/w2.jpg",
+    image: "/works/w2.webp",
     gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-1"
   },
   {
     id: 21,
     title: "Neon Concept",
     category: "Social",
-    image: "/works/w5.jpg",
+    image: "/works/w5.webp",
     gridClass: "col-span-1 lg:col-span-7 h-[300px] lg:h-full lg:row-start-1" // ضفنا h-[300px] للموبايل
   },
   {
     id: 22,
     title: "Future Vision",
     category: "Social",
-    image: "/works/w8.jpg",
+    image: "/works/w8.webp",
     gridClass: "col-span-1 lg:col-span-7 h-[300px] lg:h-full lg:row-start-2" // ضفنا h-[300px] للموبايل
   },
 ];

@@ -3,7 +3,7 @@
 export default function GlobalBackground() {
   return (
     // الخلفية السوداء الصريحة الأساسية - دي اللي هتقص الزيادات في الآخر
-    <div className="fixed inset-0 z-[-2] bg-black overflow-hidden pointer-events-none">
+    <div className="fixed inset-0 z- bg-black overflow-hidden pointer-events-none">
 
       {/* الجانب الأيسر - الإضاءة الزرقاء */}
       {/* التعديل: غيرنا overflow-hidden لـ overflow-visible عشان الدائرة متتقصش من النص */}

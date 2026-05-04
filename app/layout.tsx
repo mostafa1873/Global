@@ -5,6 +5,7 @@ import Navbar from "@/src/components/main/Navbar";
 import Footer from "@/src/components/main/Footer";
 import GlobalBackground from "@/src/components/main/GlobalBackground";
 import WhatsAppFloat from "@/src/components/main/WhatsAppFloat";
+import SmoothScroll from "@/src/components/main/SmoothScroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,25 +46,26 @@ export const metadata: Metadata = {
   },
 };
 
-  export default function RootLayout({
-    children,
-  }: Readonly<{
-    children: React.ReactNode;
-  }>) {
-    return (
-      <html lang="en">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          <Navbar />
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <SmoothScroll />
+        <Navbar />
 
-          <GlobalBackground />
-          <WhatsAppFloat />
-          {children}
+        <GlobalBackground />
+        <WhatsAppFloat />
+        {children}
 
-          <Footer />
+        <Footer />
 
-        </body>
-      </html>
-    );
+      </body>
+    </html>
+  );
 }

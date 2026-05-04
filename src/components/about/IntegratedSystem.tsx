@@ -33,11 +33,11 @@ export default function IntegratedFlow() {
             <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
 
             {/* رقم (03) المعتمد بنفس التنسيق */}
-            <div className="absolute left-4 bottom-4 md:left-10 md:bottom-10 opacity-5 md:opacity-40 pointer-events-none z-0">
+            {/* <div className="absolute left-4 bottom-4 md:left-10 md:bottom-10 opacity-5 md:opacity-40 pointer-events-none z-0">
                 <p className="text-slate-800 text-[80px] sm:text-[100px] md:text-[150px] font-black leading-none select-none tracking-tighter">
                     03
                 </p>
-            </div>
+            </div> */}
 
             <div className="max-w-5xl mx-auto relative z-10 w-full">
 
@@ -104,6 +104,7 @@ export default function IntegratedFlow() {
 
             {/* تأثير خلفية خفيف لكسر المساحات البيضاء */}
             <div className="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-64 bg-blue-600/10 blur-[120px] rounded-full pointer-events-none" />
+
 
         </section>
     );

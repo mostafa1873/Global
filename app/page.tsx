@@ -15,9 +15,9 @@ export default function Home() {
 
       <About />
 
-      <Services />
+      {/* <Services /> */}
 
-      <Works />
+      {/* <Works /> */}
 
       <BlogSection />
 

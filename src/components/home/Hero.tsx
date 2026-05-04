@@ -1,19 +1,7 @@
 "use client";
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { useEffect, useMemo, useState } from "react";
-import Image from "next/image";
-
-// استيراد صور البورتفوليو
-import img1 from "../../../public/works/main-a.webp";
-import img2 from "../../../public/works/social/w11.webp";
-import img3 from "../../../public/works/agro/main.webp";
-import img4 from "../../../public/works/social/w2.webp";
-import img5 from "../../../public/works/dodo/main.webp";
-import img6 from "../../../public/works/pure/pure.webp";
-import img7 from "../../../public/works/pure/main.webp";
-
-
+import { useEffect, useState } from "react";
 
 export default function Hero() {
   const mouseX = useMotionValue(0);
@@ -26,6 +14,7 @@ export default function Hero() {
   const parallaxY = useTransform(springY, (value) => value * -0.15);
 
   const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     handleResize();
@@ -42,38 +31,13 @@ export default function Hero() {
     };
   }, [mouseX, mouseY]);
 
-  const projects = [
-    { src: img1, width: "w-[150px] md:w-[260px]", ratio: "aspect-[9/16]" },
-    { src: img2, width: "w-[150px] md:w-[260px]", ratio: "aspect-[9/16]" },
-    { src: img3, width: "w-[150px] md:w-[260px]", ratio: "aspect-[9/16]" },
-    { src: img4, width: "w-[150px] md:w-[260px]", ratio: "aspect-[9/16]" },
-    { src: img5, width: "w-[150px] md:w-[260px]", ratio: "aspect-[9/16]" },
-    { src: img6, width: "w-[150px] md:w-[260px]", ratio: "aspect-[9/16]" },
-    { src: img7, width: "w-[150px] md:w-[260px]", ratio: "aspect-[9/16]" },
-  ];
-
-  const row1 = useMemo(() => [...projects, ...projects], []);
-  const reversedProjects = [...projects].reverse();
-  const row2 = useMemo(() => [...reversedProjects, ...reversedProjects], []);
-
   return (
-    <section className="relative min-h-screen w-full flex flex-col items-center overflow-hidden py-20 md:py-25" dir="rtl">
-
-      {/* 1. طبقة الإضاءة التفاعلية */}
-      <motion.div
-        style={{ x: springX, y: springY }}
-        className="absolute w-[300px] h-[300px] md:w-[700px] md:h-[700px] bg-nexus-blue/20 blur-[80px] md:blur-[150px] rounded-full pointer-events-none will-change-transform z-0"
-      />
-
-      {/* 2. الـ Grid الخفي (Noise) */}
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none z-0"></div>
-
-
+    <section className="relative min-h-screen w-full flex flex-col items-center overflow-hidden py-20 md:py-10" dir="rtl">
 
       {/* المحتوى الرئيسي للهيرو */}
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-16 flex flex-col items-center justify-center gap-12 mb-10 pt-5 md:pt-5">
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-16 flex flex-col items-center justify-center gap-5 md:gap-12 mb-5 pt-5 md:pt-25">
 
-        {/* 3. كلمة NEXUS */}
+        {/* كلمة NEXUS الخلفية */}
         <motion.div
           style={{ x: parallaxX, y: parallaxY }}
           className="absolute inset-0 flex items-center justify-center opacity-[0.04] select-none pointer-events-none z-0"
@@ -84,16 +48,21 @@ export default function Hero() {
         </motion.div>
 
         {/* العنوان والتاج */}
-        <div className="w-full space-y-6 md:space-y-8 mb-0 flex flex-col items-center text-center">
+        <div className="w-full space-y-4 md:space-y-8 mb-0 flex flex-col items-center text-center">
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
             <span className="text-nexus-blue font-mono tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-xs uppercase bg-white/[0.03] px-6 py-2 rounded-full border border-white/10 backdrop-blur-md inline-block">
               GLOBAL NEXUS • CREATIVE
             </span>
           </motion.div>
 
-          <motion.h2 initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="text-[2.3rem] sm:text-6xl md:text-[7rem] font-black text-white leading-[1.1] md:leading-[0.95] tracking-tighter">
+          <motion.h2
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-[2.3rem] sm:text-6xl md:text-[7rem] font-black text-white leading-tight md:leading-[0.95] tracking-tighter"
+          >
             Where the <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-l from-white via-nexus-blue to-white">
+            <span className="block md:inline text-transparent bg-clip-text [-webkit-background-clip:text] bg-gradient-to-l from-white via-nexus-blue to-white pb-2">
               real value is created
             </span>
           </motion.h2>
@@ -106,7 +75,7 @@ export default function Hero() {
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }} className="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-10 w-full pt-0 md:pt-8 px-4 sm:px-0">
-
+            {/* ... أزرار التحكم كما هي ... */}
             <button className="group relative w-full sm:w-auto py-3 px-8 sm:px-12 flex items-center justify-center transition-all duration-300 bg-white/5 md:bg-transparent border border-white/10 sm:border-none rounded-xl sm:rounded-none">
               <span className="relative z-10 text-white font-black text-[13px] sm:text-sm uppercase tracking-[0.2em] group-hover:text-white transition-colors duration-500">ابدأ الرحلة النمو</span>
               <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-white/20 group-hover:border-nexus-blue group-hover:w-full group-hover:h-full transition-all duration-500 rounded-tr-xl"></div>
@@ -125,46 +94,10 @@ export default function Hero() {
                 <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white rotate-180 transition-transform duration-500 group-hover:-translate-x-1"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
               </div>
             </button>
-
           </motion.div>
         </div>
       </div>
-
-      {/* 🔹 إضافة البورتفوليو المائل هنا (تحت المحتوى مباشرة) 🔹 */}
-      <div className="w-full flex flex-col gap-6 md:gap-8 relative z-20" dir="ltr">
-        {/* الصف العلوي */}
-        <div className="flex w-full overflow-visible">
-          <motion.div
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-            className="flex gap-3 md:gap-4 pr-4" // قللنا الـ gap هنا عشان الصور تلحم في بعض بشكل أشيك
-          >
-            {row1.map((item, i) => (
-              <div
-                key={`r1-${i}`}
-                className={`relative flex-shrink-0 rounded-[0.5rem] md:rounded-[1rem] overflow-hidden shadow-xl ${item.width} ${item.ratio}`}
-              >
-                <Image
-                  src={item.src}
-                  alt="project"
-                  fill
-                  className="object-cover" // كفر عشان الصورة تملى الـ 9:16 بالكامل
-                />
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </div>
-
-      {/* إطار ديكوري خفيف */}
-      <div className="absolute inset-4 md:inset-8 border border-white/[0.03] pointer-events-none rounded-[2rem] md:rounded-[3rem] z-0"></div>
-
-      <style jsx>{`
-        .border-text {
-          -webkit-text-stroke: 1px rgba(255,255,255,0.1);
-          color: transparent;
-        }
-      `}</style>
+      
     </section>
   );
 }

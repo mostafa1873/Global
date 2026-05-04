@@ -102,7 +102,7 @@ export default function GlobalNavbar() {
             href="/call"
             className="hidden lg:flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-full font-black text-[11px] uppercase tracking-widest transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:-translate-y-0.5"
           >
-            {lang === "AR" ? "احجز مكالمة" : "Book a call"}
+            {lang === "AR" ? "احجز استشارة" : "Book a call"}
             <ArrowUpRight size={16} />
           </Link>
 
@@ -192,7 +192,7 @@ export default function GlobalNavbar() {
                   onClick={() => setIsOpen(false)}
                   className="w-full flex items-center justify-center gap-2 py-5 bg-blue-600 text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-xl active:scale-95 transition-all"
                 >
-                  {lang === "AR" ? "احجز مكالمة" : "Book a Call"}
+                  {lang === "AR" ? "احجز استشارة" : "Book a Call"}
                   <ArrowUpRight size={18} />
                 </Link>
               </div>

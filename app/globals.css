@@ -13,14 +13,20 @@
   --color-nexus-glow: rgba(26, 95, 151, 0.15);
   /* لون الإضاءة */
 }
-html, body {
-  /* دي بتمنع المتصفح إنه يشد الصفحة لما توصل لآخرها */
-  overscroll-behavior: none;
-  
-  /* تأكيداً إن مفيش حاجة تخرج بالعرض */
+html {
+  /* دي أهم واحدة: بتمنع المتصفح إنه يغير حسابات الـ 100vh لما الـ bar يختفي */
+  height: -webkit-fill-available; 
+}
+
+body {
+  /* بنستخدم dvh (Dynamic Viewport Height) عشان يتوافق مع حركة الـ URL bar */
+  min-height: 100vh;
+  min-height: 100dvh; 
   overflow-x: hidden;
   
-  /* لو شغال على ايفون (Safari) ضيف دي كمان عشان تضمن الثبات */
-  position: relative;
-  height: 100%;
+}
+
+/* تأمين الـ Wrapper الرئيسي */
+main {
+  min-height: 100dvh;
 }

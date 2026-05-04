@@ -3,8 +3,10 @@
 export default function GlobalBackground() {
   return (
     // الخلفية السوداء الصريحة الأساسية - دي اللي هتقص الزيادات في الآخر
-    <div className="fixed inset-0 z- bg-black overflow-hidden pointer-events-none">
-
+    <div
+      className="fixed inset-0 -z-10 bg-black overflow-hidden pointer-events-none w-screen h-[100dvh]"
+      style={{ height: '100dvh' }} // تأكيد زيادة عشان المتصفحات القديمة
+    >
       {/* الجانب الأيسر - الإضاءة الزرقاء */}
       {/* التعديل: غيرنا overflow-hidden لـ overflow-visible عشان الدائرة متتقصش من النص */}
       <div className="absolute inset-y-0 left-0 w-1/2 overflow-x-visible">

@@ -12,7 +12,7 @@ export default function SmoothScroll() {
       wheelMultiplier: 0.8, 
       smoothWheel: true,
       syncTouch: true,
-      touchMultiplier: 2,
+      touchMultiplier: 1,
     });
 
     // التعديل هنا: خلينا الـ data نوعها any عشان TypeScript ميزعلش

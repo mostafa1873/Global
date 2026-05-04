@@ -12,7 +12,7 @@ export default function SmoothScroll() {
       wheelMultiplier: 1, // رجعناها لـ 1 عشان السرعة الطبيعية
       smoothWheel: true,
       syncTouch: true,
-      touchMultiplier: 2, // زودنا دي لـ 2 عشان اللمس على الموبايل يبقى خفيف وبيجري معاك
+      touchMultiplier: 18, // زودنا دي لـ 2 عشان اللمس على الموبايل يبقى خفيف وبيجري معاك
     });
 
     // التعديل هنا: خلينا الـ data نوعها any عشان TypeScript ميزعلش

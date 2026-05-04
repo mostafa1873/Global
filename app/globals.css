@@ -13,6 +13,7 @@
   --color-nexus-glow: rgba(26, 95, 151, 0.15);
   /* لون الإضاءة */
 }
+
 html {
   height: -webkit-fill-available;
   /* إجبار الخلفية تكون سوداء حتى لو الصفحة اتمطت */

@@ -27,7 +27,6 @@ body {
   /* اللون الأسود هنا هو اللي هيغطي ورا الـ GlobalBackground */
   margin: 0;
   padding: 0;
-  /* منع الارتداد (Bounce) اللي بيظهر الأبيض */
 }
 
 main {

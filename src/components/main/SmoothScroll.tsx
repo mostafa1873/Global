@@ -7,12 +7,12 @@ import { frame } from "framer-motion";
 export default function SmoothScroll() {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 3, // تبطيء السكرول
+      duration: 1.2, // قللنا الوقت لـ 1.2 عشان الاستجابة تبقى فورية وسريعة
       lerp: 0.1,
-      wheelMultiplier: 0.8, 
+      wheelMultiplier: 1, // رجعناها لـ 1 عشان السرعة الطبيعية
       smoothWheel: true,
       syncTouch: true,
-      touchMultiplier: 1,
+      touchMultiplier: 2, // زودنا دي لـ 2 عشان اللمس على الموبايل يبقى خفيف وبيجري معاك
     });
 
     // التعديل هنا: خلينا الـ data نوعها any عشان TypeScript ميزعلش

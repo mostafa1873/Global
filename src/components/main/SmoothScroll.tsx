@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Lenis from "lenis";
-import { frame } from "framer-motion"; // ضفنا دي عشان نربط الوقت
+import { frame } from "framer-motion";
 
 export default function SmoothScroll() {
   useEffect(() => {
@@ -13,12 +13,14 @@ export default function SmoothScroll() {
       smoothWheel: true,
     });
 
-    // التعديل هنا: بنخلي فريمر موشن هو اللي يحرك لينيس في كل فريم
-    function update(time: number) {
+    // التعديل هنا: خلينا الـ data نوعها any عشان TypeScript ميزعلش
+    // واخدنا منها الـ timestamp اللي Lenis محتاجه
+    function update(data: any) {
+      const time = typeof data === 'number' ? data : data.timestamp;
       lenis.raf(time);
     }
 
-    // ربط التيكر بتاع فريمر بالـ update بتاع لينيس
+    // ربط التيكر بتاع فريمر
     frame.update(update, true);
 
     function raf(time: number) {
@@ -33,5 +35,5 @@ export default function SmoothScroll() {
     };
   }, []);
 
-  return null; // مكون برمجي فقط مش بيبان في الشاشة
+  return null;
 }

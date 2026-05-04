@@ -14,19 +14,22 @@
   /* لون الإضاءة */
 }
 html {
-  /* دي أهم واحدة: بتمنع المتصفح إنه يغير حسابات الـ 100vh لما الـ bar يختفي */
-  height: -webkit-fill-available; 
+  height: -webkit-fill-available;
+  /* إجبار الخلفية تكون سوداء حتى لو الصفحة اتمطت */
+  background-color: #000 !important;
 }
 
 body {
-  /* بنستخدم dvh (Dynamic Viewport Height) عشان يتوافق مع حركة الـ URL bar */
   min-height: 100vh;
-  min-height: 100dvh; 
+  min-height: 100dvh;
   overflow-x: hidden;
-  
+  /* اللون الأسود هنا هو اللي هيغطي ورا الـ GlobalBackground */
+  margin: 0;
+  padding: 0;
+  /* منع الارتداد (Bounce) اللي بيظهر الأبيض */
+  overscroll-behavior-y: none;
 }
 
-/* تأمين الـ Wrapper الرئيسي */
 main {
   min-height: 100dvh;
 }

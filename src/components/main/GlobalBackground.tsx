@@ -8,8 +8,9 @@ export default function GlobalBackground() {
       className="fixed inset-0 -z-20 bg-black pointer-events-none w-full h-full"
       style={{ minHeight: '100dvh' }} 
     >
-      {/* طبقة سوداء إضافية عشان نضمن إن مفيش خرم إبرة أبيض يبان */}
-      <div className="absolute inset-0 bg-black -z-30" />
+      {/* التعديل السحري هنا وبس: الطبقة السوداء دي بدل ما هي على قد الشاشة، 
+          خليتها ممتدة لفوق وتحت بمسافة شاشة كاملة، عشان لو حصل أي سحب تلاقي سواد جاهز */}
+      <div className="absolute -top-[100vh] -bottom-[100vh] left-0 right-0 bg-black -z-30" />
 
       {/* الجانب الأيسر - الإضاءة الزرقاء */}
       <div className="absolute inset-y-0 left-0 w-1/2 overflow-x-visible">

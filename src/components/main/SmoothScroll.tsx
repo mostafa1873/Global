@@ -9,8 +9,10 @@ export default function SmoothScroll() {
     const lenis = new Lenis({
       duration: 3, // تبطيء السكرول
       lerp: 0.1,
-      wheelMultiplier: 0.5, 
+      wheelMultiplier: 0.8, 
       smoothWheel: true,
+      syncTouch: true,
+      touchMultiplier: 2,
     });
 
     // التعديل هنا: خلينا الـ data نوعها any عشان TypeScript ميزعلش

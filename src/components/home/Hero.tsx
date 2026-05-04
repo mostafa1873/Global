@@ -32,10 +32,10 @@ export default function Hero() {
   }, [mouseX, mouseY]);
 
   return (
-    <section className="relative min-h-screen w-full flex flex-col items-center overflow-hidden py-20 md:py-10" dir="rtl">
+    <section className="relative min-h-screen w-full flex flex-col items-center overflow-hidden py-10 md:py-10" dir="rtl">
 
       {/* المحتوى الرئيسي للهيرو */}
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-16 flex flex-col items-center justify-center gap-5 md:gap-12 mb-5 pt-5 md:pt-25">
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-16 flex flex-col items-center justify-center gap-5 md:gap-12 mb-0 pt-15 md:pt-25">
 
         {/* كلمة NEXUS الخلفية */}
         <motion.div

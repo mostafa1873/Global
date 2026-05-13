@@ -209,7 +209,7 @@ export default function Navbar() {
                   whileHover={{
                     scale: 1.02,
                     borderColor: "rgba(59, 130, 246, 0.5)",
-                    shadow: "0 0 25px rgba(59, 130, 246, 0.25)"
+                    boxShadow: "0 0 25px rgba(59, 130, 246, 0.25)" // التعديل المطلوب لـ Vercel هنا
                   }}
                   whileTap={{ scale: 0.98 }}
                   className="relative overflow-hidden flex items-center gap-3 px-7 py-3 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md text-white transition-all duration-300 group"

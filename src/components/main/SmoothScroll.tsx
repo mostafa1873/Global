@@ -19,16 +19,17 @@ export default function SmoothScroll() {
     // التعديل لحل مشكلة عدم الوصول لآخر الصفحة: تحديث المقاسات تلقائياً
     const resizeObserver = new ResizeObserver(() => {
       // التعديل هنا: نستخدم التنبؤ الآمن لضمان عدم حدوث TypeError إذا كان lenis لسه بيحمل
-      if (lenis && typeof lenis.update === 'function') {
-        lenis.update();
+      // (any) تم استخدام التبديل لنوع 
+      if (lenis && typeof (lenis as any).update === 'function') {
+        (lenis as any).update();
       }
     });
     resizeObserver.observe(document.body);
 
     // --- التعديل السحري الجديد لمراقبة التغييرات في صفحة الأعمال بدون تعديل كودها ---
     const mutationObserver = new MutationObserver(() => {
-      if (lenis && typeof lenis.update === 'function') {
-        lenis.update();
+      if (lenis && typeof (lenis as any).update === 'function') {
+        (lenis as any).update();
       }
     });
 

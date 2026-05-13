@@ -1,31 +1,20 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  Home, Users, Cpu, Briefcase, 
-  BookOpen, MessageSquare, Languages, Menu, X, ArrowUpRight 
-} from "lucide-react"; 
+import { Globe, Menu, X } from "lucide-react";
+import { FaFacebookF, FaInstagram, FaBehance, FaLinkedinIn } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../../../public/works/header.webp";
+import logo from "../../../public/works/header.webp"; // مسار اللوجو الفعلي في مشروعك الحالي
 
-
-export default function GlobalNavbar() {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [lang, setLang] = useState("AR");
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [lang, setLang] = useState("AR"); // الحفاظ على ستيت اللغة القديمة لترجمة الموقع
   const pathname = usePathname();
-
-  // منع السكرول عند فتح المنيو في الموبايل
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-  }, [isOpen]);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -33,171 +22,237 @@ export default function GlobalNavbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // تعديل: ربط الأسماء بمتغير اللغة lang عشان الترجمة تشتغل
+  useEffect(() => {
+    if (isOpen) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = 'unset';
+  }, [isOpen]);
+
+  // الداتا واللينكات القديمة بالظبط بدون أي تغيير ومربوطة بالترجمة ديناميكياً
   const navLinks = [
-    { name: lang === "AR" ? "الرئيسية" : "Home", href: "/", icon: <Home size={18} /> },
-    { name: lang === "AR" ? "عن الشركة" : "About", href: "/about", icon: <Users size={18} /> },
-    { name: lang === "AR" ? "خدماتنا" : "Services", href: "/services", icon: <Cpu size={18} /> },
-    { name: lang === "AR" ? "أعمالنا" : "Portfolio", href: "/portfolio", icon: <Briefcase size={18} /> },
-    { name: lang === "AR" ? "المدونة" : "Blog", href: "/blog", icon: <BookOpen size={18} /> },
-    { name: lang === "AR" ? "تواصل معنا" : "Contact", href: "/contact", icon: <MessageSquare size={18} /> },
+    { name: lang === "AR" ? "الرئيسية" : "Home", href: "/" },
+    { name: lang === "AR" ? "عن الشركة" : "About", href: "/about" },
+    { name: lang === "AR" ? "خدماتنا" : "Services", href: "/services" },
+    { name: lang === "AR" ? "أعمالنا" : "Portfolio", href: "/portfolio" },
+    { name: lang === "AR" ? "المدونة" : "Blog", href: "/blog" },
+    { name: lang === "AR" ? "تواصل معنا" : "Contact", href: "/contact" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[9999] pt-4 px-2 md:pt-6 md:px-8 pointer-events-none" dir={lang === "AR" ? "rtl" : "ltr"}>
-      {/* --- Floating Pill Container --- */}
-      <div className={`pointer-events-auto mx-auto max-w-[1400px] relative flex items-center justify-between h-[70px] md:h-[70px] rounded-[2.5rem] pl-2 pr-5 md:pl-4 md:pr-8 transition-all duration-700 ${
-        scrolled 
-          ? "bg-white/15 backdrop-blur-lg border border-white/10 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.7)]" 
-          : "bg-white/10 backdrop-blur-md border border-white/10 shadow-lg"
-      }`} dir="ltr">
-        
-        {/* 1. اللوجو */}
-        <div className="z-20 flex-shrink-0 transition-transform hover:scale-105">
-          <Link href="/" className="block">
-            <div className="relative w-[160px] h-[60px] md:w-[200px] md:h-[70px]">
-              <Image 
-                src={logo} 
-                alt="Nexus Logo" 
-                fill 
-                className="object-contain " 
-                priority 
-              />
-            </div>
-          </Link>
+    // الـ dir بيتغير ديناميكياً حسب اللغة لتنسيق النصوص مع الحفاظ على هيكل الديزاين
+    <nav className="fixed top-2 md:top-4 left-0 right-0 z-[100] px-2 md:px-8" dir={lang === "AR" ? "rtl" : "ltr"}>
+      <motion.div
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        className={`max-w-7xl mx-auto transition-all duration-500 ease-in-out ${scrolled
+          ? "bg-black/60 backdrop-blur-2xl border border-white/10 py-2 px-3 md:px-4 shadow-[0_20px_50px_rgba(0,21,106,0.3)]"
+          : "bg-black/40 py-3 px-4 md:py-4 md:px-5 border border-white/10"
+          } rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-between`}
+        dir="ltr" // ثابت ltr عشان ترتيب الديزاين يفضل (اللوجو شمال - اللينكات وسط - الأزرار يمين)
+      >
+        {/* Logo Section */}
+        <Link href="/" className="relative flex items-center group overflow-hidden shrink-0">
+          <motion.div whileHover={{ scale: 1.02 }} className="relative z-10 w-[120px] md:w-[190px]">
+            <Image src={logo} alt="Global Nexus Logo" width={190} height={80} className="w-full h-auto" priority />
+          </motion.div>
+        </Link>
+
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex items-center bg-white/5 rounded-full px-2 py-1 border border-white/5 relative">
+          {navLinks.map((link, index) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              className="relative px-5 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300"
+            >
+              <span className="relative z-10">{link.name}</span>
+              {hoveredIndex === index && (
+                <motion.span
+                  layoutId="nav-hover"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="absolute inset-0 bg-blue-600/20 rounded-full border border-blue-500/30"
+                  transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
+                />
+              )}
+            </Link>
+          ))}
         </div>
 
-        {/* 2. اللينكات - Desktop Only */}
-        <div className="hidden lg:flex absolute inset-0 items-center justify-center pointer-events-none">
-          <div className="flex items-center gap-1 pointer-events-auto p-1.5 bg-black/40 border border-white/5 rounded-full">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link 
-                  key={link.name} 
-                  href={link.href} 
-                  className={`px-5 py-2 rounded-full text-[11px] font-black uppercase tracking-widest transition-all duration-300 ${
-                    isActive 
-                      ? "bg-white text-black shadow-[0_0_15px_rgba(255,255,255,0.3)]" 
-                      : "text-slate-400 hover:text-white hover:bg-white/10"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* 3. أزرار الأكشن */}
-        <div className="flex items-center gap-2 md:gap-3 z-20">
-          <button 
+        {/* Actions Section */}
+        <div className="flex items-center gap-1.5 md:gap-3">
+          {/* زر تشغيل الترجمة وتغيير الستيت */}
+          <button
             onClick={() => setLang(lang === "AR" ? "EN" : "AR")}
-            className="hidden lg:flex items-center justify-center w-11 h-11 bg-black/40 border border-white/10 rounded-full text-slate-300 hover:text-white hover:border-white/30 transition-all"
+            className="hidden sm:flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full border border-white/10 bg-white/5 text-white hover:bg-blue-600 transition-all duration-300"
           >
-            <Languages size={18} />
+            <Globe size={16} />
           </button>
 
-          <Link 
+          {/* زر الأكشن متعدل باللينك والداتا القديمة (/call) وبنفس ديزاين الجديد بالظبط */}
+          <Link
             href="/call"
-            className="hidden lg:flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-full font-black text-[11px] uppercase tracking-widest transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:-translate-y-0.5"
+            className="relative group flex items-center justify-center gap-1.5 md:gap-3 bg-white text-black px-3 py-1.5 md:px-8 md:py-3.5 rounded-full text-[9px] md:text-sm font-black uppercase tracking-tight md:tracking-wider transition-all duration-300 shrink-0 shadow-[0_4px_12px_rgba(255,255,255,0.1)] active:scale-90"
           >
-            {lang === "AR" ? "احجز استشارة" : "Book a call"}
-            <ArrowUpRight size={16} />
+            {/* تأثير النبض - مخفي في الموبايل */}
+            <div className="absolute inset-0 rounded-full bg-white opacity-10 animate-pulse hidden md:block group-hover:hidden" />
+
+            <span className="relative z-10 flex items-center gap-1.5 md:gap-3">
+              {lang === "AR" ? "احجز استشارة" : "Book a call"}
+
+              {/* الدائرة والسهم: حجم ميني جداً للموبايل وحجم طبيعي للديسكطوب */}
+              <div className="relative w-4 h-4 md:w-7 md:h-7 bg-black rounded-full flex items-center justify-center transition-all duration-500 group-hover:bg-blue-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-2 h-2 md:w-3.5 md:h-3.5 group-hover:rotate-45 transition-transform duration-300"
+                >
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </div>
+            </span>
           </Link>
 
-          <button 
-            onClick={() => setIsOpen(true)}
-            className="lg:hidden flex items-center justify-center w-11 h-11 bg-blue-600 text-white rounded-full shadow-lg active:scale-95 transition-all"
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden p-2 text-white bg-white/5 rounded-xl border border-white/10 active:scale-90 transition-transform"
           >
-            <Menu size={20} />
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
-      </div>
+      </motion.div>
 
-      {/* --- Pop-up Menu (موبايل) --- */}
+      {/* --- Mobile Menu --- */}
       <AnimatePresence>
         {isOpen && (
-          <>
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setIsOpen(false)}
-              className="fixed inset-0 backdrop-blur-2xl z-[110] pointer-events-auto"
-            />
+          <motion.div
+            initial={{ clipPath: "circle(0% at 100% 0%)" }}
+            animate={{ clipPath: "circle(150% at 100% 0%)" }}
+            exit={{ clipPath: "circle(0% at 100% 0%)" }}
+            transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
+            className="fixed inset-0 bg-[#070707] z-[150] lg:hidden flex flex-col h-screen w-full overflow-hidden"
+          >
+            {/* Noise Background */}
+            <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 10 }}
-              className="fixed inset-x-4 top-5 bottom-5 border border-white/10 rounded-[2.5rem] z-[120] p-6 shadow-2xl pointer-events-auto flex flex-col justify-between"
-              dir={lang === "AR" ? "rtl" : "ltr"}
-            >
-              <div>
-                <div className="flex justify-between items-center mb-6" dir="ltr">
-                  <button 
-                    onClick={() => setIsOpen(false)}
-                    className="w-12 h-12 flex items-center justify-center bg-white/5 border border-white/10 rounded-full text-white"
-                  >
-                    <X size={24} />
-                  </button>
-                  <h3 className="text-white font-black text-lg tracking-tighter italic">GLOBAL NEXUS</h3>
-                </div>
+            {/* Header: Logo Left - Close Right */}
+            <div className="relative w-full flex justify-between items-center p-6 pt-8" dir="ltr">
+              <div className="flex-shrink-0">
+                <Image src={logo} alt="Logo" width={90} height={45} className="brightness-125" />
+              </div>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 border border-white/20 text-white active:scale-90 transition-all"
+              >
+                <X size={24} />
+              </button>
+            </div>
 
-                <div className="flex flex-col gap-1.5 py-2">
+            {/* Content Area */}
+            <div className="relative flex-1 flex flex-col justify-between px-8 pb-6 pt-2">
+
+              {/* Nav Links */}
+              {/* تم تثبيت dir="ltr" هنا عشان اللينكات والـ Menu تفضل ثابتة على اليمين في العربي والإنجليزي */}
+              <nav className="flex flex-col items-end w-full" dir="ltr">
+                <p className="text-blue-500 text-[10px] font-black tracking-[0.4em] uppercase mb-4 border-r-2 border-blue-500 pr-3">
+                  MENU
+                </p>
+                <div className="flex flex-col w-full">
                   {navLinks.map((link, i) => (
                     <motion.div
                       key={link.name}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.05 }}
+                      initial={{ x: 30, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ delay: 0.1 + i * 0.05 }}
+                      className="w-full border-b border-white/5 last:border-none"
                     >
-                      <Link 
+                      <Link
                         href={link.href}
                         onClick={() => setIsOpen(false)}
-                        className={`flex items-center justify-between p-4 rounded-2xl transition-all ${
-                          pathname === link.href 
-                            ? "bg-blue-600 text-white shadow-xl" 
-                            : "bg-white/5 text-slate-300 border border-white/5"
-                        }`}
+                        className="group flex flex-row-reverse items-center justify-start gap-4 py-3"
                       >
-                        <span className="text-sm font-black uppercase tracking-widest">{link.name}</span>
-                        {link.icon}
+                        <span className="text-3xl font-extrabold text-white uppercase tracking-tight group-hover:text-blue-500 transition-colors">
+                          {link.name}
+                        </span>
+                        <div className="h-1 w-1 rounded-full bg-blue-600 opacity-0 group-hover:opacity-100 transition-all" />
                       </Link>
                     </motion.div>
                   ))}
                 </div>
-              </div>
+              </nav>
 
-              {/* جزء الأكشن مع padding-bottom لضمان المسافة من تحت */}
-              <div className="mt-auto pb-8 flex flex-col gap-3">
-                 <div className="flex items-center p-1 bg-white/5 border border-white/10 rounded-2xl h-[60px]">
-                    <button 
-                      onClick={() => setLang("AR")}
-                      className={`flex-1 h-full rounded-xl flex items-center justify-center text-[10px] font-black uppercase tracking-[0.1em] transition-all duration-300 ${lang === "AR" ? "bg-white text-black shadow-lg" : "text-white"}`}
-                    >
-                      العربية
-                    </button>
-                    <button 
-                      onClick={() => setLang("EN")}
-                      className={`flex-1 h-full rounded-xl flex items-center justify-center text-[10px] font-black uppercase tracking-[0.1em] transition-all duration-300 ${lang === "EN" ? "bg-white text-black shadow-lg" : "text-white"}`}
-                    >
-                      English
-                    </button>
-                 </div>
+              {/* Footer Area */}
+              <div className="flex flex-col items-center gap-6 pb-4">
 
-                 <Link 
-                  href="/call"
-                  onClick={() => setIsOpen(false)}
-                  className="w-full flex items-center justify-center gap-2 py-5 bg-blue-600 text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-xl active:scale-95 transition-all"
+                {/* زر ترجمة المنيو للموبايل مربوط بالـ State بالظبط */}
+                {/* زر ترجمة المنيو للموبايل - ديزاين مودرن و Chic */}
+                <motion.button
+                  onClick={() => setLang(lang === "AR" ? "EN" : "AR")}
+                  whileHover={{
+                    scale: 1.02,
+                    borderColor: "rgba(59, 130, 246, 0.5)",
+                    boxShadow: "0 0 25px rgba(59, 130, 246, 0.25)"
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                  className="relative overflow-hidden flex items-center gap-3 px-7 py-3 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md text-white transition-all duration-300 group"
+                  dir="ltr"
                 >
-                  {lang === "AR" ? "احجز استشارة" : "Book a Call"}
-                  <ArrowUpRight size={18} />
-                </Link>
+                  {/* تأثير توهج خلفي ناعم يظهر مع الهوفر */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                  {/* حركة ذكية للأيقونة عند تغيير اللغة أو الهوفر */}
+                  <motion.div
+                    animate={{ rotate: lang === "AR" ? 0 : 185 }}
+                    transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                    className="text-blue-500 group-hover:text-blue-400 transition-colors"
+                  >
+                    <Globe size={16} />
+                  </motion.div>
+
+                  {/* نص أنيق بتباعد حروف بريميوم */}
+                  <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-gray-300 group-hover:text-white transition-colors">
+                    {lang === "AR" ? "ENGLISH VERSION" : "العربية"}
+                  </span>
+                </motion.button>
+
+                {/* السوشيال ميديا وحقوق الشركة */}
+                <div className="flex flex-col items-center gap-3">
+                  <div className="flex gap-8 items-center justify-center">
+                    {[
+                      { icon: FaFacebookF, link: "https://web.facebook.com/GlobalNexus.Egypt/?rdid=8c2wIiGvCoqjjqIv" },
+                      { icon: FaInstagram, link: "https://www.instagram.com/accounts/suspended/?next=https%3A%2F%2Fwww.instagram.com%2Fglobalnexus_eg%3Figsh%3DMWp5emNjaXdlb2g0cg%26__coig_ufac%3D1#" },
+                      { icon: FaBehance, link: "https://www.behance.net/globa1nexus" },
+                      { icon: FaLinkedinIn, link: "https://www.linkedin.com/company/globalnexus-eg/?viewAsMember=true" }
+                    ].map((social, i) => (
+                      <a
+                        key={i}
+                        href={social.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-500 hover:text-white transition-all duration-300 transform hover:scale-125 active:scale-90 text-xl"
+                      >
+                        {/* رندر الأيقونة الجديدة من مكتبة react-icons */}
+                        <social.icon />
+                      </a>
+                    ))}
+                  </div>
+
+                  <p className="text-[8px] text-gray-600 font-bold tracking-[0.4em] uppercase">
+                    © 2026 GLOBAL NEXUS
+                  </p>
+                </div>
               </div>
-            </motion.div>
-          </>
+
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </nav>

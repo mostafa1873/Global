@@ -35,7 +35,48 @@ export default function Footer() {
 
       <div className="container mx-auto px-6 relative z-10">
 
-        {/* 1. القسم العلوي: القوائم الأربعة */}
+        {/* 2. القسم السفلي: اللوجو والسوشيال ميديا */}
+        <div className="flex flex-col items-center text-center py-0 mb-5">
+          <Link href="/">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative w-[180px] h-[55px] md:w-[220px] md:h-[65px] mb-4"
+            >
+              <Image
+                src={logo}
+                alt="Global Nexus Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </motion.div>
+          </Link>
+
+          <p className="text-slate-400 text-xs md:text-sm font-medium leading-relaxed opacity-70 mb-6 max-w-sm md:max-w-md">
+            نبتكر حلولاً رقمية تعيد تعريف حضورك في السوق.
+          </p>
+
+          <div className="flex gap-6 justify-center mb-5">
+            {[
+              { icon: <FaFacebookF size={18} />, href: "https://web.facebook.com/GlobalNexus.Egypt/?rdid=8c2wIiGvCoqjjqIv" },
+              { icon: <FaInstagram size={18} />, href: "https://www.instagram.com/accounts/suspended/?next=https%3A%2F%2Fwww.instagram.com%2Fglobalnexus_eg%3Figsh%3DMWp5emNjaXdlb2g0cg%26__coig_ufac%3D1#" },
+              { icon: <FaTiktok size={18} />, href: "https://www.tiktok.com/@global.nexus5?is_from_webapp=1&sender_device=pc" },
+              { icon: <FaLinkedinIn size={18} />, href: "https://www.linkedin.com/company/globalnexus-eg/?viewAsMember=true" },
+              { icon: <FaBehance size={18} />, href: "https://www.behance.net/globa1nexus" },
+            ].map((social, i) => (
+              <Link
+                key={i}
+                href={social.href}
+                className="text-slate-500 hover:text-blue-500 transition-all duration-300 transform hover:scale-125"
+              >
+                {social.icon}
+              </Link>
+            ))}
+          </div>
+        </div>
+
         {/* التعديل: gap للموبايل فقط، و lg:gap-8 للاب توب كما كان */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 border-b border-white/5 pb-10">
 
@@ -45,14 +86,17 @@ export default function Footer() {
               <span className="w-1 h-3 bg-blue-500 rounded-full"></span>
               نظرة عامة
             </h3>
-            <ul className="flex flex-col gap-3">
+
+            <ul className="flex flex-row flex-wrap justify-center lg:justify-start gap-x-5 gap-y-2">
               {footerLinks.map((link) => (
-                <li key={link.name}>
+                <li key={link.name} className="relative group">
                   <Link
                     href={link.href}
-                    className="text-slate-400 text-xs hover:text-white transition-all duration-300 inline-block"
+                    className="text-slate-400 text-xs hover:text-white transition-all duration-300 inline-block relative"
                   >
                     {link.name}
+                    {/* سطر هوفر أنيق جداً تحت كل لينك */}
+                    <span className="absolute -bottom-1 right-0 w-0 h-[1px] bg-blue-500/50 transition-all duration-300 group-hover:w-full"></span>
                   </Link>
                 </li>
               ))}
@@ -111,47 +155,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* 2. القسم السفلي: اللوجو والسوشيال ميديا */}
-        <div className="flex flex-col items-center text-center py-10">
-          <Link href="/">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative w-[180px] h-[55px] md:w-[220px] md:h-[65px] mb-4"
-            >
-              <Image
-                src={logo}
-                alt="Global Nexus Logo"
-                fill
-                className="object-contain"
-                priority
-              />
-            </motion.div>
-          </Link>
-
-          <p className="text-slate-400 text-xs md:text-sm font-medium leading-relaxed opacity-70 mb-6 max-w-sm md:max-w-md">
-            نبتكر حلولاً رقمية تعيد تعريف حضورك في السوق.
-          </p>
-
-          <div className="flex gap-6 justify-center">
-            {[
-              { icon: <FaFacebookF size={18} />, href: "https://web.facebook.com/GlobalNexus.Egypt/?rdid=8c2wIiGvCoqjjqIv" },
-              { icon: <FaInstagram size={18} />, href: "https://www.instagram.com/accounts/suspended/?next=https%3A%2F%2Fwww.instagram.com%2Fglobalnexus_eg%3Figsh%3DMWp5emNjaXdlb2g0cg%26__coig_ufac%3D1#" },
-              { icon: <FaTiktok size={18} />, href: "https://www.tiktok.com/@global.nexus5?is_from_webapp=1&sender_device=pc" },
-              { icon: <FaLinkedinIn size={18} />, href: "https://www.linkedin.com/company/globalnexus-eg/?viewAsMember=true" },
-              { icon: <FaBehance size={18} />, href: "https://www.behance.net/globa1nexus" },
-            ].map((social, i) => (
-              <Link
-                key={i}
-                href={social.href}
-                className="text-slate-500 hover:text-blue-500 transition-all duration-300 transform hover:scale-125"
-              >
-                {social.icon}
-              </Link>
-            ))}
-          </div>
-        </div>
 
         {/* 3. الـ Copyright السفلي */}
         <div className="pt-6 border-t border-white/5 text-center relative z-10">

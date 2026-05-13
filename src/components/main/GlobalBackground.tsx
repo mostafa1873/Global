@@ -15,11 +15,11 @@ export default function GlobalBackground() {
       {/* الجانب الأيسر - الإضاءة الزرقاء */}
       <div className="absolute inset-y-0 left-0 w-1/2 overflow-x-visible">
         <div
-          className="absolute top-1 left-[-10%] -translate-y-1/2 w-[350px] h-[350px] md:w-[600px] md:h-[500px] rounded-full blur-[100px] opacity-40"
+          className="absolute top-1 left-[-10%] -translate-y-1/2 w-[350px] h-[350px] md:w-[600px] md:h-[500px] rounded-full blur-[100px] opacity-35"
           style={{ backgroundColor: "#00156a" }}
         />
         <div
-          className="absolute top-1 left-[-15%] -translate-y-1/2 w-[350px] h-[350px] md:w-[400px] md:h-[600px] rounded-full blur-[80px] opacity-30"
+          className="absolute top-1 left-[-15%] -translate-y-1/2 w-[350px] h-[350px] md:w-[400px] md:h-[600px] rounded-full blur-[80px] opacity-25"
           style={{ backgroundColor: "#00156a" }}
         />
       </div>
@@ -27,11 +27,11 @@ export default function GlobalBackground() {
       {/* الجانب الأيمن - الإضاءة الزرقاء */}
       <div className="absolute inset-y-0 right-0 w-1/2 overflow-x-visible">
         <div
-          className="absolute bottom-1 right-[-10%] translate-y-60 w-[350px] h-[350px] md:w-[600px] md:h-[500px] rounded-full blur-[100px] opacity-40"
+          className="absolute bottom-1 right-[-10%] translate-y-60 w-[350px] h-[350px] md:w-[600px] md:h-[500px] rounded-full blur-[100px] opacity-35"
           style={{ backgroundColor: "#00156a" }}
         />
         <div
-          className="absolute bottom-1 right-[-15%] translate-y-60 w-[350px] h-[350px] md:w-[400px] md:h-[600px] rounded-full blur-[80px] opacity-30"
+          className="absolute bottom-1 right-[-15%] translate-y-60 w-[350px] h-[350px] md:w-[400px] md:h-[600px] rounded-full blur-[80px] opacity-25"
           style={{ backgroundColor: "#00156a" }}
         />
       </div>

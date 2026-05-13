@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { ArrowLeft, Rocket, Users, Target, Briefcase, Layers } from "lucide-react";
+import Link from "next/link";
 
 export default function AboutSection() {
   return (
@@ -110,10 +111,13 @@ export default function AboutSection() {
           whileInView={{ opacity: 1 }}
           className="flex justify-center"
         >
-          <button className="group flex items-center gap-3 bg-white text-black px-8 py-4 rounded-2xl font-black text-sm hover:bg-blue-600 hover:text-white transition-all duration-500">
-            اكتشف منهجيتنا
-            <ArrowLeft size={18} className="group-hover:-translate-x-2 transition-transform" />
-          </button>
+          <Link href="/about">
+            <button className="group flex items-center gap-3 bg-white text-black px-8 py-4 rounded-2xl font-black text-sm hover:bg-blue-600 hover:text-white transition-all duration-500">
+              اكتشف منهجيتنا
+              <ArrowLeft size={18} className="group-hover:-translate-x-2 transition-transform" />
+            </button>
+          </Link>
+
         </motion.div>
 
       </div>

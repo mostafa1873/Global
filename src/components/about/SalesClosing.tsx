@@ -3,18 +3,11 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
-import { FiArrowRight } from "react-icons/fi";
+import { FiArrowLeft } from "react-icons/fi";
 
 export default function CompactSalesClosing() {
     return (
         <section className="relative w-full py-16 sm:py-24 px-4 bg-transparent overflow-hidden" dir="rtl">
-
-            {/* الرقم 05 المعتمد (Solid) - شمال تحت بوضوح متجاوب */}
-            {/* <div className="absolute left-4 bottom-4 md:left-10 md:bottom-10 opacity-5 md:opacity-40 pointer-events-none z-0 overflow-hidden">
-                <p className="text-slate-800 text-[80px] sm:text-[100px] md:text-[150px] font-black leading-none select-none tracking-tighter">
-                    05
-                </p>
-            </div> */}
 
             <div className="max-w-4xl mx-auto relative z-10 text-center">
 
@@ -43,7 +36,7 @@ export default function CompactSalesClosing() {
                         >
 
                             احجز استشارتك الآن
-                            <FiArrowRight className="text-2xl" />
+                            <FiArrowLeft className="text-2xl" />
 
                         </motion.button>
                     </Link>

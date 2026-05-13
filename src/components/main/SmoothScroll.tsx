@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Lenis from "lenis";
-import { frame } from "framer-motion";
+import { frame, cancelFrame } from "framer-motion"; // التعديل هنا: استدعاء cancelFrame لإلغاء الـ loop
 import { usePathname } from "next/navigation"; // التعديل المطلوب لمراقبة تغيير الصفحات
 
 export default function SmoothScroll() {
@@ -57,9 +57,10 @@ export default function SmoothScroll() {
     return () => {
       lenis.destroy();
       resizeObserver.disconnect(); // تنظيف الـ observer
-      mutationObserver.disconnect(); // تنظيف الـ mutation observer
+      mutationObserver.disconnect(); 
+      cancelFrame(update); 
     };
-  }, [pathname]); // إضافة pathname هنا بتخلي الـ Effect يعيد التشغيل ويصفر السكرول مع كل تنقل
+  }, [pathname]); 
 
   return null;
 }

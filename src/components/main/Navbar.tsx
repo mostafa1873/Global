@@ -64,10 +64,14 @@ export default function Navbar() {
               href={link.href}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className="relative px-5 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300"
+              // التعديل هنا: إضافة لون خفيف للينك النشط ليتميز عن الباقي
+              className={`relative px-5 py-2 text-sm font-medium transition-colors duration-300 ${
+                pathname === link.href ? "text-blue-400 font-semibold" : "text-gray-300 hover:text-white"
+              }`}
             >
               <span className="relative z-10">{link.name}</span>
-              {hoveredIndex === index && (
+              {/* التعديل هنا: الـ Pill الأزرق بيفضل ثابت على الصفحة الحالية ولما تعمل هوفر يروح مع الماوس ذكياً */}
+              {(hoveredIndex === index || (hoveredIndex === null && pathname === link.href)) && (
                 <motion.span
                   layoutId="nav-hover"
                   initial={{ opacity: 0 }}
@@ -179,10 +183,16 @@ export default function Navbar() {
                         onClick={() => setIsOpen(false)}
                         className="group flex flex-row-reverse items-center justify-start gap-4 py-3"
                       >
-                        <span className="text-3xl font-extrabold text-white uppercase tracking-tight group-hover:text-blue-500 transition-colors">
+                        {/* التعديل هنا: تلوين لينك الصفحة الحالية باللون الأزرق في قائمة الموبايل ليكون واضحاً */}
+                        <span className={`text-3xl font-extrabold uppercase tracking-tight group-hover:text-blue-500 transition-colors ${
+                          pathname === link.href ? "text-blue-500" : "text-white"
+                        }`}>
                           {link.name}
                         </span>
-                        <div className="h-1 w-1 rounded-full bg-blue-600 opacity-0 group-hover:opacity-100 transition-all" />
+                        {/* التعديل هنا: إظهار الدوت الزرقاء بشكل دائم للينك الصفحة الحالية في الموبايل */}
+                        <div className={`h-1 w-1 rounded-full bg-blue-600 transition-all ${
+                          pathname === link.href ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                        }`} />
                       </Link>
                     </motion.div>
                   ))}
@@ -199,7 +209,7 @@ export default function Navbar() {
                   whileHover={{
                     scale: 1.02,
                     borderColor: "rgba(59, 130, 246, 0.5)",
-                    boxShadow: "0 0 25px rgba(59, 130, 246, 0.25)"
+                    shadow: "0 0 25px rgba(59, 130, 246, 0.25)"
                   }}
                   whileTap={{ scale: 0.98 }}
                   className="relative overflow-hidden flex items-center gap-3 px-7 py-3 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md text-white transition-all duration-300 group"
@@ -223,7 +233,7 @@ export default function Navbar() {
                   </span>
                 </motion.button>
 
-                {/* السوشيال ميديا وحقوق الشركة */}
+                {/* .السوشيال ميديا وحقوق الشركة */}
                 <div className="flex flex-col items-center gap-3">
                   <div className="flex gap-8 items-center justify-center">
                     {[

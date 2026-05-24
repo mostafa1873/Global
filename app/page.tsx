@@ -1,12 +1,12 @@
 import WhyChooseUs from "@/src/components/home/WhyChooseUs";
 import Hero from "../src/components/home/Hero";
-// import Services from "../src/components/home/Services";
-import Testimonials from "../src/components/home/Testimonials";
-// import Works from "../src/components/home/works";
+import Services from "../src/components/home/Services";
 import About from "@/src/components/home/About";
-import BlogSection from "@/src/components/home/Blog";
-import SalesClosing from "@/src/components/about/SalesClosing";
-// import FinalCTA from "@/src/components/home/CTA";
+import HowWeWork from "@/src/components/home/HowWeWork";
+import WorkProcess from "@/src/components/home/WorkProcess";
+import TargetAudience from "@/src/components/home/TargetAudience";
+import Vision from "@/src/components/home/Vision";
+import CompactClosing from "@/src/components/home/CTA";
 
 export default function Home() {
   return (
@@ -16,19 +16,19 @@ export default function Home() {
 
       <About />
 
+      <Services />
+
+      <HowWeWork />
+
+      <WorkProcess />
+
       <WhyChooseUs />
 
-      {/* <Services /> */}
+      <TargetAudience />
 
-      {/* <Works /> */}
+      <Vision />
 
-      <BlogSection />
-
-      <Testimonials />
-
-      <SalesClosing />
-
-      {/* <FinalCTA /> */}
+      <CompactClosing /> 
 
     </main>
   );

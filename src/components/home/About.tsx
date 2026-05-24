@@ -5,6 +5,7 @@ import Link from "next/link";
 
 export default function AboutSection() {
   return (
+
     <section className="py-6 md:py-6 border-t border-white/5 relative overflow-hidden" dir="rtl">
       <div className="max-w-6xl mx-auto px-6 relative z-10">
 
@@ -16,7 +17,7 @@ export default function AboutSection() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/20 bg-blue-500/5 text-blue-500 text-[10px] font-bold uppercase tracking-[0.2em] mb-6"
           >
             <span className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-pulse" />
-            حكايتنا في كلمتين
+            من نحن
           </motion.div>
 
           <motion.h2
@@ -24,8 +25,8 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-black text-white leading-tight"
           >
-            شريكك الاستراتيجي  <br />
-            <span className="text-blue-600">للنمو</span>
+            نفكر في النمو بطريقة  <br />
+            <span className="text-blue-600">مختلفة</span>
           </motion.h2>
         </div>
 
@@ -38,7 +39,7 @@ export default function AboutSection() {
             className="md:col-span-2 text-center p-8 rounded-[2rem] bg-white/[0.02] border border-white/5 flex flex-col justify-center"
           >
             <p className="text-slate-400 text-lg md:text-xl font-light leading-relaxed">
-              ندرك أن السوق لم يعد بحاجة لمجرد إعلانات أو برمجيات تقليدية. في Global Nexus ندمج بين <span className="text-white font-medium">"التفكير التسويقي المبتكر"</span> و <span className="text-white font-medium">"الحلول البرمجية المتقدمة"</span> لبناء هوية رقمية متفردة تضعك في صدارة مجالك.
+             في Global Nexus نؤمن أن النمو الرقمي لا يعتمد فقط على الحملات التسويقية أو التصميم الجيد، بل على <span className="text-white font-medium">"بناء بيئة رقمية متكاملة "</span> تساعد الشركات على <span className="text-white font-medium">"تحسين حضورها وتنظيم عملياتها وتطوير علاقتها بعملائها"</span>.
 
             </p>
           </motion.div>
@@ -89,7 +90,7 @@ export default function AboutSection() {
             className="md:col-span-2 text-center p-8 rounded-[2rem] bg-white/[0.02] border border-white/5 flex flex-col justify-center"
           >
             <p className="text-slate-400 text-lg md:text-xl font-light leading-relaxed">
-              في Global Nexus هدفنا ليس مجرد ظهور<span className="text-white font-medium">"علامتك التجارية"</span> بل ترسيخ مكانتها <span className="text-white font-medium">"كقائد" </span>للسوق.
+              لهذا نعمل على تطوير حلول تجمع بين الهوية البصرية، التسويق الرقمي، المواقع الإلكترونية، وتجربة المستخدم لبناء <span className="text-white font-medium">"حضور رقمي "</span> يعكس  <span className="text-white font-medium">"قيمة الشركات " </span>بصورة أكثر احترافية ووضوحًا.
 
             </p>
           </motion.div>
@@ -122,5 +123,6 @@ export default function AboutSection() {
 
       </div>
     </section>
+
   );
 }

@@ -1,120 +1,130 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Share2, Megaphone, Cpu } from "lucide-react";
-import Link from "next/link";
 
 const services = [
-    {
-        id: "marketing-content",
-        icon: Share2,
-        title: "التسويق وصناعة المحتوى",
-        titleEn: "MARKETING & CONTENT CREATION",
-        description: "نقدم استراتيجيات محتوى متكاملة تهدف إلى تعزيز الهوية المؤسسية وبناء علاقة مستدامة مع الجمهور المستهدف، من خلال صياغة رسائل تسويقية إبداعية تحقق التأثير والانتشار المطلوب.",
-    },
-    {
-        id: "digital-advertising",
-        icon: Megaphone,
-        title: "الإعلانات والتسويق الرقمي",
-        titleEn: "DIGITAL ADS & MARKETING",
-        description: "إدارة الحملات الإعلانية المدفوعة عبر مختلف المنصات الرقمية بدقة عالية، مع التركيز على تحليل البيانات وتحسين العائد على الاستثمار لضمان الوصول للعملاء المحتملين بأعلى كفاءة ممكنة.",
-    },
-    {
-        id: "web-apps-development",
-        icon: Code2,
-        title: "تطوير المواقع والتطبيقات",
-        titleEn: "WEB & APP DEVELOPMENT",
-        description: "تطوير حلول ويب وتطبيقات هواتف ذكية متطورة تتميز بأداء فائق وتجربة مستخدم سلسة، مع الاعتماد على أحدث التقنيات البرمجية لدعم التحول الرقمي ونمو أعمالكم.",
-    },
-    {
-        id: "smart-solutions",
-        icon: Cpu,
-        title: "الأنظمة والحلول الذكية",
-        titleEn: "SMART SYSTEMS & SOLUTIONS",
-        description: "تصميم وتنفيذ الأنظمة التقنية والحلول الذكية المخصصة لأتمتة العمليات الإدارية والتشغيلية، مما يسهم في رفع الإنتاجية وتقليل التكاليف التشغيلية للمؤسسات.",
-    }
+  {
+    id: "01",
+    enTitle: "Branding & Visual Identity",
+    arTitle: "هويات بصرية تعكس قيمة العلامة التجارية",
+    desc: "نقوم بتطوير هويات بصرية تساعد الشركات على بناء حضور أكثر وضوحًا واحترافية واتساقًا عبر مختلف القنوات والمنصات الرقمية.",
+  },
+  {
+    id: "02",
+    enTitle: "Web Development",
+    arTitle: "مواقع إلكترونية مصممة للأداء وتجربة المستخدم",
+    desc: "نطور مواقع إلكترونية تجمع بين التصميم الحديث، الأداء السريع، وتجربة الاستخدام لدعم التحويل وتحسين الحضور الرقمي للشركات.",
+  },
+  {
+    id: "03",
+    enTitle: "Digital Marketing",
+    arTitle: "استراتيجيات تسويق تدعم الوصول والنمو",
+    desc: "نعمل على بناء حملات واستراتيجيات رقمية تساعد الشركات على تحسين الوصول، تعزيز التفاعل، ودعم اكتساب العملاء بطريقة أكثر كفاءة.",
+  },
+  {
+    id: "04",
+    enTitle: "CRM & Business Systems",
+    arTitle: "أنظمة تساعد الشركات على تنظيم العمليات وإدارة العملاء",
+    desc: "نطور حلولًا تساعد الشركات على متابعة العملاء وتنظيم البيانات وتحسين سير العمل بما يدعم الكفاءة التشغيلية.",
+  },
+  {
+    id: "05",
+    enTitle: "Mobile Applications",
+    arTitle: "تطبيقات رقمية تدعم تجربة المستخدم",
+    desc: "نقوم بتطوير تطبيقات تساعد الشركات على تقديم تجربة أكثر مرونة وسهولة لعملائها عبر مختلف الأجهزة.",
+  },
+  {
+    id: "06",
+    enTitle: "UI / UX Design",
+    arTitle: "تجارب استخدام أكثر وضوحًا وفعالية",
+    desc: "نصمم واجهات وتجارب استخدام تركز على سهولة التفاعل وتحسين تجربة العميل ودعم الأهداف التجارية.",
+  }
 ];
 
-export default function ServicesShowcase() {
-    return (
-        <section className="py-10 overflow-hidden relative border-t border-white/5" dir="rtl">
+export default function Services() {
+  // أنيميشن كارت الشاشة الناعم للظهور عند السكرول
+  const cardVariant = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }
+    })
+  };
 
-            <div className="container mx-auto px-6 md:px-12 lg:px-16 max-w-7xl relative z-10">
+  return (
+    <section className="relative w-full py-10 border-t border-white/5 overflow-hidden z-10 select-none" dir="rtl">
+      
 
-                <div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-6xl font-black tracking-wider text-white uppercase select-none">
-                        OUR SERVICES
-                    </h2>
-                </div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-nexus-blue/[0.02] blur-[150px] rounded-full pointer-events-none z-0 transform-gpu translate-z-0 will-change-transform" />
 
-                {/* شبكة الكروت الـ Grid - متجاوبة بالكامل */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-                    {services.map((service, index) => {
-                        const IconComponent = service.icon;
-                        return (
-                            <Link
-                                href={`/services/${service.id}`}
-                                key={service.id}
-                                className="block group cursor-pointer outline-none transform-gpu will-change-transform"
-                            >
-                                {/* الكارت - تم إضافة transform-gpu لتحسين سلاسة السكرول */}
-                                <div className="relative h-full bg-gradient-to-b from-[#051236] to-[#020512] border border-blue-500/20 rounded-[2.5rem] p-8 md:p-14 flex flex-col items-center text-center transition-all duration-500 group-hover:border-blue-400/40 shadow-[0_25px_50px_rgba(0,0,0,0.7)] overflow-hidden transform-gpu">
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12">
+        
+        {/* هيدر السيكشن - متسنتر وشيك جداً ومظبوط ريسبونسف */}
+        <div className="max-w-3xl mx-auto mb-16 md:mb-24 flex flex-col items-center text-center space-y-5 transform-gpu">
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full border border-nexus-blue/20 bg-nexus-blue/5">
+            <span className="w-1.5 h-1.5 rounded-full bg-nexus-blue animate-pulse" />
+            <span className="text-nexus-blue font-mono tracking-widest text-xs uppercase pt-0.5">
+             منظومة الخدمات الرقمية
+            </span>
+          </div>
+          
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight select-text">
+            حلول رقمية مصممة <br className="hidden sm:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/50">
+              لدعم النمو
+            </span>
+          </h2>
+          
+          <p className="text-white/50 text-sm md:text-base font-light leading-relaxed max-w-2xl select-text pt-2">
+            نقدم مجموعة من الخدمات الرقمية التي تساعد الشركات على تطوير حضورها الرقمي وتحسين تجربة العملاء وبناء أنظمة تدعم التوسع والاستمرارية.
+          </p>
+        </div>
 
-                                    {/* الأيقونة العائمة المضيئة نيون في المنتصف */}
-                                    <motion.div
-                                        animate={{ y: [0, -8, 0] }}
-                                        transition={{
-                                            duration: 4,
-                                            repeat: Infinity,
-                                            ease: "easeInOut",
-                                            delay: index * 0.2
-                                        }}
-                                        className="transform-gpu will-change-transform relative mb-8 text-blue-400/90 group-hover:text-cyan-300 transition-colors duration-300"
-                                    >
-                                        {/* هالة الضوء الصغيرة الملازمة للأيقونة */}
-                                        <div className="absolute inset-0 bg-blue-500/20 blur-xl rounded-full transform-gpu" />
-                                        <IconComponent size={52} strokeWidth={1.1} className="relative z-10 drop-shadow-[0_0_15px_rgba(59,130,246,0.6)]" />
-                                    </motion.div>
+        {/* الشبكة الهندسية الصارمة والمتزنة (Grid) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service, index) => (
+            <motion.div
+              key={service.id}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-40px" }}
+              variants={cardVariant}
+              custom={index}
+              /* تم إضافة transform-gpu لمنع تهنيج الكروت أثناء السكرول */
+              className="group relative flex flex-col justify-between p-8 md:p-10 rounded-2xl border border-white/[0.06] bg-white/[0.01] hover:border-nexus-blue/30 hover:bg-white/[0.02] transition-all duration-500 h-full min-h-[320px] transform-gpu"
+            >
+              {/* تأثير التوهج الخلفي الناعم جداً اللي بينور جوه الكارت عند الـ Hover */}
+              <div className="absolute inset-0 bg-radial-gradient from-nexus-blue/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none transform-gpu" />
 
-                                    {/* العنوان الإنجليزي الصغير */}
-                                    <span className="text-[12px] font-black tracking-[0.2em] text-blue-400 uppercase mb-3 block opacity-90">
-                                        {service.titleEn}
-                                    </span>
+              {/* الجزء العلوي: الرقم والخط التعريفي - متسنتر في الموبايل بس */}
+              <div className="flex flex-col md:flex-row justify-center md:justify-between items-center md:items-start w-full mb-8 gap-3 md:gap-0">
+                <span className="font-mono text-xs text-white/30 uppercase tracking-widest border-b border-white/10 pb-1 text-center md:text-right">
+                  {service.enTitle}
+                </span>
+                <span className="font-mono text-lg text-white/10 group-hover:text-nexus-blue transition-colors duration-300 font-bold">
+                  {service.id}
+                </span>
+              </div>
 
-                                    {/* العنوان العربي */}
-                                    <h3 className="text-2xl md:text-3xl font-black text-white mb-5 tracking-tight group-hover:text-blue-400 transition-colors duration-300">
-                                        {service.title}
-                                    </h3>
+              {/* الجزء الأوسط والسفلي: النصوص مرتبة ومظبوطة في النص للموبايل */}
+              <div className="flex flex-col items-center md:items-start text-center md:text-right space-y-3 mt-auto select-text">
+                <h3 className="text-xl font-bold text-white group-hover:text-nexus-blue transition-colors duration-300 leading-snug">
+                  {service.arTitle}
+                </h3>
+                <p className="text-white/40 group-hover:text-white/60 transition-colors duration-300 text-sm font-light leading-relaxed">
+                  {service.desc}
+                </p>
+              </div>
 
-                                    {/* وصف الخدمة */}
-                                    <p className="text-slate-400/90 text-sm md:text-lg leading-relaxed font-normal max-w-md">
-                                        {service.description}
-                                    </p>
+              {/* خط ديكوري فخم جداً أسفل الكارت يضيء بالأزرق عند الـ Hover */}
+              <div className="absolute bottom-0 left-8 right-8 h-[1px] bg-gradient-to-r from-transparent via-nexus-blue/0 to-transparent group-hover:via-nexus-blue/40 transition-all duration-700 pointer-events-none transform-gpu" />
 
-                                </div>
-                            </Link>
-                        );
-                    })}
-                </div>
+            </motion.div>
+          ))}
+        </div>
 
-                {/* فوتر القسم السفلي */}
-                <div className="mt-10 text-center flex flex-col items-center gap-8">
-                    <h2 className="text-2xl md:text-5xl font-black tracking-wide text-white uppercase max-w-4xl opacity-95 select-none">
-                        EXPLORE OUR FULL RANGE OF SERVICES
-                    </h2>
-
-                    <Link href="/services" className="block cursor-pointer">
-                        <motion.button
-                            whileHover={{ scale: 1.04 }}
-                            whileTap={{ scale: 0.98 }}
-                            className="transform-gpu px-12 py-4 bg-white hover:bg-blue-600 text-black hover:text-white font-bold rounded-full transition-all duration-300 shadow-[0_6px_20px_rgba(255,255,255,0.1)] hover:shadow-[0_6px_25px_rgba(37,99,235,0.45)] text-sm md:text-base tracking-wide cursor-pointer"
-                        >
-                            Explore Our New Service
-                        </motion.button>
-                    </Link>
-                </div>
-
-            </div>
-        </section>
-    );
+      </div>
+    </section>
+  );
 }

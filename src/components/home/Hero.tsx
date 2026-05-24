@@ -1,104 +1,105 @@
 "use client";
 
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Hero() {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const springX = useSpring(mouseX, { stiffness: 40, damping: 20 });
-  const springY = useSpring(mouseY, { stiffness: 40, damping: 20 });
-
-  const parallaxX = useTransform(springX, (value) => value * -0.15);
-  const parallaxY = useTransform(springY, (value) => value * -0.15);
-
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseX.set(e.clientX - window.innerWidth / 2);
-      mouseY.set(e.clientY - window.innerHeight / 2);
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, [mouseX, mouseY]);
+  const fadeInVariant = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (delay: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }
+    })
+  };
 
   return (
-    <section className="relative min-h-screen w-full flex flex-col items-center overflow-hidden py-10 md:py-10" dir="rtl">
+    <section
+      className="relative h-screen w-full flex flex-col justify-center items-center overflow-hidden z-10 select-none"
+      dir="rtl"
+    >
 
-      {/* المحتوى الرئيسي للهيرو */}
-      {/* التعديل: زودنا pt-32 للموبايل عشان الكلام ينزل تحت اللوجو والمنيو اللي باينين في الصورة */}
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-16 flex flex-col items-center justify-center gap-10 md:gap-12 mb-5 pt-15 md:pt-25">
+      {/* إضاءة غامرة ناعمة جداً في العمق (شفافة وبدون أي ألوان خلفية صلبة) */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-nexus-blue/10 blur-[140px] rounded-full pointer-events-none select-none z-0" />
 
-        {/* كلمة NEXUS الخلفية */}
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-12 pt-28 pb-8 flex flex-col items-center text-center justify-center space-y-6 md:space-y-8 h-full max-h-screen">
+
+        {/* 1. بادج علوي رايق ونظيف جداً بستايل تيكنيكال */}
         <motion.div
-          style={{ x: parallaxX, y: parallaxY }}
-          className="absolute inset-0 flex items-center justify-center opacity-[0.03] select-none pointer-events-none z-0"
+          variants={fadeInVariant} initial="hidden" animate="visible" custom={0.1}
+          className="inline-flex items-center gap-2.5 border border-white/[0.08] bg-white/[0.02] backdrop-blur-md px-4 py-2 rounded-full shrink-0"
         >
-          {/* التعديل: حجم الخط في الموبايل خليناه 40vw عشان الحروف تبعد عن نص الفقرة وتتحسن القراءة */}
-          <h1 className="text-[40vw] md:text-[25vw] font-black text-white leading-none tracking-[0.05em] uppercase">
-            NEXUS
-          </h1>
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-nexus-blue opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-nexus-blue"></span>
+          </span>
+          <span className="text-white/80 font-mono tracking-[0.2em] text-[10px] md:text-xs uppercase">
+            GLOBAL NEXUS • CREATIVE SYSTEM
+          </span>
         </motion.div>
 
-        {/* العنوان والتاج */}
-        <div className="w-full space-y-6 md:space-y-8 mb-0 flex flex-col items-center text-center">
-          <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
-            <span className="text-nexus-blue font-mono tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-xs uppercase bg-white/[0.03] px-6 py-2 rounded-full border border-white/10 backdrop-blur-md inline-block">
-              GLOBAL NEXUS • CREATIVE
-            </span>
-          </motion.div>
+        {/* 2. العنوان الرئيسي العملاق - تم ضبط الحجم ليكون متناسق ومثالي مع أبعاد الشاشات بدون تضخم */}
+        <motion.h1
+          variants={fadeInVariant} initial="hidden" animate="visible" custom={0.2}
+          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.15] tracking-tight max-w-5xl select-text"
+        >
+          نبني أنظمة النمو <br />
+          <span className="bg-clip-text text-transparent text-white via-white/90">
+            الرقمي
+          </span>{" "}
+          للشركات الحديثة
+        </motion.h1>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-[2.6rem] sm:text-6xl md:text-[7rem] font-black text-white leading-[1.1] md:leading-[0.95] tracking-tighter"
-          >
-            Where the <br />
-            <span className="block md:inline text-transparent bg-clip-text [-webkit-background-clip:text] bg-gradient-to-l from-white via-nexus-blue to-white pb-2">
+        {/* 3. العبارة الإنجليزية مدمجة بشكل نظيف كفاصل بصري راقي */}
+        <motion.div
+          variants={fadeInVariant} initial="hidden" animate="visible" custom={0.3}
+          dir="ltr"
+          className="flex items-center justify-center gap-3 w-full shrink-0"
+        >
+          <div className="h-[1px] w-12 bg-white/10 hidden sm:block" />
+          <p className="text-sm md:text-lg font-medium tracking-tight text-white/40">
+            <span className="italic font-serif font-normal text-white/20">Where the</span>{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-nexus-blue to-cyan-400 font-bold uppercase tracking-wider text-xs md:text-sm">
               real value is created
             </span>
-          </motion.h2>
-        </div>
+          </p>
+          <div className="h-[1px] w-12 bg-white/10 hidden sm:block" />
+        </motion.div>
 
-        {/* النص والزراير */}
-        <div className="w-full max-w-3xl flex flex-col items-center space-y-5 md:space-y-0">
-          {/* التعديل: py-8 عشان الخطين اللي فوق وتحت النص يبعدوا شوية ويدوا مساحة للعين */}
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.5 }} className="text-nexus-gray/90 text-[1.1rem] md:text-2xl font-light leading-relaxed text-center border-y border-nexus-blue/30 py-8 px-4 md:px-8">
-            في <span className="text-white font-medium italic">GLOBAL NEXUS</span> نبتكر أنظمة نمو رقمية متكاملة تضمن لأعمالك الاستمرارية وتحقيق نتائج ملموسة تعكس حجم طموحك.
-          </motion.p>
+        {/* 4. الوصف والفقرة الشارحة منسابة ومريحة جداً للقراءة */}
+        <motion.p
+          variants={fadeInVariant} initial="hidden" animate="visible" custom={0.4}
+          className="text-white/60 text-sm md:text-base font-light leading-relaxed max-w-2xl mx-auto select-text"
+        >
+          نساعد الشركات على تطوير حضورها الرقمي وبناء أنظمة تدعم النمو بشكل أكثر وضوحًا وكفاءة من خلال حلول تجمع بين التسويق، الهوية البصرية، المواقع الإلكترونية، والأنظمة التشغيلية.
+        </motion.p>
 
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }} className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 w-full pt-4 md:pt-8 px-4 sm:px-0">
-            
-            <button className="group relative w-full sm:w-auto py-4 px-8 sm:px-12 flex items-center justify-center transition-all duration-300 bg-white/5 md:bg-transparent border border-white/10 sm:border-none rounded-xl sm:rounded-none">
-              <span className="relative z-10 text-white font-black text-[13px] sm:text-sm uppercase tracking-[0.2em] group-hover:text-white transition-colors duration-500">ابدأ الرحلة النمو</span>
-              <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-white/20 group-hover:border-nexus-blue group-hover:w-full group-hover:h-full transition-all duration-500 rounded-tr-xl"></div>
-              <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-white/20 group-hover:border-nexus-blue group-hover:w-full group-hover:h-full transition-all duration-500 rounded-bl-xl"></div>
-              <div className="absolute inset-0 bg-nexus-blue scale-x-0 group-hover:scale-x-100 origin-right transition-transform duration-500 rounded-xl"></div>
-            </button>
+        {/* 5. النص الداعم الصغير */}
+        <motion.div
+          variants={fadeInVariant} initial="hidden" animate="visible" custom={0.5}
+          className="text-white/40 text-xs md:text-sm font-normal max-w-xl border-t border-white/[0.06] pt-4 w-full select-text"
+        >
+          حلول رقمية مصممة لتحسين تجربة العملاء، تنظيم العمليات، وبناء حضور رقمي أكثر احترافية واستدامة.
+        </motion.div>
 
-            <button className="group relative flex items-center justify-between sm:justify-center w-full sm:w-auto gap-4 py-4 px-6 sm:px-4 border border-white/5 sm:border-none rounded-xl">
-              <div className="flex flex-col items-end gap-1">
-                <span className="text-white font-black text-[13px] sm:text-sm uppercase tracking-[0.2em] group-hover:text-nexus-blue transition-colors duration-300">استعرض سابقة أعمالنا</span>
-                <div className="w-full h-[1px] bg-white/20 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-nexus-blue -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
-                </div>
-              </div>
-              <div className="relative w-10 h-10 flex items-center justify-center border border-white/10 rounded-xl group-hover:bg-nexus-blue group-hover:border-nexus-blue transition-all duration-500 transform group-hover:-rotate-45">
-                <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white rotate-180 transition-transform duration-500 group-hover:-translate-x-1"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
-              </div>
-            </button>
-          </motion.div>
-        </div>
+        {/* 6. قسم الأزرار الرسمية عالية التباين والفخامة */}
+        <motion.div
+          variants={fadeInVariant} initial="hidden" animate="visible" custom={0.6}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto pt-2 shrink-0"
+        >
+          {/* زر الأكشن الرئيسي */}
+          <button className="w-full sm:w-auto py-3.5 px-8 flex items-center justify-center bg-white text-black font-bold text-sm uppercase tracking-wide rounded-xl hover:bg-nexus-blue hover:text-white transition-all duration-300 shadow-xl active:scale-[0.98]">
+            احجز مكالمة استراتيجية
+          </button>
+
+          {/* زر استكشف خدماتنا */}
+          <button className="group flex items-center justify-center gap-3 w-full sm:w-auto py-3.5 px-8 bg-white/[0.02] hover:bg-white/[0.05] border border-white/10 hover:border-white/20 rounded-xl transition-all duration-300">
+            <span className="text-white font-semibold text-sm">استكشف خدماتنا</span>
+            <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white rotate-180 transform group-hover:-translate-x-1 transition-transform duration-300">
+              <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" />
+            </svg>
+          </button>
+        </motion.div>
+
       </div>
     </section>
   );

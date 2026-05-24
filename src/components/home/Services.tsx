@@ -42,40 +42,40 @@ const services = [
 ];
 
 export default function Services() {
-  // أنيميشن كارت الشاشة الناعم للظهور عند السكرول
+  // أنيميشن كارت الشاشة الناعم للظهور عند السكرول - تم ضبط التايب سكريبت بإضافة as const
   const cardVariant = {
     hidden: { opacity: 0, y: 20 },
     visible: (index: number) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }
+      transition: { duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] as const }
     })
   };
 
   return (
     <section className="relative w-full py-10 border-t border-white/5 overflow-hidden z-10 select-none" dir="rtl">
-      
+
 
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-nexus-blue/[0.02] blur-[150px] rounded-full pointer-events-none z-0 transform-gpu translate-z-0 will-change-transform" />
 
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12">
-        
+
         {/* هيدر السيكشن - متسنتر وشيك جداً ومظبوط ريسبونسف */}
         <div className="max-w-3xl mx-auto mb-16 md:mb-24 flex flex-col items-center text-center space-y-5 transform-gpu">
           <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full border border-nexus-blue/20 bg-nexus-blue/5">
             <span className="w-1.5 h-1.5 rounded-full bg-nexus-blue animate-pulse" />
             <span className="text-nexus-blue font-mono tracking-widest text-xs uppercase pt-0.5">
-             منظومة الخدمات الرقمية
+              منظومة الخدمات الرقمية
             </span>
           </div>
-          
+
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight select-text">
             حلول رقمية مصممة <br className="hidden sm:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/50">
               لدعم النمو
             </span>
           </h2>
-          
+
           <p className="text-white/50 text-sm md:text-base font-light leading-relaxed max-w-2xl select-text pt-2">
             نقدم مجموعة من الخدمات الرقمية التي تساعد الشركات على تطوير حضورها الرقمي وتحسين تجربة العملاء وبناء أنظمة تدعم التوسع والاستمرارية.
           </p>

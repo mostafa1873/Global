@@ -31,13 +31,13 @@ const workflowSteps = [
 ];
 
 export default function WorkProcess() {
-  // أنيميشن ناعم جداً بـ transform-gpu لظهور المراحل بالتوالي دون تأثير على السكرول
+  // أنيميشن ناعم جداً بـ transform-gpu لظهور المراحل بالتوالي دون تأثير على السكرول - تم إضافة as const هنا
   const stepVariant = {
     hidden: { opacity: 0, y: 15 },
     visible: (index: number) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }
+      transition: { duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] as const }
     })
   };
 

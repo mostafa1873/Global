@@ -3,13 +3,13 @@
 import { motion } from "framer-motion";
 
 export default function HowWeWork() {
-  // أنيميشن ناعم جداً لظهور الخطوات الشارحة أثناء السكرول
+  // أنيميشن ناعم جداً لظهور الخطوات الشارحة أثناء السكرول - تم ضبط التايب سكريبت هنا
   const itemVariant = {
     hidden: { opacity: 0, y: 15 },
     visible: (index: number) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }
+      transition: { duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] as const }
     })
   };
 

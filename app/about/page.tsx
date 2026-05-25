@@ -1,10 +1,7 @@
-// import AboutHero from "@/src/components/about/Hero";
-// import IntegratedSystem from "@/src/components/about/IntegratedSystem";
+import AboutHero from "@/src/components/about/Hero";
 import HeartMessage from "@/src/components/about/Message";
-// import ProblemSolver from "@/src/components/about/ProblemSolver";
+import ProblemSolver from "@/src/components/about/ProblemSolver";
 import SalesClosing from "@/src/components/about/SalesClosing";
-import Hero from "@/src/components/home/Hero";
-// import Link from "next/link";
 
 export default function AboutPage() {
 
@@ -12,13 +9,12 @@ export default function AboutPage() {
 
     <>
 
-      <Hero />
-
-      {/* <AboutHero /> */}
-      {/* <ProblemSolver /> */}
-      {/* <IntegratedSystem /> */}
+      <AboutHero />
       
       <HeartMessage />
+
+      <ProblemSolver />
+
       <SalesClosing />
 
     </>

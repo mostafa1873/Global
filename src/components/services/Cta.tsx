@@ -5,7 +5,7 @@ import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 import { FiArrowLeft } from "react-icons/fi";
 
-export default function CompactSalesClosing() {
+export default function CtaAbout() {
     return (
         <section className="relative w-full py-16 sm:py-24 px-4 bg-transparent overflow-hidden" dir="rtl">
 
@@ -17,8 +17,8 @@ export default function CompactSalesClosing() {
                     whileInView={{ opacity: 1, y: 0 }}
                     className="text-white text-2xl sm:text-3xl md:text-5xl font-black leading-tight tracking-tight mb-12 sm:mb-16"
                 >
-                    دعنا نناقش كيف يمكننا   <br className="hidden md:block" />
-                    <span className="text-blue-600">دعم نمو</span>  أعمالك
+                    دعنا نبني الحل الرقمي المناسب لنشاطك  <br className="hidden md:block" />
+                    <span className="text-blue-600">فريقنا جاهز لفهم احتياجات مشروعك ومناقشة الحلول المناسبة لتطوير حضورك الرقمي.</span> 
                 </motion.h2>
 
                 {/* الزرار المركزي الضخم والمحكم */}

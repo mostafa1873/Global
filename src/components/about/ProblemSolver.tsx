@@ -1,118 +1,116 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FiAlertCircle, FiCheckCircle, FiLayers } from "react-icons/fi";
+import { FiTrendingUp, FiUsers, FiCpu, FiArrowLeft } from "react-icons/fi";
 
-export default function WhyUsSection() {
-    const cardVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-    };
-
+export default function VisionSection() {
     return (
-        <section className="relative min-h-[90vh] md:min-h-screen w-full py-16 md:py-18 px-6 md:px-12 overflow-hidden flex flex-col justify-center" dir="rtl">
+        <section className="relative w-full py-16 px-4 sm:px-6 md:px-16 bg-transparent overflow-hidden" dir="rtl">
+            
+            <div className="absolute top-1/3 left-10 w-[200px] sm:w-[350px] h-[200px] sm:h-[350px] bg-blue-500/[0.02] rounded-full blur-[80px] sm:blur-[130px] pointer-events-none" />
+            <div className="absolute bottom-10 right-10 w-[200px] sm:w-[400px] h-[200px] sm:h-[400px] bg-indigo-500/[0.02] rounded-full blur-[100px] sm:blur-[150px] pointer-events-none" />
 
-            {/* البوردر العلوي الخفيف جداً */}
-            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent z-20" />
-
-            {/* خلفية تقنية خفيفة */}
-            <div className="absolute top-0 left-0 w-full h-full opacity-[0.02] pointer-events-none">
-                <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
-            </div>
-
-            <div className="max-w-7xl mx-auto relative z-10 w-full">
-
-                {/* العنوان الجانبي المودرن - تمركز في الموبايل */}
-                <div className="flex flex-col mb-12 md:mb-20 text-center md:text-right items-center md:items-start">
-                    <motion.span
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        className="text-blue-500 font-mono text-[10px] md:text-xs tracking-[0.3em] uppercase mb-4"
-                    >
-                        The Problem & Solution
-                    </motion.span>
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        className="text-white text-[32px] sm:text-4xl md:text-6xl font-[950] tracking-tighter"
-                    >
-                        ليه إحنا <span className="text-blue-600">موجودين؟</span>
-                    </motion.h2>
-                </div>
-
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-start">
-
-                    {/* الجانب الأيمن: شرح المشكلة - تمركز في الموبايل */}
-                    <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        className="space-y-6 md:space-y-8 text-center md:text-right"
-                    >
-                        <div className="relative p-6 md:p-8 rounded-3xl bg-white/[0.02] border border-white/5 backdrop-blur-sm group hover:border-red-500/20 transition-colors">
-                            <FiAlertCircle className="text-red-500 text-3xl mb-6 mx-auto md:mx-0" />
-                            <h3 className="text-white text-xl md:text-2xl font-bold mb-4 italic">أكبر مشكلة هي "التشتت"</h3>
-                            <p className="text-slate-400 text-base md:text-lg leading-relaxed">
-                                المبرمج بيعمل كود ملوش علاقة بالبيع، والمسوق بيعمل إعلانات مش ماشية مع إمكانيات الموقع، والنتيجة؟
-                                <span className="text-red-400 font-bold block mt-2">ميزانية ضايعة ووجع دماغ.</span>
-                            </p>
-                            <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-red-500/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="max-w-7xl mx-auto w-full relative">
+                
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    
+                    {/* الجانب الأيمن */}
+                    <div className="lg:col-span-5 flex flex-col justify-between space-y-8 text-center lg:text-right pb-0">
+                        <div className="space-y-4">
+                            <div className="inline-flex items-center gap-2 border border-blue-500/30 px-4 py-1.5 rounded-full bg-blue-500/[0.03] backdrop-blur-sm mx-auto lg:mx-0">
+                                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+                                <span className="text-blue-400 font-mono text-xs tracking-widest uppercase">OUR VISION</span>
+                            </div>
+                            
+                            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                                بناء بيئات <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-l from-blue-400 via-indigo-400 to-blue-600">
+                                    رقمية أكثر استدامة.
+                                </span>
+                            </h2>
                         </div>
 
-                        <div className="p-4 md:p-8">
-                            <p className="text-slate-500 text-lg md:text-xl font-light italic leading-loose">
-                                "تعدد الشركات بيخلي السفينة تغرق.. <br className="hidden md:block" />
-                                لأن مفيش رؤية واحدة بتجمع الكل."
-                            </p>
-                        </div>
-                    </motion.div>
-
-                    {/* الجانب الأيسر: الحل - تمركز في الموبايل */}
-                    <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        className="lg:mt-20 space-y-6 text-center md:text-right"
-                    >
-                        <motion.div
-                            variants={cardVariants}
-                            className="p-6 md:p-8 rounded-3xl bg-blue-600 shadow-[0_20px_40px_rgba(37,99,235,0.2)]"
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            // تعديل المحاذاة هنا لـ text-center على الموبايل
+                            className="flex flex-col items-center md:items-start p-6 rounded-3xl border border-white/5 bg-gradient-to-l from-white/[0.01] to-transparent gap-4 text-center md:text-right"
                         >
-                            <FiCheckCircle className="text-white text-3xl md:text-4xl mb-6 mx-auto md:mx-0" />
-                            <h3 className="text-white text-2xl md:text-3xl font-black mb-4">إحنا بننهي الصداع ده.</h3>
-                            <p className="text-blue-50 text-lg md:text-xl leading-relaxed font-medium">
-                                في جلوبال نيكسس، إحنا مش مجرد (شركة خدمات)، إحنا <span className="underline underline-offset-4 text-white">شريك استراتيجي</span> بيفهم في التكنولوجيا وفي السوق في نفس الوقت.
-                            </p>
-                        </motion.div>
-
-                        <motion.div
-                            variants={cardVariants}
-                            className="p-6 md:p-8 rounded-3xl bg-white/[0.03] border border-blue-500/20"
-                        >
-                            <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
-                                <div className="p-3 bg-blue-500/10 rounded-xl shrink-0">
-                                    <FiLayers className="text-blue-500 text-2xl" />
-                                </div>
-                                <div>
-                                    <h4 className="text-white font-bold text-lg md:text-xl mb-2">المسؤولية الكاملة</h4>
-                                    <p className="text-slate-400 text-sm md:text-base leading-relaxed">
-                                        لما بنمسك مشروع، بنبقى مسؤولين عن كل تفصيلة فيه عشان نضمن إن الصورة تطلع كاملة والنتائج تكون حقيقية.
-                                    </p>
-                                </div>
+                            <div className="p-3 bg-blue-500/10 rounded-xl text-blue-400">
+                                <FiCpu className="text-xl" />
+                            </div>
+                            <div className="space-y-1">
+                                <h5 className="text-white font-bold text-sm">الهندسة الرقمية الحديثة</h5>
+                                <p className="text-slate-400 text-xs leading-relaxed">نصمم البنية التحتية لتتحمل التوسع المستقبلي لشركتك دون الحاجة لإعادة البناء من الصفر.</p>
                             </div>
                         </motion.div>
-                    </motion.div>
+                    </div>
 
+                    {/* الجانب الأيسر: Grid */}
+                    <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4 auto-rows-auto lg:auto-rows-[220px]">
+                        
+                        <motion.div 
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            // إضافة items-center للسنتر
+                            className="md:col-span-2 p-6 rounded-3xl border border-white/5 bg-white/[0.01] backdrop-blur-md shadow-2xl flex flex-col items-center md:items-start justify-between group hover:border-blue-500/20 transition-all duration-500 overflow-hidden text-center md:text-right"
+                        >
+                            <div className="flex flex-col md:flex-row justify-between items-center md:items-start relative z-10 w-full">
+                                <div className="space-y-2 max-w-md">
+                                    <span className="text-blue-500 text-xs font-mono tracking-wider block">THE CORE PURPOSE</span>
+                                    <p className="text-slate-200 text-base leading-relaxed font-light">
+                                        نسعى إلى مساعدة الشركات على <span className="text-white font-semibold underline decoration-blue-500/50 underline-offset-4">بناء أنظمة رقمية</span> تدعم النمو طويل المدى وتحسن طريقة تفاعلها مع العملاء بشكل كامل وعميق.
+                                    </p>
+                                </div>
+                                <div className="p-3 bg-blue-500/10 rounded-2xl text-blue-500 hidden sm:block">
+                                    <FiTrendingUp className="text-2xl" />
+                                </div>
+                            </div>
+
+                            <div className="flex items-center gap-2 text-xs text-slate-500 font-mono mt-4 relative z-10">
+                                <span>GLOBAL NEXUS INDEX</span>
+                                <FiArrowLeft />
+                                <span className="text-blue-400/80">SUSTAINABLE GROWTH</span>
+                            </div>
+                        </motion.div>
+
+                        <motion.div 
+                            // تعديل المحاذاة للسنتر
+                            className="p-6 rounded-3xl border border-white/5 bg-white/[0.01] backdrop-blur-md flex flex-col items-center md:items-start justify-between group hover:border-indigo-500/20 transition-all duration-500 text-center md:text-right"
+                        >
+                            <div className="space-y-3">
+                                <div className="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400">
+                                    <FiUsers className="text-lg" />
+                                </div>
+                                <h4 className="text-white font-bold text-lg">تفاعل استثنائي وثابت</h4>
+                                <p className="text-slate-400 text-xs leading-relaxed">
+                                    تحويل كل نقطة تلاقي مع عميلك إلى تجربة سينمائية فريدة تبني الولاء وتضمن استمرار العلاقة وتطورها.
+                                </p>
+                            </div>
+                            <span className="text-[10px] text-slate-600 font-mono tracking-widest block uppercase mt-4">RETENTION DRIVEN</span>
+                        </motion.div>
+
+                        <motion.div 
+                            // تعديل المحاذاة للسنتر
+                            className="p-6 rounded-3xl border border-white/5 bg-white/[0.01] backdrop-blur-md flex flex-col items-center md:items-start justify-between group hover:border-blue-500/20 transition-all duration-500 text-center md:text-right"
+                        >
+                            <div className="space-y-3">
+                                <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400">
+                                    <span className="text-xs font-mono font-bold">L-T</span>
+                                </div>
+                                <h4 className="text-white font-bold text-lg">النمو طويل المدى</h4>
+                                <p className="text-slate-400 text-xs leading-relaxed">
+                                    نبتعد عن المسكنات البرمجية المؤقتة؛ حلولنا تُبنى لتخدم رؤية شركتك لسنوات قادمة بكل كفاءة واستقرار.
+                                </p>
+                            </div>
+                            <span className="text-[10px] text-slate-600 font-mono tracking-widest block uppercase mt-4">FUTURE PROOFED</span>
+                        </motion.div>
+
+                    </div>
                 </div>
             </div>
-
-            {/* رقم القسم (02) - متجاوب وحافظنا على مكانه */}
-            <div className="absolute right-4 bottom-4 md:right-10 md:bottom-10 opacity-5 md:opacity-40 pointer-events-none z-0">
-                <p className="text-slate-800 text-[80px] sm:text-[100px] md:text-[150px] font-black leading-none select-none tracking-tighter">
-                    02
-                </p>
-            </div>
-
         </section>
     );
 }

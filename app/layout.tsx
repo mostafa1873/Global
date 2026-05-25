@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/src/components/main/Navbar";
@@ -6,6 +6,15 @@ import Footer from "@/src/components/main/Footer";
 import GlobalBackground from "@/src/components/main/GlobalBackground";
 import WhatsAppFloat from "@/src/components/main/WhatsAppFloat";
 import SmoothScroll from "@/src/components/main/SmoothScroll";
+
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#000000",
+};
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

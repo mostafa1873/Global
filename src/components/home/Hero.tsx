@@ -57,8 +57,8 @@ export default function Hero() {
         >
           <div className="h-[1px] w-8 md:w-12 bg-white/20 hidden sm:block" />
           <p className="text-sm md:text-lg font-medium tracking-tight text-white/60 text-center">
-            <span className="italic font-serif font-normal text-white/40">Where the</span>{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 font-bold uppercase tracking-wider text-xs md:text-sm">
+            <span className="italic font-serif font-normal text-white">Where the</span>{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 font-bold uppercase text-xs md:text-sm">
               real value is created
             </span>
           </p>

@@ -28,12 +28,12 @@ export default function ContactPage() {
                 <div className="lg:col-span-5 space-y-10 flex flex-col items-center lg:items-start w-full">
                     <div className="space-y-4 text-center lg:text-right flex flex-col items-center lg:items-start">
                         <span className="text-xs font-black tracking-[0.3em] text-[#4aa3ff] uppercase border-r-2 border-[#4aa3ff] pr-3">
-                            تواصل معنا
+                            دعنا نناقش مشروعك القادم
                         </span>
-                        <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight">
-                            لنصنع شيئاً <br />
+                        <h1 className="text-xl md:text-2xl font-extrabold tracking-tight leading-tight">
+                            ذا كنت تبحث عن تطوير حضورك الرقمي أو بناء أنظمة تساعد أعمالك على النمو بشكل أكثر كفاءة <br />
                             <span className="bg-gradient-to-l from-[#4aa3ff] to-[#1f6ed4] bg-clip-text text-transparent">
-                                استثنائياً معاً
+                                 يسعدنا التواصل معك.
                             </span>
                         </h1>
                         <p className="text-gray-400 text-sm max-w-sm leading-relaxed">
@@ -74,7 +74,7 @@ export default function ContactPage() {
                             </div>
                             <div className="flex flex-col items-center lg:items-start">
                                 <p className="text-[10px] font-bold text-gray-500 uppercase">المقر الرئيسي</p>
-                                <p className="text-sm font-medium text-gray-300">كفر الدوار - البحيرة - مصر</p>
+                                <p className="text-sm font-medium text-gray-300"> البحيرة - مصر</p>
                             </div>
                         </div>
                     </div>
@@ -250,7 +250,7 @@ export default function ContactPage() {
                                 <MapPin size={16} />
                             </div>
                             <div>
-                                <p className="text-xs font-bold">مقرنا في كفر الدوار - البحيرة - مصر</p>
+                                <p className="text-xs font-bold"> البحيرة - مصر</p>
                                 <p className="text-[10px] text-gray-400">نحن بانتظار زيارتك!</p>
                             </div>
                         </div>

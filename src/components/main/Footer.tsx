@@ -149,7 +149,7 @@ export default function Footer() {
             <div className="flex flex-col lg:flex-row items-center gap-3 text-slate-400 text-xs leading-relaxed">
               <FaMapMarkerAlt className="text-blue-500/50" size={13} />
               <p>
-                كفر الدوار - البحيرة - مصر
+                البحيرة - مصر
               </p>
             </div>
           </div>

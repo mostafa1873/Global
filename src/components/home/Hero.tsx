@@ -53,18 +53,17 @@ export default function Hero() {
         <motion.div
           variants={fadeInVariant} initial="hidden" animate="visible" custom={0.3}
           dir="ltr"
-          className="flex items-center justify-center gap-3 w-full shrink-0"
+          className="flex items-center justify-center gap-3 w-full shrink-0 flex-wrap px-4"
         >
-          <div className="h-[1px] w-12 bg-white/10 hidden sm:block" />
-          <p className="text-sm md:text-lg font-medium tracking-tight text-white/40">
-            <span className="italic font-serif font-normal text-white/20">Where the</span>{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-nexus-blue to-cyan-400 font-bold uppercase tracking-wider text-xs md:text-sm">
+          <div className="h-[1px] w-8 md:w-12 bg-white/20 hidden sm:block" />
+          <p className="text-sm md:text-lg font-medium tracking-tight text-white/60 text-center">
+            <span className="italic font-serif font-normal text-white/40">Where the</span>{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 font-bold uppercase tracking-wider text-xs md:text-sm">
               real value is created
             </span>
           </p>
-          <div className="h-[1px] w-12 bg-white/10 hidden sm:block" />
+          <div className="h-[1px] w-8 md:w-12 bg-white/20 hidden sm:block" />
         </motion.div>
-
         {/* 4. الوصف والفقرة الشارحة منسابة ومريحة جداً للقراءة */}
         <motion.p
           variants={fadeInVariant} initial="hidden" animate="visible" custom={0.4}

@@ -30,7 +30,7 @@ export default function Navbar() {
   // الداتا واللينكات القديمة بالظبط بدون أي تغيير ومربوطة بالترجمة ديناميكياً
   const navLinks = [
     { name: lang === "AR" ? "الرئيسية" : "Home", href: "/" },
-    { name: lang === "AR" ? "عن الشركة" : "About", href: "/about" },
+    { name: lang === "AR" ? "من نحن" : "About", href: "/about" },
     { name: lang === "AR" ? "خدماتنا" : "Services", href: "/services" },
     { name: lang === "AR" ? "أعمالنا" : "Portfolio", href: "/portfolio" },
     { name: lang === "AR" ? "المدونة" : "Blog", href: "/blog" },
@@ -44,8 +44,8 @@ export default function Navbar() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         className={`max-w-7xl mx-auto transition-all duration-500 ease-in-out ${scrolled
-          ? "bg-black/60 backdrop-blur-2xl border border-white/10 py-2 px-3 md:px-4 shadow-[0_20px_50px_rgba(0,21,106,0.3)]"
-          : "bg-black/40 py-3 px-4 md:py-4 md:px-5 border border-white/10"
+          ? "bg-black/60 backdrop-blur-2xl border border-white/10 py-3 px-5 md:px-4 shadow-[0_20px_50px_rgba(0,21,106,0.3)]"
+          : "bg-black/40 py-5 px-5 md:py-4 md:px-5 border border-white/10"
           } rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-between`}
         dir="ltr" // ثابت ltr عشان ترتيب الديزاين يفضل (اللوجو شمال - اللينكات وسط - الأزرار يمين)
       >

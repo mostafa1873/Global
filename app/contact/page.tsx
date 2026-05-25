@@ -116,7 +116,7 @@ export default function ContactPage() {
 
     <>
 
-<ContactForm />
+      <ContactForm />
 
     </>
   );

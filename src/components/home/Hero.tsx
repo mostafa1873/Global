@@ -21,7 +21,7 @@ export default function Hero() {
       {/* إضاءة غامرة ناعمة جداً في العمق (شفافة وبدون أي ألوان خلفية صلبة) */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-nexus-blue/10 blur-[140px] rounded-full pointer-events-none select-none z-0" />
 
-      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-12 pt-28 pb-8 flex flex-col items-center text-center justify-center space-y-6 md:space-y-8 h-full max-h-screen">
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-12 pt-28 md:pt-24 pb-8 flex flex-col items-center text-center justify-center space-y-6 md:space-y-8 h-full max-h-screen">
 
         {/* 1. بادج علوي رايق ونظيف جداً بستايل تيكنيكال */}
         <motion.div

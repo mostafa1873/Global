@@ -6,27 +6,27 @@ const workflowSteps = [
   {
     phase: "01",
     enTitle: "Discovery",
-    arTitle: "فهم النشاط التجاري، التحديات الحالية، والأهداف المطلوبة.",
+    arTitle: "فهم النشاط التجاري، أهداف المشروع، التحديات الحالية، والجمهور المستهدف.",
   },
   {
     phase: "02",
     enTitle: "Strategy",
-    arTitle: "تحديد الحلول الرقمية المناسبة وخطة التنفيذ.",
+    arTitle: "تحديد الاتجاه المناسب والخطة التي يمكن من خلالها بناء الحل الرقمي بشكل عملي.",
   },
   {
     phase: "03",
     enTitle: "Design & Development",
-    arTitle: "تصميم وتطوير الأنظمة والحلول الرقمية المطلوبة.",
+    arTitle: "تصميم وتطوير الحلول الرقمية المطلوبة بما يتناسب مع طبيعة النشاط وأهدافه.",
   },
   {
     phase: "04",
     enTitle: "Launch",
-    arTitle: "إطلاق المشروع وتجهيز البيئة الرقمية للتشغيل.",
+    arTitle: "إطلاق المشروع وتجهيز البيئة الرقمية للعمل بشكل واضح ومنظم.",
   },
   {
     phase: "05",
     enTitle: "Optimization",
-    arTitle: "المتابعة والتحسين المستمر بناءً على الأداء وااحتياجات النمو.",
+    arTitle: "متابعة الأداء وتحسين التجربة بناءً على احتياجات النمو والتطوير.",
   }
 ];
 
@@ -44,7 +44,7 @@ export default function WorkProcess() {
   return (
     <section className="relative w-full py-10 border-t border-white/5 z-10 select-none" dir="rtl">
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12">
-        
+
         {/* هيدر السيكشن الفخم */}
         <div className="flex flex-col items-center md:items-start text-center md:text-right mb-20 md:mb-28 space-y-5 max-w-3xl transform-gpu">
           <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full border border-white/10">
@@ -53,12 +53,11 @@ export default function WorkProcess() {
               منهجية العمل
             </span>
           </div>
-          
+
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight select-text">
-            مراحل العمل <br className="hidden sm:block" />
+            كيف نبني الحلول   <br className="hidden sm:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60">
-              التي نقود بها مشروعك
-            </span>
+             الرقمية للنمو؟            </span>
           </h2>
         </div>
 
@@ -67,7 +66,7 @@ export default function WorkProcess() {
             - في الديسكتوب: مسار أفقي ممتد وموزع هندسياً بدون فراغات عشوائية.
         */}
         <div className="relative flex flex-col md:flex-row items-stretch justify-between gap-12 md:gap-6 w-full before:absolute before:right-1/2 md:before:right-0 md:before:left-0 before:top-0 before:bottom-0 md:before:bottom-auto md:before:h-[1px] before:w-[1px] md:before:w-full before:bg-white/10 before:pointer-events-none">
-          
+
           {workflowSteps.map((step, index) => (
             <motion.div
               key={step.phase}
@@ -80,7 +79,7 @@ export default function WorkProcess() {
             >
               {/* العقدة أو النقطة الهندسية المضيئة على الخط الفاصل */}
               <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 md:right-0 md:translate-x-0 w-2.5 h-2.5 rounded-full border border-white/30 bg-[#020617] group-hover:border-white group-hover:bg-white transition-all duration-300 z-20" />
-              
+
               {/* رقم المرحلة الأنيق */}
               <span className="font-mono text-xs text-blue-600 tracking-widest uppercase mb-2 group-hover:text-white/60 transition-colors duration-300">
                 PHASE {step.phase}
@@ -95,7 +94,7 @@ export default function WorkProcess() {
               <p className="text-white/80 text-sm md:text-base font-light leading-relaxed select-text max-w-xs md:max-w-none">
                 {step.arTitle}
               </p>
-              
+
             </motion.div>
           ))}
 

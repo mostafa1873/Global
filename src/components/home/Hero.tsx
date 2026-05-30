@@ -69,16 +69,14 @@ export default function Hero() {
           variants={fadeInVariant} initial="hidden" animate="visible" custom={0.4}
           className="text-white/60 text-sm md:text-base font-light leading-relaxed max-w-2xl mx-auto select-text"
         >
-          نساعد الشركات على تطوير حضورها الرقمي وبناء أنظمة تدعم النمو بشكل أكثر وضوحًا وكفاءة من خلال حلول تجمع بين التسويق، الهوية البصرية، المواقع الإلكترونية، والأنظمة التشغيلية.
-        </motion.p>
+          نساعد الشركات على تطوير حضورها الرقمي وبناء أنظمة رقمية أكثر وضوحًا وكفاءة، من خلال حلول تجمع بين التسويق، الهوية البصرية، المواقع الإلكترونية، وتجربة المستخدم.        </motion.p>
 
         {/* 5. النص الداعم الصغير */}
         <motion.div
           variants={fadeInVariant} initial="hidden" animate="visible" custom={0.5}
           className="text-white/40 text-xs md:text-sm font-normal max-w-xl border-t border-white/[0.06] pt-4 w-full select-text"
         >
-          حلول رقمية مصممة لتحسين تجربة العملاء، تنظيم العمليات، وبناء حضور رقمي أكثر احترافية واستدامة.
-        </motion.div>
+          في Global Nexus نعمل على تطوير حلول رقمية تساعد الشركات على تحسين تجربة عملائها، تنظيم حضورها الرقمي، وبناء بيئة أكثر احترافية تدعم النمو والاستمرارية.        </motion.div>
 
         {/* 6. قسم الأزرار الرسمية عالية التباين والفخامة */}
         <motion.div

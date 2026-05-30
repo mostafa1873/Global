@@ -39,10 +39,10 @@ export default function AboutSection() {
             className="md:col-span-2 text-center p-8 rounded-[2rem] bg-white/[0.02] border border-white/5 flex flex-col justify-center"
           >
             <p className="text-slate-400 text-lg md:text-xl font-light leading-relaxed">
-             في Global Nexus نؤمن أن النمو الرقمي لا يعتمد فقط على الحملات التسويقية أو التصميم الجيد، بل على <span className="text-white font-medium">"بناء بيئة رقمية متكاملة "</span> تساعد الشركات على <span className="text-white font-medium">"تحسين حضورها وتنظيم عملياتها وتطوير علاقتها بعملائها"</span>.
+             في Global Nexus نؤمن أن النمو الرقمي لا يعتمد فقط على حملة إعلانية أو تصميم جيد، بل يحتاج إلى رؤية متكاملة تربط بين<span className="text-white font-medium"> التسويق، التقنية، </span> <span className="text-white font-medium">الهوية، وتجربة العميل</span>.
 
             </p>
-          </motion.div>
+          </motion.div>    
 
           {/* كارت صغير - البداية */}
           <motion.div
@@ -90,7 +90,7 @@ export default function AboutSection() {
             className="md:col-span-2 text-center p-8 rounded-[2rem] bg-white/[0.02] border border-white/5 flex flex-col justify-center"
           >
             <p className="text-slate-400 text-lg md:text-xl font-light leading-relaxed">
-              لهذا نعمل على تطوير حلول تجمع بين الهوية البصرية، التسويق الرقمي، المواقع الإلكترونية، وتجربة المستخدم لبناء <span className="text-white font-medium">"حضور رقمي "</span> يعكس  <span className="text-white font-medium">"قيمة الشركات " </span>بصورة أكثر احترافية ووضوحًا.
+              لذلك نعمل على تطوير حلول تساعد الشركات على بناء حضور رقمي أكثر وضوحًا وتنظيمًا، مع تحسين طريقة تواصلها مع <span className="text-white font-medium">العملاء </span> وتحويل وجودها الرقمي إلى أداة حقيقية   <span className="text-white font-medium">لدعم النمو</span>
 
             </p>
           </motion.div>
@@ -114,7 +114,7 @@ export default function AboutSection() {
         >
           <Link href="/about">
             <button className="group flex items-center gap-3 bg-white text-black px-8 py-4 rounded-2xl font-black text-sm hover:bg-blue-600 hover:text-white transition-all duration-500">
-              اكتشف منهجيتنا
+              اعرف المزيد
               <ArrowLeft size={18} className="group-hover:-translate-x-2 transition-transform" />
             </button>
           </Link>

@@ -3,87 +3,60 @@
 import { motion } from "framer-motion";
 
 const sectors = [
-  { id: "01", name: "الشركات الناشئة" },
-  { id: "02", name: "الشركات الخدمية" },
-  { id: "03", name: "العلامات التجارية الحديثة" },
-  { id: "04", name: "الشركات التجارية" },
-  { id: "05", name: "المشاريع التي تحتاج إلى تطوير بنيتها الرقمية" }
+  { id: "01", name: "الشركات الخدمية" },
+  { id: "02", name: "الشركات التجارية" },
+  { id: "03", name: "الشركات الناشئة" },
+  { id: "04", name: "العيادات والمراكز" },
+  { id: "05", name: "المصانع وشركات التصدير" },
+  { id: "06", name: "البراندات المحلية" },
+  { id: "07", name: "الشركات التي تحتاج إلى تطوير بنيتها الرقمية" }
 ];
 
 export default function TargetAudience() {
   return (
-    <section className="relative w-full py-10 z-10 select-none overflow-hidden" dir="rtl">
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12">
-        
-        {/* الهيدر الأصلي بتاعك كامل وبمحاذاة فخمة */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-right mb-20 md:mb-28 space-y-6 max-w-3xl transform-gpu">
-          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full border border-white/10">
+    <section className="relative w-full py-10 z-10 select-none border-t border-white/5 overflow-hidden" dir="rtl">
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-12 flex flex-col items-center">
+
+        {/* الهيدر في المنتصف تماماً ليتناسب مع التوزيع الحر */}
+        <div className="flex flex-col items-center text-center mb-16 space-y-6 max-w-3xl transform-gpu">
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.02]">
             <span className="w-1.5 h-1.5 rounded-full bg-white/40 animate-pulse" />
             <span className="text-white font-mono tracking-widest text-xs uppercase pt-0.5">
               لمن نقدم خدماتنا
             </span>
           </div>
-          
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight select-text">
+
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight select-text">
             حلول رقمية للشركات <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60">
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40">
               التي تبحث عن نمو منظم
             </span>
           </h2>
-          
-          <p className="text-white/85 text-base md:text-lg lg:text-xl font-light leading-relaxed select-text pt-2">
-            نعمل مع الشركات التي تسعى لتطوير حضورها الرقمي وتحسين أنظمتها التشغيلية وبناء تجربة أكثر احترافية لعملائها.
+
+          <p className="text-white/70 text-lg font-light leading-relaxed select-text pt-2 max-w-2xl">
+            نقدم خدماتنا للشركات والأنشطة التجارية التي ترغب في تطوير حضورها الرقمي، تحسين صورتها أمام العملاء، وبناء أدوات تساعدها على التواصل والنمو بشكل أكثر احترافية.
           </p>
         </div>
 
-        {/* الماتريكس الهندسية: شفافة بالكامل، التوزيع محكوم بالملي */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-b border-white/10 relative">
-          
-          {sectors.map((sector, index) => {
-            // منطق التحكم في عرض الكروت لمنع أي مساحات فارغة (Anti-Gap Logic)
-            const isLast = index === sectors.length - 1;
-            return (
-              <motion.div
-                key={sector.id}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.5, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className={`group relative flex flex-col justify-between p-8 md:p-12 min-h-[220px] md:min-h-[260px] transform-gpu border-b border-white/10 md:border-b-0
-                  ${isLast ? "col-span-1 md:col-span-2 lg:col-span-4 border-b-0" : "lg:border-l lg:border-white/10"}
-                  ${index === 1 ? "md:border-l-0 lg:border-l lg:border-white/10" : ""}
-                  ${index === 3 ? "md:border-l-0 lg:border-l-0" : ""}
-                `}
-              >
-                {/* تقاطعات الـ Crosshairs الهندسية (بديل الباكجراوند التقليدي) */}
-                <div className="hidden lg:block absolute -top-1.5 -left-1.5 font-mono text-sm text-white/10 group-hover:text-white/50 transition-colors duration-300 pointer-events-none">
-                  +
-                </div>
-                <div className="hidden lg:block absolute -bottom-2 -left-1.5 font-mono text-sm text-white/10 group-hover:text-white/50 transition-colors duration-300 pointer-events-none">
-                  +
-                </div>
-
-                {/* رقم القطاع بتنسيق تكنولوجي بريميوم */}
-                <div className="flex items-center justify-between w-full mb-6">
-                  <span className="font-mono text-xs text-white/60 tracking-widest group-hover:text-white/60 transition-colors duration-300">
-                     TARGET_{sector.id}
-                  </span>
-                  <div className="w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-white transition-colors duration-500" />
-                </div>
-
-                {/* اسم القطاع الأصلي كاملاً */}
-                <div className="mt-auto">
-                  <h3 className={`text-xl font-bold text-white/85 group-hover:text-white transition-all duration-300 select-text leading-snug
-                    ${isLast ? "lg:text-3xl max-w-2xl" : "lg:text-2xl"}
-                  `}>
-                    {sector.name}
-                  </h3>
-                </div>
-
-              </motion.div>
-            );
-          })}
-
+        {/* التوزيع الحر (Floating Tags) - مساحات واسعة ونظيفة جداً */}
+        <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 mt-4 w-full">
+          {sectors.map((sector, index) => (
+            <motion.div
+              key={sector.id}
+              initial={{ opacity: 0, scale: 0.9, y: 10 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
+              className="group inline-flex items-center gap-3 px-6 py-4 md:px-8 md:py-5 rounded-full border border-white/10 bg-white/[0.02] hover:bg-white/[0.06] hover:border-white/30 transition-all duration-500 transform-gpu cursor-default"
+            >
+              <span className="font-mono text-sm text-white/30 group-hover:text-white/60 transition-colors duration-300">
+                {sector.id}
+              </span>
+              <span className="text-lg md:text-xl font-bold text-white/80 group-hover:text-white transition-colors duration-300 select-text">
+                {sector.name}
+              </span>
+            </motion.div>
+          ))}
         </div>
 
       </div>

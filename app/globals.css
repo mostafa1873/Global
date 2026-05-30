@@ -1,4 +1,7 @@
 @import "tailwindcss";
+/* استيراد الخطوط مباشرة من Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
 
 @theme {
   /* ألوان Global Nexus من اللوجو */
@@ -12,6 +15,10 @@
   /* لون النص الثانوي */
   --color-nexus-glow: rgba(26, 95, 151, 0.15);
   /* لون الإضاءة */
+
+  /* تعريف الخطوط الجديدة */
+  --font-cairo: "Cairo", sans-serif;
+  --font-geist: "Geist", sans-serif;
 }
 
 html {
@@ -26,6 +33,17 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  /* الخط الافتراضي (سيتغير ديناميكياً عن طريق الكلاس في الـ Layout) */
+  font-family: var(--font-geist);
+}
+
+/* كلاسات للتبديل السريع */
+.font-cairo {
+  font-family: var(--font-cairo) !important;
+}
+
+.font-geist {
+  font-family: var(--font-geist) !important;
 }
 
 main {

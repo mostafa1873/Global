@@ -21,7 +21,7 @@ export default function HowWeWork() {
         <div className="flex flex-col items-center md:items-start text-center md:text-right mb-16 md:mb-24 space-y-5 max-w-4xl transform-gpu">
           <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full border border-white/10">
             <span className="w-1.5 h-1.5 rounded-full bg-white/30 animate-pulse" />
-            <span className="text-white/60 font-mono tracking-widest text-xs uppercase pt-0.5">
+            <span className="text-white font-mono tracking-widest text-xs uppercase pt-0.5">
               كيف نعمل
             </span>
           </div>
@@ -33,7 +33,7 @@ export default function HowWeWork() {
             </span>
           </h2>
           
-          <p className="text-white/50 text-base md:text-lg lg:text-xl font-light leading-relaxed select-text pt-2">
+          <p className="text-white text-base md:text-lg lg:text-xl font-light leading-relaxed select-text pt-2">
             نعتمد على منهجية عمل واضحة تبدأ بفهم النشاط التجاري والتحديات الحالية، ثم الانتقال إلى تصميم الحلول المناسبة وتنفيذها بطريقة تساعد الشركات على بناء حضور رقمي أكثر كفاءة واستقرارًا.
           </p>
         </div>
@@ -50,9 +50,9 @@ export default function HowWeWork() {
             variants={itemVariant}
             className="flex flex-col items-center md:items-start text-center md:text-right p-8 md:p-12 border-b md:border-b-0 md:border-l border-white/10 transform-gpu"
           >
-            <span className="font-mono text-xs text-white/30 tracking-widest uppercase mb-4 block">PHASE 01</span>
+            <span className="font-mono text-xs text-blue-600 tracking-widest uppercase mb-4 block">PHASE 01</span>
             <h3 className="text-xl font-bold text-white mb-3">فهم النشاط والتحديات</h3>
-            <p className="text-white/40 text-sm font-light leading-relaxed select-text">
+            <p className="text-white/80 text-sm font-light leading-relaxed select-text">
               تبدأ المنهجية بفهم عميق وتحليل دقيق للنشاط التجاري والوقوف على كافة التحديات الحالية التي تواجه المنظومة.
             </p>
           </motion.div>
@@ -66,9 +66,9 @@ export default function HowWeWork() {
             variants={itemVariant}
             className="flex flex-col items-center md:items-start text-center md:text-right p-8 md:p-12 border-b md:border-b-0 md:border-l border-white/10 transform-gpu"
           >
-            <span className="font-mono text-xs text-white/30 tracking-widest uppercase mb-4 block">PHASE 02</span>
+            <span className="font-mono text-xs text-blue-600 tracking-widest uppercase mb-4 block">PHASE 02</span>
             <h3 className="text-xl font-bold text-white mb-3">تصميم الحلول المناسبة</h3>
-            <p className="text-white/40 text-sm font-light leading-relaxed select-text">
+            <p className="text-white/80 text-sm font-light leading-relaxed select-text">
               الانتقال المباشر إلى مرحلة التخطيط لابتكار وتصميم الحلول البرمجية والرقمية البديلة التي تناسب أهداف النمو.
             </p>
           </motion.div>
@@ -82,9 +82,9 @@ export default function HowWeWork() {
             variants={itemVariant}
             className="flex flex-col items-center md:items-start text-center md:text-right p-8 md:p-12 transform-gpu"
           >
-            <span className="font-mono text-xs text-white/30 tracking-widest uppercase mb-4 block">PHASE 03</span>
+            <span className="font-mono text-xs text-blue-600 tracking-widest uppercase mb-4 block">PHASE 03</span>
             <h3 className="text-xl font-bold text-white mb-3">التنفيذ والاستقرار</h3>
-            <p className="text-white/40 text-sm font-light leading-relaxed select-text">
+            <p className="text-white/80 text-sm font-light leading-relaxed select-text">
               تنفيذ الحلول على أرض الواقع ببنية تحتية قوية تساعد الشركات على بناء حضور رقمي ذو كفاءة عالية واستقرار تام.
             </p>
           </motion.div>

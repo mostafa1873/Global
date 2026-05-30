@@ -76,7 +76,7 @@ export default function Services() {
             </span>
           </h2>
 
-          <p className="text-white/50 text-sm md:text-base font-light leading-relaxed max-w-2xl select-text pt-2">
+          <p className="text-white/80 text-sm md:text-base font-light leading-relaxed max-w-2xl select-text pt-2">
             نقدم مجموعة من الخدمات الرقمية التي تساعد الشركات على تطوير حضورها الرقمي وتحسين تجربة العملاء وبناء أنظمة تدعم التوسع والاستمرارية.
           </p>
         </div>
@@ -99,20 +99,20 @@ export default function Services() {
 
               {/* الجزء العلوي: الرقم والخط التعريفي - متسنتر في الموبايل بس */}
               <div className="flex flex-col md:flex-row justify-center md:justify-between items-center md:items-start w-full mb-8 gap-3 md:gap-0">
-                <span className="font-mono text-xs text-white/30 uppercase tracking-widest border-b border-white/10 pb-1 text-center md:text-right">
+                <span className="font-mono text-xs text-white uppercase tracking-widest border-b border-white/10 pb-1 text-center md:text-right">
                   {service.enTitle}
                 </span>
-                <span className="font-mono text-lg text-white/10 group-hover:text-nexus-blue transition-colors duration-300 font-bold">
+                <span className="font-mono text-lg text-white group-hover:text-nexus-blue transition-colors duration-300 font-bold">
                   {service.id}
                 </span>
               </div>
 
               {/* الجزء الأوسط والسفلي: النصوص مرتبة ومظبوطة في النص للموبايل */}
               <div className="flex flex-col items-center md:items-start text-center md:text-right space-y-3 mt-auto select-text">
-                <h3 className="text-xl font-bold text-white group-hover:text-nexus-blue transition-colors duration-300 leading-snug">
+                <h3 className="text-xl font-bold text-blue-600 group-hover:text-blue-600 transition-colors duration-300 leading-snug">
                   {service.arTitle}
                 </h3>
-                <p className="text-white/40 group-hover:text-white/60 transition-colors duration-300 text-sm font-light leading-relaxed">
+                <p className="text-white/80 group-hover:text-white transition-colors duration-300 text-sm font-light leading-relaxed">
                   {service.desc}
                 </p>
               </div>

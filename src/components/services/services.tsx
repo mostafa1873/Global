@@ -63,20 +63,20 @@ export default function Services() {
         {/* هيدر السيكشن - متسنتر وشيك جداً ومظبوط ريسبونسف */}
         <div className="max-w-3xl mx-auto mb-16 md:mb-24 flex flex-col items-center text-center space-y-5 transform-gpu">
           <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full border border-nexus-blue/20 bg-nexus-blue/5">
-            <span className="w-1.5 h-1.5 rounded-full bg-nexus-blue animate-pulse" />
-            <span className="text-nexus-blue font-mono tracking-widest text-xs uppercase pt-0.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
+            <span className="text-blue-600 font-mono tracking-widest text-xs uppercase pt-0.5">
               منظومة الخدمات الرقمية
             </span>
           </div>
 
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight select-text">
             حلول رقمية مصممة <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/50">
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/60">
               لدعم النمو
             </span>
           </h2>
 
-          <p className="text-white/50 text-sm md:text-base font-light leading-relaxed max-w-2xl select-text pt-2">
+          <p className="text-white/80 text-sm md:text-base font-light leading-relaxed max-w-2xl select-text pt-2">
             نقدم مجموعة من الخدمات الرقمية التي تساعد الشركات على تطوير حضورها الرقمي وتحسين تجربة العملاء وبناء أنظمة تدعم التوسع والاستمرارية.
           </p>
         </div>
@@ -99,20 +99,20 @@ export default function Services() {
 
               {/* الجزء العلوي: الرقم والخط التعريفي - متسنتر في الموبايل بس */}
               <div className="flex flex-col md:flex-row justify-center md:justify-between items-center md:items-start w-full mb-8 gap-3 md:gap-0">
-                <span className="font-mono text-xs text-white/30 uppercase tracking-widest border-b border-white/10 pb-1 text-center md:text-right">
+                <span className="font-mono text-xs text-white uppercase tracking-widest border-b border-white/10 pb-1 text-center md:text-right">
                   {service.enTitle}
                 </span>
-                <span className="font-mono text-lg text-white/10 group-hover:text-nexus-blue transition-colors duration-300 font-bold">
+                <span className="font-mono text-lg text-white group-hover:text-nexus-blue transition-colors duration-300 font-bold">
                   {service.id}
                 </span>
               </div>
 
               {/* الجزء الأوسط والسفلي: النصوص مرتبة ومظبوطة في النص للموبايل */}
               <div className="flex flex-col items-center md:items-start text-center md:text-right space-y-3 mt-auto select-text">
-                <h3 className="text-xl font-bold text-white group-hover:text-nexus-blue transition-colors duration-300 leading-snug">
+                <h3 className="text-xl font-bold text-blue-600 group-hover:text-blue-600 transition-colors duration-300 leading-snug">
                   {service.arTitle}
                 </h3>
-                <p className="text-white/40 group-hover:text-white/60 transition-colors duration-300 text-sm font-light leading-relaxed">
+                <p className="text-white/80 group-hover:text-white transition-colors duration-300 text-sm font-light leading-relaxed">
                   {service.desc}
                 </p>
               </div>

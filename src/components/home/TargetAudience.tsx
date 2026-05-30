@@ -19,19 +19,19 @@ export default function TargetAudience() {
         <div className="flex flex-col items-center md:items-start text-center md:text-right mb-20 md:mb-28 space-y-6 max-w-3xl transform-gpu">
           <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full border border-white/10">
             <span className="w-1.5 h-1.5 rounded-full bg-white/40 animate-pulse" />
-            <span className="text-white/60 font-mono tracking-widest text-xs uppercase pt-0.5">
+            <span className="text-white font-mono tracking-widest text-xs uppercase pt-0.5">
               لمن نقدم خدماتنا
             </span>
           </div>
           
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight select-text">
             حلول رقمية للشركات <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40">
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60">
               التي تبحث عن نمو منظم
             </span>
           </h2>
           
-          <p className="text-white/50 text-base md:text-lg lg:text-xl font-light leading-relaxed select-text pt-2">
+          <p className="text-white/85 text-base md:text-lg lg:text-xl font-light leading-relaxed select-text pt-2">
             نعمل مع الشركات التي تسعى لتطوير حضورها الرقمي وتحسين أنظمتها التشغيلية وبناء تجربة أكثر احترافية لعملائها.
           </p>
         </div>
@@ -65,7 +65,7 @@ export default function TargetAudience() {
 
                 {/* رقم القطاع بتنسيق تكنولوجي بريميوم */}
                 <div className="flex items-center justify-between w-full mb-6">
-                  <span className="font-mono text-xs text-white/30 tracking-widest group-hover:text-white/60 transition-colors duration-300">
+                  <span className="font-mono text-xs text-white/60 tracking-widest group-hover:text-white/60 transition-colors duration-300">
                      TARGET_{sector.id}
                   </span>
                   <div className="w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-white transition-colors duration-500" />
@@ -73,7 +73,7 @@ export default function TargetAudience() {
 
                 {/* اسم القطاع الأصلي كاملاً */}
                 <div className="mt-auto">
-                  <h3 className={`text-xl font-bold text-white/60 group-hover:text-white transition-all duration-300 select-text leading-snug
+                  <h3 className={`text-xl font-bold text-white/85 group-hover:text-white transition-all duration-300 select-text leading-snug
                     ${isLast ? "lg:text-3xl max-w-2xl" : "lg:text-2xl"}
                   `}>
                     {sector.name}

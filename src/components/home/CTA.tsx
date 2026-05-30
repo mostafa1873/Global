@@ -24,7 +24,7 @@ export default function CompactClosing() {
                     </span>
                     
                     {/* المحتوى الطويل تم تصغير حجمه وتخفيف وزنه بصرياً ليصبح كعنوان فرعي راقٍ ومريح في القراءة */}
-                    <span className="block text-base sm:text-lg md:text-xl font-light text-white/60 max-w-3xl mx-auto leading-relaxed">
+                    <span className="block text-base sm:text-lg md:text-xl font-light text-white/80 max-w-3xl mx-auto leading-relaxed">
                         <span className="text-blue-500 font-medium">إذا كنت تبحث عن تطوير حضورك الرقمي أو بناء أنظمة تساعد أعمالك على النمو بشكل أكثر كفاءة، </span> 
                         فريقنا جاهز لمناقشة احتياجاتك وبناء الحلول المناسبة لنشاطك التجاري.
                     </span>

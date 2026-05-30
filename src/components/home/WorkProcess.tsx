@@ -48,7 +48,7 @@ export default function WorkProcess() {
         {/* هيدر السيكشن الفخم */}
         <div className="flex flex-col items-center md:items-start text-center md:text-right mb-20 md:mb-28 space-y-5 max-w-3xl transform-gpu">
           <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full border border-white/10">
-            <span className="w-1.5 h-1.5 rounded-full bg-white/40 animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
             <span className="text-white/60 font-mono tracking-widest text-xs uppercase pt-0.5">
               منهجية العمل
             </span>
@@ -56,7 +56,7 @@ export default function WorkProcess() {
           
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight select-text">
             مراحل العمل <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40">
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60">
               التي نقود بها مشروعك
             </span>
           </h2>
@@ -82,17 +82,17 @@ export default function WorkProcess() {
               <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 md:right-0 md:translate-x-0 w-2.5 h-2.5 rounded-full border border-white/30 bg-[#020617] group-hover:border-white group-hover:bg-white transition-all duration-300 z-20" />
               
               {/* رقم المرحلة الأنيق */}
-              <span className="font-mono text-xs text-white/20 tracking-widest uppercase mb-2 group-hover:text-white/40 transition-colors duration-300">
+              <span className="font-mono text-xs text-blue-600 tracking-widest uppercase mb-2 group-hover:text-white/60 transition-colors duration-300">
                 PHASE {step.phase}
               </span>
 
               {/* العنوان الإنجليزي للمرحلة */}
-              <h3 className="font-mono text-lg md:text-xl font-bold text-white/40 group-hover:text-white transition-colors duration-300 mb-4 select-text">
+              <h3 className="font-mono text-lg md:text-xl font-bold text-white/85 group-hover:text-white transition-colors duration-300 mb-4 select-text">
                 {step.enTitle}
               </h3>
 
               {/* الشرح العربي الأصلي كامل كما هو بالملي */}
-              <p className="text-white/50 text-sm md:text-base font-light leading-relaxed select-text max-w-xs md:max-w-none">
+              <p className="text-white/80 text-sm md:text-base font-light leading-relaxed select-text max-w-xs md:max-w-none">
                 {step.arTitle}
               </p>
               

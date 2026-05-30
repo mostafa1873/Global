@@ -27,16 +27,16 @@ export default function ContactPage() {
                 {/* --- الجنب الأيمن: بيانات التواصل والسوشيال ميديا --- */}
                 <div className="lg:col-span-5 space-y-10 flex flex-col items-center lg:items-start w-full">
                     <div className="space-y-4 text-center lg:text-right flex flex-col items-center lg:items-start">
-                        <span className="text-xs font-black tracking-[0.3em] text-[#4aa3ff] uppercase border-r-2 border-[#4aa3ff] pr-3">
+                        <span className="text-xs font-black tracking-[0.3em] text-blue-600 uppercase border-r-2 border-blue-600 pr-3">
                             دعنا نناقش مشروعك القادم
                         </span>
                         <h1 className="text-xl md:text-2xl font-extrabold tracking-tight leading-tight">
                             ذا كنت تبحث عن تطوير حضورك الرقمي أو بناء أنظمة تساعد أعمالك على النمو بشكل أكثر كفاءة <br />
-                            <span className="bg-gradient-to-l from-[#4aa3ff] to-[#1f6ed4] bg-clip-text text-transparent">
+                            <span className="bg-gradient-to-l from-blue-600 to-[#1f6ed4] bg-clip-text text-transparent">
                                  يسعدنا التواصل معك.
                             </span>
                         </h1>
-                        <p className="text-gray-400 text-sm max-w-sm leading-relaxed">
+                        <p className="text-white/80 text-sm max-w-sm leading-relaxed">
                             لديك فكرة مشروع أو ترغب في تطوير أعمالك؟ اترك لنا رسالة وسنقوم بالرد عليك في أقرب وقت ممكن.
                         </p>
                     </div>
@@ -49,8 +49,8 @@ export default function ContactPage() {
                                 <Mail size={18} />
                             </div>
                             <div className="flex flex-col items-center lg:items-start">
-                                <p className="text-[10px] font-bold text-gray-500 uppercase">ارسل لنا إيميل</p>
-                                <p className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors tracking-wider">
+                                <p className="text-[10px] font-bold text-white/50 uppercase">ارسل لنا إيميل</p>
+                                <p className="text-sm font-medium text-white group-hover:text-white transition-colors tracking-wider">
                                     info@globalnexuseg.com
                                 </p>
                             </div>
@@ -62,8 +62,8 @@ export default function ContactPage() {
                                 <Phone size={18} />
                             </div>
                             <div className="flex flex-col items-center lg:items-start">
-                                <p className="text-[10px] font-bold text-gray-500 uppercase">اتصل بنا مباشرة</p>
-                                <p className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors" dir="ltr">+20 110 945 8238</p>
+                                <p className="text-[10px] font-bold text-white/50 uppercase">اتصل بنا مباشرة</p>
+                                <p className="text-sm font-medium text-white group-hover:text-white transition-colors" dir="ltr">+20 110 945 8238</p>
                             </div>
                         </a>
 
@@ -73,15 +73,15 @@ export default function ContactPage() {
                                 <MapPin size={18} />
                             </div>
                             <div className="flex flex-col items-center lg:items-start">
-                                <p className="text-[10px] font-bold text-gray-500 uppercase">المقر الرئيسي</p>
-                                <p className="text-sm font-medium text-gray-300"> البحيرة - مصر</p>
+                                <p className="text-[10px] font-bold text-white/50 uppercase">المقر الرئيسي</p>
+                                <p className="text-sm font-medium text-white"> البحيرة - مصر</p>
                             </div>
                         </div>
                     </div>
 
                     {/* أيقونات السوشيال ميديا */}
                     <div className="space-y-3 w-full flex flex-col items-center lg:items-start text-center lg:text-right">
-                        <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">تابعنا على منصاتنا</p>
+                        <p className="text-xs font-bold text-white uppercase tracking-wider">تابعنا على منصاتنا</p>
                         <div className="flex gap-4 items-center justify-center lg:justify-start">
                             {[
                                 { icon: FaFacebookF, link: "https://web.facebook.com/GlobalNexus.Egypt/?rdid=8c2wIiGvCoqjjqIv" },
@@ -112,7 +112,7 @@ export default function ContactPage() {
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div className="flex flex-col gap-1.5 text-center lg:text-right">
-                                <label className="text-xs font-bold text-gray-400 lg:mr-1">الاسم</label>
+                                <label className="text-xs font-bold text-white lg:mr-1">الاسم</label>
                                 <input
                                     type="text"
                                     placeholder="الاسم بالكامل"
@@ -121,7 +121,7 @@ export default function ContactPage() {
                             </div>
 
                             <div className="flex flex-col gap-1.5 text-center lg:text-right">
-                                <label className="text-xs font-bold text-gray-400 lg:mr-1">الشركة</label>
+                                <label className="text-xs font-bold text-white lg:mr-1">الشركة</label>
                                 <input
                                     type="text"
                                     placeholder="اسم الشركة"
@@ -130,7 +130,7 @@ export default function ContactPage() {
                             </div>
 
                             <div className="flex flex-col gap-1.5 text-center lg:text-right">
-                                <label className="text-xs font-bold text-gray-400 lg:mr-1">البريد الإلكتروني</label>
+                                <label className="text-xs font-bold text-white lg:mr-1">البريد الإلكتروني</label>
                                 <input
                                     type="email"
                                     placeholder="name@example.com"
@@ -139,7 +139,7 @@ export default function ContactPage() {
                             </div>
 
                             <div className="flex flex-col gap-1.5 text-center lg:text-right">
-                                <label className="text-xs font-bold text-gray-400 lg:mr-1">رقم الهاتف</label>
+                                <label className="text-xs font-bold text-white lg:mr-1">رقم الهاتف</label>
                                 <input
                                     type="tel"
                                     placeholder="01111111111"
@@ -149,7 +149,7 @@ export default function ContactPage() {
                         </div>
 
                         <div className="flex flex-col gap-2 text-center lg:text-right">
-                            <label className="text-xs font-black text-gray-300 lg:mr-1">أنا مهتم بـ</label>
+                            <label className="text-xs font-black text-white lg:mr-1">أنا مهتم بـ</label>
                             <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
                                 {services.map((service) => {
                                     const isSelected = selectedServices.includes(service);
@@ -171,7 +171,7 @@ export default function ContactPage() {
                         </div>
 
                         <div className="flex flex-col gap-2 text-center lg:text-right">
-                            <label className="text-xs font-black text-gray-300 lg:mr-1">الميزانية المتوقعة</label>
+                            <label className="text-xs font-black text-white lg:mr-1">الميزانية المتوقعة</label>
                             <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
                                 {budgets.map((budget) => {
                                     const isSelected = selectedBudget === budget;
@@ -193,7 +193,7 @@ export default function ContactPage() {
                         </div>
 
                         <div className="flex flex-col gap-1.5 text-center lg:text-right">
-                            <label className="text-xs font-bold text-gray-400 lg:mr-1">تفاصيل مشروعك</label>
+                            <label className="text-xs font-bold text-white lg:mr-1">تفاصيل مشروعك</label>
                             <textarea
                                 rows={4}
                                 placeholder="اكتب رسالتك هنا..."

@@ -41,19 +41,19 @@ export default function WhyGlobalNexus() {
           <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-right space-y-6 lg:sticky lg:top-40 transform-gpu">
             <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full border border-white/10">
               <span className="w-1.5 h-1.5 rounded-full bg-white/40 animate-pulse" />
-              <span className="text-white/60 font-mono tracking-widest text-xs uppercase pt-0.5">
+              <span className="text-white font-mono tracking-widest text-xs uppercase pt-0.5">
                 لماذا Global Nexus
               </span>
             </div>
             
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight select-text">
               شراكات رقمية مبنية <br className="hidden lg:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40">
+              <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60">
                 على الوضوح والتنفيذ
               </span>
             </h2>
             
-            <p className="text-white/50 text-base md:text-lg font-light leading-relaxed select-text pt-2 max-w-md">
+            <p className="text-white/85 text-base md:text-lg font-light leading-relaxed select-text pt-2 max-w-md">
               نعمل مع الشركات التي تبحث عن تطوير بيئة رقمية أكثر احترافية واستقرارًا من خلال حلول تعتمد على فهم الأهداف التجارية وبناء أنظمة تدعم النمو الفعلي.
             </p>
           </div>
@@ -77,17 +77,17 @@ export default function WhyGlobalNexus() {
                 <div className="hidden md:block absolute -right-[53px] lg:-right-[69px] top-2 w-2 h-2 rounded-full bg-[#020617] border border-white/30 group-hover:border-white group-hover:scale-125 transition-all duration-300 z-20" />
 
                 {/* الرقم */}
-                <span className="font-mono text-xs text-white/20 tracking-widest mb-3 block font-bold group-hover:text-white/40 transition-colors duration-300">
+                <span className="font-mono text-xs text-white tracking-widest mb-3 block font-bold group-hover:text-white/50 transition-colors duration-300">
                    {reason.id}
                 </span>
 
                 {/* العنوان */}
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-3 select-text group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/60 transition-all duration-300">
+                <h3 className="text-xl md:text-2xl font-bold text-blue-600 mb-3 select-text group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/60 transition-all duration-300">
                   {reason.title}
                 </h3>
 
                 {/* الوصف الأصلي كامل */}
-                <p className="text-white/40 text-sm md:text-base font-light leading-relaxed max-w-md select-text group-hover:text-white/50 transition-colors duration-300">
+                <p className="text-white text-sm md:text-base font-light leading-relaxed max-w-md select-text group-hover:text-white/50 transition-colors duration-300">
                   {reason.desc}
                 </p>
               </motion.div>

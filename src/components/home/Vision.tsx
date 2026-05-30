@@ -28,14 +28,14 @@ export default function Vision() {
             <div className="lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-right space-y-4 sm:space-y-6">
               <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-md">
                 <span className="w-1.5 h-1.5 rounded-full bg-white/40 animate-pulse" />
-                <span className="text-white/60 font-mono tracking-widest text-xs uppercase pt-0.5">
+                <span className="text-white/85 font-mono tracking-widest text-xs uppercase pt-0.5">
                   الرؤية
                 </span>
               </div>
               
               <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight select-text">
                 نحو بيئة رقمية <br className="hidden lg:block" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40">
+                <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60">
                   أكثر وضوحًا واستدامة
                 </span>
               </h2>
@@ -45,7 +45,7 @@ export default function Vision() {
             <div className="lg:col-span-7 flex flex-col justify-center space-y-8 sm:space-y-10 lg:pt-4">
               
               {/* النص الأصلي كامل وبحجم خط بريميوم جداً ومريح في السكرول */}
-              <p className="text-lg md:text-2xl lg:text-3xl font-light text-white/60 leading-relaxed sm:leading-loose select-text text-center lg:text-right">
+              <p className="text-lg md:text-2xl lg:text-3xl font-light text-white/80 leading-relaxed sm:leading-loose select-text text-center lg:text-right">
                 نسعى إلى مساعدة الشركات على بناء أنظمة رقمية تدعم النمو طويل المدى من خلال حلول تجمع بين{" "}
                 <span className="text-white font-medium underline underline-offset-8 decoration-white/20 hover:decoration-white transition-colors duration-300">الاستراتيجية</span>،{" "}
                 <span className="text-white font-medium underline underline-offset-8 decoration-white/20 hover:decoration-white transition-colors duration-300">التصميم </span>

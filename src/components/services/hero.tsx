@@ -41,7 +41,7 @@ export default function AboutHero() {
             variants={fadeVariant}
             className="inline-flex items-center justify-center gap-2.5 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-md mb-10"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-white/50 animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
             <span className="text-white/60 font-mono tracking-widest text-xs uppercase pt-0.5">
               من نحن
             </span>
@@ -56,7 +56,7 @@ export default function AboutHero() {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.15] mb-8 select-text"
           >
             حلول رقمية تساعد الشركات على النمو بشكل أكثر <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/30 filter drop-shadow-sm">
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/60 filter drop-shadow-sm">
               وضوحًا وكفاءة
             </span>
           </motion.h1>
@@ -67,7 +67,7 @@ export default function AboutHero() {
             initial="hidden" 
             animate="visible" 
             variants={fadeVariant}
-            className="text-white/50 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-2xl select-text mx-auto tracking-wide"
+            className="text-white/80 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-2xl select-text mx-auto tracking-wide"
           >
             نقدم خدمات تجمع بين الاستراتيجية والتنفيذ لمساعدة الشركات على تطوير حضورها الرقمي وتحسين تجربة العملاء وبناء أنظمة تدعم الاستمرارية.
           </motion.p>

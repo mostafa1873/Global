@@ -56,7 +56,7 @@ export default function AboutHero() {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.15] mb-8 select-text"
           >
             نبني حلولًا رقمية <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/30 filter drop-shadow-sm">
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/60 filter drop-shadow-sm">
               تدعم النمو الحقيقي
             </span>
           </motion.h1>
@@ -67,7 +67,7 @@ export default function AboutHero() {
             initial="hidden" 
             animate="visible" 
             variants={fadeVariant}
-            className="text-white/50 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-2xl select-text mx-auto tracking-wide"
+            className="text-white/75 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-2xl select-text mx-auto tracking-wide"
           >
             <strong className="text-white font-semibold tracking-wide border-b border-white/20 pb-0.5">Global Nexus</strong>
             <br className="mt-4 block" />

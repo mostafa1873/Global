@@ -93,21 +93,21 @@ export default function Services() {
               >
                 <div className="absolute inset-0 bg-radial-gradient from-nexus-blue/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none transform-gpu" />
 
-                {/* الهيدر العلوي: EnTitle يمين، و ID شمال بشكل هندسي نظيف */}
-                <div className="flex justify-between items-start w-full mb-8">
-                  <span className="font-mono text-xs text-white/50 uppercase tracking-widest border-b border-white/10 pb-1">
+                {/* الهيدر العلوي: تم إضافة كلاسات ليتمركز في الموبايل */}
+                <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center sm:items-start w-full mb-8 gap-3 sm:gap-0">
+                  <span className="font-mono text-xs text-white/50 uppercase tracking-widest border-b border-white/10 pb-1 text-center sm:text-right">
                     {service.enTitle}
                   </span>
-                  <span className="font-mono text-lg text-white group-hover:text-nexus-blue transition-colors duration-300 font-bold">
+                  <span className="font-mono text-lg text-white group-hover:text-nexus-blue transition-colors duration-300 font-bold mt-2 sm:mt-0">
                     {service.id}
                   </span>
                 </div>
 
-                {/* محاذاة النص والزرار: النصوص يمين والزرار شمال في نفس السطر بدقة ريسبونسف */}
+                {/* محاذاة النص والزرار: في المنتصف للموبايل، وتوزيع طبيعي للشاشات الأكبر */}
                 <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mt-auto w-full">
                   
-                  {/* النصوص على اليمين تماماً */}
-                  <div className="flex flex-col items-start text-right space-y-3 select-text max-w-[70%]">
+                  {/* النصوص */}
+                  <div className="flex flex-col items-center sm:items-start text-center sm:text-right space-y-3 select-text w-full sm:max-w-[70%]">
                     <h3 className="text-xl font-bold text-white group-hover:text-nexus-blue transition-colors duration-300 leading-snug">
                       {service.arTitle}
                     </h3>
@@ -116,8 +116,8 @@ export default function Services() {
                     </p>
                   </div>
 
-                  {/* الزرار الجديد الفخم على الشمال (كبسولة تفاعلية متطورة) */}
-                  <div className="flex justify-end sm:pb-1">
+                  {/* الزرار الجديد الفخم */}
+                  <div className="flex justify-center sm:justify-end w-full sm:w-auto sm:pb-1">
                     <div className="inline-flex items-center gap-2.5 px-4 py-2 text-xs font-medium tracking-wide text-white/60 group-hover:text-white bg-white/[0.02] border border-white/[0.08] group-hover:border-nexus-blue/50 group-hover:bg-nexus-blue/[0.04] rounded-full transition-all duration-300 backdrop-blur-md whitespace-nowrap overflow-hidden relative">
                       <span>استكشف الخدمة</span>
                       

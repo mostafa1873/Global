@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Globe, Menu, X } from "lucide-react";
+import { ChevronLeft, Globe, Menu, X } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaBehance, FaLinkedinIn } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
@@ -65,9 +65,8 @@ export default function Navbar() {
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
               // التعديل هنا: إضافة لون خفيف للينك النشط ليتميز عن الباقي
-              className={`relative px-5 py-2 text-sm font-medium transition-colors duration-300 ${
-                pathname === link.href ? "text-blue-400 font-semibold" : "text-gray-300 hover:text-white"
-              }`}
+              className={`relative px-5 py-2 text-sm font-medium transition-colors duration-300 ${pathname === link.href ? "text-blue-400 font-semibold" : "text-gray-300 hover:text-white"
+                }`}
             >
               <span className="relative z-10">{link.name}</span>
               {/* التعديل هنا: الـ Pill الأزرق بيفضل ثابت على الصفحة الحالية ولما تعمل هوفر يروح مع الماوس ذكياً */}
@@ -142,57 +141,54 @@ export default function Navbar() {
             animate={{ clipPath: "circle(150% at 100% 0%)" }}
             exit={{ clipPath: "circle(0% at 100% 0%)" }}
             transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 bg-[#070707] z-[150] lg:hidden flex flex-col h-screen w-full overflow-hidden"
+            className="fixed inset-0 bg-black/40 backdrop-blur-xl z-[150] lg:hidden flex flex-col h-screen w-full overflow-hidden"
           >
             {/* Noise Background */}
-            <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+            <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 
             {/* Header: Logo Left - Close Right */}
-            <div className="relative w-full flex justify-between items-center p-6 pt-8" dir="ltr">
+            <div className="relative w-full flex justify-between items-center p-6" dir="ltr">
               <div className="flex-shrink-0">
-                <Image src={logo} alt="Logo" width={90} height={45} className="brightness-125" />
+                <Image src={logo} alt="Logo" width={120} height={80} className="brightness-125" />
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 border border-white/20 text-white active:scale-90 transition-all"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 border border-white/20 text-white"
               >
-                <X size={24} />
+                <X size={20} />
               </button>
             </div>
 
             {/* Content Area */}
-            <div className="relative flex-1 flex flex-col justify-between px-8 pb-6 pt-2">
+            <div className="relative flex-1 flex flex-col justify-evenly px-6 overflow-hidden">
 
               {/* Nav Links */}
-              {/* تم تثبيت dir="ltr" هنا عشان اللينكات والـ Menu تفضل ثابتة على اليمين في العربي والإنجليزي */}
-              <nav className="flex flex-col items-end w-full" dir="ltr">
-                <p className="text-blue-500 text-[10px] font-black tracking-[0.4em] uppercase mb-4 border-r-2 border-blue-500 pr-3">
-                  MENU
-                </p>
-                <div className="flex flex-col w-full">
+              {/* التعديل هنا: الـ dir بيتغير بناءً على اللغة عشان يقلب اتجاه الـ Flex */}
+              <nav className="flex flex-col items-center w-full" dir={lang === "AR" ? "rtl" : "ltr"}>
+                <div className="flex flex-col w-full gap-2">
                   {navLinks.map((link, i) => (
                     <motion.div
                       key={link.name}
                       initial={{ x: 30, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
                       transition={{ delay: 0.1 + i * 0.05 }}
-                      className="w-full border-b border-white/5 last:border-none"
+                      className="w-full"
                     >
                       <Link
                         href={link.href}
                         onClick={() => setIsOpen(false)}
-                        className="group flex flex-row-reverse items-center justify-start gap-4 py-3"
+                        className={`group flex flex-row items-center justify-between px-5 py-2.5 rounded-full transition-all border ${pathname === link.href
+                            ? "bg-white/[0.08] border-white/20"
+                            : "bg-white/[0.02] border-white/5"
+                          }`}
                       >
-                        {/* التعديل هنا: تلوين لينك الصفحة الحالية باللون الأزرق في قائمة الموبايل ليكون واضحاً */}
-                        <span className={`text-3xl font-extrabold uppercase tracking-tight group-hover:text-blue-500 transition-colors ${
-                          pathname === link.href ? "text-blue-500" : "text-white"
-                        }`}>
+                        <span className={`text-2xl font-bold uppercase ${pathname === link.href ? "text-blue-500" : "text-white"}`}>
                           {link.name}
                         </span>
-                        {/* التعديل هنا: إظهار الدوت الزرقاء بشكل دائم للينك الصفحة الحالية في الموبايل */}
-                        <div className={`h-1 w-1 rounded-full bg-blue-600 transition-all ${
-                          pathname === link.href ? "opacity-100" : "opacity-0 group-hover:opacity-100"
-                        }`} />
+                        {/* السهم هنا هيتقلب تلقائياً مع الـ dir، ولو احتجت تدوره في الإنجليزي ضفنا له كلاس دورانه */}
+                        <div className={`transition-all ${pathname === link.href ? "text-blue-500" : "text-white/30"} ${lang === "EN" ? "rotate-180" : ""}`}>
+                          <ChevronLeft size={20} />
+                        </div>
                       </Link>
                     </motion.div>
                   ))}
@@ -200,71 +196,32 @@ export default function Navbar() {
               </nav>
 
               {/* Footer Area */}
-              <div className="flex flex-col items-center gap-6 pb-4">
-
-                {/* زر ترجمة المنيو للموبايل مربوط بالـ State بالظبط */}
-                {/* زر ترجمة المنيو للموبايل - ديزاين مودرن و Chic */}
+              <div className="flex flex-col items-center gap-4">
                 <motion.button
                   onClick={() => setLang(lang === "AR" ? "EN" : "AR")}
-                  whileHover={{
-                    scale: 1.02,
-                    borderColor: "rgba(59, 130, 246, 0.5)",
-                    boxShadow: "0 0 25px rgba(59, 130, 246, 0.25)" // التعديل المطلوب لـ Vercel هنا
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                  className="relative overflow-hidden flex items-center gap-3 px-7 py-3 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md text-white transition-all duration-300 group"
+                  className="flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md text-white"
                   dir="ltr"
                 >
-                  {/* تأثير توهج خلفي ناعم يظهر مع الهوفر */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-                  {/* حركة ذكية للأيقونة عند تغيير اللغة أو الهوفر */}
-                  <motion.div
-                    animate={{ rotate: lang === "AR" ? 0 : 185 }}
-                    transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                    className="text-blue-500 group-hover:text-blue-400 transition-colors"
-                  >
-                    <Globe size={16} />
-                  </motion.div>
-
-                  {/* نص أنيق بتباعد حروف بريميوم */}
-                  <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-gray-300 group-hover:text-white transition-colors">
+                  <Globe size={14} className="text-blue-500" />
+                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase">
                     {lang === "AR" ? "ENGLISH VERSION" : "العربية"}
                   </span>
                 </motion.button>
 
-                {/* .السوشيال ميديا وحقوق الشركة */}
-                <div className="flex flex-col items-center gap-3">
-                  <div className="flex gap-8 items-center justify-center">
-                    {[
-                      { icon: FaFacebookF, link: "https://web.facebook.com/GlobalNexus.Egypt/?rdid=8c2wIiGvCoqjjqIv" },
-                      { icon: FaInstagram, link: "https://www.instagram.com/accounts/suspended/?next=https%3A%2F%2Fwww.instagram.com%2Fglobalnexus_eg%3Figsh%3DMWp5emNjaXdlb2g0cg%26__coig_ufac%3D1#" },
-                      { icon: FaBehance, link: "https://www.behance.net/globa1nexus" },
-                      { icon: FaLinkedinIn, link: "https://www.linkedin.com/company/globalnexus-eg/?viewAsMember=true" }
-                    ].map((social, i) => (
-                      <a
-                        key={i}
-                        href={social.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-500 hover:text-white transition-all duration-300 transform hover:scale-125 active:scale-90 text-xl"
-                      >
-                        {/* رندر الأيقونة الجديدة من مكتبة react-icons */}
-                        <social.icon />
-                      </a>
-                    ))}
+                <div className="flex flex-col items-center gap-2">
+                  <div className="flex gap-6 items-center justify-center text-gray-400 text-lg">
+                    <FaFacebookF /> <FaInstagram /> <FaBehance /> <FaLinkedinIn />
                   </div>
-
-                  <p className="text-[8px] text-gray-600 font-bold tracking-[0.4em] uppercase">
+                  <p className="text-[8px] text-gray-600 font-bold tracking-[0.3em] uppercase">
                     © 2026 GLOBAL NEXUS
                   </p>
                 </div>
               </div>
-
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+
     </nav>
   );
 }

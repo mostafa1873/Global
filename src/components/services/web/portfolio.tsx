@@ -1,179 +1,70 @@
 "use client";
 
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
-import { ExternalLink, ArrowUpRight } from "lucide-react";
-import Image, { StaticImageData } from "next/image";
-import proj1 from "../../../../public/works/web/ezz-web.webp";
-import proj2 from "../../../../public/works/web/agro-web.webp";
-import proj3 from "../../../../public/works/web/power_web.webp";
-import proj4 from "../../../../public/works/web/green-web.webp";
+import { motion } from "framer-motion";
 
-
-// تعريف أنواع البيانات للكروت
-interface Project {
-    id: number;
-    title: string;
-    image: StaticImageData;
-    link: string;
-    color: string;
-}
-
-const projects: Project[] = [
-    {
-        id: 1,
-        title: "عز إكسبورت",
-        image: proj1,
-        link: "https://ezzexport.com",
-        color: "#2563eb"
-    },
-    {
-        id: 2,
-        title: "اجرو مارت",
-        image: proj2,
-        link: "https://agromart-eg.com",
-        color: "#7c3aed"
-    },
-    {
-        id: 3,
-        title: "جرين باور",
-        image: proj3,
-        link: "https://agropower.site",
-        color: "#06b6d4"
-    },
-    {
-        id: 4,
-        title: "اجرو جرين",
-        image: proj4,
-        link: "https://greenpower-eg.com",
-        color: "#10b981"
-    }
-];
-
-export default function TechMusclesScroll() {
-    const container = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: container,
-        offset: ["start start", "end end"]
-    });
-
-    return (
-        <section ref={container} className="relative bg-transparent border-t border-white/5" dir="rtl">
-            <div className="container mx-auto max-w-6xl px-4 md:px-6 py-10 md:py-10">
-
-                {/* Header احترافي */}
-                <div className="sticky top-10 md:top-20 z-0 mb-12 md:mb-5 px-2" dir="rtl">
-                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/5 pb-10">
-
-                        <div className="relative">
-                            <h2 className="absolute -top-10 md:-top-16 -right-4 md:-right-8 text-8xl md:text-[12rem] font-black text-white/[0.03] uppercase italic select-none tracking-tighter leading-none pointer-events-none">
-                                WORKS
-                            </h2>
-
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6 }}
-                                className="relative z-10 space-y-2"
-                            >
-                                <div className="flex items-center gap-3 mb-2">
-                                    <div className="h-px w-8 bg-blue-600" />
-                                    <span className="text-blue-500 font-mono text-[10px] md:text-xs tracking-[0.3em] uppercase">
-                                        Portfolio.v1
-                                    </span>
-                                </div>
-                                <h2 className="text-4xl md:text-7xl font-black text-white leading-none">
-                                    بعض <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">أعمالنا</span>
-                                </h2>
-                            </motion.div>
-                        </div>
-
-                        <div className="flex flex-col items-start md:items-end gap-3 z-10">
-                            <div className="flex items-center gap-2 bg-white/[0.03] px-4 py-2 rounded-2xl border border-white/5 backdrop-blur-md">
-                                <span className="relative flex h-2 w-2">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                                </span>
-                                <span className="text-[10px] font-mono text-neutral-400 uppercase tracking-widest">
-                                    Latest_Updates.2026
-                                </span>
-                            </div>
-
-                            <p className="text-neutral-500 text-[11px] md:text-sm font-light max-w-[280px] md:text-left leading-relaxed">
-                                نستعرض هنا نخبة من المشاريع التي تعكس <br className="hidden md:block" /> قوتنا في التنفيذ ودقة التفاصيل.
-                            </p>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div className="flex flex-col pb-[10vh]">
-                    {projects.map((project, index) => {
-                        const targetScale = 1 - ((projects.length - index) * 0.05);
-                        return (
-                            <ProjectCard
-                                key={project.id}
-                                {...project}
-                                i={index}
-                                progress={scrollYProgress}
-                                range={[index * (1 / projects.length), 1]}
-                                targetScale={targetScale}
-                            />
-                        );
-                    })}
-                </div>
-            </div>
-        </section>
-    );
-}
-
-// تعريف الـ Props للـ ProjectCard لحل مشكلة الـ Type Error
-interface ProjectCardProps extends Project {
-    i: number;
-    progress: MotionValue<number>;
-    range: number[];
-    targetScale: number;
-}
-
-const ProjectCard = ({ title, image, link, i, progress, range, targetScale }: ProjectCardProps) => {
-    const scale = useTransform(progress, range, [1, targetScale]);
-
-    return (
-        <div className="h-[70vh] md:h-[80vh] flex items-center justify-center sticky top-16 md:top-24 mb-12 md:mb-0">
-            <motion.div
-                style={{
-                    scale,
-                    top: `calc(-2vh + ${i * 20}px)`
-                }}
-                className="relative h-[400px] md:h-[500px] w-full max-w-[900px] rounded-[1.5rem] md:rounded-[2.5rem] border border-white/10 bg-neutral-950 overflow-hidden shadow-2xl mx-auto"
-            >
-                <Image
-                    src={image}
-                    alt={title}
-                    fill
-                    className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-opacity duration-500"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent p-6 md:p-12 flex flex-col justify-center md:justify-end items-center md:items-stretch">
-                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 w-full text-center md:text-right">
-                        <div className="space-y-2 md:space-y-4">
-                            <span className="text-xs md:text-sm font-mono text-blue-500 block">PROJECT_0{i + 1}</span>
-                            <h3 className="text-2xl md:text-5xl font-bold text-white tracking-tight">{title}</h3>
-                        </div>
-
-                        <motion.a
-                            href={link}
-                            target="_blank"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="group flex items-center justify-center gap-3 bg-white text-black px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-xs md:text-sm hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-xl w-fit mx-auto md:mx-0"
-                        >
-                            زيارة الموقع
-                            <ArrowUpRight size={18} className="group-hover:rotate-45 transition-transform" />
-                        </motion.a>
-                    </div>
-                </div>
-            </motion.div>
+export default function ServiceDetails() {
+  return (
+    <section className="w-full py-10 border-t border-white/10 px-6 md:px-24 bg-transparent text-white" dir="rtl">
+      <div className="max-w-6xl mx-auto">
+        
+        {/* المشكلة التي تعالجها الخدمة - توسيط في الموبايل */}
+        <div className="mb-20 p-8 md:p-12 border-r-4 border-blue-600 bg-white/5 rounded-l-3xl backdrop-blur-md text-center md:text-right">
+          <h3 className="text-blue-600 font-bold mb-4 uppercase tracking-widest text-sm">المشكلة التي تعالجها الخدمة</h3>
+          <p className="text-xl md:text-2xl font-light leading-relaxed text-white">
+            كثير من الشركات تعتمد فقط على صفحات السوشيال ميديا، رغم أن العميل غالبًا يحتاج إلى مصدر رسمي يثق فيه قبل اتخاذ قرار التواصل أو الشراء. الموقع الإلكتروني يمنح الشركة مساحة احترافية لعرض خدماتها، أعمالها، معلوماتها، وطريقة التواصل معها بشكل واضح ومستقل.
+          </p>
         </div>
-    );
-};
+
+        {/* ماذا نقدم داخل الخدمة - توسيط كامل */}
+        <div className="mb-20">
+          <h3 className="text-2xl md:text-3xl font-bold mb-10 text-center">ماذا نقدم داخل <span className="text-blue-600">الخدمة؟</span></h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              "تصميم وتطوير مواقع تعريفية للشركات",
+              "تصميم مواقع للخدمات والأنشطة التجارية",
+              "تطوير صفحات هبوط للحملات الإعلانية",
+              "تحسين تجربة المستخدم داخل الموقع",
+              "تنظيم محتوى الصفحات بشكل واضح",
+              "ربط الموقع بنماذج التواصل",
+              "تحسين سرعة الموقع وتجربة التصفح",
+              "مراعاة توافق الموقع مع الموبايل",
+              "تجهيز الموقع ليكون مناسبًا للنمو والتطوير مستقبلًا"
+            ].map((item, index) => (
+              <motion.div 
+                key={index}
+                whileHover={{ scale: 1.02 }}
+                className="p-6 border border-white/10 rounded-2xl bg-white/[0.03] hover:border-blue-600/50 hover:bg-blue-600/5 transition-all duration-300 text-center"
+              >
+                <div className="flex flex-col items-center">
+                  <span className="text-blue-600 font-bold mb-2">0{index + 1}.</span>
+                  <p className="font-medium text-white">{item}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* لمن هذه الخدمة + النتيجة - توسيط في الموبايل */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-right">
+          <div className="p-8 border border-white/10 rounded-3xl bg-white/5 flex flex-col items-center md:items-start">
+            <h3 className="text-xl font-bold mb-4 text-blue-600">لمن هذه الخدمة مناسبة؟</h3>
+            <p className="text-white leading-relaxed">
+              هذه الخدمة مناسبة للشركات التي تحتاج إلى موقع احترافي يعرض خدماتها بشكل واضح، أو الشركات التي تمتلك موقعًا قديمًا وتحتاج إلى تحديثه. كما تناسب الشركات التي تعتمد على الإعلانات وتحتاج إلى صفحات هبوط تساعد على تحويل الزوار إلى عملاء محتملين.
+            </p>
+          </div>
+          
+          {/* كرت النتيجة مع تأثير Glow ملفت */}
+          <div className="relative p-8 rounded-3xl bg-blue-600/10 border border-blue-500/50 shadow-[0_0_30px_rgba(37,99,235,0.2)] flex flex-col items-center md:items-start">
+            <h3 className="text-xl font-bold mb-4 text-white">النتيجة المتوقعة</h3>
+            <p className="text-white leading-relaxed font-medium">
+              بعد تنفيذ الخدمة، تحصل الشركة على موقع إلكتروني واضح وسريع ومنظم، يعكس صورتها الاحترافية ويساعد العملاء على فهم خدماتها والتواصل معها بسهولة.
+            </p>
+            {/* إضاءة خلفية للكرت */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-transparent opacity-10 rounded-3xl blur-xl" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+}

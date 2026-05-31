@@ -23,19 +23,19 @@ export default function BrandingFinalCTA() {
                     <div className="absolute bottom-0 left-0 h-4 w-[1px] bg-white/10 group-hover:bg-blue-600/30 transition-colors duration-500" />
 
                     {/* ترويسة النظام الرقمي الخافتة */}
-                    <div className="mb-6 sm:mb-8 flex items-center gap-2 font-mono text-[9px] sm:text-[10px] text-blue-600 tracking-widest bg-blue-600/5 border border-blue-600/10 px-3 py-1 rounded-full uppercase">
+                    <div className="mb-6 sm:mb-8 flex items-center gap-2 text-[9px] sm:text-[10px] text-blue-600 tracking-widest bg-blue-600/5 border border-blue-600/10 px-3 py-1 rounded-full uppercase">
                         <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
-                        <span>Web_Development.READY</span>
+                        <span className="text-blue-600">system_crm.READY</span>
                     </div>
 
                     {/* العنوان الرئيسي الثقيل والموزون */}
                     <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight max-w-2xl">
-                        حوّل موقعك إلى نقطة قوة في حضورك الرقمي
+                        نظم عملك وخلّي بياناتك أوضح
                     </h2>
 
                     {/* الشرح التوضيحي الأنيق الانسيابي */}
-                    <p className="mt-4 sm:mt-6 text-white/80 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-xl select-text">
-                        نساعدك على بناء موقع إلكتروني يعبر عن شركتك ويدعم أهدافك التجارية بشكل واضح واحترافي.
+                    <p className="mt-4 sm:mt-6 text-white/90 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-xl select-text">
+                        يمكننا مساعدتك في بناء نظام رقمي يناسب طبيعة شركتك ويسهل إدارة العملاء والعمليات اليومية.
                     </p>
 
                     {/* زر التواصل - معزول تماماً عن هوفر الكرت وبتأثير ألوان معكوس وفخم */}

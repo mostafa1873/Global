@@ -1,124 +1,141 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
-const steps = [
-    {
-        num: "01",
-        title: "الغوص في التفاصيل",
-        desc: "مش بنبدأ شغل قبل ما نفهم أبعاد البيزنس بتاعك، طموحاتك، والمشاكل اللي بتواجه جمهورك.",
-    },
-    {
-        num: "02",
-        title: "تشريح السوق",
-        desc: "دراسة عميقة للمنافسين وتحليل الفجوات عشان نضمن لك مكان في الصدارة مش مجرد وجود.",
-    },
-    {
-        num: "03",
-        title: "هندسة الأفكار",
-        desc: "هنا بنحول كل البيانات لقصة براند ملهمة ومفهوم إبداعي يلمس مشاعر الناس.",
-    },
-    {
-        num: "04",
-        title: "صناعة الهوية",
-        desc: "بنبني النظام البصري (ألوان، خطوط، شعار) اللي هيعبر عن قوة مشروعك ويعيش سنين.",
-    },
-];
+export default function BrandingEditorialDeck() {
+    const fadeUp = {
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+        }
+    };
 
-export default function ParallaxProcess() {
+    const offerings = [
+        "تطوير أو تحسين الشعار",
+        "اختيار الألوان الأساسية والثانوية",
+        "تحديد الخطوط المناسبة",
+        "تصميم عناصر الهوية البصرية",
+        "إعداد اتجاه بصري واضح للعلامة التجارية",
+        "تطبيق الهوية على المنصات الرقمية",
+        "تحسين شكل المحتوى البصري على السوشيال ميديا",
+        "تجهيز نمط تصميم يساعد على توحيد الظهور الرقمي"
+    ];
+
     return (
-        <section className="py-12 border-t border-white/5 overflow-hidden" dir="rtl">
-            <div className="max-w-7xl mx-auto px-6">
+        <section className="relative w-full py-10 px-4 sm:px-6 md:px-12 select-none z-10 overflow-hidden" dir="rtl">
 
-                {/* الهيدر */}
-                <div className="mb-12 flex flex-col items-center md:items-start gap-6 text-center md:text-right">
-                    <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-blue-600 shadow-[0_0_10px_rgba(37,99,235,0.5)]" />
-                        <div className="w-12 h-[1px] bg-white/10" />
-                        <span className="text-[10px] font-black text-neutral-500 uppercase tracking-[0.4em]">
-                            How It Works
-                        </span>
+            <div className="relative z-10 w-full max-w-[1300px] mx-auto flex flex-col space-y-24 md:space-y-40">
+
+                {/* ================= الكتلة الأولى: المشكلة (توزيع جانبي فخم) ================= */}
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    variants={fadeUp}
+                    className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start"
+                >
+                    {/* الجانب الهندسي الجاذب للعين */}
+                    <div className="lg:col-span-4 flex flex-row lg:flex-col items-baseline lg:items-start justify-between lg:justify-start gap-4 border-b lg:border-b-0 lg:border-r border-white/[0.08] pb-4 lg:pb-0 lg:pl-8">
+                        <span className="font-mono text-4xl md:text-6xl font-thin text-white/75 tracking-tighter">01.</span>
+                        <div className="space-y-1 text-left lg:text-right">
+                            <span className="text-blue-600 font-mono text-[10px] tracking-widest uppercase block">  CHALLENGE</span>
+                            <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-blue-600 tracking-tight">المشكلة التي تعالجها الخدمة</h2>
+                        </div>
                     </div>
 
-                    <div className="max-w-xl">
-                        <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-4">
-                            منهجية <span className="text-blue-500 italic">النمو الذكي.</span>
-                        </h2>
-                        <p className="text-neutral-500 text-base md:text-lg font-medium leading-relaxed">
-                            نحول الرؤية الطموحة إلى واقع رقمي ملموس عبر خطوات هندسية دقيقة.
+                    {/* الجانب القرائي الانسيابي */}
+                    <div className="lg:col-span-8 flex flex-col space-y-6 text-center lg:text-right items-center lg:items-start">
+                        <p className="text-white/90 text-base sm:text-lg md:text-xl font-light leading-relaxed select-text break-words">
+                            كثير من الشركات تقدم خدمات جيدة، لكنها لا تظهر بالصورة التي تعكس قيمتها الحقيقية. أحيانًا يكون الشعار غير واضح، أو الألوان غير متناسقة، أو التصاميم مختلفة من منصة لأخرى، مما يضعف ثقة العميل ويجعل العلامة التجارية أقل تميزًا.
+                        </p>
+                        <p className="text-white/80 text-sm sm:text-base md:text-lg font-light leading-relaxed select-text italic border-r-2 border-white/20 pr-4">
+                            الهوية البصرية المنظمة تساعد الشركة على بناء انطباع أقوى، وتجعل حضورها أكثر ثباتًا واحترافية.
                         </p>
                     </div>
+                </motion.div>
+
+
+                {/* ================= الكتلة الثانية: ماذا نقدم (قائمة منسابة متباعدة) ================= */}
+                <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
+
+                    {/* العنوان الجانبي الثابت */}
+                    <div className="lg:col-span-4 flex flex-row lg:flex-col items-baseline lg:items-start justify-between lg:justify-start gap-4 border-b lg:border-b-0 lg:border-r border-white/[0.08] pb-4 lg:pb-0 lg:pl-8">
+                        <span className="font-mono text-4xl md:text-6xl font-thin text-white/75 tracking-tighter">02.</span>
+                        <div className="space-y-1 text-left lg:text-right">
+                            <span className="text-blue-600 font-mono text-[10px] tracking-widest uppercase block">  SCOPE</span>
+                            <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-blue-600 tracking-tight">ماذا نقدم داخل الخدمة؟</h2>
+                        </div>
+                    </div>
+
+                    {/* قائمة المخرجات الذكية: مقسومة عمودين متباعدين لتسهيل القراءة وتفادي شكل المقال */}
+                    <div className="lg:col-span-8 w-full">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 text-right">
+                            {offerings.map((item, index) => (
+                                <motion.div
+                                    key={index}
+                                    whileHover={{ x: -6 }}
+                                    transition={{ duration: 0.3, ease: "easeOut" }}
+                                    className="group flex items-start gap-4 py-3 border-b border-white/[0.03] hover:border-nexus-blue/20 transition-colors duration-300"
+                                >
+                                    <span className="font-mono text-xs text-blue-600 group-hover:text-blue-400 transition-colors pt-1">
+                                        [{index + 1}]
+                                    </span>
+                                    <p className="text-white/90 group-hover:text-white text-sm sm:text-base font-normal leading-normal select-text">
+                                        {item}
+                                    </p>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
 
-                {/* المحتوى الفني بدون صور */}
-                <div className="space-y-5 md:space-y-20">
-                    {steps.map((step, i) => (
-                        <ProcessItem key={i} step={step} index={i} />
-                    ))}
+
+                {/* ================= الكتلة الثالثة: لمن الخدمة + النتيجة (توازن متناظر) ================= */}
+                <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20">
+
+                    {/* لمن الخدمة مناسبة */}
+                    <motion.div
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-100px" }}
+                        variants={fadeUp}
+                        className="flex flex-col space-y-4 border-r border-white/[0.06] pr-6 md:pr-8 text-center lg:text-right items-center lg:items-start"
+                    >
+                        <span className="font-mono text-xs text-white/70 tracking-widest uppercase block">03  TARGET_AUDIENCE</span>
+                        <h3 className="text-lg sm:text-xl md:text-2xl font-black text-white">لمن هذه الخدمة مناسبة؟</h3>
+                        <div className="space-y-4 text-white/90 text-sm sm:text-base font-light leading-relaxed select-text pt-2">
+                            <p>
+                                هذه الخدمة مناسبة للشركات التي تبدأ من الصفر وتحتاج إلى هوية بصرية كاملة، وكذلك الشركات التي تمتلك هوية حالية لكنها تحتاج إلى تطوير أو إعادة تنظيم.
+                            </p>
+                            <p className="text-white/85 text-xs sm:text-sm">
+                                كما تناسب الشركات التي ترغب في تحسين شكل ظهورها على السوشيال ميديا، الموقع الإلكتروني، العروض التقديمية، أو المواد التسويقية.
+                            </p>
+                        </div>
+                    </motion.div>
+
+                    {/* النتيجة المتوقعة (بوزن بصري أثقل لإبراز القيمة) */}
+                    <motion.div
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-100px" }}
+                        variants={fadeUp}
+                        className="flex flex-col space-y-4 border-r-2 border-nexus-blue pr-6 md:pr-8 text-center lg:text-right items-center lg:items-start bg-gradient-to-l from-nexus-blue/[0.01] to-transparent py-2"
+                    >
+                        <span className="font-mono text-xs text-blue-600 tracking-widest uppercase block">04  THE_OUTCOME</span>
+                        <h3 className="text-lg sm:text-xl md:text-2xl font-black text-white">النتيجة المتوقعة</h3>
+                        <p className="text-white/90 group-hover:text-white text-base sm:text-lg font-light leading-relaxed select-text pt-2 max-w-xl">
+                            بعد تنفيذ الخدمة، يصبح لدى الشركة هوية بصرية أكثر وضوحًا واتساقًا، تساعدها على تقديم نفسها بثقة، وتمنح العملاء انطباعًا أكثر احترافية عن العلامة التجارية.
+                        </p>
+                    </motion.div>
+
                 </div>
 
             </div>
+
+            {/* لمسة الإغلاق الهندسية الفخمة أسفل الواجهة */}
+            <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/[0.06] to-transparent mt-24 md:mt-36" />
         </section>
-    );
-}
-
-function ProcessItem({ step, index }: { step: any, index: number }) {
-    const ref = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ["start end", "end start"]
-    });
-
-    const yNumber = useTransform(scrollYProgress, [0, 1], [50, -50]);
-    const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.3, 1, 0.3]);
-
-    return (
-        <div ref={ref} className={`relative flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center justify-between gap-12`}>
-
-            {/* الجزء الجمالي (الرقم الضخم المفرغ) */}
-            <div className="w-full md:w-1/2 flex justify-center items-center relative">
-                <motion.span
-                    className="text-[150px] md:text-[280px] font-black leading-none select-none italic"
-                    style={{
-                        WebkitTextStroke: '1px rgba(255,255,255,0.1)',
-                        color: 'transparent',
-                        y: yNumber
-                    } as any} // استخدام as any هنا بيحل مشكلة تعريف الـ WebkitTextStroke في TypeScript
-                >
-                    {step.num}
-                </motion.span>
-
-                {/* نقطة تركيز ضوئية خلف الرقم */}
-                <div className="absolute w-40 h-40 bg-blue-600/10 blur-[100px] rounded-full pointer-events-none" />
-            </div>
-
-            {/* الجزء النصي */}
-            <motion.div
-                style={{ opacity }}
-                className="w-full md:w-1/2 text-center md:text-right flex flex-col items-center md:items-start relative z-10"
-            >
-                <div className="flex items-center gap-4 mb-6">
-                    <span className="w-8 h-[1px] bg-blue-600" />
-                    <span className="text-blue-500 font-mono text-sm md:text-base tracking-[0.2em] uppercase">Phase {step.num}</span>
-                </div>
-
-                <h3 className="text-4xl md:text-7xl font-black text-white mb-6 tracking-tighter leading-tight">
-                    {step.title}
-                </h3>
-
-                <p className="text-neutral-400 text-lg md:text-2xl font-medium leading-relaxed max-w-lg">
-                    {step.desc}
-                </p>
-
-                {/* عنصر زخرفي بسيط للجوانب */}
-                <div className="mt-12 grid grid-cols-3 gap-2">
-                    {[1, 2, 3].map((dot) => (
-                        <div key={dot} className={`w-1.5 h-1.5 rounded-full ${dot === 1 ? 'bg-blue-600' : 'bg-white/10'}`} />
-                    ))}
-                </div>
-            </motion.div>
-
-        </div>
     );
 }

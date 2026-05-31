@@ -2,61 +2,72 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { FaWhatsapp } from "react-icons/fa";
-import { FiArrowRight } from "react-icons/fi";
 
-export default function CompactSalesClosing() {
+export default function BrandingFinalCTA() {
     return (
-        <section className="relative w-full py-10 sm:py-10 px-4 bg-transparent overflow-hidden border-t border-white/10" dir="rtl">
+        <section className="relative w-full py-10 border-t border-white/10 px-4 sm:px-6 md:px-12 select-none z-10 overflow-hidden" dir="rtl">
 
-            <div className="max-w-4xl mx-auto relative z-10 text-center">
-                
-                {/* العنوان - جملة واحدة حاسمة */}
-                <motion.h2 
-                    initial={{ opacity: 0, y: 20 }}
+            <div className="relative z-10 w-full max-w-[1000px] mx-auto">
+
+                <motion.div
+                    initial={{ opacity: 0, y: 35 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    className="text-white text-2xl sm:text-3xl md:text-5xl font-black leading-tight tracking-tight mb-12 sm:mb-16"
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    className="relative w-full border border-white/[0.2] bg-gradient-to-b from-white/[0.05] to-transparent rounded-3xl p-8 sm:p-14 md:p-20 text-center flex flex-col items-center justify-center overflow-hidden group"
                 >
-                   منصاتك هي واجهة مشروعك متسيبهاش للصدفة.<br className=" md:block" />
-                    <span className="text-blue-600">تواصل معانا النهاردة</span> أونلاين؟
-                </motion.h2>
+                    {/* تفاصيل تقنية ومؤشرات واجهة المستخدم على الزوايا لإتمام الهوية البرمجية الفخمة */}
+                    <div className="absolute top-0 right-0 w-4 h-[1px] bg-white/20 group-hover:bg-blue-600/50 transition-colors duration-500" />
+                    <div className="absolute top-0 right-0 h-4 w-[1px] bg-white/20 group-hover:bg-blue-600/50 transition-colors duration-500" />
+                    <div className="absolute bottom-0 left-0 w-4 h-[1px] bg-white/10 group-hover:bg-blue-600/30 transition-colors duration-500" />
+                    <div className="absolute bottom-0 left-0 h-4 w-[1px] bg-white/10 group-hover:bg-blue-600/30 transition-colors duration-500" />
 
-                {/* الزرار المركزي الضخم والمحكم */}
-                <motion.div 
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    className="inline-flex flex-col sm:flex-row items-center gap-6 p-4 sm:p-2 bg-white/[0.02] border border-white/5 rounded-3xl sm:rounded-full backdrop-blur-3xl shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
-                >
-                    {/* زرار الاستشارة (الأساسي) */}
-                    <Link href="/call">
-                    <motion.button 
-                        whileHover={{ x: -5 }}
-                        className="w-full sm:w-auto px-10 py-5 bg-white text-black font-black rounded-full text-lg md:text-xl flex items-center justify-center gap-3 transition-transform"
+                    {/* ترويسة النظام الرقمي الخافتة */}
+                    <div className="mb-6 sm:mb-8 flex items-center gap-2 text-[9px] sm:text-[10px] text-blue-600 tracking-widest bg-blue-600/5 border border-blue-600/10 px-3 py-1 rounded-full uppercase">
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
+                        <span className="text-blue-600">digital_marketing.READY</span>
+                    </div>
+
+                    {/* العنوان الرئيسي الثقيل والموزون */}
+                    <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight max-w-2xl">
+                        خلّي تسويق شركتك أوضح وأكثر فاعلية
+                    </h2>
+
+                    {/* الشرح التوضيحي الأنيق الانسيابي */}
+                    <p className="mt-4 sm:mt-6 text-white/80 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-xl select-text">
+                        نساعدك على بناء استراتيجية تسويق رقمي تناسب طبيعة نشاطك وتدعم نموك بشكل عملي.
+                    </p>
+
+                    {/* زر التواصل - معزول تماماً عن هوفر الكرت وبتأثير ألوان معكوس وفخم */}
+                    <motion.div
+                        className="mt-10 sm:mt-12 flex justify-center"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 25 }}
                     >
-                        احجز استشارتك الآن
-                        <FiArrowRight className="text-2xl" />
-                    </motion.button>
-                    </Link>
-                    {/* زرار الواتساب (المكمل) */}
-                    <motion.a 
-                        href="https://wa.me/201109458238" 
-                        target="_blank"
-                        whileHover={{ scale: 1.1 }}
-                        className="p-5 text-[#25D366] hover:text-white group transition-colors"
-                    >
-                        <FaWhatsapp className="text-3xl" />
-                    </motion.a>
+                        <Link
+                            href="/contact"
+                            className="group/btn inline-flex items-center gap-4 pr-8 pl-4 py-3 sm:pr-10 sm:pl-5 sm:py-4 bg-white text-black hover:bg-blue-600 hover:text-white font-bold text-sm sm:text-base rounded-full transition-colors duration-300 ease-in-out tracking-tight shadow-sm"
+                        >
+                            <span>تواصل معنا</span>
+
+                            {/* الدائرة: تبدأ باللون الأزرق 600 ومع الهوفر على الزرار بتقلب خلفية بيضاء والسهم جواها أزرق */}
+                            <span className="flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-blue-600 text-white group-hover/btn:bg-white group-hover/btn:text-blue-600 transition-colors duration-300 ease-in-out shrink-0">
+                                <svg
+                                    className="w-4 h-4 transform transition-transform duration-300 ease-in-out group-hover/btn:-translate-x-1.5"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    strokeWidth={2.5}
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                                </svg>
+                            </span>
+                        </Link>
+                    </motion.div>
+
                 </motion.div>
-
-                {/* جملة ختامية بسيطة جداً */}
-                <p className="mt-10 text-slate-500 text-sm font-light tracking-wide opacity-50">
-                    Your Digital Transformation Starts Here — 2026
-                </p>
-
             </div>
-
-            {/* تأثير إضاءة خلفي هادي جداً */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-600/[0.03] blur-[100px] rounded-full pointer-events-none" />
         </section>
     );
 }

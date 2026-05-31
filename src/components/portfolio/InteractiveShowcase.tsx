@@ -63,7 +63,7 @@ export default function AvantGardeShowcase() {
       transition: {
         delay: 0.1 + (i * 0.05), // تسريع الأنيميشن لتقليل الإحساس باللاج
         duration: 0.5,
-        ease: [0.22, 1, 0.36, 1] as const as const
+        ease: [0.22, 1, 0.36, 1] as const
       }
     })
   };

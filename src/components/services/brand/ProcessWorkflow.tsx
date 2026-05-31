@@ -8,7 +8,7 @@ export default function BrandingEditorialDeck() {
         visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const as const }
+            transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }
         }
     };
 

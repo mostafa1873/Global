@@ -8,7 +8,7 @@ export default function Hero() {
     visible: (delay: number) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] as const as const }
+      transition: { duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] as const }
     })
   };
 

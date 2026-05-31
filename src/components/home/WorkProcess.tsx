@@ -37,7 +37,7 @@ export default function WorkProcess() {
     visible: (index: number) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] as const as const }
+      transition: { duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] as const }
     })
   };
 

@@ -140,7 +140,7 @@ export default function Navbar() {
             initial={{ clipPath: "circle(0% at 100% 0%)" }}
             animate={{ clipPath: "circle(150% at 100% 0%)" }}
             exit={{ clipPath: "circle(0% at 100% 0%)" }}
-            transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
+            transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] as const }}
             className="fixed inset-0 bg-black/40 backdrop-blur-xl z-[150] lg:hidden flex flex-col h-screen w-full overflow-hidden"
           >
             {/* Noise Background */}

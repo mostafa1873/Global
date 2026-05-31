@@ -69,7 +69,7 @@ export default function WhyGlobalNexus() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.6, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.6, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] as const }}
                 className="group relative flex flex-col items-center md:items-start text-center md:text-right transform-gpu"
               >
                 {/* الدائرة المضيئة الصامتة على الخط في الديسكتوب */}

@@ -13,7 +13,7 @@ export default function BrandingFinalCTA() {
                     initial={{ opacity: 0, y: 35 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
                     className="relative w-full border border-white/[0.2] bg-gradient-to-b from-white/[0.05] to-transparent rounded-3xl p-8 sm:p-14 md:p-20 text-center flex flex-col items-center justify-center overflow-hidden group"
                 >
                     {/* تفاصيل تقنية ومؤشرات واجهة المستخدم على الزوايا لإتمام الهوية البرمجية الفخمة */}

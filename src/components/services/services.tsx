@@ -47,7 +47,7 @@ export default function Services() {
     visible: (index: number) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] as const }
+      transition: { duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] as const as const }
     })
   };
 

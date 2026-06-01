@@ -1,123 +1,133 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowLeft, Target, Cpu, Zap, Star, Globe } from "lucide-react";
-import Link from "next/link";
 
-export default function UltraPremiumHero() {
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.9,
-        ease: [0.16, 1, 0.3, 1] as const
-      }
-    }
-  };
-
+export default function PortfolioHero() {
   return (
-    <section
-      className="relative min-h-screen w-full flex flex-col bg-transparent overflow-hidden px-6 lg:px-16"
-      dir="rtl"
-    >
-      {/* 1. مساحة الناف بار */}
-      <div className="h-24 lg:h-32 w-full shrink-0" />
+    <section className="relative w-full min-h-[100vh] flex items-center py-10 pt-28 md:pt-20 bg-transparent text-white overflow-hidden" dir="rtl">
+      
+      {/* إضاءات نيون تقنية مدمجة في العمق بلون blue-600 الصريح */}
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-600/[0.06] blur-[150px] rounded-full pointer-events-none animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-blue-600/[0.03] blur-[130px] rounded-full pointer-events-none" />
 
-      {/* 2. المحتوى الرئيسي */}
-      <div className="flex-1 w-full max-w-[1600px] mx-auto relative flex flex-col justify-center py-5">
-
-        {/* لمسات ضوئية خلفية خافتة */}
-        <div className="absolute top-1/4 -right-20 w-[30vw] h-[30vw] bg-blue-600/5 blur-[120px] rounded-full pointer-events-none -z-10" />
-        <div className="absolute bottom-0 -left-20 w-[20vw] h-[20vw] bg-blue-900/5 blur-[100px] rounded-full pointer-events-none -z-10" />
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-
-          {/* الجانب الأيمن: تيبوجرافي بـ مقاسات مظبوطة - Responsive Alignment */}
-          <div className="lg:col-span-7 relative flex flex-col items-center lg:items-start text-center lg:text-right">
-            <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="relative z-10 w-full flex flex-col items-center lg:items-start">
-              {/* شارة علوية */}
-              <div className="flex items-center gap-4 mb-6">
-                <div className="h-[1px] w-10 bg-blue-600 hidden lg:block" />
-                <span className="text-blue-500 font-mono text-[10px] tracking-[0.4em] uppercase">Global Nexus Works</span>
-              </div>
-
-              {/* العنوان الرئيسي */}
-              <h1 className="text-[10vw] lg:text-[85px] font-black text-white leading-[1.1] tracking-tighter mb-2">
-                نجاحك هو <span className="text-blue-600 italic">المقياس</span>
-              </h1>
-
-              <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-6">
-                <h1 className="text-[10vw] lg:text-[85px] font-black text-white leading-[1.1] tracking-tighter">
-                  الوحيد لشغلنا.
-                </h1>
-                {/* عنصر ديكوري */}
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                  className="hidden xl:block text-white/5"
-                >
-                  <Globe size={60} strokeWidth={1} />
-                </motion.div>
-              </div>
-            </motion.div>
-
-            {/* إحصائية سريعة عائمة - Centered on Mobile */}
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
+          
+          {/* الجانب الأيمن: التيبوغرافيا والنصوص متمركزه بالمللي على الموبايل ويمين على الديسكتوب */}
+          <div className="lg:col-span-6 text-center lg:text-right space-y-6">
+            
+            {/* بادج علوي مودرن بلون blue-600 */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.8 }}
-              className="mt-8 lg:mt-0 lg:absolute lg:-bottom-16 lg:right-0 flex items-center gap-4 bg-white/[0.02] border border-white/5 backdrop-blur-md px-5 py-3 rounded-full"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-3 py-1 bg-blue-600/5 border border-blue-600/20 rounded-md text-[11px] tracking-wider uppercase text-blue-600 mx-auto lg:mx-0"
             >
-              <div className="flex -space-x-2">
-                {[1, 2, 3].map((i) => (
-                  <div key={i} className="w-7 h-7 rounded-full border-2 border-[#050505] bg-blue-600 flex items-center justify-center">
-                    <Star size={10} className="fill-white" />
-                  </div>
-                ))}
-              </div>
-              <span className="text-[10px] font-bold text-white/50 tracking-wider uppercase">Top Rated Agency 2026</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-ping" />
+              PORTFOLIO SHOWCASE
             </motion.div>
+
+            {/* العنوان الرئيسي: متناسق ومتمركز تلقائياً */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="text-3xl sm:text-4xl md:text-5xl font-black leading-[1.2] tracking-tight bg-gradient-to-b from-white to-white/85 bg-clip-text text-transparent"
+            >
+              أعمال تعكس طريقة تفكيرنا في <br />
+              <span className="text-blue-600">
+                بناء الحلول الرقمية
+              </span>
+            </motion.h1>
+
+            {/* تدفق النصوص بحجم خط طبيعي، راقي، ومريح جداً للعين */}
+            <div className="space-y-5 max-w-2xl mx-auto lg:mx-0">
+              {/* النص الأول */}
+              <motion.p
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.15 }}
+                className="text-base md:text-lg text-white/90 font-medium leading-relaxed"
+              >
+                في Global Nexus نعمل على تطوير مشاريع رقمية تجمع بين التصميم الواضح، الأداء العملي، وتجربة المستخدم، بهدف مساعدة الشركات على تقديم نفسها بشكل أكثر احترافية وتنظيمًا.
+              </motion.p>
+
+              {/* النص الثاني: الخط الجانبي يظهر فقط في الديسكتوب لجودة السنترة في الموبايل */}
+              <motion.p
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.3 }}
+                className="text-sm md:text-base text-white/85 font-light leading-relaxed lg:border-r-2 lg:border-blue-600/30 lg:pr-5 text-center lg:text-right"
+              >
+                تعرض هذه الصفحة مجموعة من الأعمال التي تعكس جانبًا من خبرتنا في تطوير المواقع والحلول الرقمية. كل مشروع يتم التعامل معه وفقًا لطبيعة النشاط وااحتياجاته، مع التركيز على بناء تجربة رقمية واضحة تساعد العميل على فهم الشركة والتواصل معها بسهولة.
+              </motion.p>
+            </div>
+
           </div>
 
-          {/* الجانب الأيسر: بطاقة المعلومات (Ultra Glass) */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end relative w-full">
+          {/* الجانب الأيسر: المنصة الرقمية التفاعلية متمركزة تماماً بدون خروج عن الشاشة في الموبايل */}
+          <div className="lg:col-span-6 hidden relative md:flex justify-center items-center min-h-[380px] sm:min-h-[450px] mt-8 lg:mt-0 overflow-visible w-full">
+            
+            {/* حلقة هندسية في الخلفية */}
+            <div className="absolute w-[280px] h-[280px] md:w-[380px] md:h-[380px] rounded-full bg-blue-600/[0.01] border border-white/[0.02] animate-[spin_80s_linear_infinite]" />
+
+            {/* كارت لوحة التحكم / المتصفح الرئيسي العائم */}
             <motion.div
-              initial={{ opacity: 0, x: 0, y: 30 }}
-              whileInView={{ opacity: 1, x: 0, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.3 }}
-              className="w-full lg:max-w-[420px] bg-gradient-to-br from-white/[0.05] to-transparent backdrop-blur-3xl border border-white/10 rounded-[2.5rem] lg:rounded-[3rem] p-8 lg:p-12 shadow-2xl relative group overflow-hidden flex flex-col items-center lg:items-start text-center lg:text-right"
+              initial={{ opacity: 0, scale: 0.8, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              whileHover={{ y: -10, rotate: -0.5, transition: { duration: 0.3 } }}
+              className="absolute w-[260px] sm:w-[350px] h-[170px] sm:h-[220px] bg-gradient-to-br from-white/[0.05] to-white/[0.01] border border-white/10 rounded-2xl backdrop-blur-xl p-4 sm:p-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)] z-20 transform -translate-x-2 -translate-y-6 sm:-translate-x-4 select-none"
             >
-              <div className="absolute inset-0 bg-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-
-              <div className="relative z-10 w-full flex flex-col items-center lg:items-start">
-                <div className="flex gap-2 mb-6 justify-center lg:justify-start">
-                  <Target size={18} className="text-blue-600" />
-                  <Cpu size={18} className="text-white/20" />
-                  <Zap size={18} className="text-white/20" />
+              <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
+                <div className="flex gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-white/20" />
+                  <span className="w-2 h-2 rounded-full bg-white/20" />
+                  <span className="w-2 h-2 rounded-full bg-white/20" />
                 </div>
-
-                <p className="text-neutral-400 text-lg lg:text-xl font-light leading-relaxed italic border-none lg:border-r-2 border-blue-600 lg:pr-6 mb-10">
-                  "كل مشروع هنا وراه هدف، تنفيذ، ونتيجة حقيقية، جاهزة للمستقبل.
-                  <span className="text-white block mt-4 font-bold not-italic">ساعدنا عملائنا يكبروا، مش بس يظهروا."</span>
-                </p>
-
-                {/* زرار الأكشن */}
-                <Link href="/call" className="w-full">
-                  <button className="group relative w-full flex items-center justify-between bg-white text-black h-16 px-6 rounded-2xl font-black text-xl transition-all duration-500 hover:bg-blue-600 hover:text-white overflow-hidden shadow-lg">
-                    <span className="relative z-10 flex items-center gap-3">
-                      ابدأ مشروعك
-                    </span>
-                    <div className="relative z-10 w-10 h-10 bg-black text-white rounded-xl flex items-center justify-center group-hover:bg-white group-hover:text-blue-600 transition-all duration-500">
-                      <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
-                    </div>
-                  </button>
-                </Link>
-
+                <span className="text-[9px] font-mono text-white/30 tracking-widest">NEXUS_CORE_UI</span>
+              </div>
+              <div className="w-full h-20 sm:h-24 bg-gradient-to-tr from-blue-600/10 via-transparent to-transparent rounded-xl border border-white/5 relative overflow-hidden">
+                <div className="absolute bottom-3 right-3 w-1/2 h-2 bg-white/10 rounded" />
+                <div className="absolute bottom-6 right-3 w-3/4 h-1 bg-white/5 rounded" />
+                <div className="absolute top-3 left-3 w-7 h-7 rounded-full bg-blue-600/10 border border-blue-600/20 flex items-center justify-center">
+                  <div className="w-2 h-2 rounded-full bg-blue-600 animate-ping" />
+                </div>
               </div>
             </motion.div>
+
+            {/* كارت واجهة الاستوديو الخلفي المائل */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              whileHover={{ x: 35, y: 25, rotate: 1, transition: { duration: 0.3 } }}
+              className="absolute w-[210px] sm:w-[310px] h-[150px] sm:h-[200px] bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/5 rounded-2xl backdrop-blur-md p-4 shadow-xl z-10 select-none transform translate-x-8 translate-y-8 sm:translate-x-10 sm:translate-y-10"
+            >
+              <div className="w-full h-full bg-gradient-to-bl from-blue-600/5 via-transparent to-transparent rounded-xl border border-white/5 flex items-center justify-center">
+                <div className="w-12 h-1 bg-white/10 rounded-full" />
+              </div>
+            </motion.div>
+
+            {/* كارت الموبايل الأمامي الفخم بلون وهوية blue-600 */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.7 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              whileHover={{ y: 48, transition: { duration: 0.3 } }}
+              className="absolute w-[95px] sm:w-[135px] h-[180px] sm:h-[250px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/15 rounded-[20px] sm:rounded-[24px] backdrop-blur-2xl p-2 sm:p-2.5 shadow-[0_20px_50px_rgba(0,0,0,0.6)] z-30 select-none transform -translate-x-16 translate-y-10 sm:-translate-x-24 sm:translate-y-14"
+            >
+              <div className="w-full h-full bg-slate-950/80 rounded-[16px] sm:rounded-[18px] p-2.5 sm:p-3 border border-white/5 flex flex-col justify-between">
+                <div className="w-4 h-1 bg-white/20 rounded-full mx-auto mb-1" />
+                <div className="space-y-2 flex-1 pt-3">
+                  <div className="w-full h-5 sm:h-6 bg-blue-600/20 rounded-md border border-blue-600/10" />
+                  <div className="w-2/3 h-1 bg-white/10 rounded" />
+                  <div className="w-1/2 h-1 bg-white/5 rounded" />
+                </div>
+                <div className="w-full h-4 bg-white/5 rounded-md border border-white/5" />
+              </div>
+            </motion.div>
+
           </div>
 
         </div>

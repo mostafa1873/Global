@@ -40,7 +40,7 @@ export default function Hero() {
         {/* 2. العنوان الرئيسي العملاق - تم ضبط الحجم ليكون متناسق ومثالي مع أبعاد الشاشات بدون تضخم */}
         <motion.h1
           variants={fadeInVariant} initial="hidden" animate="visible" custom={0.2}
-          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.15] tracking-tight max-w-5xl select-text"
+          className="text-xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.3] md:leading-[1.15] tracking-tight max-w-5xl select-text"
         >
           نبني أنظمة النمو <br />
           <span className="bg-clip-text text-transparent text-white via-white/90">

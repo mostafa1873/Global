@@ -53,7 +53,7 @@ export default function AboutHero() {
             initial="hidden"
             animate="visible"
             variants={fadeVariant}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.15] mb-8 select-text"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.3] mb-8 select-text"
           >
             خدمات رقمية تساعد الشركات   <br className="hidden sm:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/60 filter drop-shadow-sm">

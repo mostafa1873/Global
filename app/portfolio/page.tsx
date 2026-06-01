@@ -1,11 +1,6 @@
-// import IntegratedSystem from "@/src/components/about/IntegratedSystem";
-import SalesClosing from "@/src/components/about/SalesClosing";
-import Hero from "@/src/components/home/Hero";
-// import LuxuryCTA from "@/src/components/portfolio/CTA";
-// import InteractiveShowcase from "@/src/components/portfolio/InteractiveShowcase";
+import PortfolioSalesClosing from "@/src/components/portfolio/CTA";
 import PortfolioSection from "@/src/components/portfolio/Portfolio";
-// import PortfolioSlider from "@/src/components/portfolio/Slider";
-// import StructuralHeader from "@/src/components/portfolio/StructuralHeader";
+import StructuralHeader from "@/src/components/portfolio/StructuralHeader";
 
 
 export default function PortfolioPage() {
@@ -13,25 +8,11 @@ export default function PortfolioPage() {
 
     <main>
 
-      {/* --- Structural Header --- */}
-      {/* <StructuralHeader /> */}
+      <StructuralHeader />
 
-      <Hero />
-
-      {/* <PortfolioSlider /> */}
-
-      {/* <IntegratedSystem /> */}
-
-      {/* --- Interactive Showcase --- */}
-      {/* <InteractiveShowcase /> */}
-
-      {/* --- Portfolio Section --- */}
       <PortfolioSection />
 
-      <SalesClosing />
-
-      {/* --- Call to Action --- */}
-      {/* <LuxuryCTA /> */}
+      <PortfolioSalesClosing />
 
     </main>
 

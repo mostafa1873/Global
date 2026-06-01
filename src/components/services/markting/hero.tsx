@@ -39,11 +39,11 @@ export default function HeroSection() {
 
   return (
     <section 
-      className="relative w-full min-h-[100vh] flex items-center overflow-hidden pt-18" 
+      className="relative w-full min-h-[100vh] flex items-center overflow-hidden pt-10 md:pt-18" 
       dir="rtl"
     >
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 py-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 py-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* قسم النصوص */}

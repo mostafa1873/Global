@@ -2,15 +2,14 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Calendar } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaBehance, FaLinkedinIn, FaTiktok } from "react-icons/fa";
 
 export default function ContactPage() {
     const [selectedServices, setSelectedServices] = useState<string[]>([]);
-    const [selectedBudget, setSelectedBudget] = useState<string>("");
 
+    // نوع الخدمة المطلوبة المحدثة لتناسب نشاطك
     const services = ["تصميم مواقع", "UI/UX", "تطوير الويب", "تسويق", "هوية بصرية"];
-    const budgets = ["استشارة مجانية", "أقل من 20K", "20K - 50K", "أكثر من 50K"];
 
     const toggleService = (service: string) => {
         if (selectedServices.includes(service)) {
@@ -21,7 +20,7 @@ export default function ContactPage() {
     };
 
     return (
-        <section className="w-full min-h-screen text-white pt-25 pb-20 lg:pt-44 lg:pb-24 px-4 md:px-12 flex flex-col items-center justify-center gap-16" dir="rtl">
+        <section className="w-full min-h-screen text-white pt-25 pb-20 lg:pt-35 lg:pb-24 px-4 md:px-12 flex flex-col items-center justify-center gap-16" dir="rtl">
             <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
                 {/* --- الجنب الأيمن: بيانات التواصل والسوشيال ميديا --- */}
@@ -30,15 +29,12 @@ export default function ContactPage() {
                         <span className="text-xs font-black tracking-[0.3em] text-blue-600 uppercase border-r-2 border-blue-600 pr-3">
                             دعنا نناقش مشروعك القادم
                         </span>
-                        <h1 className="text-xl md:text-2xl font-extrabold tracking-tight leading-tight">
-                            ذا كنت تبحث عن تطوير حضورك الرقمي أو بناء أنظمة تساعد أعمالك على النمو بشكل أكثر كفاءة <br />
+                        <h1 className="text-xl md:text-xl font-extrabold tracking-tight leading-[1.8]">
+                            إذا كنت تبحث عن تطوير حضورك الرقمي أو بناء حلول تساعد شركتك على النمو بشكل أكثر كفاءة،{" "}
                             <span className="bg-gradient-to-l from-blue-600 to-[#1f6ed4] bg-clip-text text-transparent">
-                                 يسعدنا التواصل معك.
+                                يسعدنا التواصل معك وفهم احتياجات مشروعك.
                             </span>
                         </h1>
-                        <p className="text-white/80 text-sm max-w-sm leading-relaxed">
-                            لديك فكرة مشروع أو ترغب في تطوير أعمالك؟ اترك لنا رسالة وسنقوم بالرد عليك في أقرب وقت ممكن.
-                        </p>
                     </div>
 
                     {/* كروت قنوات الاتصال السريعة ببياناتك */}
@@ -108,9 +104,17 @@ export default function ContactPage() {
                 <div className="lg:col-span-7 bg-white/[0.01] border border-white/5 rounded-[2rem] p-6 md:p-8 shadow-[0_0_50px_rgba(12,75,132,0.1)] relative overflow-hidden w-full">
                     <div className="absolute -top-20 -left-20 w-40 h-40 bg-[#0c4b84]/20 rounded-full blur-[80px] pointer-events-none" />
 
+                    {/* نص قبل نموذج التواصل */}
+                    <div className="mb-8 text-center lg:text-right relative z-10">
+                        <p className="text-sm md:text-base text-white/90 font-medium leading-relaxed">
+                            شاركنا تفاصيل مشروعك أو الخدمة التي تحتاجها، وسنقوم بمراجعة طلبك والتواصل معك لمناقشة الحل الأنسب لطبيعة نشاطك.
+                        </p>
+                    </div>
+
                     <form onSubmit={(e) => e.preventDefault()} className="space-y-6 relative z-10 text-center lg:text-right flex flex-col">
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            {/* حقل الاسم */}
                             <div className="flex flex-col gap-1.5 text-center lg:text-right">
                                 <label className="text-xs font-bold text-white lg:mr-1">الاسم</label>
                                 <input
@@ -120,15 +124,17 @@ export default function ContactPage() {
                                 />
                             </div>
 
+                            {/* حقل اسم الشركة */}
                             <div className="flex flex-col gap-1.5 text-center lg:text-right">
-                                <label className="text-xs font-bold text-white lg:mr-1">الشركة</label>
+                                <label className="text-xs font-bold text-white lg:mr-1">اسم الشركة</label>
                                 <input
                                     type="text"
-                                    placeholder="اسم الشركة"
+                                    placeholder="اسم شركتك أو نشاطك"
                                     className="w-full bg-white/[0.02] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-[#4aa3ff] focus:shadow-[0_0_15px_rgba(74,163,255,0.08)] transition-all duration-300 text-xs text-center lg:text-right"
                                 />
                             </div>
 
+                            {/* حقل البريد الإلكتروني */}
                             <div className="flex flex-col gap-1.5 text-center lg:text-right">
                                 <label className="text-xs font-bold text-white lg:mr-1">البريد الإلكتروني</label>
                                 <input
@@ -138,6 +144,7 @@ export default function ContactPage() {
                                 />
                             </div>
 
+                            {/* حقل رقم الهاتف */}
                             <div className="flex flex-col gap-1.5 text-center lg:text-right">
                                 <label className="text-xs font-bold text-white lg:mr-1">رقم الهاتف</label>
                                 <input
@@ -148,8 +155,9 @@ export default function ContactPage() {
                             </div>
                         </div>
 
+                        {/* حقل نوع الخدمة المطلوبة */}
                         <div className="flex flex-col gap-2 text-center lg:text-right">
-                            <label className="text-xs font-black text-white lg:mr-1">أنا مهتم بـ</label>
+                            <label className="text-xs font-black text-white lg:mr-1">نوع الخدمة المطلوبة</label>
                             <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
                                 {services.map((service) => {
                                     const isSelected = selectedServices.includes(service);
@@ -170,45 +178,37 @@ export default function ContactPage() {
                             </div>
                         </div>
 
-                        <div className="flex flex-col gap-2 text-center lg:text-right">
-                            <label className="text-xs font-black text-white lg:mr-1">الميزانية المتوقعة</label>
-                            <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-                                {budgets.map((budget) => {
-                                    const isSelected = selectedBudget === budget;
-                                    return (
-                                        <button
-                                            key={budget}
-                                            type="button"
-                                            onClick={() => setSelectedBudget(budget)}
-                                            className={`px-4 py-2 rounded-full text-[11px] font-bold border transition-all duration-300 active:scale-95 ${isSelected
-                                                ? "bg-[#0c4b84]/30 border-[#4aa3ff] text-white shadow-[0_0_12px_rgba(74,163,255,0.15)]"
-                                                : "bg-white/[0.01] border-white/10 text-gray-400 hover:text-white hover:border-white/20"
-                                                }`}
-                                        >
-                                            {budget}
-                                        </button>
-                                    );
-                                })}
-                            </div>
-                        </div>
-
+                        {/* حقل تفاصيل المشروع */}
                         <div className="flex flex-col gap-1.5 text-center lg:text-right">
-                            <label className="text-xs font-bold text-white lg:mr-1">تفاصيل مشروعك</label>
+                            <label className="text-xs font-bold text-white lg:mr-1">تفاصيل المشروع</label>
                             <textarea
                                 rows={4}
-                                placeholder="اكتب رسالتك هنا..."
+                                placeholder="اكتب تفاصيل مشروعك أو الرؤية التي تريد تحقيقها هنا..."
                                 className="w-full bg-white/[0.02] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-[#4aa3ff] focus:shadow-[0_0_15px_rgba(74,163,255,0.08)] transition-all duration-300 text-xs resize-none text-center lg:text-right"
                             />
                         </div>
 
-                        <div className="flex justify-center lg:justify-end pt-2">
+                        {/* الـ CTA المزدوج المقترح في نفس الحاوية */}
+                        <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-end gap-4 pt-4">
+                            {/* زرار احجز مكالمة استراتيجية */}
+                            <motion.a
+                                href="/call"
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/[0.03] border border-white/10 text-white px-5 py-2.5 rounded-full text-xs font-black transition-all duration-300 hover:bg-white/10"
+                            >
+                                <Calendar size={14} className="text-blue-500" />
+                                <span>احجز مكالمة استراتيجية</span>
+                            </motion.a>
+
+                            {/* زرار أرسل طلبك (الأساسي) */}
                             <motion.button
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                                 type="submit"
-                                className="group flex items-center justify-center gap-3 bg-white text-black pl-2 pr-5 py-2.5 rounded-full text-xs font-black transition-all duration-300 shadow-[0_4px_15px_rgba(255,255,255,0.05)] hover:bg-[#4aa3ff] hover:text-white hover:shadow-[0_0_25px_rgba(74,163,255,0.25)]"
+                                className="w-full sm:w-auto group flex items-center justify-center gap-3 bg-white text-black pl-2 pr-5 py-2.5 rounded-full text-xs font-black transition-all duration-300 shadow-[0_4px_15px_rgba(255,255,255,0.05)] hover:bg-[#4aa3ff] hover:text-white hover:shadow-[0_0_25px_rgba(74,163,255,0.25)]"
                             >
-                                <span>أرسل الآن</span>
+                                <span>أرسل طلبك</span>
                                 <div className="w-6 h-6 bg-black text-white rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-white group-hover:text-black">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -230,13 +230,20 @@ export default function ContactPage() {
                 </div>
             </div>
 
+            {/* --- النص الختامي لصفحة التواصل في مكان مميز وفخم قبل الخريطة --- */}
+            <div className="w-full max-w-4xl text-center px-4 mt-4">
+                <p className="text-base md:text-lg text-white/90 font-light leading-relaxed max-w-3xl mx-auto border-t border-b border-white/5 py-6">
+                    سواء كنت في مرحلة بناء مشروع جديد أو ترغب في تطوير حضور شركتك الحالي، يمكننا مساعدتك على اختيار الحل الرقمي المناسب والبدء بخطوات واضحة ومنظمة.
+                </p>
+            </div>
+
             {/* --- قسم الخريطة المودرن --- */}
-            <div className="w-full max-w-6xl mt-10">
+            <div className="w-full max-w-6xl mt-2">
                 <div className="relative w-full h-[400px] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                     {/* Overlay لتغميق الخريطة لتناسب الـ Dark Theme */}
                     <div className="absolute inset-0 bg-[#0c4b84]/10 pointer-events-none z-10" />
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110502.60385611397!2d31.18842368149831!3d30.059488474268685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296efaa461!2sCairo%2C%20Cairo%20 Governorate!5e0!3m2!1sen!2seg!4v1715632485962!5m2!1sen!2seg"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110502.60385611397!2d31.18842368149831!3d30.059488474268685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296efaa461!2sCairo%2C%20Cairo%20Governorate!5e0!3m2!1sen!2seg!4v1715632485962!5m2!1sen!2seg"
                         className="w-full h-full grayscale invert-[0.9] contrast-[1.2] sepia-[0.1]"
                         style={{ border: 0 }}
                         allowFullScreen={true}

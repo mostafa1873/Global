@@ -13,7 +13,7 @@ export default function GlobalNexusServicePage() {
   };
 
   return (
-    <div className="w-full text-white py-8 sm:py-12 md:py-32 min-h-screen" dir="rtl">
+    <div className="w-full text-white py-10 min-h-screen md:py-30" dir="rtl">
       
       <section className="w-full max-w-6xl mx-auto px-4 relative z-10 pt-17 md:pt-5">
         

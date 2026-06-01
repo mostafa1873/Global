@@ -69,8 +69,8 @@ const projects = [
     { id: 19.11, title: "Eco Box", category: "packaging", image: "/works/pure/pure_pac.webp", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
     { id: 19.12, title: "Eco Box", category: "packaging", image: "/works/pure/pure_all.webp", gridClass: "col-span-1 lg:col-span-8 h-[250px] lg:h-full lg:row-span-1" },
     { id: 19.13, title: "Nexus Bottle", category: "packaging", image: "/works/pure/pure_min.webp", gridClass: "col-span-1 lg:col-span-4 h-[350px] lg:h-full lg:row-span-1" },
-   
-  
+
+
     { id: 20, title: "Core Render", category: "Social", image: "/works/elmaka/makaa.webp", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-1" },
     { id: 21, title: "Neon Concept", category: "Social", image: "/works/social/w5.webp", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-1" },
     { id: 22, title: "Future Vision", category: "Social", image: "/works/social/w8.webp", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-2" },
@@ -78,7 +78,7 @@ const projects = [
     { id: 23, title: "Neon Concept", category: "Social", image: "/works/dodo/w6.webp", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-3 lg:col-start-1" },
     { id: 24, title: "Future Vision", category: "Social", image: "/works/dodo/w7.webp", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-4 lg:col-start-1" },
     { id: 25, title: "Core Render", category: "Social", image: "/works/pure/pure.webp", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-3 lg:col-start-8" },
- 
+
     { id: 26, title: "New 1", category: "Social", image: "/works/social/w2.webp", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-5 lg:col-start-1" },
     { id: 27, title: "New 2", category: "Social", image: "/works/social/w9.webp", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-5 lg:col-start-6" },
     { id: 28, title: "New 3", category: "Social", image: "/works/social/w10.webp", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-6 lg:col-start-6" },
@@ -87,8 +87,8 @@ const projects = [
     { id: 30, title: "New 5", category: "Social", image: "/works/social/w1.webp", gridClass: "col-span-1 lg:col-span-7 h-full lg:row-start-8 lg:col-start-1" },
     { id: 31, title: "New 6", category: "Social", image: "/works/social/w11.webp", gridClass: "col-span-1 lg:col-span-5 row-span-2 aspect-[9/16] lg:row-start-7 lg:col-start-8" },
 
- 
- 
+
+
 ];
 
 const categories = [
@@ -201,29 +201,67 @@ export default function CustomGridPortfolio() {
                     )}
                 </AnimatePresence>
 
-                {/* --- الهيدر والأزرار --- */}
-                <div className="relative mb-12 flex flex-col items-center justify-center text-center gap-10">
-                    <div className="relative z-20">
-                        <motion.div initial={{ width: 0 }} whileInView={{ width: 60 }} className="h-[2px] bg-blue-600 mx-auto mb-6" />
-                        <h2 className="text-6xl md:text-8xl lg:text-[110px] font-black text-white tracking-tighter leading-tight">
-                            جزء من <span className="text-blue-600">شغلنا.</span>
-                        </h2>
-                    </div>
+                {/* --- الهيدر والوصف (محتواك الجديد بالمللي) --- */}
+                <div className="relative mb-12 flex flex-col items-center justify-center text-center gap-6 max-w-4xl mx-auto px-4">
+                    {/* إضاءة نيون خلفية خافتة مريحة */}
+                    <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-blue-600/[0.02] blur-[100px] rounded-full pointer-events-none -z-10" />
 
-                    <div className="flex flex-wrap justify-center gap-3 bg-white/[0.02] p-2 rounded-[2.5rem] border border-white/5 backdrop-blur-sm z-20 relative">
-                        {categories.map((cat) => (
-                            <button
-                                key={cat.name}
-                                onClick={() => setFilter(cat.name)}
-                                className={`relative flex items-center gap-3 px-8 py-3 rounded-full text-[11px] font-black transition-all duration-500 overflow-hidden group ${filter === cat.name ? "text-white" : "text-white/40 hover:text-white"}`}
-                            >
-                                {filter === cat.name && (
-                                    <motion.div layoutId="activeTab" className="absolute inset-0 bg-blue-600 -z-10 shadow-lg shadow-blue-600/20" transition={{ type: "spring", stiffness: 300, damping: 30 }} />
-                                )}
-                                <cat.icon size={14} className={filter === cat.name ? "animate-pulse" : "group-hover:rotate-12 transition-transform"} />
-                                <span className="tracking-widest uppercase">{cat.name}</span>
-                            </button>
-                        ))}
+                    <div className="space-y-4 relative z-20">
+                        <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: 40 }}
+                            viewport={{ once: true }}
+                            className="h-[2px] bg-blue-600 mx-auto mb-4"
+                        />
+
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
+                            مشاريع نفذناها بعناية <br className="hidden sm:block" />
+                            لدعم <span className="text-blue-600">الحضور الرقمي</span>
+                        </h2>
+
+                        <p className="text-sm md:text-base text-white/65 font-light leading-relaxed max-w-2xl mx-auto pt-1">
+                            نركز في كل مشروع على تقديم حل رقمي منظم يخدم هدفًا واضحًا، سواء كان تحسين صورة الشركة، عرض الخدمات والمنتجات، تسهيل التواصل مع العملاء، أو بناء تجربة استخدام أكثر وضوحًا.
+                        </p>
+                    </div>
+                </div>
+
+                {/* --- كبسولات الفلتر الواضحة جداً والفخمة (متمركزة بالكامل وبدون أي سكرول) --- */}
+                <div className="w-full max-w-5xl mx-auto px-4 mb-16 relative z-20">
+                    {/* حاوية الفلتر: متمركزه 100% وتمنع السكرول تماماً */}
+                    <div className="w-full flex justify-center">
+
+                        {/* لوحة الأزرار: تم إضافة flex-wrap و justify-center لتنزل العناصر تحت بعضها بالتساوي عند الحاجة */}
+                        <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3 px-3 py-2 bg-white/[0.03] border border-white/[0.08] rounded-2xl md:rounded-full backdrop-blur-md max-w-full">
+                            {categories.map((cat) => {
+                                const isActive = filter === cat.name;
+                                return (
+                                    <button
+                                        key={cat.name}
+                                        onClick={() => setFilter(cat.name)}
+                                        className={`
+                          relative flex items-center justify-center gap-2 px-3 py-2 rounded-xl md:rounded-full 
+                          text-xs sm:text-sm font-black tracking-wider uppercase select-none outline-none
+                          transition-all duration-200 ease-out border
+                          w-[110px] sm:w-[130px] text-center shrink-0
+                          ${isActive
+                                                ? "bg-blue-600 border-blue-500 text-white shadow-[0_4px_20px_rgba(37,99,235,0.35)] scale-[1.02]"
+                                                : "bg-white/[0.02] border-white/[0.05] text-white/50 hover:text-white hover:bg-white/[0.08] hover:border-white/10"
+                                            }
+                        `}
+                                    >
+                                        {/* الأيقونة الواضحة والتفاعلية */}
+                                        <cat.icon
+                                            size={14}
+                                            className={`transition-transform duration-300 ${isActive ? "text-white scale-110 animate-pulse" : "text-white/40 group-hover:rotate-6"}`}
+                                        />
+
+                                        {/* اسم الفئة */}
+                                        <span className="truncate">{cat.name}</span>
+                                    </button>
+                                );
+                            })}
+                        </div>
+
                     </div>
                 </div>
 

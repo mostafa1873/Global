@@ -16,14 +16,14 @@ export default function GlobalNexusMobileServicePage() {
   const floatCard1 = {
     animate: {
       y: [0, -12, 0],
-      x:,
+      x: [0, 10, 0],
       transition: { duration: 5, ease: "easeInOut" as const, repeat: Infinity }
     }
   };
 
   const floatCard2 = {
     animate: {
-      y:,
+      y: [0, 8, 0],
       x: [0, -5, 0],
       transition: { duration: 6, ease: "easeInOut" as const, repeat: Infinity }
     }
@@ -32,6 +32,7 @@ export default function GlobalNexusMobileServicePage() {
   const floatCard3 = {
     animate: {
       y: [0, -8, 0],
+      x: [0, 0, 0],
       transition: { duration: 4.5, ease: "easeInOut" as const, repeat: Infinity }
     }
   };

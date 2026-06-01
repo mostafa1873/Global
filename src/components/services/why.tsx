@@ -109,7 +109,7 @@ export default function CinematicAutoProcess() {
                 >
                   <motion.div
                     animate={{ y: [0, -15, 0] }}
-                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" as const as const }}
+                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" as const }}
                     className="relative z-10"
                   >
                     {(() => {

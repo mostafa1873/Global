@@ -32,7 +32,7 @@ export default function HeroSection() {
       transition: {
         duration: 4,
         repeat: Infinity,
-        ease: "easeInOut" as const as const as const,
+        ease: "easeInOut" as const,
       },
     },
   };

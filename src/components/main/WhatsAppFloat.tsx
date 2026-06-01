@@ -54,7 +54,7 @@ export default function CompactWhatsApp() {
             marginRight: showText ? 12 : 0,
             paddingLeft: showText ? 16 : 0 // مسافة داخلية من اليسار قبل الإغلاق
           }}
-          transition={{ duration: 0.4, ease: "easeInOut" as const as const }}
+          transition={{ duration: 0.4, ease: "easeInOut" as const }}
           className="overflow-hidden flex flex-col items-start whitespace-nowrap"
         >
           <span className="text-[8px] text-blue-300/80 font-bold tracking-[0.15em] uppercase leading-none mb-1">

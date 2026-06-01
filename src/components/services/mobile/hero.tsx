@@ -16,23 +16,23 @@ export default function GlobalNexusMobileServicePage() {
   const floatCard1 = {
     animate: {
       y: [0, -12, 0],
-      x: [0, 5, 0],
-      transition: { duration: 5, ease: "easeInOut", repeat: Infinity }
+      x:,
+      transition: { duration: 5, ease: "easeInOut" as const, repeat: Infinity }
     }
   };
 
   const floatCard2 = {
     animate: {
-      y: [0, 15, 0],
+      y:,
       x: [0, -5, 0],
-      transition: { duration: 6, ease: "easeInOut", repeat: Infinity }
+      transition: { duration: 6, ease: "easeInOut" as const, repeat: Infinity }
     }
   };
 
   const floatCard3 = {
     animate: {
       y: [0, -8, 0],
-      transition: { duration: 4.5, ease: "easeInOut", repeat: Infinity }
+      transition: { duration: 4.5, ease: "easeInOut" as const, repeat: Infinity }
     }
   };
 
@@ -99,7 +99,6 @@ export default function GlobalNexusMobileServicePage() {
             </motion.div>
           </motion.div>
 
-          {}
           {/* الجانب الأيسر: "The Layered App Stack" - تم إضافة كلاس hidden لإخفاء الكروت على الموبايل و lg:flex لإظهارها على الديسكتوب فقط */}
           <div className="hidden lg:flex lg:col-span-6 items-center justify-center relative min-h-[450px] sm:min-h-[550px] w-full overflow-visible">
             

@@ -18,7 +18,10 @@ export default function GlobalNexusMobileServiceFeatures() {
     visible: { 
       opacity: 1, 
       y: 0, 
-      transition: { duration: 0.6, ease: [0.215, 0.610, 0.355, 1.000] } 
+      transition: { 
+        duration: 0.6, 
+        ease: [0.215, 0.610, 0.355, 1.000] as const 
+      } 
     }
   };
 
@@ -48,7 +51,7 @@ export default function GlobalNexusMobileServiceFeatures() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-start">
           
           {}
-          {/* الجانب الأيمن: ماذا نقدم داخل الخدمة؟ (يأخذ 7 أعمدة ليعطي مساحة كافية للنقاط الثمانية) */}
+          {/* الجانب الأيمن: ماذا نقدم داخل الخدمة؟ */}
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -74,7 +77,7 @@ export default function GlobalNexusMobileServiceFeatures() {
                   variants={itemVariants}
                   className="flex items-start gap-4 group cursor-default"
                 >
-                  {/* رقم تسلسلي تقني ناعم باللون الأزرق بدلاً من البولتس التقليدية */}
+                  {/* رقم تسلسلي تقني ناعم باللون الأزرق */}
                   <span className="text-blue-600 font-mono text-xs pt-1 select-none font-bold transition-transform duration-300 group-hover:scale-110">
                     {(idx + 1).toString().padStart(2, '0')}
                   </span>
@@ -88,7 +91,7 @@ export default function GlobalNexusMobileServiceFeatures() {
           </motion.div>
 
           {}
-          {/* الجانب الأيسر: لمن الخدمة + النتيجة المتوقعة (يأخذ 5 أعمدة كبنية تحريرية متناسقة) */}
+          {/* الجانب الأيسر: لمن الخدمة + النتيجة المتوقعة */}
           <div className="lg:col-span-5 space-y-12 lg:space-y-16">
             
             {/* 1. لمن هذه الخدمة مناسبة؟ */}
@@ -135,12 +138,11 @@ export default function GlobalNexusMobileServiceFeatures() {
                 النتيجة المتوقعة
               </motion.h3>
 
-              {/* بلوك فخم ومضاء لتمييز النتيجة النهائية الصارخة للمشروع */}
+              {/* بلوك فخم ومضاء لتمييز النتيجة النهائية */}
               <motion.div 
                 variants={itemVariants}
                 className="p-6 sm:p-8 rounded-2xl bg-blue-600/[0.01] border-r-2 border-blue-600/40 relative overflow-hidden"
               >
-                {/* توهج خافت مريح للعين داخل البلوك */}
                 <div className="absolute top-0 right-0 w-24 h-24 bg-blue-600/[0.03] rounded-full blur-[40px] pointer-events-none" />
                 
                 <p className="text-blue-600 text-sm sm:text-base lg:text-lg font-semibold leading-[1.8] relative z-10">

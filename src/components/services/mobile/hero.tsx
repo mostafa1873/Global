@@ -17,7 +17,7 @@ export default function GlobalNexusMobileServicePage() {
     animate: {
       y: [0, -12, 0],
       x: [0, 10, 0],
-      transition: { duration: 5, ease: "easeInOut" as const, repeat: Infinity }
+      transition: { duration: 5, ease: "easeInOut" as const as const as const, repeat: Infinity }
     }
   };
 
@@ -25,7 +25,7 @@ export default function GlobalNexusMobileServicePage() {
     animate: {
       y: [0, 8, 0],
       x: [0, -5, 0],
-      transition: { duration: 6, ease: "easeInOut" as const, repeat: Infinity }
+      transition: { duration: 6, ease: "easeInOut" as const as const as const, repeat: Infinity }
     }
   };
 
@@ -33,7 +33,7 @@ export default function GlobalNexusMobileServicePage() {
     animate: {
       y: [0, -8, 0],
       x: [0, 0, 0],
-      transition: { duration: 4.5, ease: "easeInOut" as const, repeat: Infinity }
+      transition: { duration: 4.5, ease: "easeInOut" as const as const as const, repeat: Infinity }
     }
   };
 

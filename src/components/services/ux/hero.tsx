@@ -20,7 +20,7 @@ export default function GlobalNexusUIUXHero() {
       scale: [1, 0.9, 1.1, 1],
       transition: {
         duration: 7,
-        ease: "easeInOut",
+        ease: "easeInOut" as const as const,
         repeat: Infinity,
       }
     }

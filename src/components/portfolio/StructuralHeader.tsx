@@ -4,14 +4,15 @@ import { motion } from "framer-motion";
 
 export default function PortfolioHero() {
   return (
-    <section className="relative w-full min-h-[100vh] flex items-center py-10 pt-28 md:pt-20 bg-transparent text-white overflow-hidden" dir="rtl">
+    // التعديل هنا: استخدام min-h-[100dvh] لضبط طول الموبايل بالمللي، وتخفيف الـ pt على الموبايل الصغير
+    <section className="relative w-full min-h-[100dvh] flex items-center py-12 pt-24 md:pt-20 bg-transparent text-white overflow-hidden" dir="rtl">
       
       {/* إضاءات نيون تقنية مدمجة في العمق بلون blue-600 الصريح */}
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-600/[0.06] blur-[150px] rounded-full pointer-events-none animate-pulse" />
       <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-blue-600/[0.03] blur-[130px] rounded-full pointer-events-none" />
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           {/* الجانب الأيمن: التيبوغرافيا والنصوص متمركزه بالمللي على الموبايل ويمين على الديسكتوب */}
           <div className="lg:col-span-6 text-center lg:text-right space-y-6">
@@ -65,8 +66,9 @@ export default function PortfolioHero() {
 
           </div>
 
-          {/* الجانب الأيسر: المنصة الرقمية التفاعلية متمركزة تماماً بدون خروج عن الشاشة في الموبايل */}
-          <div className="lg:col-span-6 hidden relative md:flex justify-center items-center min-h-[380px] sm:min-h-[450px] mt-8 lg:mt-0 overflow-visible w-full">
+          {/* الجانب الأيسر: المنصة الرقمية التفاعلية */}
+          {/* التعديل هنا: خفيناه تماماً hidden على الموبايل عشان ما ياخدش مساحة عمودية، وبيشتغل flex من أول md بكامل أناقته */}
+          <div className="hidden md:flex lg:col-span-6 relative justify-center items-center min-h-[380px] sm:min-h-[450px] mt-8 lg:mt-0 overflow-visible w-full">
             
             {/* حلقة هندسية في الخلفية */}
             <div className="absolute w-[280px] h-[280px] md:w-[380px] md:h-[380px] rounded-full bg-blue-600/[0.01] border border-white/[0.02] animate-[spin_80s_linear_infinite]" />

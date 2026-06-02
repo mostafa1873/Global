@@ -16,8 +16,8 @@ export default function PortfolioSalesClosing() {
                     whileInView={{ opacity: 1, y: 0 }}
                     className="text-white text-3xl sm:text-4xl md:text-5xl font-black leading-[1.5] tracking-tight mb-6"
                 >
-                    هل ترغب في <br className="hidden md:block" />
-                    تطوير <span className="text-blue-600">مشروع مشابه؟</span>
+                    هل ترغب في بناء  <br className="hidden md:block" />
+                    حضور رقمي <span className="text-blue-600">مشابه لشركتك؟</span>
                 </motion.h2>
 
                 {/* النص الوصفي الجديد */}
@@ -27,8 +27,7 @@ export default function PortfolioSalesClosing() {
                     transition={{ delay: 0.1 }}
                     className="text-base md:text-lg text-white/80 font-light max-w-2xl mx-auto leading-relaxed mb-12 sm:mb-16"
                 >
-                    يمكننا مساعدتك في بناء موقع أو حل رقمي يناسب طبيعة شركتك ويدعم حضورك أمام العملاء بشكل أكثر احترافية.
-                </motion.p>
+                    نساعد الشركات على تحويل أفكارها وخدماتها إلى حضور رقمي منظم، بداية من فهم طبيعة النشاط وحتى تنفيذ الموقع، الهوية، والمحتوى البصري المناسب.                </motion.p>
 
                 {/* الزرار المركزي الضخم والمحكم */}
                 <motion.div
@@ -43,8 +42,7 @@ export default function PortfolioSalesClosing() {
                             whileHover={{ x: -5 }}
                             className="w-full sm:w-auto px-10 py-5 bg-white text-black font-black rounded-full text-lg md:text-xl flex items-center justify-center gap-3 transition-transform"
                         >
-                            احجز استشارتك الآن
-                            <FiArrowLeft className="text-2xl" />
+                            ناقش مشروعك معنا                            <FiArrowLeft className="text-2xl" />
                         </motion.button>
                     </Link>
 

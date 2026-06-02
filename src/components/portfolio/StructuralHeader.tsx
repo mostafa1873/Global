@@ -33,7 +33,7 @@ export default function PortfolioHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="text-3xl sm:text-4xl md:text-5xl font-black leading-[1.2] tracking-tight bg-gradient-to-b from-white to-white/85 bg-clip-text text-transparent"
+              className="text-3xl sm:text-4xl md:text-5xl font-black leading-[1.4] tracking-tight bg-gradient-to-b from-white to-white/85 bg-clip-text text-transparent"
             >
               أعمال تعكس طريقة تفكيرنا في <br />
               <span className="text-blue-600">

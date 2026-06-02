@@ -1,4 +1,5 @@
 import PortfolioSalesClosing from "@/src/components/portfolio/CTA";
+import AvantGardeShowcase from "@/src/components/portfolio/InteractiveShowcase";
 import PortfolioSection from "@/src/components/portfolio/Portfolio";
 import StructuralHeader from "@/src/components/portfolio/StructuralHeader";
 
@@ -11,6 +12,8 @@ export default function PortfolioPage() {
       <StructuralHeader />
 
       <PortfolioSection />
+
+      <AvantGardeShowcase />
 
       <PortfolioSalesClosing />
 

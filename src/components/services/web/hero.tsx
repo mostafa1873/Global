@@ -13,7 +13,8 @@ export default function GlobalNexusServicePage() {
   };
 
   return (
-    <div className="w-full text-white py-10 min-h-screen md:py-30" dir="rtl">
+    // التعديل الوحيد هنا: جعلنا الارتفاع h-auto على الموبايل عشان يلم الفراغ اللي تحت تماماً، وبيرجع min-h-screen على الديسكتوب
+    <div className="w-full text-white py-10 h-auto md:min-h-screen md:py-30" dir="rtl">
       
       <section className="w-full max-w-6xl mx-auto px-4 relative z-10 pt-17 md:pt-5">
         
@@ -54,7 +55,7 @@ export default function GlobalNexusServicePage() {
             <div className="w-full lg:w-2/3 p-6 md:p-12 border-b lg:border-b-0 border-white/10 flex items-center text-center lg:text-right">
               <motion.p 
                 variants={fadeIn}
-                className="text-white text-sm md:text-lg font-medium leading-[1.8] md:leading-[2]"
+                className="text-white text-sm md:text-lg font-medium leading-[1.8] md:leading-"
               >
                 موقعك الإلكتروني هو أحد أهم نقاط التواصل بين شركتك وعملائك. في <span className="font-bold text-white">Global Nexus</span> نطوّر مواقع إلكترونية تجمع بين التصميم الواضح، الأداء السريع، وتجربة الاستخدام التي تساعد الزائر على فهم خدماتك والتواصل معك بسهولة.
               </motion.p>

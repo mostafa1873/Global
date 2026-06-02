@@ -5,7 +5,8 @@ import Link from "next/link";
 
 export default function CRMHeroSection() {
   return (
-    <section className="relative w-full min-h-[100vh] flex items-center overflow-hidden pt-20" dir="rtl">
+    // التعديل الوحيد والآمن هنا: جعلنا الارتفاع h-auto على الموبايل عشان يلم الفراغ الميت، وبيفضل فخم بكامل الشاشة على الديسكتوب lg:min-h-screen مع ضبط البادينج
+    <section className="relative w-full h-auto lg:min-h-screen flex items-center overflow-hidden pt-28 pb-12 md:pt-20 md:pb-0" dir="rtl">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

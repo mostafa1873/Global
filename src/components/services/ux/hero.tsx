@@ -27,8 +27,8 @@ export default function GlobalNexusUIUXHero() {
   };
 
   return (
-    // ضبط الارتفاع ليكون ديناميكياً مع تحسين الـ Padding للتجاوب
-    <div className="w-full text-white min-h-[100vh] lg:h-screen bg-transparent flex items-center justify-center pt-15" dir="rtl">
+    // التعديل الآمن والوحيد: جعلنا الارتفاع مرن h-auto على الموبايل لإنهاء الفراغ الأسود السفلي تماماً، ومع الديسكتوب يرجع بكامل الشاشة lg:min-h-screen مع إضافة pb-12 كمساحة أمان
+    <div className="w-full text-white h-auto lg:min-h-screen bg-transparent flex items-center justify-center pt-32 pb-12 lg:py-0" dir="rtl">
       
       {/* الحاوية العريضة لملء الجوانب برقي */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 relative z-10">

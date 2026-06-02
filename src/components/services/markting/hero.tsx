@@ -38,8 +38,9 @@ export default function HeroSection() {
   };
 
   return (
+    // التعديل الوحيد والآمن هنا: جعلنا الارتفاع h-auto على الموبايل عشان يلم الفراغ الميت، وبيفضل فخم بكامل الشاشة على الديسكتوب lg:min-h-screen
     <section 
-      className="relative w-full min-h-[100vh] flex items-center overflow-hidden pt-10 md:pt-18" 
+      className="relative w-full h-auto lg:min-h-screen flex items-center overflow-hidden pt-30 pb-12 md:pt-18 md:pb-0" 
       dir="rtl"
     >
 
@@ -71,7 +72,7 @@ export default function HeroSection() {
               variants={itemVariants}
               className="text-base md:text-lg lg:text-xl text-white max-w-2xl leading-relaxed mb-12"
             >
-              التسويق الرقمي الناجح لا يعتمد فقط على نشر المحتوى أو تشغيل الإعلانات، بل يحتاج إلى فهم الجمهور، وضوح الرسالة، وتنظيم رحلة العميل من أول ظهور حتى التواصل. في Global Nexus نساعد الشركات على بناء حضور تسويقي أكثر فاعلية واتساقًا.
+              التسويق الرقمي الناجح لا يعتمد فقط على نشر المحتوى أو تشغيل الإعلانات، بل يحتاج إلى فهم الجمهور، وضوح الرسالة، وتنظيم رحلة العميل من أول ظهور حتى التواصل. في Global Nexus نساعد الشركات على حضور تسويقي أكثر فاعلية واتساقًا.
             </motion.p>
 
             <motion.div variants={itemVariants} className="flex flex-wrap gap-4 items-center justify-center lg:justify-start">

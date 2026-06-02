@@ -23,7 +23,7 @@ export default function GlobalNexusMobileServicePage() {
 
   const floatCard2 = {
     animate: {
-      y: [0, 8, 0],
+      y: [0, 12, 0],
       x: [0, -5, 0],
       transition: { duration: 6, ease: "easeInOut" as const, repeat: Infinity }
     }
@@ -32,14 +32,14 @@ export default function GlobalNexusMobileServicePage() {
   const floatCard3 = {
     animate: {
       y: [0, -8, 0],
-      x: [0, 0, 0],
+      x: [0, 15, 0],
       transition: { duration: 4.5, ease: "easeInOut" as const, repeat: Infinity }
     }
   };
 
   return (
-    // تم تحديد الارتفاع ليكون 100vh ثابت في الشاشات الكبيرة مع مرونة كاملة لعدم تداخل النافبار
-    <div className="w-full text-white min-h-[100vh] bg-transparent flex items-center justify-center pt-32 lg:py-0" dir="rtl">
+    // التعديل الآمن والوحيد: استبدال min-h-[100vh] بـ h-auto lg:min-h-screen لمنع الفراغ الأسود السفلي في الموبايل مع الحفاظ على pb-12 كمساحة أمان
+    <div className="w-full text-white h-auto lg:min-h-screen bg-transparent flex items-center justify-center pt-32 pb-12 lg:py-0" dir="rtl">
       {/* توسيع الحاوية لـ max-w-7xl لملء المساحات الجانبية الشاغرة بذكاء واحترافية */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
         
@@ -64,7 +64,7 @@ export default function GlobalNexusMobileServicePage() {
 
               {/* العنوان الصريح القوي - تم تصغيره قليلاً ليتناسق بدقة */}
               <motion.h1 
-                variants={fadeIn}
+                variants={fadeIn} 
                 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-[1.3] tracking-tight mb-6"
               >
                 تطبيقات رقمية تمنح عملاءك <span className="text-blue-600 block mt-2">تجربة أسهل وأكثر مرونة</span>
@@ -72,7 +72,7 @@ export default function GlobalNexusMobileServicePage() {
 
               {/* الفقرة النصية بتناسقها المريح وحجم خط معدل بدقة */}
               <motion.p 
-                variants={fadeIn}
+                variants={fadeIn} 
                 className="text-white/80 text-sm md:text-base font-medium leading-[1.8] max-w-2xl mx-auto lg:mx-0"
               >
                 التطبيقات أصبحت من أهم الأدوات التي تساعد الشركات على تقديم خدماتها بطريقة أسرع وأكثر قربًا من العملاء. في <span className="font-bold text-white">Global Nexus</span> نطوّر تطبيقات موبايل تساعد الشركات على تحسين تجربة المستخدم وتسهيل الوصول إلى خدماتها.

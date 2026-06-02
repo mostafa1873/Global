@@ -137,7 +137,7 @@ export default function AvantGardeShowcase() {
       opacity: 1,
       y: 0,
       transition: {
-        delay: 0.03 + (i * 0.03), // تقليل الديلي لتسريع الاستجابة وحل الـ Lag
+        delay: 0.03 + (i * 0.03), 
         duration: 0.4,
         ease: [0.25, 1, 0.5, 1] as const
       }
@@ -265,7 +265,7 @@ export default function AvantGardeShowcase() {
                 </motion.div>
               </div>
 
-              {/* النصف الأيسر: لوحة تصفح البيانات الفخمة مجهزة ضد مشاكل السكرول */}
+              {/* النصف الأيسر: لوحة تصفح البيانات الفخمة مجهزة ضد مشاكل السكرول - تم التعديل هنا لتتوسط العناصر في الموبايل */}
               <div
                 className="w-full h-[60vh] md:h-screen md:w-1/2 lg:w-7/12 bg-[#040406] relative z-20 overflow-y-auto custom-scrollbar overscroll-contain bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-neutral-900/20 via-transparent to-transparent transform-gpu"
                 onWheel={(e) => e.stopPropagation()}
@@ -276,14 +276,14 @@ export default function AvantGardeShowcase() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 15 }}
                   transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
-                  className="w-full min-h-full p-5 sm:p-10 md:p-12 lg:p-16 flex flex-col items-start text-right"
+                  className="w-full min-h-full p-5 sm:p-10 md:p-12 lg:p-16 flex flex-col items-center text-center md:items-start md:text-right"
                 >
                   <div className="max-w-3xl w-full pb-16 md:pb-20 relative z-10">
 
                     {/* خدمات العميل المُعاد تصميمها برقي */}
                     <motion.div custom={1} initial="hidden" animate="visible" variants={contentVariants} className="mb-10 md:mb-14 w-full">
                       <h4 className="text-[11px] font-bold text-neutral-500 mb-3 md:mb-4 uppercase tracking-widest font-mono border-b border-white/5 pb-2">الخدمات المُقدمة</h4>
-                      <div className="flex flex-wrap gap-1.5 md:gap-2 justify-start">
+                      <div className="flex flex-wrap gap-1.5 md:gap-2 justify-center md:justify-start">
                         {selectedClient.services.map((service, idx) => (
                           <span key={idx} className="bg-neutral-900/60 border border-white/5 hover:border-blue-500/20 text-neutral-300 hover:text-white text-[10px] md:text-[11px] font-medium px-3 md:px-4 py-1.5 md:py-2 rounded-xl transition-colors duration-300">
                             {service}
@@ -303,7 +303,7 @@ export default function AvantGardeShowcase() {
                             initial="hidden"
                             animate="visible"
                             variants={contentVariants}
-                            className="group flex flex-col items-start bg-neutral-950/40 border border-white/5 rounded-2xl p-5 md:p-6 transition-all duration-300 hover:border-white/10 hover:bg-neutral-950/80 will-change-transform"
+                            className="group flex flex-col items-center text-center md:items-start md:text-right bg-neutral-950/40 border border-white/5 rounded-2xl p-5 md:p-6 transition-all duration-300 hover:border-white/10 hover:bg-neutral-950/80 will-change-transform"
                           >
                             <div className={`w-9 h-9 md:w-10 md:h-10 rounded-xl ${detail.bg} ${detail.color} flex items-center justify-center mb-3 md:mb-4 border ${detail.border} shadow-inner`}>
                               <Icon size={16} />

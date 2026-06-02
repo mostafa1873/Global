@@ -159,7 +159,7 @@ export default function Footer() {
         {/* 3. الـ Copyright السفلي */}
         <div className="pt-6 border-t border-white/5 text-center relative z-10">
           <p className="text-slate-600 text-[10px] tracking-[0.2em] uppercase font-medium">
-            © {currentYear} GLOBAL NEXUS SYSTEMS. ALL RIGHTS RESERVED.
+            {currentYear} GLOBAL NEXUS ©. ALL RIGHTS RESERVED.
           </p>
         </div>
 

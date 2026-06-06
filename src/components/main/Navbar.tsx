@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation"; // ضفنا useRouter عشان التنقل الديناميكي بين اللغات
+import { useTranslations } from "next-intl"; // استدعاء هوك الترجمة
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, Globe, Menu, X } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaBehance, FaLinkedinIn } from "react-icons/fa";
@@ -9,12 +10,24 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "../../../public/works/header.webp"; // مسار اللوجو الفعلي في مشروعك الحالي
 
-export default function Navbar() {
+// تعريف الـ Type للـ Props عشان التايب سكريبت يفهم الـ locale ويشيل الخط الأحمر
+interface NavbarProps {
+  locale: string;
+}
+
+export default function Navbar({ locale }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [lang, setLang] = useState("AR"); // الحفاظ على ستيت اللغة القديمة لترجمة الموقع
+
+  // اشتقاق الـ lang تلقائياً من الـ locale اللي جاي من السيرفر عشان يفضل متناسق مع الموقع كله بالكامل
+  const lang = locale === "ar" ? "AR" : "EN";
+
   const pathname = usePathname();
+  const router = useRouter();
+
+  // تفعيل هوك الترجمة الخاص بسيكشن Navbar
+  const t = useTranslations("Navbar");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -27,14 +40,27 @@ export default function Navbar() {
     else document.body.style.overflow = 'unset';
   }, [isOpen]);
 
+  // دالة تحويل اللغة وتغيير المسار (URL) مع الحفاظ على الصفحة اللي المستخدم واقف عليها
+  const toggleLanguage = () => {
+    const nextLocale = locale === "ar" ? "en" : "ar";
+
+    // تقسيم الـ pathname الحالي لاستبدال الـ locale القديم بالجديد
+    const segments = pathname.split("/");
+    segments[1] = nextLocale; // الـ segment رقم 1 هو الـ locale دايماً في الـ URL
+
+    const newPath = segments.join("/");
+    router.push(newPath);
+  };
+
   // الداتا واللينكات القديمة بالظبط بدون أي تغيير ومربوطة بالترجمة ديناميكياً
+  // تم تعديل الـ href ليقرأ الـ locale الحالي عشان المستخدم ميرجعش للصفحة الرئيسية بالعربي لو داس على لينك
   const navLinks = [
-    { name: lang === "AR" ? "الرئيسية" : "Home", href: "/" },
-    { name: lang === "AR" ? "من نحن" : "About", href: "/about" },
-    { name: lang === "AR" ? "خدماتنا" : "Services", href: "/services" },
-    { name: lang === "AR" ? "أعمالنا" : "Portfolio", href: "/portfolio" },
-    { name: lang === "AR" ? "المدونة" : "Blog", href: "/blog" },
-    { name: lang === "AR" ? "تواصل معنا" : "Contact", href: "/contact" },
+    { name: t("home"), href: `/${locale}` },
+    { name: t("about"), href: `/${locale}/about` },
+    { name: t("services"), href: `/${locale}/services` },
+    { name: t("portfolio"), href: `/${locale}/portfolio` },
+    { name: t("blog"), href: `/${locale}/blog` },
+    { name: t("contact"), href: `/${locale}/contact` },
   ];
 
   return (
@@ -50,7 +76,7 @@ export default function Navbar() {
         dir="ltr" // ثابت ltr عشان ترتيب الديزاين يفضل (اللوجو شمال - اللينكات وسط - الأزرار يمين)
       >
         {/* Logo Section */}
-        <Link href="/" className="relative flex items-center group overflow-hidden shrink-0">
+        <Link href={`/${locale}`} className="relative flex items-center group overflow-hidden shrink-0">
           <motion.div whileHover={{ scale: 1.02 }} className="relative z-10 w-[120px] md:w-[190px]">
             <Image src={logo} alt="Global Nexus Logo" width={190} height={80} className="w-full h-auto" priority />
           </motion.div>
@@ -88,25 +114,25 @@ export default function Navbar() {
         <div className="flex items-center gap-1.5 md:gap-3">
           {/* زر تشغيل الترجمة وتغيير الستيت */}
           <button
-            onClick={() => setLang(lang === "AR" ? "EN" : "AR")}
-            className="hidden sm:flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full border border-white/10 bg-white/5 text-white hover:bg-blue-600 transition-all duration-300"
+            onClick={toggleLanguage}
+            className="hidden sm:flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full border border-white/10 bg-white/5 text-white hover:bg-blue-600 transition-all duration-300 cursor-pointer"
           >
             <Globe size={16} />
           </button>
 
           {/* زر الأكشن متعدل باللينك والداتا القديمة (/call) وبنفس ديزاين الجديد بالظبط */}
           <Link
-            href="/call"
-            className="relative group flex items-center justify-center gap-1.5 md:gap-3 bg-white text-black px-3 py-1.5 md:px-8 md:py-3.5 rounded-full text-[9px] md:text-sm font-black uppercase tracking-tight md:tracking-wider transition-all duration-300 shrink-0 shadow-[0_4px_12px_rgba(255,255,255,0.1)] active:scale-90"
+            href={`/${locale}/call`}
+            className="relative group flex items-center justify-center gap-1 md:gap-2 bg-white text-black px-2 py-1 md:px-5 md:py-2 rounded-full text-[8px] md:text-xs font-black uppercase tracking-tight md:tracking-wider transition-all duration-300 shrink-0 shadow-[0_4px_12px_rgba(255,255,255,0.1)] active:scale-90"
           >
             {/* تأثير النبض - مخفي في الموبايل */}
             <div className="absolute inset-0 rounded-full bg-white opacity-10 animate-pulse hidden md:block group-hover:hidden" />
 
-            <span className="relative z-10 flex items-center gap-1.5 md:gap-3">
-              {lang === "AR" ? "احجز استشارة" : "Book a call"}
+            <span className="relative z-10 flex items-center gap-1 md:gap-2">
+              {t("bookCall")}
 
               {/* الدائرة والسهم: حجم ميني جداً للموبايل وحجم طبيعي للديسكطوب */}
-              <div className="relative w-4 h-4 md:w-7 md:h-7 bg-black rounded-full flex items-center justify-center transition-all duration-500 group-hover:bg-blue-600">
+              <div className="relative w-3 h-3 md:w-5 md:h-5 bg-blue-600 rounded-full flex items-center justify-center transition-all duration-500 group-hover:bg-blue-600">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -115,7 +141,7 @@ export default function Navbar() {
                   strokeWidth="4"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="w-2 h-2 md:w-3.5 md:h-3.5 group-hover:rotate-45 transition-transform duration-300"
+                  className="w-1.5 h-1.5 md:w-2.5 md:h-2.5 group-hover:rotate-45 transition-transform duration-300"
                 >
                   <line x1="7" y1="17" x2="17" y2="7"></line>
                   <polyline points="7 7 17 7 17 17"></polyline>
@@ -178,8 +204,8 @@ export default function Navbar() {
                         href={link.href}
                         onClick={() => setIsOpen(false)}
                         className={`group flex flex-row items-center justify-between px-5 py-2.5 rounded-full transition-all border ${pathname === link.href
-                            ? "bg-white/[0.08] border-white/20"
-                            : "bg-white/[0.02] border-white/5"
+                          ? "bg-white/[0.08] border-white/20"
+                          : "bg-white/[0.02] border-white/5"
                           }`}
                       >
                         <span className={`text-2xl font-bold uppercase ${pathname === link.href ? "text-blue-500" : "text-white"}`}>
@@ -198,13 +224,13 @@ export default function Navbar() {
               {/* Footer Area */}
               <div className="flex flex-col items-center gap-4">
                 <motion.button
-                  onClick={() => setLang(lang === "AR" ? "EN" : "AR")}
-                  className="flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md text-white"
+                  onClick={toggleLanguage}
+                  className="flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md text-white cursor-pointer"
                   dir="ltr"
                 >
                   <Globe size={14} className="text-blue-500" />
                   <span className="text-[10px] font-bold tracking-[0.2em] uppercase">
-                    {lang === "AR" ? "ENGLISH VERSION" : "العربية"}
+                    {t("englishVersion")}
                   </span>
                 </motion.button>
 

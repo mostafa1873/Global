@@ -4,39 +4,51 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Calendar } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaBehance, FaLinkedinIn, FaTiktok } from "react-icons/fa";
+import { useTranslations, useLocale } from "next-intl"; // شغالين بنفس الطريقة المعتمدة في مشروعك
 
 export default function ContactPage() {
+    const t = useTranslations("ContactPage");
+    const locale = useLocale();
+    const currentDir = locale === "ar" ? "rtl" : "ltr";
+    const isAr = locale === "ar";
+
     const [selectedServices, setSelectedServices] = useState<string[]>([]);
 
-    // نوع الخدمة المطلوبة المحدثة لتناسب نشاطك
-    const services = ["تصميم مواقع", "UI/UX", "تتطوير الويب", "تسويق", "هوية بصرية"];
+    // المصفوفة تقرأ الـ keys والـ values ديناميكياً لضمان عدم حدوث مشاكل في الـ State عند تحويل اللغة
+    const services = [
+        { key: "webDesign", label: t("services.webDesign") },
+        { key: "uiux", label: t("services.uiux") },
+        { key: "webDev", label: t("services.webDev") },
+        { key: "marketing", label: t("services.marketing") },
+        { key: "branding", label: t("services.branding") }
+    ];
 
-    const toggleService = (service: string) => {
-        if (selectedServices.includes(service)) {
-            setSelectedServices(selectedServices.filter((s) => s !== service));
+    const toggleService = (serviceKey: string) => {
+        if (selectedServices.includes(serviceKey)) {
+            setSelectedServices(selectedServices.filter((s) => s !== serviceKey));
         } else {
-            setSelectedServices([...selectedServices, service]);
+            setSelectedServices([...selectedServices, serviceKey]);
         }
     };
 
     return (
-        <section className="w-full min-h-screen text-white pt-25 pb-20 lg:pt-30 lg:pb-24 px-4 md:px-12 flex flex-col items-center justify-center gap-16 relative overflow-hidden selection:bg-blue-600/30" dir="rtl">
+        <section className="w-full min-h-screen text-white pt-25 pb-20 lg:pt-30 lg:pb-24 px-4 md:px-12 flex flex-col items-center justify-center gap-16 relative overflow-hidden selection:bg-blue-600/30" dir={currentDir}>
  
             <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
                 {/* --- الجنب الأيمن: بيانات التواصل والسوشيال ميديا (موزعة بالـ order للموبايل وفي سياق الـ Flex للديسك توب) --- */}
-                <div className="contents lg:flex lg:flex-col lg:col-span-5 lg:space-y-10 lg:items-start w-full">
+                <div className={`contents lg:flex lg:flex-col lg:col-span-5 lg:space-y-10 w-full ${isAr ? "lg:items-start" : "lg:items-start"}`}>
                     
                     {/* الهيدر - يظهر أولاً في الموبايل */}
-                    <div className="order-1 lg:order-none space-y-4 text-center lg:text-right flex flex-col items-center lg:items-start w-full">
+                    <div className={`order-1 lg:order-none space-y-4 text-center flex flex-col items-center w-full ${isAr ? "lg:text-right lg:items-start" : "lg:text-left lg:items-start"}`}>
                         <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-md text-[10px] font-black uppercase tracking-widest text-white">
-                            دعنا نناقش مشروعك القادم
+                            {t("badge")}
                         </span>
-                        <h1 className="text-xl md:text-xl font-black tracking-tight leading-[1.8] text-zinc-100">
-                            إذا كنت تبحث عن تطوير حضورك الرقمي أو بناء حلول تساعد شركتك على النمو بشكل أكثر .{" "}
+                        <h1 className="text-sm md:text-xl font-black tracking-tight leading-[1.8] text-zinc-100">
+                            {t("titleMain")}{" "}
                             <br />
                             <span className="bg-gradient-to-l from-blue-600 to-blue-600 bg-clip-text text-transparent">
-                                يسعدنا التواصل معك وفهم احتياجات مشروعك.
+                                {t("titleSub")}
                             </span>
                         </h1>
                     </div>
@@ -44,12 +56,12 @@ export default function ContactPage() {
                     {/* كروت قنوات الاتصال السريعة ببياناتك - تظهر بعد الفورم في الموبايل */}
                     <div className="order-3 lg:order-none space-y-4 max-w-sm w-full mx-auto lg:mx-0">
                         {/* الإيميل */}
-                        <a href="mailto:info@globalnexuseg.com" className="flex flex-col lg:flex-row items-center gap-4 p-5 rounded-[2rem] bg-white/[0.01] backdrop-blur-md border border-white/[0.08] hover:border-blue-600/30 hover:shadow-[0_0_25px_rgba(37,99,235,0.05)] transition-all duration-300 group text-center lg:text-right justify-center lg:justify-start">
+                        <a href="mailto:info@globalnexuseg.com" className={`flex flex-col lg:flex-row items-center gap-4 p-5 rounded-[2rem] bg-white/[0.01] backdrop-blur-md border border-white/[0.08] hover:border-blue-600/30 hover:shadow-[0_0_25px_rgba(37,99,235,0.05)] transition-all duration-300 group text-center justify-center ${isAr ? "lg:text-right lg:justify-start" : "lg:text-left lg:justify-start"}`}>
                             <div className="w-10 h-10 rounded-xl bg-blue-600/10 border border-blue-600/30 flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shrink-0">
                                 <Mail size={18} />
                             </div>
-                            <div className="flex flex-col items-center lg:items-start">
-                                <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-0.5">ارسل لنا إيميل</p>
+                            <div className={`flex flex-col items-center ${isAr ? "lg:items-start" : "lg:items-start"}`}>
+                                <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-0.5">{t("emailLabel")}</p>
                                 <p className="text-sm font-bold text-slate-200 group-hover:text-blue-500 transition-colors tracking-wider">
                                     info@globalnexuseg.com
                                 </p>
@@ -57,32 +69,32 @@ export default function ContactPage() {
                         </a>
 
                         {/* الهاتف */}
-                        <a href="tel:201109458238" className="flex flex-col lg:flex-row items-center gap-4 p-5 rounded-[2rem] bg-white/[0.01] backdrop-blur-md border border-white/[0.08] hover:border-blue-600/30 hover:shadow-[0_0_25px_rgba(37,99,235,0.05)] transition-all duration-300 group text-center lg:text-right justify-center lg:justify-start">
+                        <a href="tel:201109458238" className={`flex flex-col lg:flex-row items-center gap-4 p-5 rounded-[2rem] bg-white/[0.01] backdrop-blur-md border border-white/[0.08] hover:border-blue-600/30 hover:shadow-[0_0_25px_rgba(37,99,235,0.05)] transition-all duration-300 group text-center justify-center ${isAr ? "lg:text-right lg:justify-start" : "lg:text-left lg:justify-start"}`}>
                             <div className="w-10 h-10 rounded-xl bg-blue-600/10 border border-blue-600/30 flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shrink-0">
                                 <Phone size={18} />
                             </div>
-                            <div className="flex flex-col items-center lg:items-start">
-                                <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-0.5">اتصل بنا مباشرة</p>
+                            <div className={`flex flex-col items-center ${isAr ? "lg:items-start" : "lg:items-start"}`}>
+                                <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-0.5">{t("phoneLabel")}</p>
                                 <p className="text-sm font-bold text-slate-200 group-hover:text-blue-500 transition-colors" dir="ltr">+20 110 945 8238</p>
                             </div>
                         </a>
 
                         {/* العنوان */}
-                        <div className="flex flex-col lg:flex-row items-center gap-4 p-5 rounded-[2rem] bg-white/[0.01] backdrop-blur-md border border-white/[0.08] hover:border-blue-600/20 transition-all duration-300 text-center lg:text-right justify-center lg:justify-start">
+                        <div className={`flex flex-col lg:flex-row items-center gap-4 p-5 rounded-[2rem] bg-white/[0.01] backdrop-blur-md border border-white/[0.08] hover:border-blue-600/20 transition-all duration-300 text-center justify-center ${isAr ? "lg:text-right lg:justify-start" : "lg:text-left lg:justify-start"}`}>
                             <div className="w-10 h-10 rounded-xl bg-blue-600/10 border border-blue-600/30 flex items-center justify-center text-blue-500 shrink-0">
                                 <MapPin size={18} />
                             </div>
-                            <div className="flex flex-col items-center lg:items-start">
-                                <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-0.5">المقر الرئيسي</p>
-                                <p className="text-sm font-bold text-slate-200"> البحيرة - مصر</p>
+                            <div className={`flex flex-col items-center ${isAr ? "lg:items-start" : "lg:items-start"}`}>
+                                <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-0.5">{t("addressLabel")}</p>
+                                <p className="text-sm font-bold text-slate-200"> {t("addressValue")}</p>
                             </div>
                         </div>
                     </div>
 
                     {/* أيقونات السوشيال ميديا - تظهر رابعاً في الموبايل */}
-                    <div className="order-4 lg:order-none space-y-3 w-full flex flex-col items-center lg:items-start text-center lg:text-right">
-                        <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">تابعنا على منصاتنا</p>
-                        <div className="flex gap-4 items-center justify-center lg:justify-start">
+                    <div className={`order-4 lg:order-none space-y-3 w-full flex flex-col items-center text-center ${isAr ? "lg:items-start lg:text-right" : "lg:items-start lg:text-left"}`}>
+                        <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">{t("socialTitle")}</p>
+                        <div className={`flex gap-4 items-center justify-center ${isAr ? "lg:justify-start" : "lg:justify-start"}`}>
                             {[
                                 { icon: FaFacebookF, link: "https://web.facebook.com/GlobalNexus.Egypt/?rdid=8c2wIiGvCoqjjqIv" },
                                 { icon: FaInstagram, link: "https://www.instagram.com/accounts/suspended/?next=https%3A%2F%2Fwww.instagram.com%2Fglobalnexus_eg%3Figsh%3DMWp5emNjaXdlb2g0cg%26__coig_ufac%3D1#" },
@@ -109,73 +121,77 @@ export default function ContactPage() {
                     <div className="absolute -top-20 -left-20 w-40 h-40 bg-blue-600/10 rounded-full blur-[80px] pointer-events-none" />
 
                     {/* نص قبل نموذج التواصل */}
-                    <div className="mb-8 text-center lg:text-right relative z-10">
-                        <p className="text-base text-slate-300 font-normal leading-relaxed opacity-95 text-center">
-                            شاركنا تفاصيل مشروعك أو الخدمة التي تحتاجها، وسنقوم بمراجعة طلبك والتواصل معك لمناقشة الحل الأنسب لطبيعة نشاطك.
+                    <div className="mb-8 text-center relative z-10">
+                        <p className={`text-base text-slate-300 font-normal leading-relaxed opacity-95 ${isAr ? "text-center lg:text-right" : "text-center lg:text-left"}`}>
+                            {t("formDesc")}
                         </p>
                     </div>
 
-                    <form onSubmit={(e) => e.preventDefault()} className="space-y-6 relative z-10 text-center lg:text-right flex flex-col">
+                    <form onSubmit={(e) => e.preventDefault()} className={`space-y-6 relative z-10 text-center flex flex-col ${isAr ? "lg:text-right" : "lg:text-left"}`}>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {/* حقل الاسم */}
-                            <div className="flex flex-col gap-2 text-center lg:text-right">
-                                <label className="text-xs font-bold text-white lg:mr-1">الاسم</label>
+                            <div className={`flex flex-col gap-2 text-center ${isAr ? "lg:text-right" : "lg:text-left"}`}>
+                                <label className={`text-xs font-bold text-white ${isAr ? "lg:mr-1" : "lg:ml-1"}`}>{t("labelName")}</label>
                                 <input
                                     type="text"
-                                    placeholder="الاسم بالكامل"
-                                    className="w-full bg-white/[0.02] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-blue-600 focus:shadow-[0_0_15px_rgba(37,99,235,0.08)] transition-all duration-300 text-xs text-center lg:text-right"
+                                    placeholder={t("placeholderName")}
+                                    className={`w-full bg-white/[0.02] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-blue-600 focus:shadow-[0_0_15px_rgba(37,99,235,0.08)] transition-all duration-300 text-xs text-center ${isAr ? "lg:text-right" : "lg:text-left"}`}
                                 />
                             </div>
 
                             {/* حقل اسم الشركة */}
-                            <div className="flex flex-col gap-2 text-center lg:text-right">
-                                <label className="text-xs font-bold text-white lg:mr-1">اسم الشركة</label>
+                            <div className={`flex flex-col gap-2 text-center ${isAr ? "lg:text-right" : "lg:text-left"}`}>
+                                <label className={`text-xs font-bold text-white ${isAr ? "lg:mr-1" : "lg:ml-1"}`}>{t("labelCompany")}</label>
                                 <input
                                     type="text"
-                                    placeholder="اسم شركتك أو نشاطك"
-                                    className="w-full bg-white/[0.02] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-blue-600 focus:shadow-[0_0_15px_rgba(37,99,235,0.08)] transition-all duration-300 text-xs text-center lg:text-right"
+                                    placeholder={t("placeholderCompany")}
+                                    className={`w-full bg-white/[0.02] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-blue-600 focus:shadow-[0_0_15px_rgba(37,99,235,0.08)] transition-all duration-300 text-xs text-center ${isAr ? "lg:text-right" : "lg:text-left"}`}
                                 />
                             </div>
 
                             {/* حقل البريد الإلكتروني */}
-                            <div className="flex flex-col gap-2 text-center lg:text-right">
-                                <label className="text-xs font-bold text-white lg:mr-1">البريد الإلكتروني</label>
+                            <div className={`flex flex-col gap-2 text-center ${isAr ? "lg:text-right" : "lg:text-left"}`}>
+                                <label className={`text-xs font-bold text-white ${isAr ? "lg:mr-1" : "lg:ml-1"}`}>{t("labelEmail")}</label>
                                 <input
                                     type="email"
-                                    placeholder="name@example.com"
-                                    className="w-full bg-white/[0.02] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-blue-600 focus:shadow-[0_0_15px_rgba(37,99,235,0.08)] transition-all duration-300 text-xs text-center lg:text-right"
+                                    placeholder={t("placeholderEmail")}
+                                    className={`w-full bg-white/[0.02] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-blue-600 focus:shadow-[0_0_15px_rgba(37,99,235,0.08)] transition-all duration-300 text-xs text-center ${isAr ? "lg:text-right" : "lg:text-left"}`}
                                 />
                             </div>
 
                             {/* حقل رقم الهاتف */}
-                            <div className="flex flex-col gap-2 text-center lg:text-right">
-                                <label className="text-xs font-bold text-white lg:mr-1">رقم الهاتف</label>
+                            <div className={`flex flex-col gap-2 text-center ${isAr ? "lg:text-right" : "lg:text-left"}`}>
+                                <label className={`text-xs font-bold text-white ${isAr ? "lg:mr-1" : "lg:ml-1"}`}>{t("labelPhone")}</label>
                                 <input
                                     type="tel"
-                                    placeholder="01111111111"
-                                    className="w-full bg-white/[0.02] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-blue-600 focus:shadow-[0_0_15px_rgba(37,99,235,0.08)] transition-all duration-300 text-xs text-center lg:text-right"
+                                    placeholder={t("placeholderPhone")}
+                                    className={`w-full bg-white/[0.02] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-blue-600 focus:shadow-[0_0_15px_rgba(37,99,235,0.08)] transition-all duration-300 text-xs text-center ${isAr ? "lg:text-right" : "lg:text-left"}`}
                                 />
                             </div>
                         </div>
 
                         {/* حقل نوع الخدمة المطلوبة */}
-                        <div className="flex flex-col gap-3 text-center lg:text-right">
-                            <label className="text-xs font-black text-white lg:mr-1 tracking-wide">نوع الخدمة المطلوبة</label>
-                            <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-                                {services.map((service) => {
-                                    const isSelected = selectedServices.includes(service);
+                        <div className={`flex flex-col gap-3 text-center ${isAr ? "lg:text-right" : "lg:text-left"}`}>
+                            <label className={`text-xs font-black text-white tracking-wide ${isAr ? "lg:mr-1" : "lg:ml-1"}`}>{t("labelServices")}</label>
+                            {/* تم تعديل الحاوية هنا لضبط التناسق بالكامل على الشاشات الصغيرة والكبيرة */}
+                            <div className="grid grid-cols-2 gap-2 max-w-md mx-auto w-full sm:flex sm:flex-wrap sm:justify-center lg:justify-start lg:mx-0">
+                                {services.map((service, index) => {
+                                    const isSelected = selectedServices.includes(service.key);
+                                    const isLastItem = index === services.length - 1;
                                     return (
                                         <button
-                                            key={service}
+                                            key={service.key}
                                             type="button"
-                                            onClick={() => toggleService(service)}
-                                            className={`px-4 py-2 rounded-full text-[11px] font-bold border transition-all duration-300 active:scale-95 ${isSelected
+                                            onClick={() => toggleService(service.key)}
+                                            className={`px-4 py-2.5 rounded-full text-[11px] font-bold border transition-all duration-300 active:scale-95 text-center truncate ${
+                                                isLastItem ? "col-span-2 sm:col-span-1" : "col-span-1"
+                                            } ${isSelected
                                                 ? "bg-blue-600/20 border-blue-600/50 text-blue-500 shadow-[0_0_12px_rgba(37,99,235,0.15)]"
                                                 : "bg-white/[0.02] border-white/5 text-slate-400 hover:text-white hover:border-white/20"
-                                                }`}
+                                            }`}
                                         >
-                                            {service}
+                                            {service.label}
                                         </button>
                                     );
                                 })}
@@ -183,17 +199,17 @@ export default function ContactPage() {
                         </div>
 
                         {/* حقل تفاصيل المشروع */}
-                        <div className="flex flex-col gap-2 text-center lg:text-right">
-                            <label className="text-xs font-bold text-white lg:mr-1">تفاصيل المشروع</label>
+                        <div className={`flex flex-col gap-2 text-center ${isAr ? "lg:text-right" : "lg:text-left"}`}>
+                            <label className={`text-xs font-bold text-white ${isAr ? "lg:mr-1" : "lg:ml-1"}`}>{t("labelDetails")}</label>
                             <textarea
                                 rows={4}
-                                placeholder="اكتب تفاصيل مشروعك أو الرؤية التي تريد تحقيقها هنا..."
-                                className="w-full bg-white/[0.02] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-blue-600 focus:shadow-[0_0_15px_rgba(37,99,235,0.08)] transition-all duration-300 text-xs resize-none text-center lg:text-right"
+                                placeholder={t("placeholderDetails")}
+                                className={`w-full bg-white/[0.02] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-blue-600 focus:shadow-[0_0_15px_rgba(37,99,235,0.08)] transition-all duration-300 text-xs resize-none text-center ${isAr ? "lg:text-right" : "lg:text-left"}`}
                             />
                         </div>
 
                         {/* الـ CTA المزدوج الاحترافي ومتناسق مع استايل البلوج المميز */}
-                        <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-end gap-4 pt-4">
+                        <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 ${isAr ? "lg:justify-end" : "lg:justify-end"}`}>
                             {/* زرار احجز مكالمة استراتيجية */}
                             <motion.a
                                 href="/call"
@@ -202,7 +218,7 @@ export default function ContactPage() {
                                 className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/[0.03] border border-white/10 text-white px-6 py-3 rounded-xl text-xs font-bold transition-all duration-300 hover:bg-white/10"
                             >
                                 <Calendar size={14} className="text-blue-500" />
-                                <span>احجز مكالمة استراتيجية</span>
+                                <span>{t("btnCall")}</span>
                             </motion.a>
 
                             {/* زرار أرسل طلبك (تصميم متقن مثل أزرار البلوج الاحترافية) */}
@@ -212,7 +228,7 @@ export default function ContactPage() {
                                 type="submit"
                                 className="w-full sm:w-auto group flex items-center justify-center gap-3 border border-white/10 bg-white/[0.05] text-white pl-3 pr-6 py-3 rounded-xl text-xs font-bold transition-all duration-300 shadow-[0_4px_15px_rgba(255,255,255,0.05)] hover:bg-blue-600 hover:text-white hover:shadow-[0_0_25px_rgba(37,99,235,0.25)]"
                             >
-                                <span>أرسل طلبك</span>
+                                <span>{t("btnSubmit")}</span>
                                 <div className="w-5 h-5 bg-white text-black rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-white group-hover:text-blue-600">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -222,7 +238,7 @@ export default function ContactPage() {
                                         strokeWidth="3.5"
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
-                                        className="w-2.5 h-2.5 rotate-[135deg] group-hover:rotate-[180deg] transition-transform duration-300"
+                                        className={`w-2.5 h-2.5 transition-transform duration-300 ${isAr ? "rotate-[135deg] group-hover:rotate-[180deg]" : "rotate-[45deg] group-hover:rotate-[90deg]"}`}
                                     >
                                         <line x1="7" y1="17" x2="17" y2="7"></line>
                                         <polyline points="7 7 17 7 17 17"></polyline>
@@ -237,7 +253,7 @@ export default function ContactPage() {
             {/* --- النص الختامي لصفحة التواصل --- */}
             <div className="w-full max-w-4xl text-center px-4 mt-4">
                 <p className="text-base md:text-lg text-slate-300 font-light leading-relaxed max-w-3xl mx-auto border-t border-b border-white/[0.06] py-6">
-                    سواء كنت في مرحلة بناء مشروع جديد أو ترغب في تطوير حضور شركتك الحالي، يمكننا مساعدتك على اختيار الحل الرقمي المناسب والبدء بخطوات واضحة ومنظمة.
+                    {t("footerText")}
                 </p>
             </div>
 
@@ -255,14 +271,14 @@ export default function ContactPage() {
                         referrerPolicy="no-referrer-when-downgrade"
                     />
                     {/* كارت صغير ذكي فوق الخريطة */}
-                    <div className="absolute bottom-6 right-6 z-20 bg-[#020202]/90 backdrop-blur-md border border-white/10 p-4 rounded-2xl hidden md:block">
+                    <div className={`absolute bottom-6 z-20 bg-[#020202]/90 backdrop-blur-md border border-white/10 p-4 rounded-2xl hidden md:block ${isAr ? "right-6" : "left-6"}`}>
                         <div className="flex items-center gap-3">
                             <div className="w-8 h-8 rounded-full bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-500">
                                 <MapPin size={16} />
                             </div>
-                            <div>
-                                <p className="text-xs font-bold text-white"> البحيرة - مصر</p>
-                                <p className="text-[10px] text-slate-400">نحن بانتظار زيارتك!</p>
+                            <div className={isAr ? "text-right" : "text-left"}>
+                                <p className="text-xs font-bold text-white"> {t("mapCardTitle")}</p>
+                                <p className="text-[10px] text-slate-400">{t("mapCardSub")}</p>
                             </div>
                         </div>
                     </div>

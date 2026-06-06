@@ -1,0 +1,772 @@
+{
+    "Metadata": {
+        "title": "Global Nexus | Premium Digital Solutions",
+        "description": "Global Nexus is a platform for sharing and discovering knowledge across the globe.",
+        "ogDescription": "Build your digital future with Global Nexus"
+    },
+    "Navbar": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "portfolio": "Portfolio",
+        "blog": "Blog",
+        "contact": "Contact",
+        "bookCall": "Book a call",
+        "englishVersion": "العربية"
+    },
+    "Footer": {
+        "tagline": "We innovate digital solutions that redefine your market presence.",
+        "overview": "Overview",
+        "contact": "Contact",
+        "workingHours": "Working Hours",
+        "location": "Our Location",
+        "days": "Saturday - Thursday",
+        "hours": "08:00 AM - 06:00 PM",
+        "address": "Beheira - Egypt",
+        "rights": "ALL RIGHTS RESERVED.",
+        "links": {
+            "about": "About",
+            "services": "Services",
+            "portfolio": "Portfolio",
+            "blog": "Blog",
+            "contact": "Contact"
+        }
+    },
+    "WhatsApp": {
+        "text": "Contact Us",
+        "message": "Hello, I need more details about Global Nexus services."
+    },
+    "BookACall": {
+        "badge": "STRATEGIC CONSULTATION",
+        "titleLine1": "Want to build a",
+        "titleLine2": "Digital Presence?",
+        "description": "We help companies transform their ideas and services into an organized digital presence, from understanding the business nature to executing the website, brand identity, and the right visual content.",
+        "placeholderName": "Full Name",
+        "placeholderEmail": "Email Address",
+        "placeholderPhone": "Phone Number",
+        "placeholderNotes": "Additional details about your project",
+        "serviceDefault": "Service Type",
+        "services": [
+            "Digital Marketing",
+            "Design & Websites",
+            "Growth Consultation"
+        ],
+        "contactDefault": "Contact Method",
+        "contactMethods": [
+            "Voice Call",
+            "Zoom Meeting"
+        ],
+        "submitBtn": "Confirm Call Request"
+    },
+    "Hero": {
+        "titleLine1": "We build digital",
+        "titleLine2": "Growth systems",
+        "titleLine3": "for modern businesses",
+        "subTextItalic": "Where the",
+        "subTextGradient": "real value is created",
+        "description": "We help companies transform their ideas and services into an organized digital presence, starting from understanding the business nature to execution, identity design, and visual content.",
+        "supportingText": "Integrated digital solutions tailored specifically to meet your business needs and build a strong presence.",
+        "primaryBtn": "Book a Call",
+        "secondaryBtn": "Explore Services"
+    },
+    "AboutSection": {
+        "badge": "About Us",
+        "titleLine1": "We think about growth in a",
+        "titleLine2": "different way",
+        "p1_part1": "At Global Nexus, we believe that digital growth doesn't just depend on an ad campaign or a good design, but requires an integrated vision that connects",
+        "p1_bold1": " marketing, technology, ",
+        "p1_bold2": "identity, and customer experience",
+        "card2026_sub": "A Vision Realized",
+        "cardExperts_sub": "Industry Experts",
+        "cardProjects_sub": "Projects",
+        "cardServices_sub": "Services",
+        "p2_part1": "Therefore, we work on developing solutions that help companies build a clearer and more organized digital presence, while improving the way they connect with ",
+        "p2_bold1": "customers ",
+        "p2_part2": " and turning their digital presence into a real tool ",
+        "p2_bold2": "to support growth",
+        "cardCommitment_sub": "Full Commitment to Results",
+        "btnMore": "Learn More"
+    },
+    "Services": {
+        "badge": "Our Services",
+        "titleLine1": "Digital Solutions Designed",
+        "titleLine2": "To Support Business Growth",
+        "description": "We offer a range of digital services that help companies develop their presence, improve their customer experience, and organize their digital tools more professionally.",
+        "exploreBtn": "Explore Service",
+        "items": {
+            "01": {
+                "enTitle": "Branding & Visual Identity",
+                "arTitle": "Branding & Visual Identity",
+                "desc": "Visual identities that help companies appear clearer and more professional."
+            },
+            "02": {
+                "enTitle": "Web Development",
+                "arTitle": "Web Development",
+                "desc": "Websites designed for performance, clarity, and improving the customer experience."
+            },
+            "03": {
+                "enTitle": "Digital Marketing",
+                "arTitle": "Digital Marketing",
+                "desc": "Digital marketing strategies that help companies reach their audience in a better way."
+            },
+            "04": {
+                "enTitle": "CRM & Business Systems",
+                "arTitle": "CRM & Business Systems",
+                "desc": "Digital systems that help organize operations and manage customers with higher efficiency."
+            },
+            "05": {
+                "enTitle": "Mobile Applications",
+                "arTitle": "Mobile Applications",
+                "desc": "Digital applications that help companies provide a more flexible and seamless experience."
+            },
+            "06": {
+                "enTitle": "UI / UX Design",
+                "arTitle": "UI / UX Design",
+                "desc": "Interface and user experience design focused on clarity and ease of interaction."
+            }
+        }
+    },
+    "WorkProcess": {
+        "badge": "Work Methodology",
+        "titleLine1": "How Do We Build Digital",
+        "titleLine2": "Solutions for Growth?",
+        "steps": {
+            "01": {
+                "phase": "01",
+                "enTitle": "Discovery",
+                "arTitle": "Understanding the business, project goals, current challenges, and target audience."
+            },
+            "02": {
+                "phase": "02",
+                "enTitle": "Strategy",
+                "arTitle": "Defining the right direction and actionable roadmap to build the digital solution effectively."
+            },
+            "03": {
+                "phase": "03",
+                "enTitle": "Design & Development",
+                "arTitle": "Designing and developing the required digital solutions to align with the business nature and goals."
+            },
+            "04": {
+                "phase": "04",
+                "enTitle": "Launch",
+                "arTitle": "Launching the project and setting up the digital environment for a clear and organized operation."
+            },
+            "05": {
+                "phase": "05",
+                "enTitle": "Optimization",
+                "arTitle": "Monitoring performance and optimizing the experience based on growth and scaling needs."
+            }
+        }
+    },
+    "WhyGlobalNexus": {
+        "badge": "Why Global Nexus",
+        "titleLine1": "Digital Partnerships Built",
+        "titleLine2": "on Clarity and Execution",
+        "description": "We work with companies looking to develop their digital presence professionally, through solutions that combine business understanding, technical execution, and clear design.",
+        "reasons": {
+            "01": {
+                "title": "Strategic Thinking",
+                "desc": "We start every project with a clear understanding of goals before moving to execution."
+            },
+            "02": {
+                "title": "Custom Solutions",
+                "desc": "We develop solutions tailored to the nature of each business instead of relying on ready-made templates."
+            },
+            "03": {
+                "title": "Better User Experience",
+                "desc": "We focus on improving the customer experience at every digital touchpoint."
+            },
+            "04": {
+                "title": "Clear and Organized Execution",
+                "desc": "We rely on clear operational steps that help manage the project efficiently."
+            },
+            "05": {
+                "title": "Scalable Solutions",
+                "desc": "We develop systems and solutions that can scale with the company's growth and future needs."
+            }
+        }
+    },
+    "TargetAudience": {
+        "badge": "Who We Serve",
+        "titleLine1": "Digital Solutions for Companies",
+        "titleLine2": "Seeking Organized Growth",
+        "description": "We provide our services to businesses and commercial enterprises that want to develop their digital presence, improve their image before clients, and build tools that help them communicate and grow more professionally.",
+        "sectors": {
+            "01": "Service Companies",
+            "02": "Commercial Companies",
+            "03": "Startups",
+            "04": "Clinics & Medical Centers",
+            "05": "Factories & Export Companies",
+            "06": "Local Brands",
+            "07": "Companies Needing Digital Infrastructure Development"
+        }
+    },
+    "Vision": {
+        "badge": "Vision",
+        "titleLine1": "Towards a Clearer",
+        "titleLine2": "and More Sustainable Digital Environment",
+        "description": "We strive to help companies build digital systems that support long-term growth through solutions that combine strategy, design, and technology.",
+        "strategy": "Strategy",
+        "design": "Design",
+        "tech": "Technology",
+        "values": {
+            "0": "Strategy",
+            "1": "Design",
+            "2": "Technology"
+        }
+    },
+    "CompactClosing": {
+        "title": "Start Developing Your Digital Environment with Global Nexus",
+        "descriptionHighlight": "If you are looking to develop your website, enhance your digital presence, or build a system that helps your company grow more efficiently, ",
+        "descriptionNormal": "our team can help you choose the right solution tailored to the nature of your business.",
+        "ctaButton": "Free consultation"
+    },
+    "AboutPage": {
+        "Hero": {
+            "badge": "About Us",
+            "titleLine1": "We Build Digital Solutions",
+            "titleLine2": "That Drive Real Growth",
+            "companyName": "Global Nexus",
+            "description": "A company specialized in developing digital solutions that help businesses enhance their digital presence, streamline operations, and deliver a more professional experience to their clients."
+        },
+        "Philosophy": {
+            "sec1Badge": "Work Philosophy",
+            "sec1Title1": "Clarity",
+            "sec1Title2": "Before Execution",
+            "sec1Desc": "We believe that the success of any digital project starts with a clear understanding of the business's nature, its goals, and current challenges. Therefore, we do not jump straight into execution; instead, we first define what the project truly needs and which solutions will deliver real value.",
+            "sec2Badge": "Way of Thinking",
+            "sec2Title1": "We Connect",
+            "sec2Title2": "Design, Technology, and Growth",
+            "sec2Desc": "We develop solutions that combine professional aesthetics, technical performance, and commercial thinking. The goal is not just to deliver a website, a campaign, or a system, but to build a digital experience that helps the company stand out, communicate clearly with clients, and streamline its digital tools.",
+            "sec3Badge": "What Standardizes Us",
+            "sec3Title1": "Practical Solutions Tailored to",
+            "sec3Title2": "The Nature of Each Business",
+            "sec3Desc": "We do not treat all projects the same way, because every business has a unique nature, a different audience, and distinct goals. Therefore, we focus on building solutions that match the actual needs of each project while maintaining execution clarity and scalability for the future.",
+            "sec4Badge": "Our Vision",
+            "sec4Title1": "Building More Sustainable",
+            "sec4Title2": "Digital Environments",
+            "sec4Desc": "We strive to help companies build a more organized and sustainable digital presence through solutions that combine strategy, design, and technology, supporting long-term growth."
+        },
+        "SalesClosing": {
+            "titleLine1": "Let's Discuss How We Can",
+            "titleHighlight": "Support the Growth",
+            "titleLine2": "of Your Business",
+            "description": "If you are looking for a partner to help develop your digital presence or build digital solutions tailored to your business nature, we can discuss your needs and determine the best direction.",
+            "ctaButton": "Free consultation"
+        }
+    },
+    "ServicesPage": {
+        "Hero": {
+            "badge": "Our Services",
+            "titleLine1": "Digital Services That Help Businesses",
+            "titleLine2": "Grow with Clarity and Efficiency",
+            "description": "At Global Nexus, we offer a suite of digital solutions combining strategy, design, marketing, and technology to help companies build a more professional digital presence and enhance their client experience."
+        },
+        "Grid": {
+            "badge": "Our Services",
+            "titleLine1": "Digital Solutions Designed",
+            "titleLine2": "To Support Business Growth",
+            "description": "Every service we offer is engineered to fulfill a clear objective within a company's growth journey, whether the goal is building a stronger identity, developing a website, optimizing customer acquisition, or streamlining internal operations.",
+            "exploreBtn": "Explore Service",
+            "items": {
+                "01": {
+                    "enTitle": "Branding & Visual Identity",
+                    "arTitle": "Visual Identities Reflecting Brand Value",
+                    "desc": "Visual identities that help companies stand out more clearly and professionally."
+                },
+                "02": {
+                    "enTitle": "Web Development",
+                    "arTitle": "Websites Crafted for Performance & UX",
+                    "desc": "Websites engineered for peak performance, utmost clarity, and conversion optimization."
+                },
+                "03": {
+                    "enTitle": "Digital Marketing",
+                    "arTitle": "Marketing Strategies That Drive Growth",
+                    "desc": "Digital marketing strategies that help companies reach their target audience more effectively."
+                },
+                "04": {
+                    "enTitle": "CRM & Business Systems",
+                    "arTitle": "Systems Custom-Built for Workflow Optimization",
+                    "desc": "Digital systems designed to optimize operations and manage clients with higher efficiency."
+                },
+                "05": {
+                    "enTitle": "Mobile Applications",
+                    "arTitle": "Mobile Apps Driving Seamless User Experiences",
+                    "desc": "Digital applications tailored to help companies deliver smoother and highly intuitive experiences."
+                },
+                "06": {
+                    "enTitle": "UI / UX Design",
+                    "arTitle": "Clarity-Driven Interface & User Experiences",
+                    "desc": "Interface designs focused deeply on logical clarity and frictionless user interaction."
+                }
+            }
+        },
+        "Cta": {
+            "titleLine1": "Let's Build the Digital Solution",
+            "titleHighlight": "Tailored to Your Business",
+            "description": "Our team is ready to understand your project needs and discuss the ideal solutions to elevate your digital presence.",
+            "ctaButton": "Free consultation"
+        }
+    },
+    "PortfolioPage": {
+        "Hero": {
+            "badge": "PORTFOLIO SHOWCASE",
+            "titleLine1": "Works reflecting our mindset in",
+            "titleHighlight": "Building Digital Solutions",
+            "paragraph1": "At Global Nexus, we develop digital projects that combine clear design, practical performance, and user experience, aiming to help companies present themselves more professionally and organized.",
+            "paragraph2": "This page displays a collection of works reflecting a part of our expertise in developing websites and digital solutions. Each project is handled according to the nature of the business and its needs, focusing on building a clear digital experience that helps the client understand the company and connect with it easily."
+        },
+        "Grid": {
+            "headerTitle": "Projects Crafted with Care to Support",
+            "headerTitleHighlight": "Digital Presence",
+            "headerDescription": "In every project, we focus on delivering an organized digital solution that serves a clear goal, whether it is enhancing corporate image, showcasing products/services, simplifying client communication, or building a clearer user experience.",
+            "architectureBadge": "Project Architecture",
+            "architectureTitle": "EZZ",
+            "architectureHighlight": "Export.",
+            "architectureDesc": "We developed the \"Ezz\" platform using modern technologies to ensure ultra-fast performance matching European market standards.",
+            "reactBadge": "React Architecture",
+            "reactTitle": "AGRO",
+            "reactHighlight": "Mart.",
+            "reactDesc": "In \"Agro Mart\", we leveraged the power of the latest smart technologies to create an intelligent shopping interface.",
+            "capsuleAgroPower": "Built with a smart and fast user interface to facilitate international importers' access.",
+            "capsuleGreenPower": "A modern design reflecting the freshness of global products."
+        },
+        "showcase": {
+            "badge": "Featured Case Studies",
+            "title_part1": "Integrated projects reflecting our philosophy",
+            "title_part2": "in building digital presence",
+            "description": "In this section, we showcase models of projects we have comprehensively worked on, starting from understanding the business nature and defining the digital footprint, up to website development, visual content, and user experience.",
+            "services_title": "Services Provided",
+            "final_result": "Final Result",
+            "clients": {
+                "ezz": {
+                    "name": "Ezz Export",
+                    "tagline": "Agricultural Export / Fresh & Frozen Produce",
+                    "problem_title": "The Problem",
+                    "problem_content": "Ezz Export needed a more professional digital presence to reflect its business as an agricultural exporter, especially since the target market relies on trust, clarity, and quality presentation. The main challenge was organizing the company's look for potential clients and partners, presenting products and services to make navigation and contact seamless.",
+                    "positioning_title": "Digital Positioning",
+                    "positioning_content": "The digital footprint was geared to showcase Ezz Export as a trusted, structured export firm focused on quality and professional B2B relations. The direction centered on clarifying product offerings, reliable communication channels, and easy access to core data for global buyers.",
+                    "website_title": "Website",
+                    "website_content": "A custom website was developed to present products and services clearly, with pages designed to help visitors understand operations, browse catalogs, and reach the team instantly. The site focuses on clean UX and intuitive hierarchy to enhance corporate trust.",
+                    "visual_title": "Visual Direction",
+                    "visual_content": "A premium visual approach suited for agro-exports was crafted, utilizing crisp product imagery, premium nature-inspired colors, and structured layouts. The goal was to make the portfolio look pristine and highly appealing to international food sector buyers.",
+                    "social_title": "Social Media",
+                    "social_content": "Tailored social assets and visual content layouts were created aligned with the brand's scope, emphasizing product highlights and corporate credibility. Structured designs ensured the agency looks highly corporate and competitive across social networks.",
+                    "result": "Ezz Export now possesses a pristine, highly corporate digital presence that effectively introduces the firm to global buyers. The website and visual assets streamlined product displays, elevated user retention, and facilitated B2B inquiries through a polished, trustworthy interface."
+                },
+                "agro": {
+                    "name": "Agro Mart",
+                    "tagline": "Agricultural Export / Packaged Food Products",
+                    "problem_title": "The Problem",
+                    "problem_content": "Agro Mart required a comprehensive digital and visual identity to position itself as a modern agricultural enterprise capable of showcasing products professionally locally and globally. The challenge wasn't just a site or a logo, but creating a unified brand persona encompassing visual identity, packaging direction, and web layout.",
+                    "positioning_title": "Digital Positioning",
+                    "positioning_content": "Agro Mart was positioned as a cutting-edge agricultural brand delivering products with structural precision, emphasizing raw origin and supreme quality. The positioning targets buyers looking for a structured, reliable supplier with efficient communication streams.",
+                    "branding_title": "Branding",
+                    "branding_content": "A distinct brand identity was engineered, establishing guidelines from logos and typography to palette systems applicable across web pages and packaging assets. The identity radiates a fresh, modern aesthetic tailored for premium agri-food corporate spheres.",
+                    "website_title": "Website",
+                    "website_content": "A high-performance website was built to host the firm's portfolio systematically. It streamlines product discovery, maps client journeys smoothly, and emphasizes strategic content structures that showcase corporate authority to potential partners.",
+                    "packaging_title": "Packaging & Product Presentation",
+                    "packaging_content": "A sophisticated visual direction for product renders and physical packaging was designed to mirror high-tier produce quality. It highlights items through crisp, minimalist styling, maximizing brand equity and market distinction.",
+                    "social_title": "Social Media",
+                    "social_content": "Cohesive social media assets were delivered in harmony with the brand guidelines to sustain absolute consistency across platforms. The visual flow emphasizes product purity, high-resolution visuals, and swift message delivery.",
+                    "result": "Agro Mart now operates with a fully integrated digital and visual ecosystem. From core branding to custom web platforms and asset renders, the project elevated corporate perception, creating an informative and high-trust experience for current and prospective global clients."
+                }
+            }
+        },
+        "PortfolioSalesClosing": {
+            "title_part1": "Do you want to build a digital",
+            "title_part2": "presence",
+            "title_part3": "similar to your company?",
+            "description": "We help companies transform their ideas and services into an organized digital presence, from understanding the nature of the business to implementing the website, identity, and appropriate visual content.",
+            "cta_button": "Start a project"
+        }
+    },
+    "BlogPage": {
+        "badge": "GLOBAL NEXUS INSIGHTS",
+        "title_part1": "Articles",
+        "title_part2": "Strategic Insights",
+        "cta_consultation": "Strategic Consultation",
+        "trending_title": "Most Read This Week",
+        "read_time": "10 min read",
+        "trending_tag": "Trending Now",
+        "strategic_tag": "Strategic Insight",
+        "ready_title": "Ready to Start?",
+        "ready_desc": "Go to the project building model, and tell us the details of your idea so we can analyze it and send a customized quote to you.",
+        "ready_cta": "Discuss your project with us",
+        "read_more": "Read More"
+    },
+    "BlogPost": {
+        "badge": "Blog",
+        "tag": "Strategic Vision",
+        "read_time": "5 min read",
+        "summary_title": "Executive Summary",
+        "summary_desc": "Not just an article, but a strategic roadmap to build a powerful digital presence for your enterprise.",
+        "cta_project": "Start Your Project",
+        "newsletter_title": "Executive Newsletter",
+        "newsletter_desc": "Strategic insights delivered directly to your inbox weekly.",
+        "newsletter_placeholder": "Your professional email...",
+        "newsletter_btn": "Join the Elite",
+        "related_title": "Related",
+        "related_subtitle": "Insights",
+        "view_all": "View All",
+        "read": "Read",
+        "suggested": "Suggested Article"
+    },
+    "ContactPage": {
+        "badge": "Let's discuss your next project",
+        "titleMain": "If you are looking to develop your digital presence or build solutions that help your company grow more.",
+        "titleSub": "We are glad to connect with you and understand your project needs.",
+        "emailLabel": "Send us an email",
+        "phoneLabel": "Call us directly",
+        "addressLabel": "Headquarters",
+        "addressValue": "Beheira - Egypt",
+        "socialTitle": "Follow us on our platforms",
+        "formDesc": "Share with us your project details or the service you need, and we will review your request and get in touch to discuss the best solution for your business.",
+        "labelName": "Name",
+        "placeholderName": "Full Name",
+        "labelCompany": "Company Name",
+        "placeholderCompany": "Your company or business name",
+        "labelEmail": "Email Address",
+        "placeholderEmail": "name@example.com",
+        "labelPhone": "Phone Number",
+        "placeholderPhone": "01111111111",
+        "labelServices": "Required Service Type",
+        "services": {
+            "webDesign": "Web Design",
+            "uiux": "UI/UX",
+            "webDev": "Web Development",
+            "marketing": "Marketing",
+            "branding": "Visual Identity"
+        },
+        "labelDetails": "Project Details",
+        "placeholderDetails": "Write your project details or the vision you want to achieve here",
+        "btnCall": "Book a strategic call",
+        "btnSubmit": "Send your request",
+        "footerText": "Whether you are in the stage of building a new project or want to develop your company's current presence, we can help you choose the right digital solution and start with clear and organized steps.",
+        "mapCardTitle": "Beheira - Egypt",
+        "mapCardSub": "We are waiting for your visit!"
+    },
+    "BrandingService": {
+        "badge": "Branding & Visual Identity",
+        "titleMain": "A Visual Identity That Reflects",
+        "titleMiddle": "Your Company's Value and Gives It",
+        "titleSub": "a Clearer Presence",
+        "description": "Visual identity is not just a logo or colors; it is how customers recognize and remember your company. At Global Nexus, we help businesses build clear, consistent visual identities capable of professional value expression.",
+        "ctaButton": "Building Your Visual Identity",
+        "cardGeometryTitle": "Logo Grid & Geometry",
+        "cardGeometrySub": "Logo Grid & Geometry",
+        "cardPaletteTitle": "Color Harmony & Consistency",
+        "cardPaletteSub": "Brand Color Palette",
+        "cardTypographyTitle": "Typography & Alignment",
+        "cardTypographySub": "Typography & Alignment",
+        "BrandingCyberDashboard": {
+            "sysData": "SYS.DATA  01",
+            "serviceOverview": "Service Overview",
+            "mainDescription": "We develop a visual identity that helps the company appear more clearly and confidently before its clients, whether through the logo, colors, fonts, design elements, or how the identity is applied across different platforms.",
+            "subDescription": "The objective of the service is to build an integrated visual form that expresses the nature of the company, distinguishes it from competitors, and helps it present itself professionally at every point of communication with the audience."
+        },
+        "BrandingEditorialDeck": {
+            "challengeNum": "01.",
+            "challengeLabel": "CHALLENGE",
+            "challengeTitle": "The Problem the Service Addresses",
+            "challengeText1": "Many companies offer excellent services, but they do not appear in a way that reflects their true value. Sometimes the logo is unclear, colors are inconsistent, or designs vary from one platform to another, which weakens client trust and makes the brand less distinctive.",
+            "challengeText2": "An organized visual identity helps the company build a stronger impression, making its presence more stable and professional.",
+            "scopeNum": "02.",
+            "scopeLabel": "SCOPE",
+            "scopeTitle": "What Do We Provide Within the Service?",
+            "offerings": [
+                "Developing or improving the logo",
+                "Selecting primary and secondary colors",
+                "Determining the appropriate fonts",
+                "Designing visual identity elements",
+                "Establishing a clear visual direction for the brand",
+                "Applying the identity to digital platforms",
+                "Enhancing the visual content appearance on social media",
+                "Preparing a design pattern that unifies the digital presence"
+            ],
+            "audienceNum": "03  TARGET_AUDIENCE",
+            "audienceTitle": "Who Is This Service For?",
+            "audienceText1": "This service is suitable for companies starting from scratch that need a complete visual identity, as well as companies that have an existing identity but need development or reorganization.",
+            "audienceText2": "It also suits companies wishing to enhance their appearance on social media, websites, presentations, or marketing materials.",
+            "outcomeNum": "04  THE_OUTCOME",
+            "outcomeTitle": "Expected Outcome",
+            "outcomeText": "After implementing the service, the company will possess a clearer and more consistent visual identity, helping it present itself confidently and giving clients a more professional impression of the brand."
+        },
+        "BrandingFinalCTA": {
+            "systemLabel": "INITIALIZE BRAND_ELEVATION SYSTEM.READY",
+            "title": "Ready to elevate your brand identity?",
+            "text": "We can help you build a visual identity that reflects your company and supports its digital presence more professionally.",
+            "ctaBtn": "Contact us"
+        }
+    },
+    "WebDevelopmentService": {
+        "Hero": {
+            "serviceLabel": "Web Development",
+            "title": "Your website is designed to present your company <span class=\"text-blue-600\">professionally</span>",
+            "description": "Your website is one of the most important touchpoints between your company and your clients. At <span class=\"font-bold text-white\">Global Nexus</span>, we develop websites that combine clear design, fast performance, and a user experience that helps visitors understand your services and connect with you easily.",
+            "ctaBtn": "Develop your website"
+        },
+        "Overview": {
+            "titlePart1": "About the",
+            "titlePart2": "Service",
+            "paragraph1": "We design and develop websites that help companies build a strong and organized digital presence, focusing on easy navigation, clear messaging, and fast access to information.",
+            "paragraph2": "We do not treat the website merely as a visual interface, but as a tool that helps the company build trust, showcase its services, and convert visitors into potential clients through a clear and organized experience."
+        },
+        "Details": {
+            "problemTitle": "The Problem the Service Addresses",
+            "problemText": "Many companies rely solely on social media pages, even though clients often need an official, trusted source before making a decision to connect or purchase. A website gives the company a professional space to showcase its services, works, information, and contact methods clearly and independently.",
+            "featuresTitle": "What Do We Provide Inside the <span class=\"text-blue-600\">Service?</span>",
+            "featuresList": [
+                "Design and development of corporate profile websites",
+                "Website design for services and business activities",
+                "Landing page development for advertising campaigns",
+                "Improving user experience (UX) within the website",
+                "Organizing page content clearly",
+                "Linking the website with contact forms",
+                "Improving website speed and browsing experience",
+                "Ensuring website compatibility with mobile devices",
+                "Preparing the website to be suitable for future growth and development"
+            ],
+            "audienceTitle": "Who is This Service Suitable For?",
+            "audienceText": "This service is suitable for companies that need a professional website to showcase their services clearly, or companies that have an old website and need to update it. It also suits companies that rely on ads and need landing pages that help convert visitors into potential clients.",
+            "resultTitle": "Expected Result",
+            "resultText": "After executing the service, the company gets a clear, fast, and organized website that reflects its professional image and helps clients understand its services and communicate with it easily."
+        },
+        "CTA": {
+            "tagline": "Web_Development.READY",
+            "title": "Turn your website into a leverage point in your digital presence",
+            "description": "We help you build a website that represents your company and supports your business goals clearly and professionally.",
+            "btnText": "Contact Us"
+        }
+    },
+    "DigitalMarketingService": {
+        "Hero": {
+            "badge": "Smart Growth Strategies",
+            "title": "Digital marketing that helps your company <br /> <span class=\"text-blue-500 block md:mt-2\">reach and grow</span>",
+            "description": "Successful digital marketing does not just rely on publishing content or running ads; it requires understanding the audience, clarity of the message, and organizing the customer journey from the first touchpoint to communication. At Global Nexus, we help companies build a more effective and consistent marketing presence.",
+            "ctaBtn": "Developing your digital marketing",
+            "card1Title": "Audience Insight",
+            "card2Status": "Analyzing...",
+            "card2Title": "Message Clarity",
+            "card3Title": "Client Journey",
+            "card3Subtitle": "Effective Conversion"
+        },
+        "Overview": {
+            "title": "About The <span class=\"text-blue-600\">Service</span>",
+            "description": "We provide digital marketing solutions that help companies improve their visibility to the right audience, build stronger customer relationships, and increase opportunities for genuine inquiries and requests.",
+            "cardText": "We work on <span class=\"text-blue-600 font-semibold underline decoration-blue-600/30 underline-offset-8\">connecting content, design, advertising, and performance analytics</span> in a single direction that serves company goals and gives them a clearer presence."
+        },
+        "ProblemAndServices": {
+            "problemTitle": "The Problem the Service Addresses",
+            "problemDesc": "Many companies post content randomly or launch ad campaigns without a clear strategy, leading to weak results or engagement that doesn't turn into customers.",
+            "solutionTitle": "Organized Digital Marketing",
+            "solutionDesc": "Organized digital marketing helps the company understand its audience, improve its messaging, and utilize digital platforms more efficiently.",
+            "sectionTitle": "What Do We Offer Within the Service?",
+            "services": [
+                "Preparing a content strategy tailored to the nature of the business",
+                "Social media platforms management",
+                "Writing marketing and professional content",
+                "Planning digital campaigns",
+                "Managing sponsored ads",
+                "Improving marketing messages and offers",
+                "Monitoring and analyzing performance",
+                "Optimizing content based on results",
+                "Supporting the customer journey from appearance to communication"
+            ]
+        },
+        "ServicesDetailed": {
+            "mainTitle": "Integrated Services <span class=\"text-blue-600\">Guarantee Your Presence</span>",
+            "services": [
+                {
+                    "title": "Social Media Management",
+                    "desc": "Managing the company's accounts on digital platforms through organized content, consistent designs, and clear scheduling that helps build a continuous presence."
+                },
+                {
+                    "title": "Content Strategy",
+                    "desc": "Planning content based on the company's goals and target audience, so that publishing is not random, but rather serves awareness, trust, and conversion."
+                },
+                {
+                    "title": "Paid Advertising",
+                    "desc": "Managing ad campaigns in a way that helps the company reach the right audience and improve chances of getting measurable results."
+                },
+                {
+                    "title": "Campaign Planning",
+                    "desc": "Planning seasonal or commercial campaigns according to the company's goals, whether to increase awareness, launch a service, promote an offer, or attract potential leads."
+                },
+                {
+                    "title": "Performance Optimization",
+                    "desc": "Monitoring results and analyzing performance to continuously improve content, ads, and customer experience."
+                }
+            ],
+            "forWhomTitle": "Who is this service for?",
+            "forWhomDesc1": "This service is suitable for companies that want to improve their presence on social media, reach new customers, or organize their digital marketing more professionally.",
+            "forWhomDesc2": "It also suits companies that have strong services but do not reach their audience as required.",
+            "resultTitle": "Expected Result",
+            "resultDesc": "After implementing the service, the company will have a clearer marketing presence, more organized content, and stronger messaging that helps build trust and increase opportunities to connect with potential clients."
+        },
+        "BrandingFinalCTA": {
+            "systemBadge": "digital_marketing.READY",
+            "mainTitle": "Make your company's marketing clearer and more effective",
+            "description": "We help you build a digital marketing strategy that suits the nature of your business and practically supports your growth.",
+            "ctaText": "Contact Us"
+        }
+    },
+    "CRMService": {
+        "Hero": {
+            "badge": "SYSTEM_ARCHITECTURE.READY",
+            "title": "Digital systems that help your company<br /> <span class=\"text-blue-600\">organize operations and manage customers</span>",
+            "description": "As companies grow, managing customers, orders, and data becomes more complex. At Global Nexus, we develop digital systems that help companies organize work, improve follow-up, and facilitate day-to-day operations management.",
+            "ctaText": "Start organizing your digital operations"
+        },
+        "Overview": {
+            "sectionTitle": "Service Overview",
+            "mainDescription": "We develop custom CRM and business systems that help companies track customers, record data, organize orders, and manage operations in a clearer and more efficient way.",
+            "subDescription": "The goal of this service is to reduce chaos within the business, and transform daily operations into a clear system that can be monitored and improved.",
+            "features": [
+                {
+                    "title": "Customer & Data Tracking",
+                    "desc": "Accurate recording of all customer data and transaction history to ensure no opportunity is lost."
+                },
+                {
+                    "title": "Order & Operations Organization",
+                    "desc": "Transforming random orders into a clear and smooth workflow that increases team productivity."
+                },
+                {
+                    "title": "Performance Efficiency Elevation",
+                    "desc": "The objective is to turn daily operations into a measurable, trackable, and continuously improved system."
+                }
+            ]
+        },
+        "FullDetails": {
+            "challenge": "The Challenge",
+            "problemTitle": "The Problem the Service Solves",
+            "problemDesc": "Many companies rely on messages, scattered spreadsheets, or manual tracking only, which leads to losing customer data, delayed responses, or difficulty in knowing the status of each customer or order.",
+            "solutionDesc": "Digital systems help organize information in one place, and facilitate follow-up between the work team and management, which transforms chaos into an operational workflow.",
+            "offerTitle": "What Do We Offer Within the Service?",
+            "servicesList": [
+                "CRM Customer Relationship Management Systems Development",
+                "Lead Tracking Systems",
+                "Order Organization Systems",
+                "Management Dashboards",
+                "Booking and Appointment Systems",
+                "Team Tracking Systems",
+                "Database Organization",
+                "Internal Workflow Optimization",
+                "Connecting Operations in a Way that Facilitates Tracking and Analysis"
+            ],
+            "audienceTitle": "Who is this service suitable for?",
+            "audienceDesc": "This service is suitable for companies that have a growing number of customers or orders, and need a more organized way to manage follow-up and data. It also suits companies that want to reduce reliance on manual methods and improve team efficiency.",
+            "resultTitle": "Expected Result",
+            "resultDesc": "After implementing the service, operations become clearer and more organized, and the company can track customers, orders, and data in an easier and more efficient way."
+        },
+        "FinalCTA": {
+            "systemStatus": "system_crm.READY",
+            "title": "Organize your work and make your data clearer",
+            "description": "We can help you build a digital system that suits the nature of your company and facilitates managing customers and daily operations.",
+            "ctaText": "Contact Us"
+        }
+    },
+    "MobileService": {
+        "Hero": {
+            "badge": "Mobile Applications",
+            "title": "Digital applications that give your clients a <span class=\"text-blue-600 block mt-2\">smoother and more flexible experience</span>",
+            "description": "Applications have become one of the most important tools that help companies deliver their services faster and closer to customers. At <span class=\"font-bold text-white\">Global Nexus</span> we develop mobile apps that help companies improve user experience and facilitate access to their services.",
+            "ctaText": "Start developing your app",
+            "cardSystemPerformance": "System Performance",
+            "cardVeryFast": "Very Fast",
+            "cardUsers": "Users",
+            "cardSmoothSecure": "Smooth & Secure",
+            "cardProcessCompleted": "Process Completed",
+            "cardSecurityStandards": "With highest security standards"
+        },
+        "Details": {
+            "visionNum": "01  THE VISION",
+            "visionTitle": "About the Service",
+            "visionDesc1": "We develop mobile applications that help companies deliver their services or products in a more organized and easy way, focusing on user experience, interface clarity, and smoothness of use.",
+            "visionDesc2": "Whether the application is dedicated to customers or for internal use within the company, we work on building a digital experience that serves the core objective of the project directly and professionally.",
+            "challengeNum": "02  THE CHALLENGE",
+            "challengeTitle": "The Problem the Service Solves",
+            "challengeDesc1": "Some companies need a direct and stable means to communicate with customers or deliver services, instead of relying entirely on social media or scattered channels.",
+            "challengeDesc2": "The application helps create a dedicated digital channel for the company, through which it can provide a more controlled and organized experience."
+        },
+        "Features": {
+            "offeringsNum": "01  THE OFFERINGS",
+            "offeringsTitle": "What We Offer Within the Service",
+            "offers": [
+                "Mobile App Development for Companies",
+                "Customer Service Applications",
+                "Booking and Order Applications",
+                "Internal Apps for the Work Team",
+                "Designing Clear User Interfaces",
+                "Improving User Experience Within the App",
+                "Connecting the App with Required Systems",
+                "Preparing the App for Future Growth and Development"
+            ],
+            "fitNum": "02  THE FIT",
+            "fitTitle": "Who Is This Service Suitable For?",
+            "fitDesc1": "This service is suitable for companies that need to provide their services via an app, or want to improve customer experience through an easy-to-use digital channel.",
+            "fitDesc2": "It also suits companies that have repetitive operations such as booking, requests, follow-up, or continuous communication with customers.",
+            "outcomeNum": "03  THE OUTCOME",
+            "outcomeTitle": "Expected Outcome",
+            "outcomeDesc": "After executing the service, the company gets a clear and easy-to-use application that helps it provide a better experience for customers and organize services more flexibly."
+        },
+        "FinalCTA": {
+            "systemBadge": "Mobile_Development.READY",
+            "title": "Turn Your Idea Into a Practical and Clear App",
+            "description": "We help you develop an application that suits your company's nature and provides an easy and comfortable experience for your customers.",
+            "ctaText": "Contact Us"
+        }
+    },
+    "UIUXService": {
+        "Hero": {
+            "badge": "UI / UX DESIGN SERVICE",
+            "title": "Designing Interfaces and User Experiences <span class=\"text-blue-600 block mt-2\">That Make Interaction Easier and Clearer</span>",
+            "description": "A good user experience helps the customer understand the service, navigate within the site or application easily, and make decisions faster. At <span class=\"font-bold text-white\">Global Nexus</span>, we design interfaces and user experiences that focus on clarity, simplicity, and achieving project goals.",
+            "ctaText": "Start Improving User Experience",
+            "figmaFileName": "nexus_wireframe_v2.fig",
+            "liveEdit": "Live Edit",
+            "activeNow": "Active Now"
+        },
+        "Details": {
+            "sectionTitle": "Our Services",
+            "card1": {
+                "num": "01  THE ESSENCE",
+                "title": "UI / UX & Digital Experience Design",
+                "desc": "We design user interfaces and experiences for websites, applications, and digital systems, focusing on making the customer journey seamless and organized.",
+                "quote": "\"Design is not just what it looks like; it encompasses information architecture, clear steps, effortless interaction, and guiding the user toward the desired action.\""
+            },
+            "card2": {
+                "num": "02  THE CHALLENGE",
+                "title": "The Problem",
+                "desc": "Your website might look good, but users get lost and don't know how to complete their requests.",
+                "alert": "A weak user experience damages trust and reduces your sales opportunities."
+            }
+        },
+        "Features": {
+            "sectionTitle": "03  WHAT WE OFFER",
+            "mainTitle": "What Do We Offer Inside The Service?",
+            "services": [
+                "Website Interface Design",
+                "Mobile Application Interface Design",
+                "Dashboard & Internal Systems Design",
+                "User Journey Mapping",
+                "Improving Page Clarity & Steps",
+                "Prototyping Experiences",
+                "Reviewing & Enhancing Current UX",
+                "Guiding Users Toward Key Goals"
+            ],
+            "targetTitle": "04  WHO IS THIS FOR",
+            "targetHeading": "Who Is This Service For?",
+            "targetDesc": "This service is ideal for companies developing a new website or app, as well as businesses with an existing digital product looking to optimize its user experience. It also suits enterprises aiming to make their digital services intuitive and clear for customers.",
+            "resultTitle": "05  EXPECTED RESULT",
+            "resultHeading": "Expected Result",
+            "resultDesc": "Upon executing the service, the user experience becomes remarkably clearer and seamless, enabling customers to interact better and driving conversion rates toward the core objectives of the platform."
+        },
+        "FinalCTA": {
+            "badge": "UX_STRATEGY.READY",
+            "title": "Make Your Customers' Experience Simpler & Clearer",
+            "description": "We help you design structured user experiences that support your business goals and enhance customer engagement with your digital services.",
+            "ctaText": "Contact Us"
+        }
+    }
+}

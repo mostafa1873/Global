@@ -2,11 +2,18 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function BrandingFinalCTA() {
-    return (
-        <section className="relative w-full py-10 border-t border-white/10 px-4 sm:px-6 md:px-12 select-none z-10 overflow-hidden" dir="rtl">
+    const t = useTranslations("BrandingService.BrandingFinalCTA");
+    const locale = useLocale();
+    const currentDir = locale === "ar" ? "rtl" : "ltr";
 
+    return (
+        <section
+            className="relative w-full py-10 border-t border-white/10 px-4 sm:px-6 md:px-12 select-none z-10 overflow-hidden"
+            dir={currentDir}
+        >
             <div className="relative z-10 w-full max-w-[1000px] mx-auto">
 
                 <motion.div
@@ -25,17 +32,17 @@ export default function BrandingFinalCTA() {
                     {/* ترويسة النظام الرقمي الخافتة */}
                     <div className="mb-6 sm:mb-8 flex items-center gap-2 font-mono text-[9px] sm:text-[10px] text-nexus-blue tracking-widest bg-nexus-blue/5 border border-nexus-blue/10 px-3 py-1 rounded-full uppercase">
                         <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
-                        <span className="text-blue-600">INITIALIZE BRAND_ELEVATION  SYSTEM.READY</span>
+                        <span className="text-blue-600">{t("systemLabel")}</span>
                     </div>
 
                     {/* العنوان الرئيسي الثقيل والموزون */}
                     <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight max-w-2xl">
-                        جاهز لتطوير شكل علامتك التجارية؟
+                        {t("title")}
                     </h2>
 
                     {/* الشرح التوضيحي الأنيق الانسيابي */}
                     <p className="mt-4 sm:mt-6 text-white/80 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-xl select-text">
-                        يمكننا مساعدتك في بناء هوية بصرية تعبر عن شركتك وتدعم حضورها الرقمي بشكل أكثر احترافية.
+                        {t("text")}
                     </p>
 
                     {/* زر التواصل - معزول تماماً عن هوفر الكرت وبتأثير ألوان معكوس وفخم */}
@@ -50,12 +57,15 @@ export default function BrandingFinalCTA() {
                             // عزلنا الزرار بجروب مسمّى مستقل (group/btn) عشان ملوش أي علاقة بهوفر الكرت الخارجي
                             className="group/btn inline-flex items-center gap-4 pr-8 pl-4 py-3 sm:pr-10 sm:pl-5 sm:py-4 bg-white text-black hover:bg-blue-600 hover:text-white font-bold text-sm sm:text-base rounded-full transition-colors duration-300 ease-in-out tracking-tight shadow-sm"
                         >
-                            <span>تواصل معنا</span>
+                            <span>{t("ctaBtn")}</span>
 
                             {/* الدائرة: تبدأ باللون الأزرق 600 ومع الهوفر على الزرار بتقلب خلفية بيضاء والسهم جواها أزرق */}
                             <span className="flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-blue-600 text-white group-hover/btn:bg-white group-hover/btn:text-blue-600 transition-colors duration-300 ease-in-out shrink-0">
                                 <svg
-                                    className="w-4 h-4 transform transition-transform duration-300 ease-in-out group-hover/btn:-translate-x-1.5"
+                                    className={`w-4 h-4 transform transition-transform duration-300 ease-in-out ${currentDir === "rtl"
+                                            ? "group-hover/btn:-translate-x-1.5"
+                                            : "group-hover/btn:translate-x-1.5 rotate-180"
+                                        }`}
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"

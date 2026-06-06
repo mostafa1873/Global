@@ -2,151 +2,196 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiCheckCircle, FiChevronDown } from "react-icons/fi";
+import { FiChevronDown, FiSend, FiCalendar, FiClock, FiBriefcase, FiPhone, FiVideo } from "react-icons/fi";
+import { useTranslations } from "next-intl";
 
-const faqs = [
-  {
-    question: "هي المكالمة دي بجد مجانية؟",
-    answer: "أكيد، 100٪. مفيش أي رسوم مخفية. هدفنا إننا نفهم طبيعة بيزنسك ونشوف إزاي نقدر نساعدك تكبر صح.",
-  },
-  {
-    question: "مين اللي يقدر يستفيد من المكالمة دي؟",
-    answer: "أي صاحب شركة، براند، أو بيزنس عاوز يبني حضور رقمي قوي ومحترف، ومحتاج خطة واضحة ومدروسة للنمو.",
-  },
-  {
-    question: "إيه اللي بيحصل بعد ما المكالمة تخلص؟",
-    answer: "لو لقينا إننا نقدر نحقق نجاح مع بعض، بنجهز لك عرض فني ومالي مفصل فيه كل الخطوات اللي هنمشي عليها عشان نوصل لأهدافك.",
-  },
-];
+interface BookACallFormProps {
+  locale: string;
+}
 
-export default function BookACall() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null); // خليتها null عشان الزحمة بتبدأ لما كله يبقى مفتوح
+export default function BookACall({ locale }: BookACallFormProps) {
+  const t = useTranslations("BookACall");
+
+  const servicesArray = t.raw("services") as string[];
+  const contactMethodsArray = t.raw("contactMethods") as string[];
+
+  const [serviceType, setServiceType] = useState<string>(t("serviceDefault"));
+  const [isServiceOpen, setIsServiceOpen] = useState(false);
+
+  const [contactMethod, setContactMethod] = useState<string>(t("contactDefault"));
+  const [isContactOpen, setIsContactOpen] = useState(false);
+
+  React.useEffect(() => {
+    setServiceType(t("serviceDefault"));
+    setContactMethod(t("contactDefault"));
+  }, [locale, t]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15 },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut" as const // أضف "as const" هنا حل المشكلة فوراً
-      },
-    },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
   };
 
-  return (
-    <section className="relative min-h-screen w-full bg-[#020617] overflow-hidden pt-28 pb-20 px-6" dir="rtl">
+  // 1. الكلاسات العامة للحقول: استخدمنا text-start عشان يظبط أوتوماتيك يمين في العربي وشمال في الإنجليزي
+  const glassInputClasses = "w-full bg-white/[0.02] hover:bg-white/[0.04] border border-white/[0.08] hover:border-white/[0.15] rounded-2xl py-4 text-white text-sm focus:border-blue-500/50 focus:bg-white/[0.05] outline-none transition-all duration-300 placeholder:text-white shadow-inner shadow-white/[0.01] text-start";
+  
+  // 2. كلاسات القائمة المنسدلة: استخدمنا start-0 بدل left-0
+  const dropdownMenuClasses = "absolute top-[calc(100%+8px)] start-0 w-full bg-black/[0.9] backdrop-blur-3xl border border-white/10 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] z-50 overflow-hidden flex flex-col";
+  const dropdownItemClasses = "w-full text-start px-8 py-3.5 text-sm text-white hover:bg-blue-600/20 transition-colors duration-200 cursor-pointer";
 
-      {/* خلفية الإضاءة المتحركة - قللتها شوية لراحة العين */}
+  return (
+    // شلنا الـ dir الثابت وسبناه يعتمد على الـ html tag الأساسي
+    <section className="relative min-h-[100vh] w-full flex items-start justify-center overflow-hidden pt-32 pb-20 px-6">
+
       <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-blue-600/10 blur-[120px] rounded-full" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
+      <div className="relative z-10 max-w-7xl w-full mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20 items-start justify-between">
 
-        {/* العمود الأيمن: المحتوى والنصوص (خليته 40% عشان الهدوء البصري) */}
+        {/* العمود الخاص بالنصوص */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-col lg:w-[40%] pt-8 text-center lg:text-right items-center lg:items-start"
+          className="flex flex-col lg:w-[40%] items-start w-full"
         >
-          {/* شارة صغيرة */}
-          <motion.div variants={itemVariants} className="mb-8 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/5 border border-blue-500/10 w-fit">
+          <motion.div variants={itemVariants} className="mb-8 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-600/5 border border-blue-500/10 w-fit">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-600 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
             </span>
-            <span className="text-blue-400 text-[10px] font-bold tracking-widest uppercase italic">استشارة استراتيجية</span>
+            <span className="text-blue-600 text-[10px] font-bold tracking-widest uppercase">{t("badge")}</span>
           </motion.div>
 
-          {/* العنوان الرئيسي */}
-          <motion.h1 variants={itemVariants} className="text-white text-5xl md:text-7xl font-black leading-[1.1] mb-8 tracking-tight">
-            جاهز <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 italic">
-              نكبر سوا؟
-            </span>
+          <motion.h1 variants={itemVariants} className="text-white text-3xl md:text-5xl font-black leading-[1.5] mb-8 tracking-tight w-full text-start">
+            {t("titleLine1")} <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600">{t("titleLine2")}</span>
           </motion.h1>
 
-          <motion.p variants={itemVariants} className="text-slate-500 text-lg md:text-xl leading-relaxed mb-12 max-w-sm">
-            خلينا نتكلم عن بيزنسك، نفهم أهدافك، ونرسم لك خريطة طريق واضحة للنجاح الرقمي.
+          <motion.p variants={itemVariants} className="text-white text-lg md:text-xl leading-relaxed mb-12 max-w-sm w-full text-start">
+            {t("description")}
           </motion.p>
+        </motion.div>
 
-          {/* المميزات بشكل أبسط */}
-          <motion.div variants={itemVariants} className="flex flex-col gap-4 mb-16 w-full max-w-xs">
-            {[
-              "تحليل وضع البيزنس وتحديد الفجوات.",
-              "اكتشاف فرص نمو جديدة غير مستغلة.",
-              "رسم خريطة طريق مبدئية لأهدافك.",
-            ].map((text, i) => (
-              <div key={i} className="flex items-center gap-3 text-slate-400 group">
-                <FiCheckCircle className="text-blue-600 text-lg flex-shrink-0" />
-                <span className="text-[15px]">{text}</span>
+        {/* العمود الخاص بالفورم */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative w-full lg:w-[60%]"
+        >
+          <div className="relative z-10 bg-white/[0.03] backdrop-blur-3xl border border-white/[0.08] rounded-[2.5rem] p-8 md:p-12 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+            <form className="flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <input type="text" placeholder={t("placeholderName")} className={`${glassInputClasses} px-5`} />
+                <input type="email" placeholder={t("placeholderEmail")} className={`${glassInputClasses} px-5`} />
               </div>
-            ))}
-          </motion.div>
 
-          {/* قسم الأسئلة الشائعة بنسخة أهدى بكتير */}
-          <motion.div variants={itemVariants} className="w-full max-w-sm border-t border-white/5 pt-12">
-            <h3 className="text-white/40 font-bold text-xs uppercase tracking-[0.2em] mb-8">أسئلة شائعة</h3>
-            <div className="flex flex-col gap-3 text-right">
-              {faqs.map((faq, index) => (
-                <div key={index} className="group border-b border-white/5 pb-3">
+              {/* حقل الموبايل */}
+              <div className="relative">
+                {/* الأيقونة هتقف في البداية أوتوماتيك (يمين في العربي وشمال في الإنجليزي) بفضل start-5 */}
+                <FiPhone className="absolute start-5 top-1/2 -translate-y-1/2 text-blue-500 pointer-events-none z-10" />
+                <input type="tel" placeholder={t("placeholderPhone")} className={`${glassInputClasses} ps-12 pe-5`} />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                {/* نوع الخدمة */}
+                <div className="relative group">
+                  <FiBriefcase className="absolute start-5 top-1/2 -translate-y-1/2 text-blue-500 pointer-events-none z-10" />
                   <button
-                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                    className="flex justify-between items-center w-full text-slate-300 hover:text-white transition-colors text-sm font-medium"
+                    type="button"
+                    onClick={() => { setIsServiceOpen(!isServiceOpen); setIsContactOpen(false); }}
+                    className={`${glassInputClasses} ps-12 pe-5 flex items-center justify-between w-full relative ${isServiceOpen ? 'border-blue-500/50 bg-white/[0.05]' : ''}`}
                   >
-                    {faq.question}
-                    <FiChevronDown className={`text-blue-500 transition-transform ${openFaq === index ? 'rotate-180' : ''}`} />
+                    <span>{serviceType}</span>
+                    <FiChevronDown className="text-white transition-transform duration-300 group-hover:text-blue-500" />
                   </button>
+
                   <AnimatePresence>
-                    {openFaq === index && (
+                    {isServiceOpen && (
                       <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className="overflow-hidden"
+                        initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                        transition={{ duration: 0.2 }}
+                        className={dropdownMenuClasses}
                       >
-                        <p className="text-slate-500 text-[13px] leading-relaxed mt-3">
-                          {faq.answer}
-                        </p>
+                        {servicesArray.map((item) => (
+                          <div
+                            key={item}
+                            onClick={() => { setServiceType(item); setIsServiceOpen(false); }}
+                            className={dropdownItemClasses}
+                          >
+                            {item}
+                          </div>
+                        ))}
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </div>
-              ))}
-            </div>
-          </motion.div>
-        </motion.div>
 
-        {/* العمود الأيسر: الـ Calendly (واخد 60% عشان يكون واضح) */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative w-full lg:w-[60%] lg:sticky lg:top-24 h-[650px] md:h-[750px] rounded-[3rem] bg-black/40 border border-white/5 shadow-2xl overflow-hidden"
-        >
-          {/* Overlay لتغطية الـ footer */}
-          <div className="absolute bottom-0 left-0 right-0 h-14 bg-[#020617] z-20 pointer-events-none" />
+                {/* طريقة التواصل */}
+                <div className="relative group">
+                  <FiVideo className="absolute start-5 top-1/2 -translate-y-1/2 text-blue-500 pointer-events-none z-10" />
+                  <button
+                    type="button"
+                    onClick={() => { setIsContactOpen(!isContactOpen); setIsServiceOpen(false); }}
+                    className={`${glassInputClasses} ps-12 pe-5 flex items-center justify-between w-full relative ${isContactOpen ? 'border-blue-500/50 bg-white/[0.05]' : ''}`}
+                  >
+                    <span>{contactMethod}</span>
+                    <FiChevronDown className="text-white transition-transform duration-300 group-hover:text-blue-500" />
+                  </button>
 
-          <iframe
-            src="https://calendly.com/globalnexus1999/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=020617&text_color=ffffff&primary_color=2563eb"
-            className="w-full h-full relative z-10"
-            frameBorder="0"
-            title="Book a Call with Global Nexus"
-          ></iframe>
+                  <AnimatePresence>
+                    {isContactOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                        transition={{ duration: 0.2 }}
+                        className={dropdownMenuClasses}
+                      >
+                        {contactMethodsArray.map((item) => (
+                          <div
+                            key={item}
+                            onClick={() => { setContactMethod(item); setIsContactOpen(false); }}
+                            className={dropdownItemClasses}
+                          >
+                            {item}
+                          </div>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </div>
 
-          {/* تأثير التحميل */}
-          <div className="absolute inset-0 bg-[#020617] -z-10 flex items-center justify-center">
-            <div className="w-8 h-8 border-2 border-blue-600/20 border-t-blue-600 rounded-full animate-spin" />
+              {/* التاريخ والوقت */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="relative">
+                  <FiCalendar className="absolute start-5 top-1/2 -translate-y-1/2 text-blue-500 pointer-events-none z-10" />
+                  <input type="date" className={`${glassInputClasses} [color-scheme:dark] ps-12 pe-5`} />
+                </div>
+                <div className="relative">
+                  <FiClock className="absolute start-5 top-1/2 -translate-y-1/2 text-blue-500 pointer-events-none z-10" />
+                  <input type="time" className={`${glassInputClasses} [color-scheme:dark] ps-12 pe-5`} />
+                </div>
+              </div>
+
+              <textarea rows={3} placeholder={t("placeholderNotes")} className={`${glassInputClasses} px-5 resize-none`}></textarea>
+
+              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 group mt-2 shadow-[0_0_20px_rgba(37,99,235,0.2)] hover:shadow-[0_0_30px_rgba(37,99,235,0.4)] border border-blue-500/50">
+                <span>{t("submitBtn")}</span>
+                {/* قلبنا أيقونة الإرسال في العربي عشان تشاور صح للناحية التانية، وعملنا تأثير التحريك متوافق */}
+                <FiSend className="transition-transform duration-300 rtl:-scale-x-100 group-hover:-translate-y-0.5 ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
+              </button>
+            </form>
           </div>
         </motion.div>
 

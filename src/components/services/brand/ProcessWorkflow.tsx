@@ -1,8 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function BrandingEditorialDeck() {
+    const t = useTranslations("BrandingService.BrandingEditorialDeck");
+    const locale = useLocale();
+    const currentDir = locale === "ar" ? "rtl" : "ltr";
+
     const fadeUp = {
         hidden: { opacity: 0, y: 30 },
         visible: {
@@ -12,21 +17,15 @@ export default function BrandingEditorialDeck() {
         }
     };
 
-    const offerings = [
-        "تطوير أو تحسين الشعار",
-        "اختيار الألوان الأساسية والثانوية",
-        "تحديد الخطوط المناسبة",
-        "تصميم عناصر الهوية البصرية",
-        "إعداد اتجاه بصري واضح للعلامة التجارية",
-        "تطبيق الهوية على المنصات الرقمية",
-        "تحسين شكل المحتوى البصري على السوشيال ميديا",
-        "تجهيز نمط تصميم يساعد على توحيد الظهور الرقمي"
-    ];
+    // قراءة مصفوفة المخرجات ديناميكياً من ملف الترجمة لضمان دقة التنفيذ وعرضها بالتساوي
+    const offerings = t.raw("offerings") as string[];
 
     return (
-        <section className="relative w-full py-10 px-4 sm:px-6 md:px-12 select-none z-10 overflow-hidden" dir="rtl">
-
-            <div className="relative z-10 w-full max-w-[1300px] mx-auto flex flex-col space-y-24 md:space-y-40">
+        <section
+            className="relative w-full py-10 px-4 sm:px-6 md:px-12 select-none z-10 overflow-hidden"
+            dir={currentDir}
+        >
+            <div className="relative z-10 w-full max-w-[1300px] mx-auto flex flex-col space-y-10 md:space-y-20">
 
                 {/* ================= الكتلة الأولى: المشكلة (توزيع جانبي فخم) ================= */}
                 <motion.div
@@ -36,22 +35,28 @@ export default function BrandingEditorialDeck() {
                     variants={fadeUp}
                     className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start"
                 >
-                    {/* الجانب الهندسي الجاذب للعين */}
-                    <div className="lg:col-span-4 flex flex-row lg:flex-col items-baseline lg:items-start justify-between lg:justify-start gap-4 border-b lg:border-b-0 lg:border-r border-white/[0.08] pb-4 lg:pb-0 lg:pl-8">
-                        <span className="font-mono text-4xl md:text-6xl font-thin text-white/75 tracking-tighter">01.</span>
-                        <div className="space-y-1 text-left lg:text-right">
-                            <span className="text-blue-600 font-mono text-[10px] tracking-widest uppercase block">  CHALLENGE</span>
-                            <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-blue-600 tracking-tight">المشكلة التي تعالجها الخدمة</h2>
+                    {/* الجانب الهندسي الجاذب للعين - تم إضافة بادينج تناظري ذكي (rtl:lg:pl-12 ltr:lg:pr-12) لمنع التصاق النص بالبوردر */}
+                    <div className="lg:col-span-4 flex flex-row lg:flex-col items-baseline lg:items-start justify-between lg:justify-start gap-4 border-b lg:border-b-0 rtl:lg:border-l-0 rtl:lg:border-r ltr:lg:border-r-0 ltr:lg:border-l border-white/[0.08] pb-4 lg:pb-0 rtl:lg:pl-12 ltr:lg:pr-12 rtl:lg:pr-10 ltr:lg:pl-10 w-full">
+                        <span className="font-mono text-4xl md:text-6xl font-thin text-white/75 tracking-tighter">
+                            {t("challengeNum")}
+                        </span>
+                        <div className="space-y-1 text-start lg:text-start max-w-[90%]">
+                            <span className="text-blue-600 font-mono text-[10px] tracking-widest uppercase block">
+                                {t("challengeLabel")}
+                            </span>
+                            <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-blue-600 tracking-tight leading-tight">
+                                {t("challengeTitle")}
+                            </h2>
                         </div>
                     </div>
 
                     {/* الجانب القرائي الانسيابي */}
-                    <div className="lg:col-span-8 flex flex-col space-y-6 text-center lg:text-right items-center lg:items-start">
-                        <p className="text-white/90 text-base sm:text-lg md:text-xl font-light leading-relaxed select-text break-words">
-                            كثير من الشركات تقدم خدمات جيدة، لكنها لا تظهر بالصورة التي تعكس قيمتها الحقيقية. أحيانًا يكون الشعار غير واضح، أو الألوان غير متناسقة، أو التصاميم مختلفة من منصة لأخرى، مما يضعف ثقة العميل ويجعل العلامة التجارية أقل تميزًا.
+                    <div className="lg:col-span-8 flex flex-col space-y-6 text-center lg:text-start items-center lg:items-start">
+                        <p className="text-white/90 text-base sm:text-lg md:text-xl ltr:text-sm ltr:sm:text-base ltr:md:text-lg font-light leading-relaxed select-text break-words">
+                            {t("challengeText1")}
                         </p>
-                        <p className="text-white/80 text-sm sm:text-base md:text-lg font-light leading-relaxed select-text italic border-r-2 border-white/20 pr-4">
-                            الهوية البصرية المنظمة تساعد الشركة على بناء انطباع أقوى، وتجعل حضورها أكثر ثباتًا واحترافية.
+                        <p className="text-white/80 text-sm sm:text-base md:text-lg ltr:text-xs ltr:sm:text-sm font-light leading-relaxed select-text italic rtl:border-l-0 rtl:border-r-2 ltr:border-r-0 ltr:border-l-2 border-white/20 rtl:pr-4 ltr:pl-4 w-full">
+                            {t("challengeText2")}
                         </p>
                     </div>
                 </motion.div>
@@ -60,29 +65,35 @@ export default function BrandingEditorialDeck() {
                 {/* ================= الكتلة الثانية: ماذا نقدم (قائمة منسابة متباعدة) ================= */}
                 <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
 
-                    {/* العنوان الجانبي الثابت */}
-                    <div className="lg:col-span-4 flex flex-row lg:flex-col items-baseline lg:items-start justify-between lg:justify-start gap-4 border-b lg:border-b-0 lg:border-r border-white/[0.08] pb-4 lg:pb-0 lg:pl-8">
-                        <span className="font-mono text-4xl md:text-6xl font-thin text-white/75 tracking-tighter">02.</span>
-                        <div className="space-y-1 text-left lg:text-right">
-                            <span className="text-blue-600 font-mono text-[10px] tracking-widest uppercase block">  SCOPE</span>
-                            <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-blue-600 tracking-tight">ماذا نقدم داخل الخدمة؟</h2>
+                    {/* العنوان الجانبي الثابت - تم إضافة نفس البادينج التناظري هنا لتوحيد الهوية البصرية ومنع الالتصاق */}
+                    <div className="lg:col-span-4 flex flex-row lg:flex-col items-baseline lg:items-start justify-between lg:justify-start gap-4 border-b lg:border-b-0 rtl:lg:border-l-0 rtl:lg:border-r ltr:lg:border-r-0 ltr:lg:border-l border-white/[0.08] pb-4 lg:pb-0 rtl:lg:pl-12 ltr:lg:pr-12 rtl:lg:pr-10 ltr:lg:pl-10 w-full">
+                        <span className="font-mono text-4xl md:text-6xl font-thin text-white/75 tracking-tighter">
+                            {t("scopeNum")}
+                        </span>
+                        <div className="space-y-1 text-start lg:text-start max-w-[90%]">
+                            <span className="text-blue-600 font-mono text-[10px] tracking-widest uppercase block">
+                                {t("scopeLabel")}
+                            </span>
+                            <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-blue-600 tracking-tight leading-tight">
+                                {t("scopeTitle")}
+                            </h2>
                         </div>
                     </div>
 
-                    {/* قائمة المخرجات الذكية: مقسومة عمودين متباعدين لتسهيل القراءة وتفادي شكل المقال */}
+                    {/* قائمة المخرجات الذكية */}
                     <div className="lg:col-span-8 w-full">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 text-right">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 text-start">
                             {offerings.map((item, index) => (
                                 <motion.div
                                     key={index}
-                                    whileHover={{ x: -6 }}
+                                    whileHover={{ x: currentDir === "rtl" ? -6 : 6 }}
                                     transition={{ duration: 0.3, ease: "easeOut" }}
                                     className="group flex items-start gap-4 py-3 border-b border-white/[0.03] hover:border-nexus-blue/20 transition-colors duration-300"
                                 >
                                     <span className="font-mono text-xs text-blue-600 group-hover:text-blue-400 transition-colors pt-1">
                                         [{index + 1}]
                                     </span>
-                                    <p className="text-white/90 group-hover:text-white text-sm sm:text-base font-normal leading-normal select-text">
+                                    <p className="text-white/90 group-hover:text-white text-sm sm:text-base ltr:text-xs ltr:sm:text-sm font-normal leading-normal select-text">
                                         {item}
                                     </p>
                                 </motion.div>
@@ -101,32 +112,40 @@ export default function BrandingEditorialDeck() {
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
                         variants={fadeUp}
-                        className="flex flex-col space-y-4 border-r border-white/[0.06] pr-6 md:pr-8 text-center lg:text-right items-center lg:items-start"
+                        className="flex flex-col space-y-4 border-b pb-6 lg:pb-0 lg:border-b-0 rtl:lg:border-l-0 rtl:lg:border-r ltr:lg:border-r-0 ltr:lg:border-l border-white/[0.06] rtl:lg:pr-8 ltr:lg:pl-8 text-center lg:text-start items-center lg:items-start w-full"
                     >
-                        <span className="font-mono text-xs text-white/70 tracking-widest uppercase block">03  TARGET_AUDIENCE</span>
-                        <h3 className="text-lg sm:text-xl md:text-2xl font-black text-white">لمن هذه الخدمة مناسبة؟</h3>
-                        <div className="space-y-4 text-white/90 text-sm sm:text-base font-light leading-relaxed select-text pt-2">
+                        <span className="font-mono text-xs text-white/70 tracking-widest uppercase block">
+                            {t("audienceNum")}
+                        </span>
+                        <h3 className="text-lg sm:text-xl md:text-2xl font-black text-white">
+                            {t("audienceTitle")}
+                        </h3>
+                        <div className="space-y-4 text-white/90 text-sm sm:text-base ltr:text-xs ltr:sm:text-sm font-light leading-relaxed select-text pt-2">
                             <p>
-                                هذه الخدمة مناسبة للشركات التي تبدأ من الصفر وتحتاج إلى هوية بصرية كاملة، وكذلك الشركات التي تمتلك هوية حالية لكنها تحتاج إلى تطوير أو إعادة تنظيم.
+                                {t("audienceText1")}
                             </p>
-                            <p className="text-white/85 text-xs sm:text-sm">
-                                كما تناسب الشركات التي ترغب في تحسين شكل ظهورها على السوشيال ميديا، الموقع الإلكتروني، العروض التقديمية، أو المواد التسويقية.
+                            <p className="text-white/85 text-xs sm:text-sm ltr:text-[11px] ltr:sm:text-xs">
+                                {t("audienceText2")}
                             </p>
                         </div>
                     </motion.div>
 
-                    {/* النتيجة المتوقعة (بوزن بصري أثقل لإبراز القيمة) */}
+                    {/* النتيجة المتوقعة */}
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
                         variants={fadeUp}
-                        className="flex flex-col space-y-4 border-r-2 border-nexus-blue pr-6 md:pr-8 text-center lg:text-right items-center lg:items-start bg-gradient-to-l from-nexus-blue/[0.01] to-transparent py-2"
+                        className="flex flex-col space-y-4 border-b pb-6 lg:pb-0 lg:border-b-0 rtl:lg:border-l-0 rtl:lg:border-r-2 ltr:lg:border-r-0 ltr:lg:border-l-2 border-nexus-blue rtl:lg:pr-8 ltr:lg:pl-8 text-center lg:text-start items-center lg:items-start bg-gradient-to-l ltr:bg-gradient-to-r from-nexus-blue/[0.01] to-transparent py-2 w-full"
                     >
-                        <span className="font-mono text-xs text-blue-600 tracking-widest uppercase block">04  THE_OUTCOME</span>
-                        <h3 className="text-lg sm:text-xl md:text-2xl font-black text-white">النتيجة المتوقعة</h3>
-                        <p className="text-white/90 group-hover:text-white text-base sm:text-lg font-light leading-relaxed select-text pt-2 max-w-xl">
-                            بعد تنفيذ الخدمة، يصبح لدى الشركة هوية بصرية أكثر وضوحًا واتساقًا، تساعدها على تقديم نفسها بثقة، وتمنح العملاء انطباعًا أكثر احترافية عن العلامة التجارية.
+                        <span className="font-mono text-xs text-blue-600 tracking-widest uppercase block">
+                            {t("outcomeNum")}
+                        </span>
+                        <h3 className="text-lg sm:text-xl md:text-2xl font-black text-white">
+                            {t("outcomeTitle")}
+                        </h3>
+                        <p className="text-white/90 group-hover:text-white text-base sm:text-lg ltr:text-sm ltr:sm:text-base font-light leading-relaxed select-text pt-2 max-w-xl">
+                            {t("outcomeText")}
                         </p>
                     </motion.div>
 
@@ -134,8 +153,6 @@ export default function BrandingEditorialDeck() {
 
             </div>
 
-            {/* لمسة الإغلاق الهندسية الفخمة أسفل الواجهة */}
-            <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/[0.06] to-transparent mt-24 md:mt-36" />
         </section>
     );
 }

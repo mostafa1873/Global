@@ -2,70 +2,86 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useTranslations, useLocale } from "next-intl";
 import { FaWhatsapp } from "react-icons/fa";
-import { FiArrowLeft } from "react-icons/fi";
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
 export default function CompactClosing() {
-    return (
-        <section className="relative w-full py-16 sm:py-24 px-4 bg-transparent overflow-hidden" dir="rtl">
+  const t = useTranslations("CompactClosing");
+  const locale = useLocale();
+  const isAr = locale === "ar";
 
-            <div className="max-w-4xl mx-auto relative z-10 text-center">
+  return (
+    <section className="relative w-full py-10 px-4 bg-transparent overflow-hidden" dir={isAr ? "rtl" : "ltr"}>
 
-                {/* العنوان - تم ضبط التراتبية البصرية لتصغير الحجم وتوزيع النص بدون حذف أي كلمة */}
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-white mb-12 sm:mb-16 tracking-tight leading-tight"
-                >
-                    {/* الجملة الأساسية الحاسمة بحجم فخم وكبير */}
-                    <span className="block text-2xl sm:text-3xl md:text-5xl font-black mb-6 sm:mb-8">
-                        ابدأ تطوير بيئتك الرقمية مع Global Nexus
-                    </span>
+      <div className="max-w-4xl mx-auto relative z-10 text-center">
 
-                    {/* المحتوى الطويل تم تصغير حجمه وتخفيف وزنه بصرياً ليصبح كعنوان فرعي راقٍ ومريح في القراءة */}
-                    <span className="block text-base sm:text-lg md:text-xl font-light text-white/80 max-w-3xl mx-auto leading-relaxed">
-                        <span className="text-blue-600 font-medium">إذا كنت تبحث عن تطوير موقعك الإلكتروني، تحسين حضورك الرقمي، أو بناء نظام يساعد شركتك على النمو بشكل أكثر كفاءة،  </span>
-                        يمكن لفريقنا مساعدتك في اختيار الحل المناسب لطبيعة نشاطك                    </span>
-                </motion.h2>
-                {/* الزرار المركزي الضخم والمحكم */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    className="inline-flex flex-col sm:flex-row items-center gap-6 p-4 sm:p-2 bg-white/[0.02] border border-white/5 rounded-3xl sm:rounded-full backdrop-blur-3xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] w-full sm:w-auto"
-                >
-                    {/* زرار الاستشارة (الأساسي) - تم ضبط تمدده على الموبايل */}
-                    <Link href="/call" className="w-full sm:w-auto">
-                        <motion.button
-                            whileHover={{ x: -5 }}
-                            className="w-full sm:w-auto px-10 py-5 bg-white text-black font-black rounded-full text-lg md:text-xl flex items-center justify-center gap-3 transition-transform"
-                        >
-                            احجز استشارتك الآن
-                            <FiArrowLeft className="text-2xl" />
-                        </motion.button>
-                    </Link>
+        {/* العنوان - تم ضبط حجم الخط للموبايل في الإنجليزي ليكون متناسقاً ومريحاً جداً في الرؤية */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-blue-600 mb-5 sm:mb-8 tracking-tight leading-tight"
+        >
+          {/* الجملة الأساسية الحاسمة - تم معالجة حجمها في الموبايل للغة الإنجليزية لتجنب الضخامة والتكدس */}
+          <span className={`block font-black mb-2 sm:mb-4 tracking-tight ${
+            isAr 
+              ? "text-xl sm:text-2xl md:text-4xl" 
+              : "text-lg sm:text-xl md:text-3xl px-2 sm:px-0"
+          }`}>
+            {t("title")}
+          </span>
 
-                    {/* زرار الواتساب (المكمل) */}
-                    <motion.a
-                        href="https://wa.me/201109458238"
-                        target="_blank"
-                        whileHover={{ scale: 1.1 }}
-                        className="p-5 text-[#25D366] hover:text-white group transition-colors"
-                    >
-                        <FaWhatsapp className="text-3xl" />
-                    </motion.a>
-                </motion.div>
+          {/* المحتوى الفرعي الطويل - تم تحسين تباينه وحجمه ليكون مريحاً على الشاشات الصغيرة */}
+          <span className={`block font-light text-white/90 max-w-3xl mx-auto leading-relaxed ${
+            isAr ? "text-base sm:text-lg md:text-xl" : "text-sm sm:text-lg md:text-xl px-1 sm:px-0"
+          }`}>
+            <span className="text-white/90 font-medium">{t("descriptionHighlight")}</span>
+            <br />
+            {t("descriptionNormal")}
+          </span>
+        </motion.h2>
 
-                {/* جملة ختامية بسيطة جداً */}
-                <p className="mt-16 text-slate-500 text-sm font-light tracking-wide opacity-50">
-                    Your Digital Transformation Starts Here — 2026
-                </p>
+        {/* الزرار المركزي الضخم والمحكم */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="inline-flex flex-col sm:flex-row items-center gap-6 p-4 sm:p-2 bg-white/[0.02] border border-white/5 rounded-3xl sm:rounded-full backdrop-blur-3xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] w-full sm:w-auto"
+        >
+          {/* زرار الاستشارة الأساسي - تم تصغير البادينج وحجم الخط قليلاً في موبايل الإنجليزي ليفرد النص على سطر واحد فخم */}
+          <Link href="/call" className="w-full sm:w-auto">
+            <motion.button
+              whileHover={{ x: isAr ? -5 : 5 }}
+              className={`w-full sm:w-auto bg-white text-black font-black rounded-full flex items-center justify-center gap-3 transition-transform ${
+                isAr 
+                  ? "px-6 py-4 text-base sm:px-10 sm:py-5 sm:text-lg md:text-xl whitespace-nowrap" 
+                  : "px-6 py-4 text-base sm:px-10 sm:py-5 sm:text-lg md:text-xl whitespace-nowrap"
+              }`}
+            >
+              {t("ctaButton")}
+              {isAr ? <FiArrowLeft className="text-xl md:text-2xl shrink-0" /> : <FiArrowRight className="text-xl md:text-2xl shrink-0" />}
+            </motion.button>
+          </Link>
 
-            </div>
+          {/* زرار الواتساب (المكمل) */}
+          <motion.a
+            href="https://wa.me/201109458238"
+            target="_blank"
+            whileHover={{ scale: 1.1 }}
+            className="p-5 text-[#25D366] hover:text-white group transition-colors"
+          >
+            <FaWhatsapp className="text-3xl" />
+          </motion.a>
+        </motion.div>
 
-            {/* تأثير إضاءة خلفي هادي جداً */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-600/[0.03] blur-[100px] rounded-full pointer-events-none" />
-        </section>
-    );
+        {/* جملة ختامية بسيطة جداً */}
+        <p className="mt-16 text-slate-500 text-sm font-light tracking-wide opacity-50">
+          Your Digital Transformation Starts Here — 2026
+        </p>
+
+      </div>
+
+    </section>
+  );
 }

@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpLeft, Globe, Palette, Box, Layers } from "lucide-react";
+import { useTranslations, useLocale } from "next-intl";
+import { Globe, Palette, Box, Layers } from "lucide-react";
 
 // --- إعدادات ستايل كل قسم لوحده ---
 const categoryStyles = {
@@ -94,6 +95,10 @@ const categories = [
 ];
 
 export default function CustomGridPortfolio() {
+    const t = useTranslations("PortfolioPage.Grid");
+    const locale = useLocale();
+    const isAr = locale === "ar";
+
     const [filter, setFilter] = useState("Website");
 
     // فلتر المشاريع بناءً على القسم
@@ -134,23 +139,31 @@ export default function CustomGridPortfolio() {
                     )}
                 </div>
 
-                {/* --- كبسولة زجاجية شفافة ومينيمال جداً لـ Power Scale (تثبت أسفل اليمين على الصورة) --- */}
+                {/* --- كبسولة زجاجية شفافة ومينيمال جداً لـ Power Scale (تثبت أسفل اليمين أو اليسار حسب الـ dir) --- */}
                 {filter === "Website" && project.id === 4.1 && (
-                    <div className="hidden absolute bottom-5 right-50 z-20 pointer-events-none md:flex items-center gap-3 py-2.5 px-4 rounded-2xl bg-black/25 backdrop-blur-md border border-white/5 shadow-md" dir="ltr">
+                    <div
+                        className={`hidden absolute bottom-5 z-20 pointer-events-none md:flex items-center gap-3 py-2.5 px-4 rounded-2xl bg-black/25 backdrop-blur-md border border-white/5 shadow-md`}
+                        style={{ right: isAr ? '220px' : 'auto', left: isAr ? 'auto' : '110px' }}
+                        dir={isAr ? "rtl" : "ltr"}
+                    >
                         <span className="text-blue-500 font-mono text-sm font-black">03</span>
                         <div className="w-[1px] h-3.5 bg-white/10"></div>
                         <span className="text-blue-600 text-xs font-bold uppercase tracking-wider">Agro Power</span>
-                        <p className="text-white/90 text-[10px] font-normal uppercase tracking-wider">تم بناؤها بواجهة مستخدم ذكية وسريعة لتسهيل وصول المستوردين الدوليين.</p>
+                        <p className="text-white/90 text-[10px] font-normal uppercase tracking-wider">{t("capsuleAgroPower")}</p>
                     </div>
                 )}
 
-                {/* --- كبسولة زجاجية شفافة ومينيمال جداً لـ Creative Layout (تثبت أسفل اليسار على الصورة) --- */}
+                {/* --- كبسولة زجاجية شفافة ومينيمال جداً لـ Creative Layout (تثبت أسفل اليسار أو اليمين حسب الـ dir) --- */}
                 {filter === "Website" && project.id === 4.2 && (
-                    <div className="hidden absolute bottom-7 left-12 z-20 pointer-events-none md:flex items-center gap-3 py-2.5 px-4 rounded-2xl bg-black/25 backdrop-blur-md border border-white/5 shadow-md" dir="ltr">
+                    <div
+                        className={`hidden absolute bottom-7 z-20 pointer-events-none md:flex items-center gap-3 py-2.5 px-4 rounded-2xl bg-black/25 backdrop-blur-md border border-white/5 shadow-md`}
+                        style={{ left: isAr ? '45px' : 'auto', right: isAr ? 'auto' : '-0px' }}
+                        dir={isAr ? "rtl" : "ltr"}
+                    >
                         <span className="text-blue-500 font-mono text-sm font-black">04</span>
                         <div className="w-[1px] h-3.5 bg-white/10"></div>
                         <span className="text-blue-600 text-xs font-bold uppercase tracking-wider">Green Power</span>
-                        <p className="text-white/90 text-[10px] font-normal uppercase tracking-wider">تصميم عصري يعكس نضارة المنتجات العالمية.</p>
+                        <p className="text-white/90 text-[10px] font-normal uppercase tracking-wider">{t("capsuleGreenPower")}</p>
                     </div>
                 )}
             </motion.div>
@@ -158,57 +171,65 @@ export default function CustomGridPortfolio() {
     };
 
     return (
-        <section className="py-10 border-t border-white/5 px-6 lg:px-16 bg-transparent relative" dir="rtl">
+        <section className="py-10 border-t border-white/5 px-6 lg:px-16 bg-transparent relative" dir={isAr ? "rtl" : "ltr"}>
             <div className="max-w-[1600px] mx-auto relative">
 
                 {/* --- النصوص الجانبية الخاصة بقسم الموقع الأساسي (علوي) --- */}
                 <AnimatePresence>
                     {filter === "Website" && (
                         <>
+                            {/* الكبسولة العائمة الأولى - تتكيف هندسياً بالكامل */}
                             <motion.div
-                                initial={{ opacity: 0, x: 30, filter: "blur(10px)" }}
+                                initial={{ opacity: 0, x: isAr ? 30 : -30, filter: "blur(10px)" }}
                                 animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                                exit={{ opacity: 0, x: 30, filter: "blur(10px)" }}
+                                exit={{ opacity: 0, x: isAr ? 30 : -30, filter: "blur(10px)" }}
                                 transition={{ duration: 0.8, ease: "easeOut" }}
-                                className="hidden lg:flex flex-col absolute left-10 top-[39%] -translate-y-1/2 w-[320px] z-0 pointer-events-none"
+                                className={`hidden lg:flex flex-col absolute top-[39%] -translate-y-1/2 w-[320px] z-0 pointer-events-none ${isAr ? "left-10 text-right" : "right-10 text-left"
+                                    }`}
                             >
-                                <div className="flex items-baseline gap-2 mb-2">
+                                <div className={`flex items-baseline gap-2 mb-2 ${isAr ? "" : "flex-row-reverse"}`}>
                                     <span className="text-blue-600 font-mono text-xs font-black tracking-tighter">01</span>
                                     <div className="h-[1px] w-8 bg-blue-600/30"></div>
-                                    <span className="text-white/20 font-mono text-[9px] uppercase tracking-[0.3em]">Project Architecture</span>
+                                    <span className="text-white/20 font-mono text-[9px] uppercase tracking-[0.3em]">{t("architectureBadge")}</span>
                                 </div>
-                                <h3 className="text-white text-3xl font-black mb-6 leading-none uppercase">
-                                    EZZ <br />
-                                    <span className="text-blue-600 not-italic">Export.</span>
+                                <h3 className={`text-white text-3xl font-black mb-6 leading-none uppercase ${isAr ? "" : "text-right"}`} dir={isAr ? "rtl" : "ltr"}>
+                                    {t("architectureTitle")} <br />
+                                    <span className="text-blue-600 not-italic">{t("architectureHighlight")}</span>
                                 </h3>
                                 <div className="relative group">
-                                    <div className="absolute -left-4 top-0 bottom-0 w-[1px] bg-gradient-to-b from-blue-600 via-blue-600/20 to-transparent"></div>
-                                    <p className="text-white/50 text-[13px] leading-relaxed font-light pl-2">
-                                        طورنا منصة "عز" بتقنيات <span className="text-white font-medium">حديثة</span> لضمان سرعة فائقة تناسب معايير السوق الأوروبي.
+                                    <div className={`absolute top-0 bottom-0 w-[1px] bg-gradient-to-b from-blue-600 via-blue-600/20 to-transparent ${isAr ? "-left-4" : "-right-4"
+                                        }`}></div>
+                                    <p className={`text-white/50 text-[13px] leading-relaxed font-light ${isAr ? "pl-2" : "pr-2"}`}>
+                                        {t("architectureDesc")}
                                     </p>
                                 </div>
                             </motion.div>
 
+                            {/* الكبسولة العائمة الثانية - تتكيف هندسياً بالكامل */}
                             <motion.div
-                                initial={{ opacity: 0, x: -30, filter: "blur(10px)" }}
+                                initial={{ opacity: 0, x: isAr ? -30 : 30, filter: "blur(10px)" }}
                                 animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                                exit={{ opacity: 0, x: -30, filter: "blur(10px)" }}
+                                exit={{ opacity: 0, x: isAr ? -30 : 30, filter: "blur(10px)" }}
                                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                                className="hidden lg:flex flex-col absolute right-10 top-[65.8%] -translate-y-1/2 w-[320px] z-0 pointer-events-none text-right"
+                                className={`hidden lg:flex flex-col absolute top-[65.8%] -translate-y-1/2 w-[320px] z-0 pointer-events-none ${isAr ? "right-10 text-right" : "left-10 text-left"
+                                    }`}
                             >
-                                <div className="flex items-baseline gap-2 mb-2 justify-end">
-                                    <span className="text-white/20 font-mono text-[9px] uppercase tracking-[0.3em]">React Architecture</span>
-                                    <div className="h-[1px] w-8 bg-blue-600/30"></div>
-                                    <span className="text-blue-600 font-mono text-xs font-black tracking-tighter">02</span>
+                                <div className={`flex items-baseline gap-2 mb-2 ${isAr ? "justify-end" : "justify-start"}`}>
+                                    {!isAr && <span className="text-blue-600 font-mono text-xs font-black tracking-tighter">02</span>}
+                                    {!isAr && <div className="h-[1px] w-8 bg-blue-600/30"></div>}
+                                    <span className="text-white/20 font-mono text-[9px] uppercase tracking-[0.3em]">{t("reactBadge")}</span>
+                                    {isAr && <div className="h-[1px] w-8 bg-blue-600/30"></div>}
+                                    {isAr && <span className="text-blue-600 font-mono text-xs font-black tracking-tighter">02</span>}
                                 </div>
-                                <h3 className="text-white text-3xl font-black mb-6 leading-none tracking-tighter uppercase italic text-left" dir="ltr">
-                                    AGRO <br />
-                                    <span className="text-blue-600 not-italic">Mart.</span>
+                                <h3 className={`text-white text-3xl font-black mb-6 leading-none tracking-tighter uppercase italic ${isAr ? "text-left" : "text-left"}`} dir="ltr">
+                                    {t("reactTitle")} <br />
+                                    <span className="text-blue-600 not-italic">{t("reactHighlight")}</span>
                                 </h3>
-                                <div className="relative group text-right">
-                                    <div className="absolute -right-4 top-0 bottom-0 w-[1px] bg-gradient-to-b from-blue-600 via-blue-600/20 to-transparent"></div>
-                                    <p className="text-white/50 text-[13px] leading-relaxed font-light pr-2">
-                                        في "أجرو مارت" استغلينا قوة <span className="text-white font-medium">أحدث التقنيات الذكية</span> لخلق واجهة تسوق ذكية.
+                                <div className="relative group">
+                                    <div className={`absolute top-0 bottom-0 w-[1px] bg-gradient-to-b from-blue-600 via-blue-600/20 to-transparent ${isAr ? "-right-4" : "-left-4"
+                                        }`}></div>
+                                    <p className={`text-white/50 text-[13px] leading-relaxed font-light ${isAr ? "pr-2" : "pl-2"}`}>
+                                        {t("reactDesc")}
                                     </p>
                                 </div>
                             </motion.div>
@@ -228,13 +249,13 @@ export default function CustomGridPortfolio() {
                             className="h-[2px] bg-blue-600 mx-auto mb-4"
                         />
 
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
-                            مشاريع نفذناها بعناية <br className="hidden sm:block" />
-                            لدعم <span className="text-blue-600">الحضور الرقمي</span>
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-tight">
+                            {t("headerTitle")} <br className="hidden sm:block" />
+                            <span className="text-blue-600">{t("headerTitleHighlight")}</span>
                         </h2>
 
                         <p className="text-sm md:text-base text-white/65 font-light leading-relaxed max-w-2xl mx-auto pt-1">
-                            نركز في كل مشروع على تقديم حل رقمي منظم يخدم هدفًا واضحًا، سواء كان تحسين صورة الشركة، عرض الخدمات والمنتجات, تسهيل التواصل مع العملاء، أو بناء تجربة استخدام أكثر وضوحًا.
+                            {t("headerDescription")}
                         </p>
                     </div>
                 </div>
@@ -251,7 +272,7 @@ export default function CustomGridPortfolio() {
                                         onClick={() => setFilter(cat.name)}
                                         className={`
                                           relative flex items-center justify-center gap-2 px-3 py-2 rounded-xl md:rounded-full 
-                                          text-xs sm:text-sm font-black tracking-wider uppercase select-none outline-none
+                                          text-[8px] sm:text-[12px] font-black tracking-wider uppercase select-none outline-none
                                           transition-all duration-200 ease-out border
                                           w-[110px] sm:w-[130px] text-center shrink-0
                                           ${isActive

@@ -1,11 +1,16 @@
 import BookACall from "@/src/components/main/book-a-call";
 
-export default function ContactPage() {
-
+// إذا كان الملف داخل [locale]، يجب استقبال الـ params
+export default async function ContactPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
 
   return (
-<>
-<BookACall />
-</>
+    <>
+      <BookACall locale={locale} />
+    </>
   );
 }

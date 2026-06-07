@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { FiChevronDown, FiSend, FiCalendar, FiClock, FiBriefcase, FiPhone, FiVideo, FiCheckCircle, FiLoader } from "react-icons/fi";
 import { useTranslations } from "next-intl";
 
@@ -105,7 +105,7 @@ export default function BookACall({ locale }: BookACallFormProps) {
     visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeInOut" } },
   };

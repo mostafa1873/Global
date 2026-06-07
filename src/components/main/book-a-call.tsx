@@ -107,7 +107,7 @@ export default function BookACall({ locale }: BookACallFormProps) {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeInOut" } },
   };
 
   const glassInputClasses = "w-full bg-white/[0.02] hover:bg-white/[0.04] border border-white/[0.08] hover:border-white/[0.15] rounded-2xl py-4 text-white text-sm focus:border-blue-500/50 focus:bg-white/[0.05] outline-none transition-all duration-300 placeholder:text-white/40 shadow-inner shadow-white/[0.01] text-start";

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Calendar, Clock, ChevronRight, Tag, ArrowRight, ArrowLeft, ChevronLeft, Quote } from "lucide-react";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
 
 // إنشاء المسارات الثابتة للـ Static Export لدعم اللغتين معاً عبر الـ Slugs العربية والإنجليزية
 export async function generateStaticParams() {
@@ -29,6 +30,56 @@ interface PostPageProps {
   params: Promise<{ locale: string; slug: string }>;
 }
 
+// دالة توليد الميتا داتا الديناميكية المخصصة لكل مقال على حدة لتصدر محركات البحث SEO
+export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const isRtl = locale === "ar";
+  const decodedSlug = decodeURIComponent(slug);
+
+  // البحث عن المقال المقابل للرابط لجلب بيانات الميتا داتا الخاصة به
+  const post = blogData.find((p) => {
+    const slugArDecoded = p.slug_ar ? decodeURIComponent(p.slug_ar) : "";
+    const slugEnDecoded = p.slug_en ? decodeURIComponent(p.slug_en) : "";
+
+    if (isRtl) {
+      return slugArDecoded === decodedSlug || slugEnDecoded === decodedSlug;
+    } else {
+      return slugEnDecoded === decodedSlug || slugArDecoded === decodedSlug;
+    }
+  });
+
+  // في حال لم يتم العثور على المقال، نرجع قيم افتراضية متزنة
+  if (!post) {
+    return {
+      title: "Global Nexus Blog",
+    };
+  }
+
+  const title = isRtl ? post.title_ar : post.title_en;
+  const description = isRtl ? post.mainTitle_ar : post.mainTitle_en;
+  const defaultImage = "/img/blog_1.webp";
+  const postImage = post.image?.startsWith('/') ? post.image : (post.image ? `/${post.image}` : defaultImage);
+
+  return {
+    title: `${title} | Global Nexus`,
+    description: description,
+    openGraph: {
+      title: title,
+      description: description,
+      type: "article",
+      publishedTime: post.date,
+      images: [
+        {
+          url: postImage,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+  };
+}
+
 export default async function PostPage({ params }: PostPageProps) {
   const { locale, slug } = await params;
   const isRtl = locale === "ar";
@@ -36,13 +87,13 @@ export default async function PostPage({ params }: PostPageProps) {
 
   // فك تشفير الـ slug القادم من الرابط لضمان قراءته بشكل صحيح
   const decodedSlug = decodeURIComponent(slug);
-  
+
   // حل مشكلة الـ 404 نهائياً: البحث المرن الذكي
   // بيبحث الأول في لغة المسار، لو ملقاش بيبحث في اللغة التانية كـ Fallback عشان لو السلوج إنجليزي والمسار عربي يشتغل برضه
   const post = blogData.find((p) => {
     const slugArDecoded = p.slug_ar ? decodeURIComponent(p.slug_ar) : "";
     const slugEnDecoded = p.slug_en ? decodeURIComponent(p.slug_en) : "";
-    
+
     if (isRtl) {
       return slugArDecoded === decodedSlug || slugEnDecoded === decodedSlug;
     } else {

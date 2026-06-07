@@ -3,6 +3,37 @@ import Link from "next/link";
 import blogData from "../../../blog.json";
 import Image from "next/image";
 import { getTranslations, getLocale } from "next-intl/server";
+import type { Metadata } from "next";
+
+// دالة توليد الميتا داتا الديناميكية المخصصة لصفحة المقالات (Blog) باسمها في الترجمة
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+
+  // القراءة من الـ namespace المخصص لصفحة المقالات
+  const t = await getTranslations({ locale, namespace: 'MetadataBlog' });
+
+  // تحويل نص الكلمات المفتاحية لمصفوفة متوافقة مع Next.js
+  const keywordsString = t("keywords") || "";
+  const keywordsArray = keywordsString.split(",").map((item: string) => item.trim()).filter(Boolean);
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    keywords: keywordsArray,
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      images: [
+        {
+          url: "/og-main.webp",
+          width: 1200,
+          height: 630,
+          alt: "Global Nexus Blog Page Preview",
+        },
+      ],
+    },
+  };
+}
 
 export default async function BlogPage() {
   const t = await getTranslations("BlogPage");

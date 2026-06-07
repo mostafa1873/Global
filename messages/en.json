@@ -1,7 +1,8 @@
 {
     "Metadata": {
-        "title": "Global Nexus | Premium Digital Solutions",
-        "description": "Global Nexus is a platform for sharing and discovering knowledge across the globe.",
+        "title": "Global Nexus | Digital solutions for building and growing modern companies",
+        "description": "We help companies develop their digital presence and build clear growth systems and efficiency through design services, website development, digital marketing, and business management systems.",
+        "keywords": "Global Nexus, website development, digital marketing, visual identity, digital growth systems, UI/UX design, startups, digital solutions.",
         "ogDescription": "Build your digital future with Global Nexus"
     },
     "Navbar": {
@@ -35,6 +36,11 @@
     "WhatsApp": {
         "text": "Contact Us",
         "message": "Hello, I need more details about Global Nexus services."
+    },
+    "MetadataCall": {
+        "title": "Book a Strategy Discovery Call | Schedule Now | Global Nexus",
+        "description": "Select your preferred time slot to schedule a direct consultation with Global Nexus growth corporate experts. Let's map your business objectives to high-performance systems.",
+        "keywords": "book a consultation call, schedule strategy meeting, Global Nexus discovery call, corporate tech consultation, web project onboarding"
     },
     "BookACall": {
         "badge": "STRATEGIC CONSULTATION",
@@ -221,6 +227,11 @@
         "descriptionNormal": "our team can help you choose the right solution tailored to the nature of your business.",
         "ctaButton": "Free consultation"
     },
+    "MetadataAbout": {
+        "title": "About Us - Global Nexus - Your Partner in Digital Growth",
+        "description": "Global Nexus is a company specializing in developing digital solutions that combine design, technology, and strategic thinking to support the long-term growth of companies.",
+        "keywords": "About Us, Global Nexus philosophy, technology company vision, digital partner, business development"
+    },
     "AboutPage": {
         "Hero": {
             "badge": "About Us",
@@ -254,6 +265,11 @@
             "description": "If you are looking for a partner to help develop your digital presence or build digital solutions tailored to your business nature, we can discuss your needs and determine the best direction.",
             "ctaButton": "Free consultation"
         }
+    },
+    "MetadataServices": {
+        "title": "Our Services | Integrated Digital Solutions for Business Scale | Global Nexus",
+        "description": "Discover Global Nexus digital services designed to scale your business: custom web development, premium branding, digital marketing, mobile apps, and elite UI/UX design.",
+        "keywords": "Global Nexus services, mobile app development, marketing strategies, visual identity design, CRM systems, UI/UX optimization"
     },
     "ServicesPage": {
         "Hero": {
@@ -307,6 +323,11 @@
             "description": "Our team is ready to understand your project needs and discuss the ideal solutions to elevate your digital presence.",
             "ctaButton": "Free consultation"
         }
+    },
+    "MetadataPortfolio": {
+        "title": "Our Portfolio - Successful Digital Projects | Global Nexus",
+        "description": "Explore our portfolio of web development and digital solutions. See how we apply our vision to design clear, structured digital experiences that scale businesses.",
+        "keywords": "Global Nexus portfolio, web projects, case studies, digital project development"
     },
     "PortfolioPage": {
         "Hero": {
@@ -381,6 +402,11 @@
             "cta_button": "Start a project"
         }
     },
+    "MetadataBlog": {
+        "title": "Digital Insights & Business Growth Blog | Global Nexus",
+        "description": "Explore expert articles, cutting-edge insights, and growth strategies covering custom software development, advanced digital marketing, UI/UX trends, and corporate tech systems.",
+        "keywords": "tech insights blog, digital marketing articles, business automation trends, web design strategies, corporate scaling tips, software engineering blog"
+    },
     "BlogPage": {
         "badge": "GLOBAL NEXUS INSIGHTS",
         "title_part1": "Articles",
@@ -411,6 +437,11 @@
         "view_all": "View All",
         "read": "Read",
         "suggested": "Suggested Article"
+    },
+    "MetadataContact": {
+        "title": "Contact Us - Scale Your Digital Presence | Global Nexus",
+        "description": "Looking to build or scale your digital ecosystem? Contact Global Nexus today to audit your project and implement elite corporate solutions tailored to your market dynamic.",
+        "keywords": "contact us, book a strategy call, partner with Global Nexus, digital consultations, elite software firm"
     },
     "ContactPage": {
         "badge": "Let's discuss your next project",
@@ -445,6 +476,11 @@
         "footerText": "Whether you are in the stage of building a new project or want to develop your company's current presence, we can help you choose the right digital solution and start with clear and organized steps.",
         "mapCardTitle": "Beheira - Egypt",
         "mapCardSub": "We are waiting for your visit!"
+    },
+    "MetadataBranding": {
+        "title": "Premium Corporate Visual Identity Design & Branding | Global Nexus",
+        "description": "We build elite visual identities that encapsulate your corporate value and establish a commanding industry presence. Architect your brand ecosystem with us.",
+        "keywords": "logo design, visual identity, branding strategy, corporate brand development, visual assets design, digital identity systems"
     },
     "BrandingService": {
         "badge": "Branding & Visual Identity",
@@ -499,6 +535,11 @@
             "ctaBtn": "Contact us"
         }
     },
+    "MetadataWebDev": {
+        "title": "Professional Web Development Services | Next.js & React | Global Nexus",
+        "description": "We engineer high-performance web applications combining ultra-fast load times, seamless UI/UX, and conversion-optimized architectures to scale your corporate brand.",
+        "keywords": "web development, custom website design, Next.js engineering, corporate portals, production-ready landing pages, performance optimization"
+    },
     "WebDevelopmentService": {
         "Hero": {
             "serviceLabel": "Web Development",
@@ -538,6 +579,11 @@
             "description": "We help you build a website that represents your company and supports your business goals clearly and professionally.",
             "btnText": "Contact Us"
         }
+    },
+    "MetadataMarketing": {
+        "title": "Performance Digital Marketing & Growth Strategies | Global Nexus",
+        "description": "Data-driven marketing engines deployed to capture market share. Specialized in paid acquisition campaigns, corporate content mapping, and social ecosystem management.",
+        "keywords": "digital marketing, social media management, paid ad campaigns, content strategy, sales conversion, B2B marketing"
     },
     "DigitalMarketingService": {
         "Hero": {
@@ -611,6 +657,11 @@
             "ctaText": "Contact Us"
         }
     },
+    "MetadataCRM": {
+        "title": "Custom Business Management & CRM Systems | Global Nexus",
+        "description": "Architect proprietary CRM infrastructures and business intelligence dash systems. Automate day-to-day operations and manage client databases with uncompromised software performance.",
+        "keywords": "CRM system, corporate management software, client data optimization, workflow automation, administrative dashboards, scheduling software"
+    },
     "CRMService": {
         "Hero": {
             "badge": "SYSTEM_ARCHITECTURE.READY",
@@ -666,6 +717,11 @@
             "ctaText": "Contact Us"
         }
     },
+    "MetadataMobileApps": {
+        "title": "Custom Mobile App Development | iOS & Android | Global Nexus",
+        "description": "We engineer proprietary iOS and Android mobile architectures designed to offer frictionless deployment and seamless user mobility. Scale your corporate utility ecosystems.",
+        "keywords": "mobile app engineering, iPhone applications, Android apps, custom mobile UI/UX, customer service applications, hybrid mobile systems"
+    },
     "MobileService": {
         "Hero": {
             "badge": "Mobile Applications",
@@ -716,6 +772,11 @@
             "description": "We help you develop an application that suits your company's nature and provides an easy and comfortable experience for your customers.",
             "ctaText": "Contact Us"
         }
+    },
+    "MetadataUIUX": {
+        "title": "Elite UI/UX Design & User Experience Architecture | Global Nexus",
+        "description": "We architect minimalist user journeys and high-fidelity interface layouts focused on data clarity, interactive friction reduction, and frictionless conversion optimization.",
+        "keywords": "UX design, UI interface layout, user experience optimization, web & mobile interface design, digital user journey mapping"
     },
     "UIUXService": {
         "Hero": {

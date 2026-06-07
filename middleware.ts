@@ -2,10 +2,10 @@ import createMiddleware from 'next-intl/middleware';
 
 export default createMiddleware({
   // اللغات المدعومة في الموقع
-  locales: ['ar', 'en'],
+  locales: ['en','ar'],
 
   // اللغة الأساسية لو الرابط مفيش فيه لغة
-  defaultLocale: 'ar'
+  defaultLocale: 'en'
 });
 
 export const config = {

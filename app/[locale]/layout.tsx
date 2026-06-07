@@ -14,11 +14,13 @@ import { notFound } from 'next/navigation';
 const cairo = Cairo({
   subsets: ["arabic"],
   variable: "--font-cairo",
+  display: "swap", // تحسين أداء تحميل الخط العربي للـ SEO وسرعة الصفحة
 });
 
 const geistSans = Geist({
   variable: "--font-geist-sans", // ده هو الـ Git Sans بتاعك
   subsets: ["latin"],
+  display: "swap", // تحسين أداء تحميل الخط الإنجليزي
 });
 
 export const viewport: Viewport = {
@@ -33,13 +35,47 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Metadata' });
 
+  // الدومين الجديد بتاعك
+  const SITE_URL = "https://globalnexuseg.com";
+  // تحديد رابط الصفحة الحالي بشكل ديناميكي (لو اللغة إنجليزي وهي الأساسية مش هيحط /en)
+  const canonicalUrl = `${SITE_URL}${locale === 'en' ? '' : `/${locale}`}`;
+
+  // جلب الكلمات المفتاحية كـ نص يفصله فواصل من ملف الترجمة وتحويله لمصفوفة لـ Next.js
+  const keywordsString = t("keywords") || "";
+  const keywordsArray = keywordsString.split(",").map((item: string) => item.trim()).filter(Boolean);
+
   return {
     title: t("title"),
     description: t("description"),
+    keywords: keywordsArray, // إضافة الكلمات المفتاحية ديناميكياً هنا كـ Array
+    metadataBase: new URL(SITE_URL), // تحديد الرابط الأساسي لحل مشاكل الروابط النسبية في نكست
+
+    // تاجز الـ الروابط البديلة (مهمة جداً لجوجل عشان يعرف إن الصفحة ليها نسختين عربي وإنجليزي)
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        en: `${SITE_URL}`,
+        ar: `${SITE_URL}/ar`,
+      },
+    },
+
+    // إعدادات زواحف الأرشفة (Robots) لضمان أرشفة الموقع بالكامل وبأعلى كفاءة
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+
     openGraph: {
       title: t("title"),
       description: t("ogDescription"),
-      url: "https://global-nexus-new.vercel.app",
+      url: canonicalUrl, // استخدام الرابط الجديد والديناميكي هنا
       siteName: "Global Nexus",
       images: [
         {
@@ -52,6 +88,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       locale: locale === "ar" ? "ar_EG" : "en_US",
       type: "website",
     },
+
+    // كروت تويتر (X) عشان لما اللينك يتبعت على تويتر يظهر بشكل فخم وصورة كبيرة
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("ogDescription") || t("description"),
+      images: ["/og-main.webp"],
+    },
+
     icons: {
       icon: [
         { url: '/icon.png', sizes: '32x32', type: 'image/png' },
@@ -70,7 +115,7 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>; // استقبال الـ params بالتحديث الجديد لنكست 16
 }>) {
-  // فك الـ Promise للحصول على الـ locale الحالي (ar أو en)
+  // فك الـ Promise للحصول على الـ locale الحالي (ar أو en) كما كان في ملفك الأصلي
   const { locale } = await params;
 
   // حماية: لو كتب لغة مش مدعومة يروح 404

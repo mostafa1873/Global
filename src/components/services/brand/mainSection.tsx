@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
+import Link from "next/link";
 
 export default function BrandingHeroNonTraditional() {
   const t = useTranslations("BrandingService");
@@ -89,16 +90,16 @@ export default function BrandingHeroNonTraditional() {
               {t("description")}
             </motion.p>
 
-            {/* الزر التفاعلي - تم حل مشكلة الريسبونسف هنا */}
+            {/* الزر التفاعلي - تم تحسين أبعاد وعرض الزرار للموبايل بشكل متناسق */}
             <motion.div variants={itemVariants} className="flex flex-wrap gap-4 items-center justify-center lg:justify-start w-full px-4 sm:px-0 z-20">
-              <button className="group/btn inline-flex items-center justify-center sm:justify-start gap-3 sm:gap-4 px-6 sm:px-8 py-3.5 sm:py-4 bg-white text-black font-bold text-sm sm:text-base rounded-full transition-all duration-300 ease-in-out tracking-tight shadow-sm hover:bg-nexus-blue hover:text-white w-full sm:w-auto active:scale-[0.99]">
+              <Link href="/contact" className="group/btn inline-flex items-center justify-center sm:justify-start gap-3 px-5 py-3 sm:px-8 sm:py-4 bg-white text-black font-bold text-xs sm:text-base rounded-full transition-all duration-300 ease-in-out tracking-tight shadow-sm hover:bg-blue-600 hover:text-white w-full sm:w-auto active:scale-[0.99] cursor-pointer">
                 <span className="whitespace-nowrap">{t("ctaButton")}</span>
-                <span className="flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-nexus-blue text-white group-hover/btn:bg-white group-hover/btn:text-nexus-blue transition-colors duration-300 ease-in-out shrink-0">
-                  <svg className="w-4 h-4 transform transition-transform duration-300 ease-in-out rtl:group-hover/btn:-translate-x-1.5 ltr:group-hover/btn:translate-x-1.5 ltr:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <span className="flex items-center justify-center w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-blue-600 text-white group-hover/btn:bg-white group-hover/btn:text-blue-600 transition-colors duration-300 ease-in-out shrink-0">
+                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 transform transition-transform duration-300 ease-in-out rtl:group-hover/btn:-translate-x-1.5 ltr:group-hover/btn:translate-x-1.5 ltr:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                   </svg>
                 </span>
-              </button>
+              </Link> 
             </motion.div>
           </motion.div>
 

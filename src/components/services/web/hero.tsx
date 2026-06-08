@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
+import Link from "next/link";
 
 export default function GlobalNexusServicePage() {
   const t = useTranslations("WebDevelopmentService.Hero");
@@ -76,8 +77,8 @@ export default function GlobalNexusServicePage() {
                 // لغينا الـ max-w-[300px] وخليناه max-w-max عشان يلم نفسه، وبيروح lg:max-w-none في الديسكتوب
                 className="w-full max-w-max lg:max-w-none"
               >
-                <a
-                  href="#contact-section"
+                <Link
+                  href="/contact"
                   // جعلنا التوزيع جواه justify-center عشان النص والسهم يكونوا لازقين في بعض ف המوبייל، وبيروح justify-between في الديسكتوب
                   className="w-full flex items-center justify-center lg:justify-between gap-4 px-6 py-4 bg-white text-black hover:bg-blue-600 hover:text-white font-bold rounded-full transition-all duration-300 shadow-lg"
                 >
@@ -93,7 +94,7 @@ export default function GlobalNexusServicePage() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                     </svg>
                   </span>
-                </a>
+                </Link>
               </motion.div>
             </div>
 

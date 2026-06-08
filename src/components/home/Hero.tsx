@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
+import Link from "next/link";
 
 export default function Hero() {
   const t = useTranslations("Hero");
@@ -43,15 +44,14 @@ export default function Hero() {
 
         {/* كونتير داخلي للمسافات والنصوص */}
         <div className="flex flex-col items-center gap-4 md:gap-6 w-full justify-center">
-          
+
           {/* 2. العنوان الرئيسي المترجم بالكامل وديناميكي - تم تظبيط حجم الخط للإنجليزي ليناسب الشاشات */}
           <motion.h1
             variants={fadeInVariant} initial="hidden" animate="visible" custom={0.2}
-            className={`font-black text-white leading-[1.25] md:leading-[1.15] tracking-tight max-w-5xl select-text ${
-              isAr 
-                ? "text-3xl sm:text-5xl md:text-6xl lg:text-7xl" 
-                : "text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
-            }`}
+            className={`font-black text-white leading-[1.25] md:leading-[1.15] tracking-tight max-w-5xl select-text ${isAr
+              ? "text-3xl sm:text-5xl md:text-6xl lg:text-7xl"
+              : "text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
+              }`}
           >
             {isAr ? (
               <>
@@ -103,32 +103,40 @@ export default function Hero() {
           >
             {t("supportingText")}
           </motion.div>
-          
+
         </div>
 
         {/* 6. قسم الأزرار الرسمية بالتنسيق الذكي */}
         <motion.div
-          variants={fadeInVariant} initial="hidden" animate="visible" custom={0.6}
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-xs sm:max-w-none sm:w-auto shrink-0 z-20 mt-2 md:mt-0"
+          variants={fadeInVariant}
+          initial="hidden"
+          animate="visible"
+          custom={0.6}
+          // رفعنا الـ z-index هنا لـ z-30 عشان نضمن إنه فوق أي خلفية أو سيكشن ومحدش يغطي عليه
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-xs sm:max-w-none sm:w-auto shrink-0 z-30 mt-2 md:mt-0"
         >
           {/* زر الأكشن الرئيسي */}
-          <button className="w-full sm:w-auto py-3 md:py-3.5 px-6 md:px-8 flex items-center justify-center bg-white text-black font-bold text-sm uppercase tracking-wide rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-xl active:scale-[0.98]">
-            {t("primaryBtn")}
-          </button>
+          <Link href="/call" className="w-full sm:w-auto block">
+            <button className="w-full sm:w-auto py-3 md:py-3.5 px-6 md:px-8 flex items-center justify-center bg-white text-black font-bold text-sm uppercase tracking-wide rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-xl active:scale-[0.98] cursor-pointer">
+              {t("primaryBtn")}
+            </button>
+          </Link>
 
           {/* زر استكشف خدماتنا */}
-          <button className="group flex items-center justify-center gap-3 w-full sm:w-auto py-3 md:py-3.5 px-6 md:px-8 bg-white/[0.02] hover:bg-white/[0.05] border border-white/10 hover:border-white/20 rounded-xl transition-all duration-300">
-            <span className="text-white font-semibold text-sm">{t("secondaryBtn")}</span>
-            <svg 
-              viewBox="0 0 24 24" 
-              className="w-4 h-4 fill-white transform transition-transform duration-300 rtl:-scale-x-100 ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1"
-            >
-              <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" />
-            </svg>
-          </button>
+          <Link href="/services" className="w-full sm:w-auto block">
+            <button className="group flex items-center justify-center gap-3 w-full sm:w-auto py-3 md:py-3.5 px-6 md:px-8 bg-white/[0.02] hover:bg-white/[0.05] border border-white/10 hover:border-white/20 rounded-xl transition-all duration-300 cursor-pointer">
+              <span className="text-white font-semibold text-sm">{t("secondaryBtn")}</span>
+              <svg
+                viewBox="0 0 24 24"
+                className="w-4 h-4 fill-white transform transition-transform duration-300 rtl:-scale-x-100 ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1"
+              >
+                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" />
+              </svg>
+            </button>
+          </Link>
         </motion.div>
 
       </div>
-    </section>
+    </section >
   );
 }

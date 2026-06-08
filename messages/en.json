@@ -35,7 +35,9 @@
     },
     "WhatsApp": {
         "text": "Contact Us",
-        "message": "Hello, I need more details about Global Nexus services."
+        "message": "Hello, I need more details about Global Nexus services.",
+        "portfolioPopup": "Download Portfolio Now!",
+        "portfolioText": "Download Portfolio"
     },
     "MetadataCall": {
         "title": "Book a Strategy Discovery Call | Schedule Now | Global Nexus",

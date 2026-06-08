@@ -35,7 +35,9 @@
     },
     "WhatsApp": {
         "text": "تواصل معنا",
-        "message": "أهلاً بيك، محتاج تفاصيل أكتر عن خدمات Global Nexus."
+        "message": "أهلاً بيك، محتاج تفاصيل أكتر عن خدمات Global Nexus.",
+        "portfolioPopup": "تحميل البورتفوليو الآن!",
+        "portfolioText": "تحميل البورتفوليو"
     },
     "MetadataCall": {
         "title": "احجز مكالمتك الاستراتيجية - جدولة المواعيد | Global Nexus",

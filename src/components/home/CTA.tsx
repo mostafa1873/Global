@@ -49,11 +49,11 @@ export default function CompactClosing() {
           viewport={{ once: true }}
           className="inline-flex flex-col sm:flex-row items-center gap-6 p-4 sm:p-2 bg-white/[0.02] border border-white/5 rounded-3xl sm:rounded-full backdrop-blur-3xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] w-full sm:w-auto"
         >
-          {/* زرار الاستشارة الأساسي - تم تصغير البادينج وحجم الخط قليلاً في موبايل الإنجليزي ليفرد النص على سطر واحد فخم */}
-          <Link href="/call" className="w-full sm:w-auto">
+          {/* زرار الاستشارة الأساسي - تم معالجة الـ Link ليكون block متوافق مع أبعاد الزرار */}
+          <Link href="/call" className="w-full sm:w-auto block sm:inline-block">
             <motion.button
               whileHover={{ x: isAr ? -5 : 5 }}
-              className={`w-full sm:w-auto bg-white text-black font-black rounded-full flex items-center justify-center gap-3 transition-transform ${
+              className={`w-full sm:w-auto bg-white text-black font-black rounded-full flex items-center justify-center gap-3 transition-transform cursor-pointer ${
                 isAr 
                   ? "px-6 py-4 text-base sm:px-10 sm:py-5 sm:text-lg md:text-xl whitespace-nowrap" 
                   : "px-6 py-4 text-base sm:px-10 sm:py-5 sm:text-lg md:text-xl whitespace-nowrap"
@@ -68,8 +68,9 @@ export default function CompactClosing() {
           <motion.a
             href="https://wa.me/201109458238"
             target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }}
-            className="p-5 text-[#25D366] hover:text-white group transition-colors"
+            className="p-5 text-[#25D366] hover:text-white group transition-colors cursor-pointer"
           >
             <FaWhatsapp className="text-3xl" />
           </motion.a>

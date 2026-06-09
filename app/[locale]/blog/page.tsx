@@ -92,11 +92,11 @@ export default async function BlogPage() {
             href={isRtl ? `/blog/${featuredPost.slug_ar || ""}` : `/blog/${featuredPost.slug_en || ""}`}
             className="lg:col-span-2 p-6 md:p-8 rounded-[2.5rem] bg-white/[0.01] backdrop-blur-md border border-white/[0.08] flex flex-col justify-between gap-6 group items-center text-center"
           >
-            <div className="w-full h-72 md:h-96 relative rounded-[1.5rem] overflow-hidden bg-slate-900">
+            <div className="w-full h-72 md:h-96 relative rounded-[1.5rem] overflow-hidden bg-black">
               <Image
                 src={featuredPost.image?.startsWith('/') ? featuredPost.image : (featuredPost.image ? `/${featuredPost.image}` : defaultImage)}
                 alt={isRtl ? featuredPost.title_ar || "" : featuredPost.title_en || ""}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                 fill
                 priority
               />
@@ -195,11 +195,11 @@ export default async function BlogPage() {
             className="p-5 rounded-[2rem] bg-white/[0.01] backdrop-blur-md border border-white/[0.06] hover:border-blue-600/30 transition-all duration-400 flex flex-col justify-between group items-center text-center"
           >
             <div className="w-full">
-              <div className="w-full h-48 relative rounded-2xl overflow-hidden bg-slate-900 mb-5">
+              <div className="w-full h-48 relative rounded-2xl overflow-hidden bg-black mb-5">
                 <Image
                   src={post.image?.startsWith('/') ? post.image : (post.image ? `/${post.image}` : defaultImage)}
                   alt={isRtl ? post.title_ar || "" : post.title_en || ""}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                   fill
                 />
               </div>

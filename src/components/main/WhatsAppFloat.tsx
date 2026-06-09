@@ -34,57 +34,14 @@ export default function CompactWhatsApp({ isMenuOpen = false }) {
     // التعديل الوحيد هنا: إذا كانت المنيو مفتوحة (isMenuOpen === true) هيتم إضافة كلاس hidden ليختفي تماماً
     <div className={`fixed bottom-6 right-6 z-[99] ${isMenuOpen ? "hidden" : ""}`}>
 
-      {/* ========================================================= */}
-      {/* 1. زرار البورتفوليو الجديد (يفتح أول ما الموقع يفتح وخلاص) */}
-      {/* ========================================================= */}
-      <div className="absolute bottom-[64px] right-0 flex flex-col items-end z-10">
 
-        {/* الزرار نفسه بنفس حجم وتنسيق الواتساب بالمللي وبدون البوب الطاير */}
-        <div className="relative">
-          <div className="absolute inset-0 bg-blue-600/10 blur-[20px] rounded-full pointer-events-none"></div>
-          <motion.a
-            href="/company-portfolio.pdf" // مسار ملف البورتفوليو بتاعك
-            download="Company_Portfolio.pdf"
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            onMouseEnter={() => setShowPortText(true)}
-            onMouseLeave={() => setShowPortText(false)}
-            className="group relative flex items-center bg-white/5 border border-white/10 backdrop-blur-md p-1.5 rounded-full overflow-hidden transition-colors duration-300 hover:bg-white/10 hover:border-blue-500/30 shadow-xl shadow-black/20"
-            dir="rtl"
-          >
-            <div className="relative flex items-center justify-center w-10 h-10 bg-gradient-to-br from-blue-500/20 to-transparent border border-blue-500/30 rounded-full group-hover:scale-105 transition-transform duration-300">
-              <Download size={18} className="text-blue-400" strokeWidth={2.5} />
-              <span className="absolute top-0.5 right-0.5 w-2.5 h-2.5 bg-blue-500 rounded-full animate-ping opacity-75"></span>
-            </div>
-
-            <motion.div
-              initial={false}
-              animate={{
-                width: showPortText ? "auto" : 0,
-                opacity: showPortText ? 1 : 0,
-                marginRight: showPortText ? 12 : 0,
-                paddingLeft: showPortText ? 16 : 0
-              }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="overflow-hidden flex flex-col items-start whitespace-nowrap"
-            >
-              <span className="text-[8px] text-blue-300/80 font-bold tracking-[0.15em] uppercase leading-none mb-1">
-                Company Profile
-              </span>
-              {/* ربط نص الزرار بنظام الترجمة */}
-              <span className="text-white font-medium text-xs tracking-wide leading-tight">
-                {t("portfolioText")}
-              </span>
-            </motion.div>
-          </motion.a>
-        </div>
-      </div>
 
       {/* ========================================================= */}
       {/* 2. كود زرار الواتساب الأصلي بتاعك (ملمسناش فيه الهوا) */}
       {/* ========================================================= */}
-      <div className="absolute bottom-0 right-0">
+
+      <div className="absolute bottom-[64px] right-0 flex flex-col items-end z-10">
+
         {/* توهج خلفي خفيف جداً ومصغر */}
         <div className="absolute inset-0 bg-blue-600/10 blur-[20px] rounded-full pointer-events-none"></div>
 
@@ -129,6 +86,53 @@ export default function CompactWhatsApp({ isMenuOpen = false }) {
             </span>
           </motion.div>
         </motion.a>
+
+      </div>
+
+      {/* ========================================================= */}
+      {/* 1. زرار البورتفوليو الجديد (يفتح أول ما الموقع يفتح وخلاص) */}
+      {/* ========================================================= */}
+      <div className="absolute bottom-0 right-0">
+        {/* الزرار نفسه بنفس حجم وتنسيق الواتساب بالمللي وبدون البوب الطاير */}
+        <div className="relative">
+          <div className="absolute inset-0 bg-blue-600/10 blur-[20px] rounded-full pointer-events-none"></div>
+          <motion.a
+            href="/company-portfolio.pdf" // مسار ملف البورتفوليو بتاعك
+            download="Company_Portfolio.pdf"
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            onMouseEnter={() => setShowPortText(true)}
+            onMouseLeave={() => setShowPortText(false)}
+            className="group relative flex items-center bg-white/5 border border-white/10 backdrop-blur-md p-1.5 rounded-full overflow-hidden transition-colors duration-300 hover:bg-white/10 hover:border-blue-500/30 shadow-xl shadow-black/20"
+            dir="rtl"
+          >
+            <div className="relative flex items-center justify-center w-10 h-10 bg-gradient-to-br from-blue-500/20 to-transparent border border-blue-500/30 rounded-full group-hover:scale-105 transition-transform duration-300">
+              <Download size={18} className="text-blue-400" strokeWidth={2.5} />
+              <span className="absolute top-0.5 right-0.5 w-2.5 h-2.5 bg-blue-500 rounded-full animate-ping opacity-75"></span>
+            </div>
+
+            <motion.div
+              initial={false}
+              animate={{
+                width: showPortText ? "auto" : 0,
+                opacity: showPortText ? 1 : 0,
+                marginRight: showPortText ? 12 : 0,
+                paddingLeft: showPortText ? 16 : 0
+              }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="overflow-hidden flex flex-col items-start whitespace-nowrap"
+            >
+              <span className="text-[8px] text-blue-300/80 font-bold tracking-[0.15em] uppercase leading-none mb-1">
+                Company Profile
+              </span>
+              {/* ربط نص الزرار بنظام الترجمة */}
+              <span className="text-white font-medium text-xs tracking-wide leading-tight">
+                {t("portfolioText")}
+              </span>
+            </motion.div>
+          </motion.a>
+        </div>
       </div>
 
     </div>

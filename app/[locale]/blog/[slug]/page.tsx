@@ -155,12 +155,12 @@ export default async function PostPage({ params }: PostPageProps) {
             </div>
 
             {/* الصورة داخل الكرت الفخم */}
-            <div className="relative aspect-video md:aspect-[21/9] w-full rounded-[2rem] overflow-hidden bg-slate-900 border border-white/[0.04]">
+            <div className="relative aspect-video md:aspect-[21/9] w-full rounded-[2rem] overflow-hidden bg-black border border-white/[0.04]">
               <Image
                 src={post.image?.startsWith('/') ? post.image : (post.image ? `/${post.image}` : defaultImage)}
                 alt={isRtl ? post.title_ar : post.title_en}
                 fill
-                className="object-cover"
+                className="object-contain"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#020202]/80 via-transparent to-transparent" />
